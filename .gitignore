@@ -1,0 +1,8 @@
+*.swp
+*.vagrant
+
+packer/builds
+packer/bin
+packer/packer_cache
+
+jenkins.ini

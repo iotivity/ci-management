@@ -1,0 +1,18 @@
+## Builders
+- builder:
+    name: iotivity-bootstrap
+    builders:
+        - shell:
+            !include-raw: include-raw-iotivity-bootstrap.sh
+
+- builder:
+    name: iotivity-osx-bootstrap
+    builders:
+        - shell:
+            !include-raw: include-raw-iotivity-osx-bootstrap.sh
+
+- builder:
+    name: iotivity-windows-bootstrap
+    builders:
+        - batch:
+            !include-raw: include-raw-iotivity-windows-bootstrap.bat
