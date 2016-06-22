@@ -1,0 +1,195 @@
+# Global Macros
+
+## Parameters
+- parameter:
+    name: gerrit-branch
+    parameters:
+        - string:
+            name: GERRIT_BRANCH
+            default: 'master'
+            description: "JJB configured GERRIT_BRANCH parameter"
+
+- parameter:
+    name: gerrit-project
+    parameters:
+        - string:
+            name: GERRIT_PROJECT
+            default: '{project}'
+            description: "GERRIT_PROJECT parameter if not given by trigger"
+
+- parameter:
+    name: gerrit-refspec
+    parameters:
+        - string:
+            name: GERRIT_REFSPEC
+            default: 'refs/heads/master'
+            description: "GERRIT_REFSPEC parameter if not given by trigger"
+
+## SCMs
+- scm:
+    name: gerrit-branch-scm
+    scm:
+        - git:
+            credentials-id: '{credentials-id}'
+            url: 'ssh://iotivity-jobbuilder@gerrit.iotivity.org:29418/iotivity'
+            refspec: '$GERRIT_REFSPEC'
+            branches:
+                - 'origin/$GERRIT_BRANCH'
+            skip-tag: true
+            wipe-workspace: true
+            choosing-strategy: 'gerrit'
+
+- scm:
+    name: gerrit-ci-management-scm
+    scm:
+        - git:
+            credentials-id: '{credentials-id}'
+            url: 'ssh://iotivity-jobbuilder@gerrit.iotivity.org:29418/ci-management'
+            refspec: '$GERRIT_REFSPEC'
+            branches:
+                - 'origin/$GERRIT_BRANCH'
+            skip-tag: true
+            wipe-workspace: true
+            choosing-strategy: 'gerrit'
+
+## Wrappers
+- wrapper:
+    name: build-timeout
+    wrappers:
+        - timeout:
+            type: no-activity
+            timeout: 10
+            abort: true
+
+## Triggers
+- trigger:
+    name: gerrit-trigger-patch-submitted
+    triggers:
+        - gerrit:
+            server-name: 'iotivity'
+            trigger-on:
+                - patchset-created-event:
+                    exclude-drafts: 'false'
+                    exclude-trivial-rebase: 'false'
+                    exclude-no-code-change: 'true'
+                - draft-published-event
+                - comment-added-contains-event:
+                    comment-contains-value: 'verify all'
+                - comment-added-contains-event:
+                    comment-contains-value: 'reverify'
+            projects:
+                - project-compare-type: 'ANT'
+                  project-pattern: '{project}'
+                  branches:
+                    - branch-compare-type: 'ANT'
+                      branch-pattern: '**'
+
+- trigger:
+    name: gerrit-trigger-silent-patch-submitted
+    triggers:
+        - gerrit:
+            server-name: 'iotivity'
+            trigger-on:
+                - patchset-created-event:
+                    exclude-drafts: 'false'
+                    exclude-trivial-rebase: 'false'
+                    exclude-no-code-change: 'true'
+                - draft-published-event
+                - comment-added-contains-event:
+                    comment-contains-value: 'recheck'
+                - comment-added-contains-event:
+                    comment-contains-value: 'reverify'
+            silent-start: 'true'
+            projects:
+                - project-compare-type: 'ANT'
+                  project-pattern: '{project}'
+                  branches:
+                    - branch-compare-type: 'ANT'
+                      branch-pattern: '**'
+
+- trigger:
+    name: gerrit-trigger-patch-merged
+    triggers:
+        - gerrit:
+            server-name: 'iotivity'
+            trigger-on:
+                - change-merged-event
+                - comment-added-contains-event:
+                    comment-contains-value: 'remerge'
+            projects:
+                - project-compare-type: 'ANT'
+                  project-pattern: '{project}'
+                  branches:
+                    - branch-compare-type: 'ANT'
+                      branch-pattern: '**'
+
+- trigger:
+    name: gerrit-trigger-tag
+    triggers:
+      - gerrit:
+          server-name: 'iotivity'
+          trigger-on:
+            - ref-updated-event
+          projects:
+            - project-compare-type: 'ANT'
+              project-pattern: '{project}'
+              branches:
+                - branch-compare-type: 'ANT'
+                  branch-pattern: 'refs/tags/**'
+
+
+## Publishers
+- publisher:
+    name: archive-artifacts
+    publishers:
+        - archive:
+            artifacts: '{artifacts}'
+            latest-only: false
+            allow-empty: true
+            only-if-successful: false
+            fingerprint: true
+            default-excludes: true
+
+- publisher:
+    name: email-notification
+    publishers:
+        - email:
+            recipients: '{mailto}'
+            notify-every-unstable-build: false
+            send-to-individuals: true
+
+- publisher:
+    name: valgrind-report
+    publishers:
+        - valgrind:
+            pattern: '*.memcheck'
+            thresholds:
+                failed:
+                    invalid-read-write: 0
+                    definitely-lost: 20
+                    total: 50
+            fail-no-reports: false
+            fail-invalid-reports: false
+            publish-if-aborted: true
+            publish-if-failed: true
+
+- publisher:
+    name: xunit-report
+    publishers:
+        - xunit:
+            thresholdmode: '1'
+            test-time-margin: 3000
+            types:
+                - gtest:
+                    pattern: 'out/**/test_out/*.xml'
+                    skip-if-no-test-files: true
+                    fail-if-not-new: false
+                    deleteoutput: true
+                    stoponerror: false
+
+## Builders
+- builder:
+    name: ci-management-check-unicode
+    builders:
+        - shell: |
+            $WORKSPACE/scripts/check-unicode.sh jjb/

@@ -1,0 +1,197 @@
+- project:
+    name: iotivity-jobs
+    jobs:
+        - 'iotivity-merge'
+        - 'iotivity-verify-{component}'
+        - 'iotivity-verify-osx'
+        - 'iotivity-verify-windows-{vs-version}'
+    component:
+        - 'linux_unsecured'
+        - 'linux_unsecured_with_ra'
+        - 'linux_unsecured_with_rd'
+        - 'linux_unsecured_with_java'
+        - 'linux_secured'
+        - 'linux_secured_with_ra'
+        - 'linux_secured_with_rd'
+        - 'linux_secured_with_java'
+        - 'android_armeabi'
+        - 'android_x86'
+        - 'arduino'
+        - 'tizen'
+        - 'simulator'
+        - 'unit_tests'
+    vs-version:
+        - 'vs2013'
+        - 'vs2015'
+    project: 'iotivity'
+
+- job-template:
+    name: 'iotivity-verify-{component}'
+
+    project-type: freestyle
+    node: 'ubuntu1204'
+    concurrent: true
+
+    parameters:
+        - gerrit-project:
+            project: '{project}'
+        - gerrit-branch
+        - gerrit-refspec
+
+    scm:
+        - gerrit-branch-scm:
+            credentials-id: '{ssh-credentials}'
+
+    triggers:
+        - gerrit-trigger-patch-submitted:
+            project: '{project}'
+            branch: 'master'
+
+    wrappers:
+        - timestamps
+
+    builders:
+        - iotivity-bootstrap
+        - shell: |
+            #!/bin/bash -eux
+            set -o pipefail
+
+            ./auto_build.sh {component}
+
+    publishers:
+        - archive-artifacts
+        - email-notification:
+            mailto: 'oicbuild@intel.com'
+
+- job-template:
+    name: 'iotivity-verify-windows-{vs-version}'
+
+    project-type: freestyle
+    node: '{vs-version}'
+    concurrent: true
+
+    parameters:
+        - gerrit-project:
+            project: '{project}'
+        - gerrit-branch
+        - gerrit-refspec
+
+    scm:
+        - gerrit-branch-scm:
+            credentials-id: '{ssh-credentials}'
+
+    triggers:
+        - gerrit-trigger-patch-submitted:
+            project: '{project}'
+            branch: 'windows-port'
+
+    wrappers:
+        - timestamps
+
+    builders:
+        - iotivity-windows-bootstrap
+        - batch: |
+            @echo off
+            run.bat build
+            run.bat test
+            run.bat clean
+
+    publishers:
+        - archive-artifacts
+        - email-notification:
+            mailto: 'oicbuild@intel.com'
+
+- job-template:
+    name: 'iotivity-verify-osx'
+
+    project-type: freestyle
+    node: 'osx1010'
+    concurrent: true
+
+    parameters:
+        - gerrit-project:
+            project: '{project}'
+        - gerrit-branch
+        - gerrit-refspec
+
+    scm:
+        - gerrit-branch-scm:
+            credentials-id: '{ssh-credentials}'
+
+    triggers:
+        - gerrit-trigger-patch-submitted:
+            project: '{project}'
+            branch: 'master'
+
+    wrappers:
+        - timestamps
+
+    builders:
+        - iotivity-osx-bootstrap
+        - shell: |
+            #!/bin/bash -eux
+            set -o pipefail
+
+            PATH=$PATH:/usr/local/bin/
+            if (git rev-list HEAD | grep -q d0b861c0276208b3fd1b29bf98908e401c7ca17f); then
+              ./auto_build.sh darwin
+            fi
+            # Run Tests against OSX 10.10 without Logging
+            echo "*********** Build for OSX 10.10 *************"
+            scons TARGET_OS=darwin SYS_VERSION=10.10 RELEASE=false
+            scons TARGET_OS=darwin SYS_VERSION=10.10 RELEASE=false -c
+            scons TARGET_OS=darwin SYS_VERSION=10.10 RELEASE=false LOGGING=false
+            export DYLD_LIBRARY_PATH=./extlibs/gtest/gtest-1.7.0/lib/.libs
+            ./out/darwin/x86_64/debug/resource/csdk/stack/test/stacktests
+
+    publishers:
+        - valgrind-report
+        - xunit-report
+        - archive-artifacts
+        - email-notification:
+            mailto: 'oicbuild@intel.com'
+
+- job-template:
+    name: 'iotivity-merge'
+
+    project-type: freestyle
+    node: 'integration'
+    concurrent: true
+
+    parameters:
+        - gerrit-project:
+            project: '{project}'
+        - gerrit-branch:
+            branch: 'master'
+        - gerrit-refspec:
+            refspec: ''
+
+    scm:
+        - gerrit-branch-scm:
+            credentials-id: '{ssh-credentials}'
+            refspec: 'refs/heads/master'
+
+    triggers:
+        - gerrit-trigger-patch-merged:
+          project: '{project}'
+          branch: 'master'
+
+    wrappers:
+        - timestamps
+        - ssh-agent-credentials:
+            users:
+                - '{ssh-credentials}'
+        - ci-skip
+        - mask-passwords
+
+    builders:
+        - iotivity-bootstrap
+        - shell: |
+            #!/bin/bash -eux
+            set -o pipefail
+
+            ./auto_build.sh all
+
+    publishers:
+        - archive-artifacts:
+            artifacts: '**'
