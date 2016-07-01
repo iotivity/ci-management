@@ -51,7 +51,8 @@
         - timestamps
 
     builders:
-        - iotivity-bootstrap
+        - shell:
+            !include-raw-escape: include-raw-iotivity-bootstrap.sh
         - shell: |
             #!/bin/bash -eux
             set -o pipefail
@@ -89,7 +90,8 @@
         - timestamps
 
     builders:
-        - iotivity-windows-bootstrap
+        - batch:
+            !include-raw-escape: include-raw-iotivity-windows-bootstrap.bat
         - batch: |
             @echo off
             run.bat build
@@ -127,7 +129,8 @@
         - timestamps
 
     builders:
-        - iotivity-osx-bootstrap
+        - shell:
+            !include-raw-escape: include-raw-iotivity-osx-bootstrap.sh
         - shell: |
             #!/bin/bash -eux
             set -o pipefail
@@ -185,7 +188,8 @@
         - mask-passwords
 
     builders:
-        - iotivity-bootstrap
+        - shell:
+            !include-raw-escape: include-raw-iotivity-bootstrap.sh
         - shell: |
             #!/bin/bash -eux
             set -o pipefail
