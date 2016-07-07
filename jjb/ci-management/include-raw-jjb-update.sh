@@ -1,6 +1,6 @@
 # Uncomment this to delete jobs not managed by JJB on upload
 #jenkins-jobs update --delete-old --recursive jjb/
-jenkins-jobs update --recursive jjb/ ci-management-verify-jjb ci-management-merge
+jenkins-jobs update --recursive jjb/
 
 # Submit patches for any jobs that can be auto updated
 function submitJJB {

@@ -31,6 +31,7 @@
     project-type: freestyle
     node: 'ubuntu1204'
     concurrent: true
+    disabled: true
 
     parameters:
         - gerrit-project:
@@ -70,6 +71,7 @@
     project-type: freestyle
     node: '{vs-version}'
     concurrent: true
+    disabled: true
 
     parameters:
         - gerrit-project:
@@ -109,6 +111,7 @@
     project-type: freestyle
     node: 'osx1010'
     concurrent: true
+    disabled: true
 
     parameters:
         - gerrit-project:
@@ -160,6 +163,7 @@
     project-type: freestyle
     node: 'integration'
     concurrent: true
+    disabled: true
 
     parameters:
         - gerrit-project:
