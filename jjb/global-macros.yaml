@@ -121,7 +121,7 @@
                   project-pattern: '{project}'
                   branches:
                     - branch-compare-type: 'ANT'
-                      branch-pattern: '**'
+                      branch-pattern: '{branch}'
 
 - trigger:
     name: gerrit-trigger-tag
