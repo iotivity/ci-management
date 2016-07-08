@@ -46,7 +46,7 @@
     triggers:
         - gerrit-trigger-patch-submitted:
             project: '{project}'
-            branch: 'master'
+            branch: '**'
 
     wrappers:
         - timestamps
@@ -126,7 +126,7 @@
     triggers:
         - gerrit-trigger-patch-submitted:
             project: '{project}'
-            branch: 'master'
+            branch: '**'
 
     wrappers:
         - timestamps
