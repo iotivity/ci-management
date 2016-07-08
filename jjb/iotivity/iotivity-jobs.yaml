@@ -180,8 +180,8 @@
 
     triggers:
         - gerrit-trigger-patch-merged:
-          project: '{project}'
-          branch: 'master'
+            project: '{project}'
+            branch: 'master'
 
     wrappers:
         - timestamps
