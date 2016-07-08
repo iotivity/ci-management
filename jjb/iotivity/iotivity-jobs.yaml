@@ -201,5 +201,5 @@
             ./auto_build.sh all
 
     publishers:
-        - archive-artifacts:
-            artifacts: '**'
+        - email-notification:
+            mailto: 'oicbuild@intel.com, joseph.l.morrow@intel.com, tbramwell@linuxfoundation.org'
