@@ -5,6 +5,7 @@
         - 'iotivity-verify-{component}'
         - 'iotivity-verify-osx'
         - 'iotivity-verify-windows-{vs-version}'
+        - 'iotivity-sonar-runner'
     component:
         - 'linux_unsecured'
         - 'linux_unsecured_with_ra'
@@ -203,8 +204,6 @@
         - ssh-agent-credentials:
             users:
                 - '{ssh-credentials}'
-        - ci-skip
-        - mask-passwords
 
     builders:
         - shell:
@@ -218,3 +217,62 @@
     publishers:
         - email-notification:
             mailto: 'oicbuild@intel.com, joseph.l.morrow@intel.com, tbramwell@linuxfoundation.org'
+
+- job-template:
+    name: 'iotivity-sonar-runner'
+
+    project-type: freestyle
+    node: 'sonar'
+    concurrent: true
+    disabled: true
+
+    parameters:
+        - gerrit-project:
+            project: '{project}'
+        - gerrit-branch:
+            branch: 'master'
+        - gerrit-refspec:
+            refspec: ''
+
+    scm:
+        - gerrit-branch-scm:
+            credentials-id: '{ssh-credentials}'
+            refspec: 'refs/heads/master'
+
+    triggers:
+        - gerrit-trigger-silent-patch-merged:
+            project: '{project}'
+            branch: 'master'
+
+    wrappers:
+        - timestamps
+        - ssh-agent-credentials:
+            users:
+                - '{ssh-credentials}'
+
+    builders:
+        - shell:
+            !include-raw-escape: include-raw-iotivity-sonar.sh
+        - sonar:
+            sonar-name: Sonar
+            properties: |
+                sonar.projectKey=iotivity:master
+                sonar.projectName=Iotivity
+                sonar.projectVersion=1.1.0
+
+                sonar.sources=resource,service,examples,android,build_common,tools
+                sonar.language=c++
+
+                sonar.cxx.compiler.parser=GCC
+                sonar.cxx.errorRecoveryEnabled=True
+
+                sonar.cxx.includeDirectories=resource,service,examples,android,build_common,tools
+
+                sonar.cxx.valgrind.reportPath=*.memcheck
+                sonar.cxx.vera.reportPath=vera-report.xml
+                sonar.cxx.cppcheck.reportPath=cppcheck-report.xml
+                sonar.cxx.rats.reportPath=rats-report.xml
+
+    publishers:
+        - archive-artifacts:
+            artifacts: '*-report.xml'

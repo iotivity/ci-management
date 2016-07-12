@@ -124,6 +124,23 @@
                       branch-pattern: '{branch}'
 
 - trigger:
+    name: gerrit-trigger-silent-patch-merged
+    triggers:
+        - gerrit:
+            server-name: 'iotivity'
+            silent-start: 'true'
+            trigger-on:
+                - change-merged-event
+                - comment-added-contains-event:
+                    comment-contains-value: 'remerge'
+            projects:
+                - project-compare-type: 'ANT'
+                  project-pattern: '{project}'
+                  branches:
+                    - branch-compare-type: 'ANT'
+                      branch-pattern: '{branch}'
+
+- trigger:
     name: gerrit-trigger-tag
     triggers:
       - gerrit:
