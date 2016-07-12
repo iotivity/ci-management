@@ -99,6 +99,7 @@
                     comment-contains-value: 'recheck'
                 - comment-added-contains-event:
                     comment-contains-value: 'reverify'
+            silent: 'true'
             silent-start: 'true'
             projects:
                 - project-compare-type: 'ANT'
@@ -128,6 +129,7 @@
     triggers:
         - gerrit:
             server-name: 'iotivity'
+            silent: 'true'
             silent-start: 'true'
             trigger-on:
                 - change-merged-event
