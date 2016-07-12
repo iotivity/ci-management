@@ -195,7 +195,7 @@
             refspec: 'refs/heads/master'
 
     triggers:
-        - gerrit-trigger-patch-merged:
+        - gerrit-trigger-silent-patch-merged:
             project: '{project}'
             branch: 'master'
 
