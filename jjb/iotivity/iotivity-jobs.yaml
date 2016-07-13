@@ -22,7 +22,7 @@
     name: iotivity-unit-tests
     project: 'iotivity'
     jobs:
-        - 'iotivity-verify-unit-tests'
+        - 'iotivity-verify-unit_tests'
 
 - project:
     name: iotivity-android
@@ -94,7 +94,7 @@
             mailto: 'oicbuild@intel.com'
 
 - job-template:
-    name: 'iotivity-verify-unit-tests'
+    name: 'iotivity-verify-unit_tests'
 
     project-type: freestyle
     node: 'ubuntu1204'
