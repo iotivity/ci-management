@@ -4,7 +4,6 @@
         - 'iotivity-merge'
         - 'iotivity-verify-{component}'
         - 'iotivity-verify-osx'
-        - 'iotivity-verify-windows-{vs-version}'
         - 'iotivity-sonar-runner'
     component:
         - 'linux_unsecured'
@@ -21,10 +20,18 @@
         - 'tizen'
         - 'simulator'
         - 'unit_tests'
-    vs-version:
-        - 'vs2013'
-        - 'vs2015'
     project: 'iotivity'
+
+- project:
+    name: iotivity-windows
+    project: 'iotivity'
+    vs-version:
+        - 'vs2013':
+            disabled: false
+        - 'vs2015':
+            disabled: true
+    jobs:
+        - 'iotivity-verify-windows-{vs-version}'
 
 - job-template:
     name: 'iotivity-verify-{component}'
@@ -72,7 +79,7 @@
     project-type: freestyle
     node: '{vs-version}'
     concurrent: true
-    disabled: false
+    disabled: '{obj:disabled}'
 
     parameters:
         - gerrit-project:
