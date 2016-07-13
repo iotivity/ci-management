@@ -31,7 +31,7 @@
         - 'armeabi'
         - 'x86'
     jobs:
-        - 'iotivity-verify-android-{arch}'
+        - 'iotivity-verify-android_{arch}'
 
 - project:
     name: iotivity-windows
@@ -139,7 +139,7 @@
             mailto: 'oicbuild@intel.com'
 
 - job-template:
-    name: 'iotivity-verify-android-{arch}'
+    name: 'iotivity-verify-android_{arch}'
 
     project-type: freestyle
     node: 'ubuntu1204'
