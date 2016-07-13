@@ -17,7 +17,12 @@
         - 'arduino'
         - 'tizen'
         - 'simulator'
-        - 'unit_tests'
+
+- project:
+    name: iotivity-unit-tests
+    project: 'iotivity'
+    jobs:
+        - 'iotivity-verify-unit-tests'
 
 - project:
     name: iotivity-android
@@ -85,6 +90,51 @@
             ./auto_build.sh {component}
 
     publishers:
+        - email-notification:
+            mailto: 'oicbuild@intel.com'
+
+- job-template:
+    name: 'iotivity-verify-unit-tests'
+
+    project-type: freestyle
+    node: 'ubuntu1204'
+    concurrent: true
+    disabled: false
+
+    parameters:
+        - gerrit-project:
+            project: '{project}'
+        - gerrit-branch
+        - gerrit-refspec
+
+    scm:
+        - gerrit-branch-scm:
+            credentials-id: '{ssh-credentials}'
+
+    triggers:
+        - gerrit-trigger-patch-submitted:
+            project: '{project}'
+            branch: '**'
+
+    wrappers:
+        - timestamps
+        - build-timeout
+
+    builders:
+        - shell:
+            !include-raw-escape: include-raw-iotivity-bootstrap.sh
+        - shell: |
+            #!/bin/bash -eux
+            set -o pipefail
+
+            export CCACHE_DISABLE=true
+            ./auto_build.sh unit_tests
+
+    publishers:
+        - valgrind-report
+        - xunit-report
+        - archive-artifacts:
+            artifacts: '*.memcheck, out/**/test_out/*.xml'
         - email-notification:
             mailto: 'oicbuild@intel.com'
 
