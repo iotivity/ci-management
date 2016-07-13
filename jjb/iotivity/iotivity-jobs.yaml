@@ -1,5 +1,7 @@
 - project:
     name: iotivity-jobs
+    project: 'iotivity'
+    branch: '**'
     jobs:
         - 'iotivity-merge'
         - 'iotivity-verify-{component}'
@@ -9,16 +11,13 @@
         - 'linux_unsecured'
         - 'linux_unsecured_with_ra'
         - 'linux_unsecured_with_rd'
-        - 'linux_unsecured_with_java'
         - 'linux_secured'
         - 'linux_secured_with_ra'
         - 'linux_secured_with_rd'
-        - 'linux_secured_with_java'
         - 'arduino'
         - 'tizen'
         - 'simulator'
         - 'unit_tests'
-    project: 'iotivity'
 
 - project:
     name: iotivity-android
@@ -39,6 +38,16 @@
             disabled: true
     jobs:
         - 'iotivity-verify-windows-{vs-version}'
+
+- project:
+    name: iotivity-java
+    project: 'iotivity'
+    branch: 'generic-java'
+    component:
+        - 'linux_unsecured_with_java'
+        - 'linux_secured_with_java'
+    jobs:
+        - 'iotivity-verify-{component}'
 
 - job-template:
     name: 'iotivity-verify-{component}'
@@ -61,7 +70,7 @@
     triggers:
         - gerrit-trigger-patch-submitted:
             project: '{project}'
-            branch: '**'
+            branch: '{branch}'
 
     wrappers:
         - timestamps
