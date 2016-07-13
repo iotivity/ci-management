@@ -69,7 +69,6 @@
             ./auto_build.sh {component}
 
     publishers:
-        - archive-artifacts
         - email-notification:
             mailto: 'oicbuild@intel.com'
 
@@ -124,7 +123,6 @@
             run.bat clean
 
     publishers:
-        - archive-artifacts
         - email-notification:
             mailto: 'oicbuild@intel.com'
 
@@ -176,7 +174,8 @@
     publishers:
         - valgrind-report
         - xunit-report
-        - archive-artifacts
+        - archive-artifacts:
+            artifacts: '*.memcheck'
         - email-notification:
             mailto: 'oicbuild@intel.com'
 
