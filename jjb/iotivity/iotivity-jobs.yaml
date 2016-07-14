@@ -38,9 +38,9 @@
     project: 'iotivity'
     vs-version:
         - 'vs2013':
-            disabled: false
+            silent: false
         - 'vs2015':
-            disabled: true
+            silent: true
     jobs:
         - 'iotivity-verify-windows-{vs-version}'
 
@@ -185,7 +185,7 @@
     project-type: freestyle
     node: '{vs-version}'
     concurrent: true
-    disabled: '{obj:disabled}'
+    disabled: false
 
     parameters:
         - gerrit-project:
@@ -200,6 +200,7 @@
     triggers:
         - gerrit:
             server-name: 'iotivity'
+            silent: '{obj:silent}'
             trigger-on:
                 - patchset-created-event:
                     exclude-drafts: 'false'
