@@ -337,7 +337,7 @@
             ./auto_build.sh all
 
     publishers:
-        - email-notification:
+        - email-notification-unstable:
             mailto: 'oicbuild@intel.com, joseph.l.morrow@intel.com, tbramwell@linuxfoundation.org'
 
 - job-template:
@@ -383,7 +383,7 @@
             ./auto_build.sh all
 
     publishers:
-        - email-notification:
+        - email-notification-unstable:
             mailto: 'oicbuild@intel.com, joseph.l.morrow@intel.com, tbramwell@linuxfoundation.org'
 
 - job-template:

@@ -176,6 +176,14 @@
             send-to-individuals: true
 
 - publisher:
+    name: email-notification-unstable
+    publishers:
+        - email:
+            recipients: '{mailto}'
+            notify-every-unstable-build: true
+            send-to-individuals: true
+
+- publisher:
     name: valgrind-report
     publishers:
         - valgrind:
