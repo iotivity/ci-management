@@ -194,8 +194,15 @@
         - gerrit-refspec
 
     scm:
-        - gerrit-branch-scm:
-            credentials-id: '{ssh-credentials}'
+        - git:
+            credentials-id: '6466b968-939a-4d87-9f7f-0ceb5fca54dc'
+            url: 'ssh://jenkins-iotivity@gerrit.iotivity.org:29418/iotivity'
+            refspec: '$GERRIT_REFSPEC'
+            branches:
+                - 'origin/$GERRIT_BRANCH'
+            skip-tag: true
+            wipe-workspace: true
+            choosing-strategy: 'gerrit'
 
     triggers:
         - gerrit:
