@@ -4,6 +4,7 @@
     branch: '**'
     jobs:
         - 'iotivity-merge'
+        - 'iotivity-merge-1.1-rel'
         - 'iotivity-verify-{component}'
         - 'iotivity-verify-osx'
         - 'iotivity-sonar-runner'
@@ -319,6 +320,52 @@
         - gerrit-trigger-silent-ref-updated:
             project: '{project}'
             branch: 'master'
+
+    wrappers:
+        - timestamps
+        - ssh-agent-credentials:
+            users:
+                - '{ssh-credentials}'
+
+    builders:
+        - shell:
+            !include-raw-escape: include-raw-iotivity-bootstrap.sh
+        - shell: |
+            #!/bin/bash -eux
+            set -o pipefail
+
+            ./auto_build.sh all
+
+    publishers:
+        - email-notification:
+            mailto: 'oicbuild@intel.com, joseph.l.morrow@intel.com, tbramwell@linuxfoundation.org'
+
+- job-template:
+    name: 'iotivity-merge-1.1-rel'
+
+    project-type: freestyle
+    node: 'integration'
+    concurrent: true
+    disabled: false
+
+    parameters:
+        - gerrit-project:
+            project: '{project}'
+        - string:
+            name: GERRIT_BRANCH
+            default: '1.1-rel'
+            description: "JJB configured GERRIT_BRANCH parameter"
+        - string:
+            name: GERRIT_REFSPEC
+            default: 'refs/heads/1.1-rel'
+            description: "GERRIT_REFSPEC parameter if not given by trigger"
+
+    scm:
+        - gerrit-branch-scm:
+            credentials-id: '{ssh-credentials}'
+
+    triggers:
+        - timed: 'H H * * *'
 
     wrappers:
         - timestamps
