@@ -63,7 +63,14 @@ ln -sv ${IOTIVITYEXTLIB}/arduino/arduino-1.5.8 ${WORKSPACE}/extlibs/arduino/ardu
 unzip -oq ${IOTIVITYEXTLIB}/boost/boost_1_58_0.zip -d ${WORKSPACE}/extlibs/boost/
 ln -sv ${IOTIVITYEXTLIB}/boost/boost_1_58_0.zip ${WORKSPACE}/extlibs/boost/boost_1_58_0.zip
 ln -sv ${IOTIVITYEXTLIB}/cereal ${WORKSPACE}/extlibs/cereal
-ln -sv ${IOTIVITYEXTLIB}/tinycbor/tinycbor ${WORKSPACE}/extlibs/tinycbor/tinycbor
+
+TINYCBOR_VERSION='0.2.1'
+if [ "$GERRIT_BRANCH" = "1.1-rel" ]; then
+    TINYCBOR_VERSION='0.2.1'
+fi
+unzip -oq "${IOTIVITYEXTLIB}/tinycbor/v${TINYCBOR_VERSION}.zip" -d ${IOTIVITYEXTLIB}/tinycbor/
+ln -sv "${IOTIVITYEXTLIB}/tinycbor/tinycbor-${TINYCBOR_VERSION}" ${WORKSPACE}/extlibs/tinycbor/tinycbor
+
 ln -sv ${IOTIVITYEXTLIB}/android/android-ndk-r10d.bin ${WORKSPACE}/extlibs/android/ndk/android-ndk-r10d
 ln -sv ${IOTIVITYEXTLIB}/android/sdk/android-sdk_r24.2 ${WORKSPACE}/extlibs/android/sdk/android-sdk_r24.2
 ln -sv ${IOTIVITYEXTLIB}/android/gradle-2.2.1 ${WORKSPACE}/extlibs/android/gradle/gradle-2.2.1
