@@ -52,6 +52,20 @@
             wipe-workspace: true
             choosing-strategy: 'gerrit'
 
+- scm:
+    name: gerrit-iotivity-upnp-scm
+    scm:
+        - git:
+            credentials-id: '{credentials-id}'
+            url: 'ssh://iotivity-jobbuilder@gerrit.iotivity.org:29418/iotivity-upnp-bridge'
+            refspec: '$GERRIT_REFSPEC'
+            branches:
+                - 'origin/$GERRIT_BRANCH'
+            skip-tag: true
+            wipe-workspace: true
+            basedir: 'iotivity-upnp-bridge'
+            choosing-strategy: 'gerrit'
+
 ## Wrappers
 - wrapper:
     name: build-timeout

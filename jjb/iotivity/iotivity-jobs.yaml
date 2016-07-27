@@ -35,6 +35,12 @@
         - 'iotivity-verify-android_{arch}'
 
 - project:
+    name: iotivity-upnp-bridge
+    project: 'iotivity-upnp-bridge'
+    jobs:
+        - 'iotivity-verify-upnp-bridge'
+
+- project:
     name: iotivity-windows
     project: 'iotivity'
     vs-version:
@@ -173,6 +179,50 @@
             set -o pipefail
 
             ./auto_build.sh android_{arch}
+
+    publishers:
+        - archive-artifacts:
+            artifacts: 'android/android_api/base/build/outputs/**/*.xml, android/android_api/base/build/outputs/**/*.html'
+        - email-notification:
+            mailto: 'oicbuild@intel.com'
+
+- job-template:
+    name: 'iotivity-verify-upnp-bridge'
+
+    project-type: freestyle
+    node: 'ubuntu1204'
+    concurrent: true
+    disabled: false
+
+    parameters:
+        - gerrit-project:
+            project: '{project}'
+        - gerrit-branch
+        - gerrit-refspec
+
+    scm:
+        - gerrit-branch-scm:
+            credentials-id: '{ssh-credentials}'
+        - gerrit-iotivity-upnp-scm:
+            credentials-id: '{ssh-credentials}'
+
+    triggers:
+        - gerrit-trigger-patch-submitted:
+            project: '{project}'
+            branch: '**'
+
+    wrappers:
+        - timestamps
+
+    builders:
+        - shell:
+            !include-raw-escape: include-raw-iotivity-bootstrap.sh
+        - shell: |
+            #!/bin/bash -eux
+            cp -rv ${{WORKSPACE}}/iotivity-upnp-bridge/android/examples/upnpclient/ ${{WORKSPACE}}/android/examples
+            sed -i "1 s/$/, ':upnpclient'/" ${{WORKSPACE}}/android/examples/settings.gradle
+
+            ./auto_build.sh android_x86
 
     publishers:
         - archive-artifacts:
