@@ -94,6 +94,9 @@
             #!/bin/bash -eux
             set -o pipefail
 
+            export VERBOSE=false
+            export CCACHE_DISABLE=false
+
             ./auto_build.sh {component}
 
     publishers:
@@ -134,7 +137,9 @@
             #!/bin/bash -eux
             set -o pipefail
 
+            export VERBOSE=true
             export CCACHE_DISABLE=true
+
             ./auto_build.sh unit_tests
 
     publishers:
@@ -178,6 +183,9 @@
             #!/bin/bash -eux
             set -o pipefail
 
+            export VERBOSE=false
+            export CCACHE_DISABLE=false
+
             ./auto_build.sh android_{arch}
 
     publishers:
@@ -219,6 +227,11 @@
             !include-raw-escape: include-raw-iotivity-bootstrap.sh
         - shell: |
             #!/bin/bash -eux
+            set -o pipefail
+
+            export VERBOSE=false
+            export CCACHE_DISABLE=false
+
             cp -rv ${{WORKSPACE}}/iotivity-upnp-bridge/android/examples/upnpclient/ ${{WORKSPACE}}/android/examples
             sed -i "1 s/$/, ':upnpclient'/" ${{WORKSPACE}}/android/examples/settings.gradle
 
