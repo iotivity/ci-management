@@ -217,7 +217,7 @@
                 - 'origin/master'
             skip-tag: true
             wipe-workspace: true
-            choosing-strategy: 'gerrit'
+            choosing-strategy: 'default'
         - gerrit-iotivity-upnp-scm:
             credentials-id: '{ssh-credentials}'
 
