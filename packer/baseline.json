@@ -11,12 +11,6 @@
       {
         "type": "docker-tag",
         "only": ["docker"],
-        "repository": "us.gcr.io/gce-iotivity-ci/iotivity-baseline",
-        "tag": "0.2"
-      },
-      {
-        "type": "docker-tag",
-        "only": ["docker"],
         "force": "true",
         "repository": "us.gcr.io/gce-iotivity-ci/iotivity-baseline",
         "tag": "latest"
