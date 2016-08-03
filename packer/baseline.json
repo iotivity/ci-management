@@ -12,7 +12,7 @@
         "type": "docker-tag",
         "only": ["docker"],
         "repository": "us.gcr.io/gce-iotivity-ci/iotivity-baseline",
-        "tag": "0.1"
+        "tag": "0.2"
       },
       {
         "type": "docker-tag",
