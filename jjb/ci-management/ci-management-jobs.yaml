@@ -180,7 +180,7 @@
     builders:
         - shell: |
             cd packer
-            packer build baseline.json
+            packer build -color=false baseline.json
 
 - job-template:
     name: 'ci-management-merge'
