@@ -4,6 +4,7 @@
         - 'ci-management-verify-jjb'
         - 'ci-management-verify-packer'
         - 'ci-management-merge'
+        - 'packer-build-baseline'
 
     project: 'ci-management'
 
@@ -127,6 +128,59 @@
                 echo "> Validating: $PACKER_CONFIG"
                 packer validate $PACKER_CONFIG
             done
+
+- job-template:
+    name: packer-build-baseline
+
+    project-type: freestyle
+    node: packer
+    concurrent: true
+
+    logrotate:
+        daysToKeep: 30
+        numToKeep: 10
+        artifactDaysToKeep: -1
+        artifactNumToKeep: -1
+
+    parameters:
+        - gerrit-project:
+            project: '{project}'
+        - gerrit-branch:
+            branch: 'master'
+        - gerrit-refspec:
+            refspec: ''
+
+    scm:
+        - gerrit-ci-management-scm:
+            credentials-id: '{ssh-credentials}'
+            refspec: '$GERRIT_REFSPEC'
+            choosing-strategy: 'gerrit'
+
+    wrappers:
+        - ssh-agent-credentials:
+            users:
+                - '{ssh-credentials}'
+
+    triggers:
+        - gerrit:
+            trigger-on:
+                - change-merged-event
+                - comment-added-contains-event:
+                    comment-contains-value: 'rebuild baseline'
+            projects:
+                - project-compare-type: 'ANT'
+                  project-pattern: 'ci-management'
+                  branches:
+                    - branch-compare-type: 'ANT'
+                      branch-pattern: '**/master'
+                  file-paths:
+                    - compare-type: ANT
+                      pattern: packer/baseline.json
+
+    builders:
+        - shell: |
+            cd packer
+            packer build baseline.json
 
 - job-template:
     name: 'ci-management-merge'
