@@ -12,7 +12,7 @@ apt-get -y -q install software-properties-common python-software-properties
 apt-add-repository -y ppa:openjdk-r/ppa
 apt-get -y -q update
 
-apt-get -y -q install unzip xz-utils git libxml-xpath-perl wget
+apt-get -y -q install unzip xz-utils git libxml-xpath-perl wget curl
 apt-get -y -q install default-jre openjdk-7-jdk openjdk-8-jdk
 
 apt-get -y -q upgrade
