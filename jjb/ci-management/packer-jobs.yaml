@@ -1,15 +1,17 @@
 - project:
-    name: ci-management-jobs
+    name: packer-builds
     jobs:
-        - 'ci-management-verify-jjb'
-        - 'ci-management-merge'
+        - 'packer-verify-{image}'
+        - 'packer-build-{image}'
+    image:
+        - 'baseline'
     project: 'ci-management'
 
 - job-template:
-    name: ci-management-verify-jjb
+    name: 'packer-verify-{image}'
 
     project-type: freestyle
-    node: master
+    node: packer
     concurrent: true
 
     logrotate:
@@ -46,9 +48,7 @@
                     exclude-no-code-change: 'false'
                 - draft-published-event
                 - comment-added-contains-event:
-                    comment-contains-value: 'recheck'
-                - comment-added-contains-event:
-                    comment-contains-value: 'reverify'
+                    comment-contains-value: 'recheck {image}'
             projects:
                 - project-compare-type: 'ANT'
                   project-pattern: 'ci-management'
@@ -57,24 +57,26 @@
                       branch-pattern: '**/master'
                   file-paths:
                     - compare-type: ANT
-                      pattern: jjb/**
+                      pattern: packer/{image}.json
 
     builders:
-        - ci-management-check-unicode
         - shell: |
-            jenkins-jobs test --recursive jjb/
+            cd packer
+            echo "> Validating: {image}.json"
+            packer validate {image}.json
 
 - job-template:
-    name: 'ci-management-merge'
+    name: 'packer-build-{image}'
 
     project-type: freestyle
-    node: master
+    node: packer
+    concurrent: true
 
     logrotate:
         daysToKeep: 30
-        numToKeep: 40
+        numToKeep: 10
         artifactDaysToKeep: -1
-        artifactNumToKeep: 5
+        artifactNumToKeep: -1
 
     parameters:
         - gerrit-project:
@@ -87,6 +89,8 @@
     scm:
         - gerrit-ci-management-scm:
             credentials-id: '{ssh-credentials}'
+            refspec: '$GERRIT_REFSPEC'
+            choosing-strategy: 'gerrit'
 
     wrappers:
         - ssh-agent-credentials:
@@ -98,7 +102,7 @@
             trigger-on:
                 - change-merged-event
                 - comment-added-contains-event:
-                    comment-contains-value: 'remerge'
+                    comment-contains-value: 'rebuild {image}'
             projects:
                 - project-compare-type: 'ANT'
                   project-pattern: 'ci-management'
@@ -107,8 +111,9 @@
                       branch-pattern: '**/master'
                   file-paths:
                     - compare-type: ANT
-                      pattern: jjb/**
+                      pattern: 'packer/{image}.json'
 
     builders:
-        - shell:
-            !include-raw-escape: include-raw-jjb-update.sh
+        - shell: |
+            cd packer
+            packer build -color=false {image}.json
