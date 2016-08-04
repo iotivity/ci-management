@@ -2,7 +2,7 @@
 set -o pipefail
 PATH=$PATH:/usr/local/bin/
 IOTIVITYEXTLIB=/Users/jenkins-ci/extlibs
-TINYCBOR_VERSION='0.3.1'
+TINYCBOR_VERSION='0.3.2'
 
 unzip -oq "${IOTIVITYEXTLIB}/tinycbor/v${TINYCBOR_VERSION}.zip" -d ${IOTIVITYEXTLIB}/tinycbor/
 ln -s "${IOTIVITYEXTLIB}/tinycbor/tinycbor-${TINYCBOR_VERSION}" ${WORKSPACE}/extlibs/tinycbor/tinycbor
