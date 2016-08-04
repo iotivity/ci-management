@@ -5,6 +5,7 @@
         - 'packer-build-{image}'
     image:
         - 'baseline'
+        - 'arduino'
     project: 'ci-management'
 
 - job-template:
