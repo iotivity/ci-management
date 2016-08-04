@@ -5,4 +5,4 @@ mklink %WORKSPACE%\extlibs\boost\boost_1_60_0.zip C:\j\e\boost_1_60_0.zip
 md %WORKSPACE%\extlibs\boost\boost\
 xcopy /q /e C:\j\e\boost\* %WORKSPACE%\extlibs\boost\boost
 md %WORKSPACE%\extlibs\tinycbor\tinycbor
-xcopy /q /e C:\j\e\tinycbor\tinycbor-0.2.1 %WORKSPACE%\extlibs\tinycbor\tinycbor
+xcopy /q /e C:\j\e\tinycbor\tinycbor-0.3.1 %WORKSPACE%\extlibs\tinycbor\tinycbor
