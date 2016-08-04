@@ -7,6 +7,7 @@ mkdir -p /extlibs/
 # this will change once sources are moved off of Sourceforge. Github's
 # zipfile is not the same. The zip file is kept because the build system
 # checks for it.
+
 mkdir -p /extlibs/boost
 cd /extlibs/boost
 wget -nv https://storage.googleapis.com/iotivity/boost/boost_1_58_0.zip && unzip boost_1_58_0.zip
@@ -30,37 +31,39 @@ wget -nv https://googletest.googlecode.com/files/gtest-1.7.0.zip \
 && unzip gtest-1.7.0.zip \
 && rm gtest-1.7.0.zip
 
-# tinydtls
-mkdir -p /extlibs/tinydtls
-cd /extlibs/tinydtls
-wget -nv 'http://downloads.sourceforge.net/project/tinydtls/r4/tinydtls-0.8.1.tar.gz' \
-&& tar zxf tinydtls-0.8.1.tar.gz \
-&& rm tinydtls-0.8.1.tar.gz
+# tinydtls - currently not used
+#mkdir -p /extlibs/tinydtls
+#cd /extlibs/tinydtls
+#wget -nv 'http://downloads.sourceforge.net/project/tinydtls/r4/tinydtls-0.8.1.tar.gz' \
+#&& tar zxf tinydtls-0.8.1.tar.gz \
+#&& rm tinydtls-0.8.1.tar.gz
 
 # sqlite
 mkdir -p /extlibs/sqlite3/
 cd /extlibs/sqlite3/
-[ ! -f sqlite3.c ] && wget -nv 'http://www.sqlite.org/2015/sqlite-amalgamation-3081101.zip' \
+wget -nv 'http://www.sqlite.org/2015/sqlite-amalgamation-3081101.zip' \
 && unzip sqlite-amalgamation-3081101.zip \
 && mv sqlite-amalgamation-3081101/sqlite3.c . \
 && mv sqlite-amalgamation-3081101/sqlite3.h . \
 && rm -r sqlite-amalgamation-3081101 \
 && rm sqlite-amalgamation-3081101.zip
 
+# tinycbor
+mkdir -p /extlibs/tinycbor
+cd /extlibs/tinycbor
+wget -nv 'https://github.com/01org/tinycbor/archive/v0.3.2.zip'
+
 cd /extlibs/
 
 # libyaml
-git clone https://github.com/jbeder/yaml-cpp.git /extlibs/yaml
+mkdir -p /extlibs/yaml
+git clone https://github.com/jbeder/yaml-cpp.git /extlibs/yaml/yaml
 
 # raxmpp
-git clone https://gerrit.iotivity.org/gerrit/iotivity-xmpp /extlibs/raxmpp
+mkdir -p /extlibs/raxmpp
+git clone https://gerrit.iotivity.org/gerrit/iotivity-xmpp /extlibs/raxmpp/raxmpp
 
 # hippomocks
-git clone https://github.com/dascandy/hippomocks /extlibs/hippomocks \
-&& cd /extlibs/hippomocks \
+git clone https://github.com/dascandy/hippomocks /extlibs/hippomocks-master \
+&& cd /extlibs/hippomocks-master \
 && git checkout -qf 2f40aa11e31499432283b67f9d3449a3cd7b9c4d
-
-# tinycbor
-git clone https://github.com/01org/tinycbor /extlibs/tinycbor \
-&& cd /extlibs/tinycbor \
-&& git checkout -b v0.2 v0.2
