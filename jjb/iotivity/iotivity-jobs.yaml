@@ -12,6 +12,7 @@
         - 'linux_unsecured'
         - 'linux_unsecured_with_ra'
         - 'linux_unsecured_with_rd'
+        - 'linux_unsecured_with_tcp'
         - 'linux_secured'
         - 'linux_secured_with_ra'
         - 'linux_secured_with_rd'
