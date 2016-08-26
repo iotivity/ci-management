@@ -48,7 +48,7 @@
         - 'vs2013':
             silent: false
         - 'vs2015':
-            silent: true
+            silent: false
     jobs:
         - 'iotivity-verify-windows-{vs-version}'
 
