@@ -37,6 +37,7 @@
                 - 'origin/$GERRIT_BRANCH'
             skip-tag: true
             wipe-workspace: true
+            shallow-clone: true
             choosing-strategy: 'gerrit'
 
 - scm:
@@ -50,6 +51,7 @@
                 - 'origin/$GERRIT_BRANCH'
             skip-tag: true
             wipe-workspace: true
+            shallow-clone: true
             choosing-strategy: 'gerrit'
 
 - scm:
@@ -63,6 +65,7 @@
                 - 'origin/$GERRIT_BRANCH'
             skip-tag: true
             wipe-workspace: true
+            shallow-clone: true
             basedir: 'iotivity-upnp-bridge'
             choosing-strategy: 'gerrit'
 
