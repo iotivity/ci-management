@@ -12,7 +12,6 @@
         - 'linux_unsecured'
         - 'linux_unsecured_with_ra'
         - 'linux_unsecured_with_rd'
-        - 'linux_unsecured_with_tcp'
         - 'linux_secured'
         - 'linux_secured_with_ra'
         - 'linux_secured_with_rd'
@@ -59,6 +58,15 @@
     component:
         - 'linux_unsecured_with_java'
         - 'linux_secured_with_java'
+    jobs:
+        - 'iotivity-verify-{component}'
+
+- project:
+    name: linux-unsecured-with-tcp
+    project: 'iotivity'
+    branch: '^(?!.*1.1-rel).*$'
+    component:
+        - 'linux_unsecured_with_tcp'
     jobs:
         - 'iotivity-verify-{component}'
 
