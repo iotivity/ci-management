@@ -391,7 +391,7 @@
             refspec: ''
 
     scm:
-        - gerrit-branch-scm:
+        - gerrit-merge-branch-scm:
             credentials-id: '{ssh-credentials}'
             refspec: 'refs/heads/master'
 
@@ -443,7 +443,7 @@
             description: "GERRIT_REFSPEC parameter if not given by trigger"
 
     scm:
-        - gerrit-branch-scm:
+        - gerrit-merge-branch-scm:
             credentials-id: '{ssh-credentials}'
 
     triggers:

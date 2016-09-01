@@ -41,6 +41,20 @@
             choosing-strategy: 'gerrit'
 
 - scm:
+    name: gerrit-merge-branch-scm
+    scm:
+        - git:
+            credentials-id: '{credentials-id}'
+            url: 'ssh://iotivity-jobbuilder@gerrit.iotivity.org:29418/iotivity'
+            refspec: '$GERRIT_REFSPEC'
+            branches:
+                - 'origin/$GERRIT_BRANCH'
+            skip-tag: true
+            wipe-workspace: true
+            shallow-clone: false
+            choosing-strategy: 'gerrit'
+
+- scm:
     name: gerrit-ci-management-scm
     scm:
         - git:
