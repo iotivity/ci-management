@@ -12,7 +12,6 @@
         - 'linux_unsecured'
         - 'linux_secured'
         - 'arduino'
-        - 'tizen'
         - 'simulator'
 
 - project:
@@ -20,6 +19,13 @@
     project: 'iotivity'
     jobs:
         - 'iotivity-verify-unit_tests'
+
+- project:
+    name: iotivity-verify-tizen
+    project: 'iotivity'
+    branch: '**'
+    jobs:
+        - 'iotivity-verify-tizen'
 
 - project:
     name: iotivity-android
@@ -102,6 +108,50 @@
             export CCACHE_DISABLE=false
 
             ./auto_build.sh {component}
+
+    publishers:
+        - email-notification:
+            mailto: 'oicbuild@intel.com'
+
+- job-template:
+    name: 'iotivity-verify-tizen'
+
+    project-type: freestyle
+    node: 'ubuntu1204'
+    concurrent: true
+    disabled: false
+
+    parameters:
+        - gerrit-project:
+            project: '{project}'
+        - gerrit-branch
+        - gerrit-refspec
+
+    scm:
+        - gerrit-branch-scm:
+            credentials-id: '{ssh-credentials}'
+
+    triggers:
+        - gerrit-trigger-patch-submitted:
+            project: '{project}'
+            branch: '{branch}'
+
+    wrappers:
+        - timestamps
+
+    builders:
+        - shell:
+            !include-raw-escape: include-raw-iotivity-bootstrap.sh
+        - shell:
+            !include-raw-escape: include-raw-iotivity-tizen.sh
+        - shell: |
+            #!/bin/bash -eux
+            set -o pipefail
+
+            export VERBOSE=false
+            export CCACHE_DISABLE=false
+
+            ./auto_build.sh tizen
 
     publishers:
         - email-notification:
