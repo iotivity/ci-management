@@ -392,6 +392,7 @@
 
     wrappers:
         - timestamps
+        - build-timeout
 
     builders:
         - shell:
