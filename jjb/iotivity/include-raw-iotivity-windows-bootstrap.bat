@@ -6,3 +6,5 @@ md %WORKSPACE%\extlibs\boost\boost\
 xcopy /q /e C:\j\e\boost\* %WORKSPACE%\extlibs\boost\boost
 md %WORKSPACE%\extlibs\tinycbor\tinycbor
 xcopy /q /e C:\j\e\tinycbor\tinycbor-0.3.2 %WORKSPACE%\extlibs\tinycbor\tinycbor
+md %WORKSPACE%\extlibs\mbedtls\mbedtls
+xcopy /q /e C:\j\e\mbedtls\mbedtls-2.3.0 %WORKSPACE%\extlibs\mbedtls\mbedtls
