@@ -111,4 +111,4 @@
 
     builders:
         - shell:
-            !include-raw-escape: include-raw-jjb-update.sh
+            jenkins-jobs update --delete-old --recursive jjb/
