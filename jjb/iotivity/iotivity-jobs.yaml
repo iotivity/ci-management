@@ -10,7 +10,15 @@
         - 'iotivity-sonar-runner'
     component:
         - 'linux_unsecured'
+        - 'linux_unsecured_with_ra':
+            silent: true
+        - 'linux_unsecured_with_rd':
+            silent: true
         - 'linux_secured'
+        - 'linux_secured_with_ra':
+            silent: true
+        - 'linux_secured_with_rd':
+            silent: true
         - 'arduino'
         - 'simulator'
 
@@ -32,6 +40,8 @@
     project: 'iotivity'
     arch:
         - 'armeabi'
+        - 'x86':
+            silent: true
     jobs:
         - 'iotivity-verify-android_{arch}'
 
@@ -142,6 +152,7 @@
 
     triggers:
         - gerrit-trigger-patch-submitted:
+            silent: '{silent}'
             project: '{project}'
             branch: '{branch}'
 
@@ -184,6 +195,7 @@
 
     triggers:
         - gerrit-trigger-patch-submitted:
+            silent: '{silent}'
             project: '{project}'
             branch: '{branch}'
 
@@ -228,6 +240,7 @@
 
     triggers:
         - gerrit-trigger-patch-submitted:
+            silent: '{silent}'
             project: '{project}'
             branch: '**'
 
@@ -275,6 +288,7 @@
 
     triggers:
         - gerrit-trigger-patch-submitted:
+            silent: '{silent}'
             project: '{project}'
             branch: '**'
 
@@ -384,6 +398,7 @@
 
     triggers:
         - gerrit-trigger-patch-submitted:
+            silent: '{silent}'
             project: '{project}'
             branch: '**'
 

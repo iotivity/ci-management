@@ -7,4 +7,6 @@
     build-artifact-days-to-keep: -1
     build-artifact-num-to-keep: -1
 
+    silent: false
+
     ssh-credentials: '6ba265b5-4270-46f3-aeaa-44b789a5d7a9'

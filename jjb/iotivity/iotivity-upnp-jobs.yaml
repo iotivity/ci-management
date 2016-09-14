@@ -33,6 +33,7 @@
 
     triggers:
         - gerrit-trigger-patch-submitted:
+            silent: '{silent}'
             project: '{project}'
             branch: '**'
 
