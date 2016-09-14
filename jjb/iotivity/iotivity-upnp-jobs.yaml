@@ -1,0 +1,62 @@
+- project:
+    name: iotivity-upnp-bridge
+    project: 'iotivity-upnp-bridge'
+    jobs:
+        - 'iotivity-verify-upnp-bridge'
+
+- job-template:
+    name: 'iotivity-verify-upnp-bridge'
+
+    project-type: freestyle
+    node: 'ubuntu1204'
+    concurrent: true
+    disabled: false
+
+    parameters:
+        - gerrit-project:
+            project: '{project}'
+        - gerrit-branch
+        - gerrit-refspec
+
+    scm:
+        - git:
+            credentials-id: '{ssh-credentials}'
+            url: 'ssh://iotivity-jobbuilder@gerrit.iotivity.org:29418/iotivity'
+            refspec: 'refs/heads/master'
+            branches:
+                - 'origin/master'
+            skip-tag: true
+            wipe-workspace: true
+            choosing-strategy: 'default'
+        - gerrit-iotivity-upnp-scm:
+            credentials-id: '{ssh-credentials}'
+
+    triggers:
+        - gerrit-trigger-patch-submitted:
+            project: '{project}'
+            branch: '**'
+
+    wrappers:
+        - timestamps
+
+    builders:
+        - shell:
+            !include-raw-escape: include-raw-iotivity-bootstrap.sh
+        - shell: |
+            #!/bin/bash -eux
+            set -o pipefail
+
+            export VERBOSE=false
+            export CCACHE_DISABLE=false
+
+            cp -rv ${{WORKSPACE}}/iotivity-upnp-bridge/android/examples/upnpclient/ ${{WORKSPACE}}/android/examples
+            sed -i "1 s/$/, ':upnpclient'/" ${{WORKSPACE}}/android/examples/settings.gradle
+
+            ./auto_build.sh android_x86
+
+    publishers:
+        - archive-artifacts:
+            artifacts: 'android/android_api/base/build/outputs/**/*.xml, android/android_api/base/build/outputs/**/*.html'
+        - email-notification:
+            mailto: 'oicbuild@intel.com'
+
