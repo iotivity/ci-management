@@ -47,8 +47,10 @@
     vs-version:
         - 'vs2013':
             silent: false
+            msvc-version: '12.0'
         - 'vs2015':
             silent: false
+            msvc-version: '14.0'
     jobs:
         - 'iotivity-verify-windows-{vs-version}'
 
@@ -359,6 +361,8 @@
             !include-raw-escape: include-raw-iotivity-windows-bootstrap.bat
         - batch: |
             @echo off
+            set MSVC_VERSION='{msvc-version}'
+            set
             run.bat build
             run.bat test
             run.bat clean
