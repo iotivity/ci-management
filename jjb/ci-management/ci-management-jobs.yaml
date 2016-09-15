@@ -56,7 +56,8 @@
                       pattern: jjb/**
 
     builders:
-        - ci-management-check-unicode
+        - shell: |
+            $WORKSPACE/scripts/check-unicode.sh jjb/
         - shell: |
             jenkins-jobs test --recursive jjb/
 

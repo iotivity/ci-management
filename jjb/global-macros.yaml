@@ -99,24 +99,3 @@
                   branches:
                     - branch-compare-type: 'ANT'
                       branch-pattern: '{branch}'
-
-- trigger:
-    name: gerrit-trigger-tag
-    triggers:
-      - gerrit:
-          server-name: 'iotivity'
-          trigger-on:
-            - ref-updated-event
-          projects:
-            - project-compare-type: 'ANT'
-              project-pattern: '{project}'
-              branches:
-                - branch-compare-type: 'ANT'
-                  branch-pattern: 'refs/tags/**'
-
-## Builders
-- builder:
-    name: ci-management-check-unicode
-    builders:
-        - shell: |
-            $WORKSPACE/scripts/check-unicode.sh jjb/
