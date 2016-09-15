@@ -1,5 +1,5 @@
 - project:
-    name: iotivity-jobs
+    name: iotivity-verify-jobs
     project: 'iotivity'
     jobs:
         - 'iotivity-merge':
