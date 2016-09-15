@@ -2,24 +2,16 @@
 
 ## Parameters
 - parameter:
-    name: gerrit-branch
-    parameters:
-        - string:
-            name: GERRIT_BRANCH
-            default: 'master'
-            description: "JJB configured GERRIT_BRANCH parameter"
-
-- parameter:
     name: gerrit-project
     parameters:
         - string:
             name: GERRIT_PROJECT
             default: '{project}'
             description: "GERRIT_PROJECT parameter if not given by trigger"
-
-- parameter:
-    name: gerrit-refspec
-    parameters:
+        - string:
+            name: GERRIT_BRANCH
+            default: 'master'
+            description: "JJB configured GERRIT_BRANCH parameter"
         - string:
             name: GERRIT_REFSPEC
             default: 'refs/heads/master'

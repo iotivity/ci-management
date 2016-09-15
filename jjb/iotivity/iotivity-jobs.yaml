@@ -86,8 +86,6 @@
     parameters:
         - gerrit-project:
             project: '{project}'
-        - gerrit-branch
-        - gerrit-refspec
 
     scm:
         - gerrit-branch-scm:
@@ -143,8 +141,6 @@
     parameters:
         - gerrit-project:
             project: '{project}'
-        - gerrit-branch
-        - gerrit-refspec
 
     scm:
         - gerrit-branch-scm:
@@ -186,8 +182,6 @@
     parameters:
         - gerrit-project:
             project: '{project}'
-        - gerrit-branch
-        - gerrit-refspec
 
     scm:
         - gerrit-branch-scm:
@@ -231,8 +225,6 @@
     parameters:
         - gerrit-project:
             project: '{project}'
-        - gerrit-branch
-        - gerrit-refspec
 
     scm:
         - gerrit-branch-scm:
@@ -279,8 +271,6 @@
     parameters:
         - gerrit-project:
             project: '{project}'
-        - gerrit-branch
-        - gerrit-refspec
 
     scm:
         - gerrit-branch-scm:
@@ -324,8 +314,6 @@
     parameters:
         - gerrit-project:
             project: '{project}'
-        - gerrit-branch
-        - gerrit-refspec
 
     scm:
         - git:
@@ -389,8 +377,6 @@
     parameters:
         - gerrit-project:
             project: '{project}'
-        - gerrit-branch
-        - gerrit-refspec
 
     scm:
         - gerrit-branch-scm:
@@ -444,10 +430,6 @@
     parameters:
         - gerrit-project:
             project: '{project}'
-        - gerrit-branch:
-            branch: 'master'
-        - gerrit-refspec:
-            refspec: ''
 
     scm:
         - gerrit-branch-scm:
@@ -491,8 +473,10 @@
     disabled: false
 
     parameters:
-        - gerrit-project:
-            project: '{project}'
+        - string:
+            name: GERRIT_PROJECT
+            default: '{project}'
+            description: "GERRIT_PROJECT parameter if not given by trigger"
         - string:
             name: GERRIT_BRANCH
             default: '1.1-rel'
@@ -542,10 +526,6 @@
     parameters:
         - gerrit-project:
             project: '{project}'
-        - gerrit-branch:
-            branch: 'master'
-        - gerrit-refspec:
-            refspec: ''
 
     scm:
         - gerrit-branch-scm:

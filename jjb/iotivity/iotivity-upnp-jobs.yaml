@@ -15,8 +15,6 @@
     parameters:
         - gerrit-project:
             project: '{project}'
-        - gerrit-branch
-        - gerrit-refspec
 
     scm:
         - git:
