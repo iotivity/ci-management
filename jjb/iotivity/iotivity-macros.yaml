@@ -9,6 +9,120 @@
             timeout: 10
             abort: true
 
+## Builders
+- builder:
+    name: linux
+    builders:
+        - shell: |
+            #!/bin/bash -eux
+            set -o pipefail
+
+            export VERBOSE=false
+            export CCACHE_DISABLE=false
+
+            ./auto_build.sh {component}
+
+- builder:
+    name: windows
+    builders:
+        - batch: |
+            @echo off
+            set MSVC_VERSION={msvc-version}
+            set
+            run.bat build
+            run.bat test
+            run.bat clean
+
+- builder:
+    name: osx
+    builders:
+        - shell: |
+            #!/bin/bash -eux
+            set -o pipefail
+
+            PATH=$PATH:/usr/local/bin/
+            if (git rev-list HEAD | grep -q d0b861c0276208b3fd1b29bf98908e401c7ca17f); then
+              ./auto_build.sh darwin
+            fi
+            # Run Tests against OSX 10.10 without Logging
+            echo "*********** Build for OSX 10.10 *************"
+            scons TARGET_OS=darwin SYS_VERSION=10.10 RELEASE=false
+            scons TARGET_OS=darwin SYS_VERSION=10.10 RELEASE=false -c
+            scons TARGET_OS=darwin SYS_VERSION=10.10 RELEASE=false LOGGING=false
+            export DYLD_LIBRARY_PATH=./extlibs/gtest/gtest-1.7.0/lib/.libs
+            ./out/darwin/x86_64/debug/resource/csdk/stack/test/stacktests
+
+- builder:
+    name: tizen
+    builders:
+        - shell: |
+            #!/bin/bash -eux
+            set -o pipefail
+
+            export VERBOSE=false
+            export CCACHE_DISABLE=false
+
+            ./auto_build.sh tizen
+
+- builder:
+    name: android
+    builders:
+        - shell: |
+            #!/bin/bash -eux
+            set -o pipefail
+
+            export VERBOSE=false
+            export CCACHE_DISABLE=false
+
+            ./auto_build.sh android_{arch}
+
+- builder:
+    name: unit-tests
+    builders:
+        - shell: |
+            #!/bin/bash -eux
+            set -o pipefail
+
+            export VERBOSE=true
+            export CCACHE_DISABLE=true
+
+            ./auto_build.sh unit_tests
+
+- builder:
+    name: sonar-runner
+    builders:
+        - sonar:
+            sonar-name: Sonar
+            properties: |
+                sonar.projectKey=iotivity:master
+                sonar.projectName=Iotivity
+                sonar.projectVersion=1.1.0
+
+                sonar.sources=resource,service,examples,android,build_common,tools
+                sonar.language=c++
+
+                sonar.cxx.compiler.parser=GCC
+                sonar.cxx.errorRecoveryEnabled=True
+
+                sonar.cxx.includeDirectories=resource,service,examples,android,build_common,tools
+
+                sonar.cxx.valgrind.reportPath=*.memcheck
+                sonar.cxx.vera.reportPath=vera-report.xml
+                sonar.cxx.cppcheck.reportPath=cppcheck-report.xml
+                sonar.cxx.rats.reportPath=rats-report.xml
+
+- builder:
+    name: linux-tcp
+    builders:
+        - shell: |
+            #!/bin/bash -eux
+            set -o pipefail
+
+            export VERBOSE=false
+            export CCACHE_DISABLE=false
+
+            ./auto_build.sh linux_unsecured_with_tcp
+
 ## Publishers
 - publisher:
     name: archive-artifacts

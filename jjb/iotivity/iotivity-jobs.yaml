@@ -97,14 +97,7 @@
     builders:
         - shell:
             !include-raw-escape: include-raw-iotivity-bootstrap.sh
-        - shell: |
-            #!/bin/bash -eux
-            set -o pipefail
-
-            export VERBOSE=false
-            export CCACHE_DISABLE=false
-
-            ./auto_build.sh linux_unsecured_with_tcp
+        - linux-tcp
 
     publishers:
         - email-notification:
@@ -140,14 +133,8 @@
     builders:
         - shell:
             !include-raw-escape: include-raw-iotivity-bootstrap.sh
-        - shell: |
-            #!/bin/bash -eux
-            set -o pipefail
-
-            export VERBOSE=false
-            export CCACHE_DISABLE=false
-
-            ./auto_build.sh {component}
+        - linux:
+            component: '{component}'
 
     publishers:
         - email-notification:
@@ -185,14 +172,7 @@
             !include-raw-escape: include-raw-iotivity-bootstrap.sh
         - shell:
             !include-raw-escape: include-raw-iotivity-tizen.sh
-        - shell: |
-            #!/bin/bash -eux
-            set -o pipefail
-
-            export VERBOSE=false
-            export CCACHE_DISABLE=false
-
-            ./auto_build.sh tizen
+        - tizen
 
     publishers:
         - email-notification:
@@ -229,14 +209,7 @@
     builders:
         - shell:
             !include-raw-escape: include-raw-iotivity-bootstrap.sh
-        - shell: |
-            #!/bin/bash -eux
-            set -o pipefail
-
-            export VERBOSE=true
-            export CCACHE_DISABLE=true
-
-            ./auto_build.sh unit_tests
+        - unit-tests
 
     publishers:
         - valgrind-report
@@ -276,14 +249,8 @@
     builders:
         - shell:
             !include-raw-escape: include-raw-iotivity-bootstrap.sh
-        - shell: |
-            #!/bin/bash -eux
-            set -o pipefail
-
-            export VERBOSE=false
-            export CCACHE_DISABLE=false
-
-            ./auto_build.sh android_{arch}
+        - android:
+            arch: '{arch}'
 
     publishers:
         - archive-artifacts:
@@ -344,13 +311,8 @@
     builders:
         - batch:
             !include-raw-escape: include-raw-iotivity-windows-bootstrap.bat
-        - batch: |
-            @echo off
-            set MSVC_VERSION={msvc-version}
-            set
-            run.bat build
-            run.bat test
-            run.bat clean
+        - windows:
+            msvc-version: '{msvc-version}'
 
     publishers:
         - email-notification:
@@ -387,21 +349,7 @@
     builders:
         - shell:
             !include-raw-escape: include-raw-iotivity-osx-bootstrap.sh
-        - shell: |
-            #!/bin/bash -eux
-            set -o pipefail
-
-            PATH=$PATH:/usr/local/bin/
-            if (git rev-list HEAD | grep -q d0b861c0276208b3fd1b29bf98908e401c7ca17f); then
-              ./auto_build.sh darwin
-            fi
-            # Run Tests against OSX 10.10 without Logging
-            echo "*********** Build for OSX 10.10 *************"
-            scons TARGET_OS=darwin SYS_VERSION=10.10 RELEASE=false
-            scons TARGET_OS=darwin SYS_VERSION=10.10 RELEASE=false -c
-            scons TARGET_OS=darwin SYS_VERSION=10.10 RELEASE=false LOGGING=false
-            export DYLD_LIBRARY_PATH=./extlibs/gtest/gtest-1.7.0/lib/.libs
-            ./out/darwin/x86_64/debug/resource/csdk/stack/test/stacktests
+        - osx
 
     publishers:
         - valgrind-report
@@ -533,25 +481,7 @@
     builders:
         - shell:
             !include-raw-escape: include-raw-iotivity-sonar.sh
-        - sonar:
-            sonar-name: Sonar
-            properties: |
-                sonar.projectKey=iotivity:master
-                sonar.projectName=Iotivity
-                sonar.projectVersion=1.1.0
-
-                sonar.sources=resource,service,examples,android,build_common,tools
-                sonar.language=c++
-
-                sonar.cxx.compiler.parser=GCC
-                sonar.cxx.errorRecoveryEnabled=True
-
-                sonar.cxx.includeDirectories=resource,service,examples,android,build_common,tools
-
-                sonar.cxx.valgrind.reportPath=*.memcheck
-                sonar.cxx.vera.reportPath=vera-report.xml
-                sonar.cxx.cppcheck.reportPath=cppcheck-report.xml
-                sonar.cxx.rats.reportPath=rats-report.xml
+        - sonar-runner
 
     publishers:
         - archive-artifacts:
