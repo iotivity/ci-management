@@ -100,30 +100,16 @@
                       branch-pattern: '{branch}'
 
 - trigger:
-    name: gerrit-trigger-patch-merged
+    name: gerrit-trigger-ref-updated
     triggers:
         - gerrit:
             server-name: 'iotivity'
-            trigger-on:
-                - change-merged-event
-                - comment-added-contains-event:
-                    comment-contains-value: 'remerge'
-            projects:
-                - project-compare-type: 'ANT'
-                  project-pattern: '{project}'
-                  branches:
-                    - branch-compare-type: 'ANT'
-                      branch-pattern: '{branch}'
-
-- trigger:
-    name: gerrit-trigger-silent-ref-updated
-    triggers:
-        - gerrit:
-            server-name: 'iotivity'
-            silent: 'true'
+            silent: '{obj:silent}'
             silent-start: 'true'
             trigger-on:
                 - ref-updated-event
+                - comment-added-contains-event:
+                    comment-contains-value: 'remerge'
             projects:
                 - project-compare-type: 'ANT'
                   project-pattern: '{project}'

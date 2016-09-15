@@ -455,8 +455,9 @@
             refspec: 'refs/heads/master'
 
     triggers:
-        - gerrit-trigger-silent-ref-updated:
+        - gerrit-trigger-ref-updated:
             project: '{project}'
+            silent: 'true'
             branch: 'master'
 
     wrappers:
@@ -552,8 +553,9 @@
             refspec: 'refs/heads/master'
 
     triggers:
-        - gerrit-trigger-silent-ref-updated:
+        - gerrit-trigger-ref-updated:
             project: '{project}'
+            silent: 'true'
             branch: 'master'
 
     wrappers:
