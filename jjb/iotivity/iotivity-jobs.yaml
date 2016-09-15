@@ -8,10 +8,24 @@
         - 'iotivity-merge-1.1-rel':
             branch: '1.1-rel'
             refspec: 'refs/heads/1.1-rel'
-        - 'iotivity-verify-{component}':
-            gerrit-branch: '**'
-        - 'iotivity-verify-osx':
-            gerrit-branch: '**'
+        - 'iotivity-verify-{component}'
+        - 'iotivity-verify-osx'
+        - 'iotivity-verify-tizen'
+        - 'iotivity-verify-linux_unsecured_with_tcp'
+        - 'iotivity-verify-android_{arch}':
+            arch:
+                - 'armeabi'
+                - 'x86':
+                    silent: true
+        - 'iotivity-verify-windows-{vs-version}':
+            vs-version:
+                - 'vs2013':
+                    silent: false
+                    msvc-version: '12.0'
+                - 'vs2015':
+                    silent: false
+                    msvc-version: '14.0'
+        - 'iotivity-verify-unit_tests'
         - 'iotivity-sonar-runner'
     component:
         - 'linux_unsecured'
@@ -28,42 +42,6 @@
         - 'simulator'
 
 - project:
-    name: iotivity-unit-tests
-    project: 'iotivity'
-    jobs:
-        - 'iotivity-verify-unit_tests'
-
-- project:
-    name: iotivity-verify-tizen
-    project: 'iotivity'
-    gerrit-branch: '**'
-    jobs:
-        - 'iotivity-verify-tizen'
-
-- project:
-    name: iotivity-android
-    project: 'iotivity'
-    arch:
-        - 'armeabi'
-        - 'x86':
-            silent: true
-    jobs:
-        - 'iotivity-verify-android_{arch}'
-
-- project:
-    name: iotivity-windows
-    project: 'iotivity'
-    vs-version:
-        - 'vs2013':
-            silent: false
-            msvc-version: '12.0'
-        - 'vs2015':
-            silent: false
-            msvc-version: '14.0'
-    jobs:
-        - 'iotivity-verify-windows-{vs-version}'
-
-- project:
     name: iotivity-java
     project: 'iotivity'
     branch: 'generic-java'
@@ -74,12 +52,6 @@
         - 'linux_secured_with_java'
     jobs:
         - 'iotivity-verify-{component}'
-
-- project:
-    name: linux-unsecured-with-tcp
-    project: 'iotivity'
-    jobs:
-        - 'iotivity-verify-linux_unsecured_with_tcp'
 
 - job-template:
     name: 'iotivity-verify-linux_unsecured_with_tcp'
@@ -248,7 +220,7 @@
         - gerrit-trigger-patch-submitted:
             silent: '{silent}'
             project: '{project}'
-            branch: '**'
+            branch: '{gerrit-branch}'
 
     wrappers:
         - timestamps
@@ -296,7 +268,7 @@
         - gerrit-trigger-patch-submitted:
             silent: '{silent}'
             project: '{project}'
-            branch: '**'
+            branch: '{gerrit-branch}'
 
     wrappers:
         - timestamps
@@ -406,7 +378,7 @@
         - gerrit-trigger-patch-submitted:
             silent: '{silent}'
             project: '{project}'
-            branch: '**'
+            branch: '{gerrit-branch}'
 
     wrappers:
         - timestamps
