@@ -1,12 +1,17 @@
 - project:
     name: iotivity-jobs
     project: 'iotivity'
-    branch: '**'
     jobs:
-        - 'iotivity-merge'
-        - 'iotivity-merge-1.1-rel'
-        - 'iotivity-verify-{component}'
-        - 'iotivity-verify-osx'
+        - 'iotivity-merge':
+            branch: 'master'
+            refpsec: 'refs/heads/master'
+        - 'iotivity-merge-1.1-rel':
+            branch: '1.1-rel'
+            refspec: 'refs/heads/1.1-rel'
+        - 'iotivity-verify-{component}':
+            gerrit-branch: '**'
+        - 'iotivity-verify-osx':
+            gerrit-branch: '**'
         - 'iotivity-sonar-runner'
     component:
         - 'linux_unsecured'
@@ -31,7 +36,7 @@
 - project:
     name: iotivity-verify-tizen
     project: 'iotivity'
-    branch: '**'
+    gerrit-branch: '**'
     jobs:
         - 'iotivity-verify-tizen'
 
@@ -62,6 +67,8 @@
     name: iotivity-java
     project: 'iotivity'
     branch: 'generic-java'
+    gerrit-branch: 'generic-java'
+    refspec: 'refs/heads/generic-java'
     component:
         - 'linux_unsecured_with_java'
         - 'linux_secured_with_java'
@@ -71,7 +78,6 @@
 - project:
     name: linux-unsecured-with-tcp
     project: 'iotivity'
-    branch: '^(?!.*1.1-rel).*$'
     jobs:
         - 'iotivity-verify-linux_unsecured_with_tcp'
 
@@ -86,6 +92,8 @@
     parameters:
         - gerrit-project:
             project: '{project}'
+            branch: '{branch}'
+            refspec: '{refspec}'
 
     scm:
         - gerrit-branch-scm:
@@ -141,6 +149,8 @@
     parameters:
         - gerrit-project:
             project: '{project}'
+            branch: '{branch}'
+            refspec: '{refspec}'
 
     scm:
         - gerrit-branch-scm:
@@ -150,7 +160,7 @@
         - gerrit-trigger-patch-submitted:
             silent: '{silent}'
             project: '{project}'
-            branch: '{branch}'
+            branch: '{gerrit-branch}'
 
     wrappers:
         - timestamps
@@ -182,6 +192,8 @@
     parameters:
         - gerrit-project:
             project: '{project}'
+            branch: '{branch}'
+            refspec: '{refspec}'
 
     scm:
         - gerrit-branch-scm:
@@ -191,7 +203,7 @@
         - gerrit-trigger-patch-submitted:
             silent: '{silent}'
             project: '{project}'
-            branch: '{branch}'
+            branch: '{gerrit-branch}'
 
     wrappers:
         - timestamps
@@ -225,6 +237,8 @@
     parameters:
         - gerrit-project:
             project: '{project}'
+            branch: '{branch}'
+            refspec: '{refspec}'
 
     scm:
         - gerrit-branch-scm:
@@ -271,6 +285,8 @@
     parameters:
         - gerrit-project:
             project: '{project}'
+            branch: '{branch}'
+            refspec: '{refspec}'
 
     scm:
         - gerrit-branch-scm:
@@ -314,6 +330,8 @@
     parameters:
         - gerrit-project:
             project: '{project}'
+            branch: '{branch}'
+            refspec: '{refspec}'
 
     scm:
         - git:
@@ -377,6 +395,8 @@
     parameters:
         - gerrit-project:
             project: '{project}'
+            branch: '{branch}'
+            refspec: '{refspec}'
 
     scm:
         - gerrit-branch-scm:
@@ -430,11 +450,12 @@
     parameters:
         - gerrit-project:
             project: '{project}'
+            branch: '{branch}'
+            refspec: '{refspec}'
 
     scm:
         - gerrit-branch-scm:
             credentials-id: '{ssh-credentials}'
-            refspec: 'refs/heads/master'
 
     triggers:
         - gerrit-trigger-ref-updated:
@@ -473,18 +494,10 @@
     disabled: false
 
     parameters:
-        - string:
-            name: GERRIT_PROJECT
-            default: '{project}'
-            description: "GERRIT_PROJECT parameter if not given by trigger"
-        - string:
-            name: GERRIT_BRANCH
-            default: '1.1-rel'
-            description: "JJB configured GERRIT_BRANCH parameter"
-        - string:
-            name: GERRIT_REFSPEC
-            default: 'refs/heads/1.1-rel'
-            description: "GERRIT_REFSPEC parameter if not given by trigger"
+        - gerrit-project:
+            project: '{project}'
+            branch: '{branch}'
+            refspec: '{refspec}'
 
     scm:
         - gerrit-branch-scm:
@@ -526,11 +539,12 @@
     parameters:
         - gerrit-project:
             project: '{project}'
+            branch: '{branch}'
+            refspec: '{refspec}'
 
     scm:
         - gerrit-branch-scm:
             credentials-id: '{ssh-credentials}'
-            refspec: 'refs/heads/master'
 
     triggers:
         - gerrit-trigger-ref-updated:

@@ -24,6 +24,8 @@
     parameters:
         - gerrit-project:
             project: '{project}'
+            branch: '{branch}'
+            refspec: '{refspec}'
 
     scm:
         - gerrit-ci-management-scm:
@@ -78,6 +80,8 @@
     parameters:
         - gerrit-project:
             project: '{project}'
+            branch: '{branch}'
+            refspec: '{refspec}'
 
     scm:
         - gerrit-ci-management-scm:
