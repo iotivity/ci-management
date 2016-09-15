@@ -38,20 +38,16 @@
             silent: true
         - 'linux_secured_with_rd':
             silent: true
+        - 'linux_secured_with_java':
+            branch: 'generic-java'
+            gerrit-branch: 'generic-java'
+            refspec: 'refs/heads/generic-java'
+        - 'linux_unsecured_with_java':
+            branch: 'generic-java'
+            gerrit-branch: 'generic-java'
+            refspec: 'refs/heads/generic-java'
         - 'arduino'
         - 'simulator'
-
-- project:
-    name: iotivity-java
-    project: 'iotivity'
-    branch: 'generic-java'
-    gerrit-branch: 'generic-java'
-    refspec: 'refs/heads/generic-java'
-    component:
-        - 'linux_unsecured_with_java'
-        - 'linux_secured_with_java'
-    jobs:
-        - 'iotivity-verify-{component}'
 
 - job-template:
     name: 'iotivity-verify-linux_unsecured_with_tcp'
