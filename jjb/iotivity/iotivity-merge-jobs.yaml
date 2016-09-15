@@ -1,17 +1,25 @@
 - project:
-    name: iotivity-verify-jobs
+    name: iotivity-merge-master-jobs
     project: 'iotivity'
+    branch: 'master'
+    refspec: 'refs/heads/master'
+    gerrit-branch: 'master'
+    silent: true
+    mailto: 'oicbuild@intel.com, joseph.l.morrow@intel.com, tbramwell@linuxfoundation.org'
     jobs:
-        - 'iotivity-verify-{component}'
-        - 'iotivity-verify-osx'
-        - 'iotivity-verify-tizen'
-        - 'iotivity-verify-linux_unsecured_with_tcp'
-        - 'iotivity-verify-android_{arch}':
+        - 'iotivity-merge-1.1-rel':
+            branch: '1.1-rel'
+            refspec: 'refs/heads/1.1-rel'
+            gerrit-branch: '1.1-rel'
+        - 'iotivity-merge-{branch}-{component}'
+        - 'iotivity-merge-{branch}-osx'
+        - 'iotivity-merge-{branch}-tizen'
+        - 'iotivity-merge-{branch}-linux_unsecured_with_tcp'
+        - 'iotivity-merge-{branch}-android_{arch}':
             arch:
                 - 'armeabi'
-                - 'x86':
-                    silent: true
-        - 'iotivity-verify-windows-{vs-version}':
+                - 'x86'
+        - 'iotivity-merge-{branch}-windows-{vs-version}':
             vs-version:
                 - 'vs2013':
                     silent: false
@@ -19,7 +27,8 @@
                 - 'vs2015':
                     silent: false
                     msvc-version: '14.0'
-        - 'iotivity-verify-unit_tests'
+        - 'iotivity-merge-{branch}-unit_tests'
+        - 'iotivity-sonar-runner'
     component:
         - 'linux_unsecured'
         - 'linux_unsecured_with_ra':
@@ -31,19 +40,11 @@
             silent: true
         - 'linux_secured_with_rd':
             silent: true
-        - 'linux_secured_with_java':
-            branch: 'generic-java'
-            gerrit-branch: 'generic-java'
-            refspec: 'refs/heads/generic-java'
-        - 'linux_unsecured_with_java':
-            branch: 'generic-java'
-            gerrit-branch: 'generic-java'
-            refspec: 'refs/heads/generic-java'
         - 'arduino'
         - 'simulator'
 
 - job-template:
-    name: 'iotivity-verify-linux_unsecured_with_tcp'
+    name: 'iotivity-merge-{branch}-linux_unsecured_with_tcp'
 
     project-type: freestyle
     node: 'ubuntu1204'
@@ -61,24 +62,10 @@
             credentials-id: '{ssh-credentials}'
 
     triggers:
-        - gerrit:
-            server-name: 'iotivity'
-            trigger-on:
-                - patchset-created-event:
-                    exclude-drafts: 'false'
-                    exclude-trivial-rebase: 'false'
-                    exclude-no-code-change: 'true'
-                - draft-published-event
-                - comment-added-contains-event:
-                    comment-contains-value: 'verify all'
-                - comment-added-contains-event:
-                    comment-contains-value: 'reverify'
-            projects:
-                - project-compare-type: 'ANT'
-                  project-pattern: '{project}'
-                  branches:
-                    - branch-compare-type: 'REG_EXP'
-                      branch-pattern: '^(?!.*1.1-rel).*$'
+        - gerrit-trigger-ref-updated:
+            project: '{project}'
+            silent: '{silent}'
+            branch: '{gerrit-branch}'
 
     wrappers:
         - timestamps
@@ -89,11 +76,11 @@
         - linux-tcp
 
     publishers:
-        - email-notification:
-            mailto: 'oicbuild@intel.com'
+        - email-notification-unstable:
+            mailto: '{mailto}'
 
 - job-template:
-    name: 'iotivity-verify-{component}'
+    name: 'iotivity-merge-{branch}-{component}'
 
     project-type: freestyle
     node: 'ubuntu1204'
@@ -111,7 +98,7 @@
             credentials-id: '{ssh-credentials}'
 
     triggers:
-        - gerrit-trigger-patch-submitted:
+        - gerrit-trigger-ref-updated:
             silent: '{silent}'
             project: '{project}'
             branch: '{gerrit-branch}'
@@ -126,11 +113,11 @@
             component: '{component}'
 
     publishers:
-        - email-notification:
-            mailto: 'oicbuild@intel.com'
+        - email-notification-unstable:
+            mailto: '{mailto}'
 
 - job-template:
-    name: 'iotivity-verify-tizen'
+    name: 'iotivity-merge-{branch}-tizen'
 
     project-type: freestyle
     node: 'ubuntu1204'
@@ -148,7 +135,7 @@
             credentials-id: '{ssh-credentials}'
 
     triggers:
-        - gerrit-trigger-patch-submitted:
+        - gerrit-trigger-ref-updated:
             silent: '{silent}'
             project: '{project}'
             branch: '{gerrit-branch}'
@@ -164,11 +151,11 @@
         - tizen
 
     publishers:
-        - email-notification:
-            mailto: 'oicbuild@intel.com'
+        - email-notification-unstable:
+            mailto: '{mailto}'
 
 - job-template:
-    name: 'iotivity-verify-unit_tests'
+    name: 'iotivity-merge-{branch}-unit_tests'
 
     project-type: freestyle
     node: 'ubuntu1204'
@@ -186,7 +173,7 @@
             credentials-id: '{ssh-credentials}'
 
     triggers:
-        - gerrit-trigger-patch-submitted:
+        - gerrit-trigger-ref-updated:
             silent: '{silent}'
             project: '{project}'
             branch: '{gerrit-branch}'
@@ -205,11 +192,12 @@
         - xunit-report
         - archive-artifacts:
             artifacts: '*.memcheck, out/**/test_out/*.xml'
-        - email-notification:
-            mailto: 'oicbuild@intel.com'
+        - email-notification-unstable:
+            mailto: '{mailto}'
+
 
 - job-template:
-    name: 'iotivity-verify-android_{arch}'
+    name: 'iotivity-merge-{branch}-android_{arch}'
 
     project-type: freestyle
     node: 'ubuntu1204'
@@ -227,7 +215,7 @@
             credentials-id: '{ssh-credentials}'
 
     triggers:
-        - gerrit-trigger-patch-submitted:
+        - gerrit-trigger-ref-updated:
             silent: '{silent}'
             project: '{project}'
             branch: '{gerrit-branch}'
@@ -244,11 +232,11 @@
     publishers:
         - archive-artifacts:
             artifacts: 'android/android_api/base/build/outputs/**/*.xml, android/android_api/base/build/outputs/**/*.html'
-        - email-notification:
-            mailto: 'oicbuild@intel.com'
+        - email-notification-unstable:
+            mailto: '{mailto}'
 
 - job-template:
-    name: 'iotivity-verify-windows-{vs-version}'
+    name: 'iotivity-merge-{branch}-windows-{vs-version}'
 
     project-type: freestyle
     node: '{vs-version}'
@@ -273,25 +261,10 @@
             choosing-strategy: 'gerrit'
 
     triggers:
-        - gerrit:
-            server-name: 'iotivity'
-            silent: '{obj:silent}'
-            trigger-on:
-                - patchset-created-event:
-                    exclude-drafts: 'false'
-                    exclude-trivial-rebase: 'false'
-                    exclude-no-code-change: 'true'
-                - draft-published-event
-                - comment-added-contains-event:
-                    comment-contains-value: 'verify all'
-                - comment-added-contains-event:
-                    comment-contains-value: 'reverify'
-            projects:
-                - project-compare-type: 'ANT'
-                  project-pattern: '{project}'
-                  branches:
-                    - branch-compare-type: 'REG_EXP'
-                      branch-pattern: '^(?!.*1.1-rel).*$'
+        - gerrit-trigger-ref-updated:
+            project: '{project}'
+            silent: '{silent}'
+            branch: '{gerrit-branch}'
 
     wrappers:
         - timestamps
@@ -304,11 +277,11 @@
             msvc-version: '{msvc-version}'
 
     publishers:
-        - email-notification:
-            mailto: 'oicbuild@intel.com'
+        - email-notification-unstable:
+            mailto: '{mailto}'
 
 - job-template:
-    name: 'iotivity-verify-osx'
+    name: 'iotivity-merge-{branch}-osx'
 
     project-type: freestyle
     node: 'osx1010'
@@ -326,7 +299,7 @@
             credentials-id: '{ssh-credentials}'
 
     triggers:
-        - gerrit-trigger-patch-submitted:
+        - gerrit-trigger-ref-updated:
             silent: '{silent}'
             project: '{project}'
             branch: '{gerrit-branch}'
@@ -345,5 +318,89 @@
         - xunit-report
         - archive-artifacts:
             artifacts: '*.memcheck'
-        - email-notification:
-            mailto: 'oicbuild@intel.com'
+        - email-notification-unstable:
+            mailto: '{mailto}'
+
+- job-template:
+    name: 'iotivity-sonar-runner'
+
+    project-type: freestyle
+    node: 'sonar'
+    concurrent: true
+    disabled: false
+
+    parameters:
+        - gerrit-project:
+            project: '{project}'
+            branch: '{branch}'
+            refspec: '{refspec}'
+
+    scm:
+        - gerrit-branch-scm:
+            credentials-id: '{ssh-credentials}'
+
+    triggers:
+        - gerrit-trigger-ref-updated:
+            project: '{project}'
+            silent: '{silent}'
+            branch: '{gerrit-branch}'
+
+    wrappers:
+        - timestamps
+        - ssh-agent-credentials:
+            users:
+                - '{ssh-credentials}'
+
+    builders:
+        - shell:
+            !include-raw-escape: include-raw-iotivity-sonar.sh
+        - sonar-runner
+
+    publishers:
+        - archive-artifacts:
+            artifacts: '*-report.xml'
+        - email-notification-unstable:
+            mailto: '{mailto}'
+
+- job-template:
+    name: 'iotivity-merge-1.1-rel'
+
+    project-type: freestyle
+    node: 'integration'
+    concurrent: true
+    disabled: false
+
+    parameters:
+        - gerrit-project:
+            project: '{project}'
+            branch: '{branch}'
+            refspec: '{refspec}'
+
+    scm:
+        - gerrit-branch-scm:
+            credentials-id: '{ssh-credentials}'
+
+    triggers:
+        - timed: 'H H * * *'
+
+    wrappers:
+        - timestamps
+        - ssh-agent-credentials:
+            users:
+                - '{ssh-credentials}'
+
+    builders:
+        - shell:
+            !include-raw-escape: include-raw-iotivity-bootstrap.sh
+        - shell: |
+            #!/bin/bash -eux
+            set -o pipefail
+
+            export VERBOSE=false
+            export CCACHE_DISABLE=false
+
+            ./auto_build.sh all
+
+    publishers:
+        - email-notification-unstable:
+            mailto: '{mailto}'
