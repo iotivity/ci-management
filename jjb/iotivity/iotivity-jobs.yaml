@@ -66,10 +66,65 @@
     name: linux-unsecured-with-tcp
     project: 'iotivity'
     branch: '^(?!.*1.1-rel).*$'
-    component:
-        - 'linux_unsecured_with_tcp'
     jobs:
-        - 'iotivity-verify-{component}'
+        - 'iotivity-verify-linux_unsecured_with_tcp'
+
+- job-template:
+    name: 'iotivity-verify-linux_unsecured_with_tcp'
+
+    project-type: freestyle
+    node: 'ubuntu1204'
+    concurrent: true
+    disabled: false
+
+    parameters:
+        - gerrit-project:
+            project: '{project}'
+        - gerrit-branch
+        - gerrit-refspec
+
+    scm:
+        - gerrit-branch-scm:
+            credentials-id: '{ssh-credentials}'
+
+    triggers:
+        - gerrit:
+            server-name: 'iotivity'
+            trigger-on:
+                - patchset-created-event:
+                    exclude-drafts: 'false'
+                    exclude-trivial-rebase: 'false'
+                    exclude-no-code-change: 'true'
+                - draft-published-event
+                - comment-added-contains-event:
+                    comment-contains-value: 'verify all'
+                - comment-added-contains-event:
+                    comment-contains-value: 'reverify'
+            projects:
+                - project-compare-type: 'ANT'
+                  project-pattern: '{project}'
+                  branches:
+                    - branch-compare-type: 'REG_EXP'
+                      branch-pattern: '^(?!.*1.1-rel).*$'
+
+    wrappers:
+        - timestamps
+
+    builders:
+        - shell:
+            !include-raw-escape: include-raw-iotivity-bootstrap.sh
+        - shell: |
+            #!/bin/bash -eux
+            set -o pipefail
+
+            export VERBOSE=false
+            export CCACHE_DISABLE=false
+
+            ./auto_build.sh linux_unsecured_with_tcp
+
+    publishers:
+        - email-notification:
+            mailto: 'oicbuild@intel.com'
 
 - job-template:
     name: 'iotivity-verify-{component}'
