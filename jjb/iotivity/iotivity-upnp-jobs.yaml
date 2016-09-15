@@ -1,11 +1,13 @@
 - project:
     name: iotivity-upnp-bridge
     project: 'iotivity-upnp-bridge'
+    stream:
+        - 'verify'
     jobs:
-        - 'iotivity-verify-upnp-bridge'
+        - 'iotivity-{stream}-upnp-bridge'
 
 - job-template:
-    name: 'iotivity-verify-upnp-bridge'
+    name: 'iotivity-{stream}-upnp-bridge'
 
     project-type: freestyle
     node: 'ubuntu1204'
