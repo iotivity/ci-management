@@ -11,6 +11,17 @@
                 - 'armeabi'
                 - 'x86':
                     silent: true
+        - 'iotivity-verify-android_{arch}-{transport}':
+            arch:
+                - 'armeabi'
+                - 'x86'
+            transport:
+                - 'ip'
+                - 'bt'
+                - 'ble'
+                - 'rm_and_ip'
+                - 'rm_and_bt'
+                - 'rm_and_ble'
         - 'iotivity-verify-windows-{vs-version}':
             vs-version:
                 - 'vs2013':
@@ -240,6 +251,46 @@
             !include-raw-escape: include-raw-iotivity-bootstrap.sh
         - android:
             arch: '{arch}'
+
+    publishers:
+        - archive-artifacts:
+            artifacts: 'android/android_api/base/build/outputs/**/*.xml, android/android_api/base/build/outputs/**/*.html'
+        - email-notification:
+            mailto: 'oicbuild@intel.com'
+
+- job-template:
+    name: 'iotivity-verify-android_{arch}-{transport}'
+
+    project-type: freestyle
+    node: 'ubuntu1204'
+    concurrent: true
+    disabled: false
+
+    parameters:
+        - gerrit-project:
+            project: '{project}'
+            branch: '{branch}'
+            refspec: '{refspec}'
+
+    scm:
+        - gerrit-branch-scm:
+            credentials-id: '{ssh-credentials}'
+
+    triggers:
+        - gerrit-trigger-patch-submitted:
+            silent: '{silent}'
+            project: '{project}'
+            branch: '{gerrit-branch}'
+
+    wrappers:
+        - timestamps
+
+    builders:
+        - shell:
+            !include-raw-escape: include-raw-iotivity-bootstrap.sh
+        - android-transport:
+            arch: '{arch}'
+            transport: '{transport}'
 
     publishers:
         - archive-artifacts:

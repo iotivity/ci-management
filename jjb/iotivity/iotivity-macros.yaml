@@ -90,7 +90,11 @@
             export VERBOSE=false
             export CCACHE_DISABLE=false
 
-            ./auto_build.sh android_{arch}
+            if (git rev-list HEAD | grep -q 0a3b83222bfff7e44ecb60c89ce682a58a0ee762); then
+              echo "Using seperate android builds."
+            else
+              ./auto_build.sh android_{arch}
+            fi
 
 - builder:
     name: android-transport
@@ -102,7 +106,11 @@
             export VERBOSE=false
             export CCACHE_DISABLE=false
 
-            ./auto_build.sh android_{arch}_with_{transport}
+            if (git rev-list HEAD | grep -q 0a3b83222bfff7e44ecb60c89ce682a58a0ee762); then
+              ./auto_build.sh android_{arch}_with_{transport}
+            else
+              echo "Using unified Android builds. Please rebase"
+            fi
 
 - builder:
     name: unit-tests
