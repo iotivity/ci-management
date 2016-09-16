@@ -77,6 +77,18 @@
             ./auto_build.sh android_{arch}
 
 - builder:
+    name: android-transport
+    builders:
+        - shell: |
+            #!/bin/bash -eux
+            set -o pipefail
+
+            export VERBOSE=false
+            export CCACHE_DISABLE=false
+
+            ./auto_build.sh android_{arch}_with_{transport}
+
+- builder:
     name: unit-tests
     builders:
         - shell: |

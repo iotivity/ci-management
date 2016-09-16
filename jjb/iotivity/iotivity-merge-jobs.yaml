@@ -15,10 +15,17 @@
         - 'iotivity-merge-{branch}-osx'
         - 'iotivity-merge-{branch}-tizen'
         - 'iotivity-merge-{branch}-linux_unsecured_with_tcp'
-        - 'iotivity-merge-{branch}-android_{arch}':
+        - 'iotivity-merge-{branch}-android_{arch}-{transport}':
             arch:
                 - 'armeabi'
                 - 'x86'
+            transport:
+                - 'ip'
+                - 'bt'
+                - 'ble'
+                - 'rm_and_ip'
+                - 'rm_and_bt'
+                - 'rm_and_ble'
         - 'iotivity-merge-{branch}-windows-{vs-version}':
             vs-version:
                 - 'vs2013':
@@ -197,7 +204,7 @@
 
 
 - job-template:
-    name: 'iotivity-merge-{branch}-android_{arch}'
+    name: 'iotivity-merge-{branch}-android_{arch}-{transport}'
 
     project-type: freestyle
     node: 'ubuntu1204'
@@ -226,8 +233,9 @@
     builders:
         - shell:
             !include-raw-escape: include-raw-iotivity-bootstrap.sh
-        - android:
+        - android-transport:
             arch: '{arch}'
+            transport: '{transport}'
 
     publishers:
         - archive-artifacts:
