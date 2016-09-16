@@ -9,6 +9,14 @@
             timeout: 10
             abort: true
 
+- wrapper:
+    name: build-timeout-fail
+    wrappers:
+        - timeout:
+            type: no-activity
+            timeout: 10
+            fail: true
+
 ## Builders
 - builder:
     name: linux
@@ -32,6 +40,14 @@
             run.bat build
             run.bat test
             run.bat clean
+
+- builder:
+    name: windows-kill-unit-tests
+    builders:
+        - batch: |
+            IF "%MSVC_VERSION%" == "12.0" (
+              taskkill /F /IM "unittests.exe"
+            )
 
 - builder:
     name: osx

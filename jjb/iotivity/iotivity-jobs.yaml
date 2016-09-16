@@ -295,7 +295,7 @@
 
     wrappers:
         - timestamps
-        - build-timeout
+        - build-timeout-fail
 
     builders:
         - batch:
@@ -304,6 +304,11 @@
             msvc-version: '{msvc-version}'
 
     publishers:
+        - postbuildscript:
+            script-only-if-succeeded: false
+            script-only-if-failed: true
+            builders:
+                - windows-kill-unit-tests
         - email-notification:
             mailto: 'oicbuild@intel.com'
 
