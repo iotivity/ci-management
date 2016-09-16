@@ -92,7 +92,7 @@
             trigger-on:
                 - ref-updated-event
                 - comment-added-contains-event:
-                    comment-contains-value: 'remerge'
+                    comment-contains-value: 'remerge {branch}'
             projects:
                 - project-compare-type: 'ANT'
                   project-pattern: '{project}'
