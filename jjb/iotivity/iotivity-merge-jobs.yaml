@@ -2,21 +2,24 @@
     name: iotivity-merge-master-jobs
     project: 'iotivity'
     stream:
-        - 'master':
+        - 'master': &master
             branch: 'master'
             refspec: 'refs/heads/master'
             gerrit-branch: 'master'
-    silent: true
-    mailto: 'oicbuild@intel.com, joseph.l.morrow@intel.com, tbramwell@linuxfoundation.org'
-    jobs:
-        - 'iotivity-merge-1.1-rel':
+        - '1.1-rel': &1_1-rel
             branch: '1.1-rel'
             refspec: 'refs/heads/1.1-rel'
             gerrit-branch: '1.1-rel'
+    silent: true
+    mailto: 'oicbuild@intel.com, joseph.l.morrow@intel.com, tbramwell@linuxfoundation.org'
+    jobs:
         - 'iotivity-merge-{stream}-{component}'
         - 'iotivity-merge-{stream}-osx'
         - 'iotivity-merge-{stream}-tizen'
-        - 'iotivity-merge-{stream}-linux_unsecured_with_tcp'
+        - 'iotivity-merge-{stream}-linux_unsecured_with_tcp':
+            stream:
+                - 'master':
+                    <<: *master
         - 'iotivity-merge-{stream}-android_{arch}-{transport}':
             arch:
                 - 'armeabi'
@@ -29,6 +32,9 @@
                 - 'rm_and_bt'
                 - 'rm_and_ble'
         - 'iotivity-merge-{stream}-windows-{vs-version}':
+            stream:
+                - 'master':
+                    <<: *master
             vs-version:
                 - 'vs2013':
                     silent: false
@@ -370,48 +376,5 @@
     publishers:
         - archive-artifacts:
             artifacts: '*-report.xml'
-        - email-notification-unstable:
-            mailto: '{mailto}'
-
-- job-template:
-    name: 'iotivity-merge-1.1-rel'
-
-    project-type: freestyle
-    node: 'integration'
-    concurrent: true
-    disabled: false
-
-    parameters:
-        - gerrit-project:
-            project: '{project}'
-            branch: '{branch}'
-            refspec: '{refspec}'
-
-    scm:
-        - gerrit-branch-scm:
-            credentials-id: '{ssh-credentials}'
-
-    triggers:
-        - timed: 'H H * * *'
-
-    wrappers:
-        - timestamps
-        - ssh-agent-credentials:
-            users:
-                - '{ssh-credentials}'
-
-    builders:
-        - shell:
-            !include-raw-escape: include-raw-iotivity-bootstrap.sh
-        - shell: |
-            #!/bin/bash -eux
-            set -o pipefail
-
-            export VERBOSE=false
-            export CCACHE_DISABLE=false
-
-            ./auto_build.sh all
-
-    publishers:
         - email-notification-unstable:
             mailto: '{mailto}'
