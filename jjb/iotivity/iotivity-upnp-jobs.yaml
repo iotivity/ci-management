@@ -1,6 +1,6 @@
 - project:
-    name: iotivity-upnp-bridge
-    project: 'iotivity-upnp-bridge'
+    name: iotivity-upnp-bridge-verify-jobs
+    project: 'iotivity-upnp-bridge-verify'
     arch:
         - 'x86'
     transport:
@@ -11,10 +11,10 @@
         - 'rm_and_bt'
         - 'rm_and_ble'
     jobs:
-        - 'iotivity-verify-upnp-bridge-android_{arch}-{transport}'
+        - 'iotivity-upnp-bridge-verify-android_{arch}-{transport}'
 
 - job-template:
-    name: 'iotivity-verify-upnp-bridge-android_{arch}-{transport}'
+    name: 'iotivity-upnp-bridge-verify-android_{arch}-{transport}'
 
     project-type: freestyle
     node: 'ubuntu1204'
