@@ -45,7 +45,7 @@
     name: windows-kill-unit-tests
     builders:
         - batch: |
-            IF "%MSVC_VERSION%" == "12.0" (
+            IF "{msvc-version}" == "12.0" (
               taskkill /F /IM "unittests.exe"
             )
 

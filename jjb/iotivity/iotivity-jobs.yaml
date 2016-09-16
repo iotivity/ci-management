@@ -359,7 +359,8 @@
             script-only-if-succeeded: false
             script-only-if-failed: true
             builders:
-                - windows-kill-unit-tests
+                - windows-kill-unit-tests:
+                    msvc-version: '{msvc-version}'
         - email-notification:
             mailto: 'oicbuild@intel.com'
 
