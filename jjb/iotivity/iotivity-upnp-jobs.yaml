@@ -1,11 +1,20 @@
 - project:
     name: iotivity-upnp-bridge
     project: 'iotivity-upnp-bridge'
+    arch:
+        - 'x86'
+    transport:
+        - 'ip'
+        - 'bt'
+        - 'ble'
+        - 'rm_and_ip'
+        - 'rm_and_bt'
+        - 'rm_and_ble'
     jobs:
-        - 'iotivity-verify-upnp-bridge'
+        - 'iotivity-verify-upnp-bridge-android_{arch}-{transport}'
 
 - job-template:
-    name: 'iotivity-verify-upnp-bridge'
+    name: 'iotivity-verify-upnp-bridge-android_{arch}-{transport}'
 
     project-type: freestyle
     node: 'ubuntu1204'
@@ -53,7 +62,7 @@
             cp -rv ${{WORKSPACE}}/iotivity-upnp-bridge/android/examples/upnpclient/ ${{WORKSPACE}}/android/examples
             sed -i "1 s/$/, ':upnpclient'/" ${{WORKSPACE}}/android/examples/settings.gradle
 
-            ./auto_build.sh android_x86
+            ./auto_build.sh android_{arch}_with_{transport}
 
     publishers:
         - archive-artifacts:
