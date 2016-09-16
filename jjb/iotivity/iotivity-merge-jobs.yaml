@@ -1,9 +1,11 @@
 - project:
     name: iotivity-merge-master-jobs
     project: 'iotivity'
-    branch: 'master'
-    refspec: 'refs/heads/master'
-    gerrit-branch: 'master'
+    stream:
+        - 'master':
+            branch: 'master'
+            refspec: 'refs/heads/master'
+            gerrit-branch: 'master'
     silent: true
     mailto: 'oicbuild@intel.com, joseph.l.morrow@intel.com, tbramwell@linuxfoundation.org'
     jobs:
@@ -11,11 +13,11 @@
             branch: '1.1-rel'
             refspec: 'refs/heads/1.1-rel'
             gerrit-branch: '1.1-rel'
-        - 'iotivity-merge-{branch}-{component}'
-        - 'iotivity-merge-{branch}-osx'
-        - 'iotivity-merge-{branch}-tizen'
-        - 'iotivity-merge-{branch}-linux_unsecured_with_tcp'
-        - 'iotivity-merge-{branch}-android_{arch}-{transport}':
+        - 'iotivity-merge-{stream}-{component}'
+        - 'iotivity-merge-{stream}-osx'
+        - 'iotivity-merge-{stream}-tizen'
+        - 'iotivity-merge-{stream}-linux_unsecured_with_tcp'
+        - 'iotivity-merge-{stream}-android_{arch}-{transport}':
             arch:
                 - 'armeabi'
                 - 'x86'
@@ -26,7 +28,7 @@
                 - 'rm_and_ip'
                 - 'rm_and_bt'
                 - 'rm_and_ble'
-        - 'iotivity-merge-{branch}-windows-{vs-version}':
+        - 'iotivity-merge-{stream}-windows-{vs-version}':
             vs-version:
                 - 'vs2013':
                     silent: false
@@ -34,8 +36,9 @@
                 - 'vs2015':
                     silent: false
                     msvc-version: '14.0'
-        - 'iotivity-merge-{branch}-unit_tests'
-        - 'iotivity-sonar-runner'
+        - 'iotivity-merge-{stream}-unit_tests'
+        - 'iotivity-sonar-runner':
+            gerrit-branch: 'master'
     component:
         - 'linux_unsecured'
         - 'linux_unsecured_with_ra':
@@ -51,7 +54,7 @@
         - 'simulator'
 
 - job-template:
-    name: 'iotivity-merge-{branch}-linux_unsecured_with_tcp'
+    name: 'iotivity-merge-{stream}-linux_unsecured_with_tcp'
 
     project-type: freestyle
     node: 'ubuntu1204'
@@ -87,7 +90,7 @@
             mailto: '{mailto}'
 
 - job-template:
-    name: 'iotivity-merge-{branch}-{component}'
+    name: 'iotivity-merge-{stream}-{component}'
 
     project-type: freestyle
     node: 'ubuntu1204'
@@ -124,7 +127,7 @@
             mailto: '{mailto}'
 
 - job-template:
-    name: 'iotivity-merge-{branch}-tizen'
+    name: 'iotivity-merge-{stream}-tizen'
 
     project-type: freestyle
     node: 'ubuntu1204'
@@ -162,7 +165,7 @@
             mailto: '{mailto}'
 
 - job-template:
-    name: 'iotivity-merge-{branch}-unit_tests'
+    name: 'iotivity-merge-{stream}-unit_tests'
 
     project-type: freestyle
     node: 'ubuntu1204'
@@ -204,7 +207,7 @@
 
 
 - job-template:
-    name: 'iotivity-merge-{branch}-android_{arch}-{transport}'
+    name: 'iotivity-merge-{stream}-android_{arch}-{transport}'
 
     project-type: freestyle
     node: 'ubuntu1204'
@@ -244,7 +247,7 @@
             mailto: '{mailto}'
 
 - job-template:
-    name: 'iotivity-merge-{branch}-windows-{vs-version}'
+    name: 'iotivity-merge-{stream}-windows-{vs-version}'
 
     project-type: freestyle
     node: '{vs-version}'
@@ -289,7 +292,7 @@
             mailto: '{mailto}'
 
 - job-template:
-    name: 'iotivity-merge-{branch}-osx'
+    name: 'iotivity-merge-{stream}-osx'
 
     project-type: freestyle
     node: 'osx1010'
