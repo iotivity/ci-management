@@ -81,7 +81,7 @@
             ./auto_build.sh tizen
 
 - builder:
-    name: android
+    name: android-arch
     builders:
         - shell: |
             #!/bin/bash -eux
@@ -95,6 +95,18 @@
             else
               ./auto_build.sh android_{arch}
             fi
+
+- builder:
+    name: android
+    builders:
+        - shell: |
+            #!/bin/bash -eux
+            set -o pipefail
+
+            export VERBOSE=false
+            export CCACHE_DISABLE=false
+
+            ./auto_build.sh android
 
 - builder:
     name: android-transport

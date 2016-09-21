@@ -1,17 +1,22 @@
 - project:
     name: iotivity-verify-jobs
     project: 'iotivity'
+    disabled: false
+    silent: false
     jobs:
         - 'iotivity-verify-{component}'
         - 'iotivity-verify-osx'
         - 'iotivity-verify-tizen'
         - 'iotivity-verify-linux_unsecured_with_tcp'
+        - 'iotivity-verify-android'
         - 'iotivity-verify-android_{arch}':
+            disabled: true
             arch:
                 - 'armeabi'
                 - 'x86':
                     silent: true
         - 'iotivity-verify-android_{arch}-{transport}':
+            disabled: true
             arch:
                 - 'armeabi'
                 - 'x86'
@@ -59,7 +64,7 @@
     project-type: freestyle
     node: 'ubuntu1204'
     concurrent: true
-    disabled: false
+    disabled: '{obj:disabled}'
 
     parameters:
         - gerrit-project:
@@ -109,7 +114,7 @@
     project-type: freestyle
     node: 'ubuntu1204'
     concurrent: true
-    disabled: false
+    disabled: '{obj:disabled}'
 
     parameters:
         - gerrit-project:
@@ -146,7 +151,7 @@
     project-type: freestyle
     node: 'ubuntu1204'
     concurrent: true
-    disabled: false
+    disabled: '{obj:disabled}'
 
     parameters:
         - gerrit-project:
@@ -184,7 +189,7 @@
     project-type: freestyle
     node: 'ubuntu1204'
     concurrent: true
-    disabled: false
+    disabled: '{obj:disabled}'
 
     parameters:
         - gerrit-project:
@@ -220,12 +225,12 @@
             mailto: 'oicbuild@intel.com'
 
 - job-template:
-    name: 'iotivity-verify-android_{arch}'
+    name: 'iotivity-verify-android'
 
     project-type: freestyle
     node: 'ubuntu1204'
     concurrent: true
-    disabled: false
+    disabled: '{obj:disabled}'
 
     parameters:
         - gerrit-project:
@@ -249,7 +254,45 @@
     builders:
         - shell:
             !include-raw-escape: include-raw-iotivity-bootstrap.sh
-        - android:
+        - android
+
+    publishers:
+        - archive-artifacts:
+            artifacts: 'android/android_api/base/build/outputs/**/*.xml, android/android_api/base/build/outputs/**/*.html'
+        - email-notification:
+            mailto: 'oicbuild@intel.com'
+
+- job-template:
+    name: 'iotivity-verify-android_{arch}'
+
+    project-type: freestyle
+    node: 'ubuntu1204'
+    concurrent: true
+    disabled: '{obj:disabled}'
+
+    parameters:
+        - gerrit-project:
+            project: '{project}'
+            branch: '{branch}'
+            refspec: '{refspec}'
+
+    scm:
+        - gerrit-branch-scm:
+            credentials-id: '{ssh-credentials}'
+
+    triggers:
+        - gerrit-trigger-patch-submitted:
+            silent: '{silent}'
+            project: '{project}'
+            branch: '{gerrit-branch}'
+
+    wrappers:
+        - timestamps
+
+    builders:
+        - shell:
+            !include-raw-escape: include-raw-iotivity-bootstrap.sh
+        - android-arch:
             arch: '{arch}'
 
     publishers:
@@ -264,7 +307,7 @@
     project-type: freestyle
     node: 'ubuntu1204'
     concurrent: true
-    disabled: false
+    disabled: '{obj:disabled}'
 
     parameters:
         - gerrit-project:
@@ -304,7 +347,7 @@
     project-type: freestyle
     node: '{vs-version}'
     concurrent: true
-    disabled: false
+    disabled: '{obj:disabled}'
 
     parameters:
         - gerrit-project:
@@ -370,7 +413,7 @@
     project-type: freestyle
     node: 'osx1010'
     concurrent: true
-    disabled: false
+    disabled: '{obj:disabled}'
 
     parameters:
         - gerrit-project:

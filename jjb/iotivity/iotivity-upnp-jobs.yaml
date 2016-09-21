@@ -1,6 +1,7 @@
 - project:
     name: iotivity-upnp-bridge-verify-jobs
     project: 'iotivity-upnp-bridge-verify'
+    disabled: false
     arch:
         - 'x86'
     transport:
@@ -19,7 +20,7 @@
     project-type: freestyle
     node: 'ubuntu1204'
     concurrent: true
-    disabled: false
+    disabled: '{obj:disabled}'
 
     parameters:
         - gerrit-project:

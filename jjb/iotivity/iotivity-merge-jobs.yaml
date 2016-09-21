@@ -11,6 +11,7 @@
             refspec: 'refs/heads/1.1-rel'
             gerrit-branch: '1.1-rel'
     silent: true
+    disabled: false
     mailto: 'oicbuild@intel.com, joseph.l.morrow@intel.com, tbramwell@linuxfoundation.org'
     jobs:
         - 'iotivity-merge-{stream}-{component}'
@@ -20,7 +21,9 @@
             stream:
                 - 'master':
                     <<: *master
+        - 'iotivity-merge-{stream}-android'
         - 'iotivity-merge-{stream}-android_{arch}':
+            disabled: true
             stream:
                 - '1.1-rel':
                     <<: *1_1-rel 
@@ -28,6 +31,7 @@
                 - 'armeabi'
                 - 'x86'
         - 'iotivity-merge-{stream}-android_{arch}-{transport}':
+            disabled: true
             stream:
                 - 'master':
                     <<: *master
@@ -75,7 +79,7 @@
     project-type: freestyle
     node: 'ubuntu1204'
     concurrent: true
-    disabled: false
+    disabled: '{obj:disabled}'
 
     parameters:
         - gerrit-project:
@@ -111,7 +115,7 @@
     project-type: freestyle
     node: 'ubuntu1204'
     concurrent: true
-    disabled: false
+    disabled: '{obj:disabled}'
 
     parameters:
         - gerrit-project:
@@ -148,7 +152,7 @@
     project-type: freestyle
     node: 'ubuntu1204'
     concurrent: true
-    disabled: false
+    disabled: '{obj:disabled}'
 
     parameters:
         - gerrit-project:
@@ -186,7 +190,7 @@
     project-type: freestyle
     node: 'ubuntu1204'
     concurrent: true
-    disabled: false
+    disabled: '{obj:disabled}'
 
     parameters:
         - gerrit-project:
@@ -222,12 +226,12 @@
             mailto: '{mailto}'
 
 - job-template:
-    name: 'iotivity-merge-{stream}-android_{arch}'
+    name: 'iotivity-merge-{stream}-android'
 
     project-type: freestyle
     node: 'ubuntu1204'
     concurrent: true
-    disabled: false
+    disabled: '{obj:disabled}'
 
     parameters:
         - gerrit-project:
@@ -251,7 +255,45 @@
     builders:
         - shell:
             !include-raw-escape: include-raw-iotivity-bootstrap.sh
-        - android:
+        - android
+
+    publishers:
+        - archive-artifacts:
+            artifacts: 'android/android_api/base/build/outputs/**/*.xml, android/android_api/base/build/outputs/**/*.html'
+        - email-notification-unstable:
+            mailto: '{mailto}'
+
+- job-template:
+    name: 'iotivity-merge-{stream}-android_{arch}'
+
+    project-type: freestyle
+    node: 'ubuntu1204'
+    concurrent: true
+    disabled: '{obj:disabled}'
+
+    parameters:
+        - gerrit-project:
+            project: '{project}'
+            branch: '{branch}'
+            refspec: '{refspec}'
+
+    scm:
+        - gerrit-branch-scm:
+            credentials-id: '{ssh-credentials}'
+
+    triggers:
+        - gerrit-trigger-ref-updated:
+            silent: '{silent}'
+            project: '{project}'
+            branch: '{gerrit-branch}'
+
+    wrappers:
+        - timestamps
+
+    builders:
+        - shell:
+            !include-raw-escape: include-raw-iotivity-bootstrap.sh
+        - android-arch:
             arch: '{arch}'
 
     publishers:
@@ -267,7 +309,7 @@
     project-type: freestyle
     node: 'ubuntu1204'
     concurrent: true
-    disabled: false
+    disabled: '{obj:disabled}'
 
     parameters:
         - gerrit-project:
@@ -307,7 +349,7 @@
     project-type: freestyle
     node: '{vs-version}'
     concurrent: true
-    disabled: false
+    disabled: '{obj:disabled}'
 
     parameters:
         - gerrit-project:
@@ -352,7 +394,7 @@
     project-type: freestyle
     node: 'osx1010'
     concurrent: true
-    disabled: false
+    disabled: '{obj:disabled}'
 
     parameters:
         - gerrit-project:
@@ -393,7 +435,7 @@
     project-type: freestyle
     node: 'sonar'
     concurrent: true
-    disabled: false
+    disabled: '{obj:disabled}'
 
     parameters:
         - gerrit-project:
