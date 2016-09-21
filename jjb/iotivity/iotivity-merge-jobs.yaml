@@ -51,25 +51,19 @@
                     <<: *master
             vs-version:
                 - 'vs2013':
-                    silent: false
                     msvc-version: '12.0'
                 - 'vs2015':
-                    silent: false
                     msvc-version: '14.0'
         - 'iotivity-merge-{stream}-unit_tests'
         - 'iotivity-sonar-runner':
             gerrit-branch: 'master'
     component:
         - 'linux_unsecured'
-        - 'linux_unsecured_with_ra':
-            silent: true
-        - 'linux_unsecured_with_rd':
-            silent: true
+        - 'linux_unsecured_with_ra'
+        - 'linux_unsecured_with_rd'
         - 'linux_secured'
-        - 'linux_secured_with_ra':
-            silent: true
-        - 'linux_secured_with_rd':
-            silent: true
+        - 'linux_secured_with_ra'
+        - 'linux_secured_with_rd'
         - 'arduino'
         - 'simulator'
 
