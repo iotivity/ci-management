@@ -93,3 +93,9 @@ ln -sv ${IOTIVITYEXTLIB}/yaml/yaml ${WORKSPACE}/extlibs/yaml/yaml
 
 ln -sv ${IOTIVITYEXTLIB}/sqlite3/sqlite3.c ${WORKSPACE}/extlibs/sqlite3/sqlite3.c
 ln -sv ${IOTIVITYEXTLIB}/sqlite3/sqlite3.h ${WORKSPACE}/extlibs/sqlite3/sqlite3.h
+
+if [ ! -d "${WORKSPACE}/extlibs/mbedtls" ]
+then
+	mkdir ${WORKSPACE}/extlibs/mbedtls
+fi
+ln -sv ${IOTIVITYEXTLIB}/mbedtls/mbedtls-2.3.0 ${WORKSPACE}/extlibs/mbedtls/mbedtls
