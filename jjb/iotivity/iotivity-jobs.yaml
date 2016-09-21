@@ -7,7 +7,10 @@
         - 'iotivity-verify-{component}'
         - 'iotivity-verify-osx'
         - 'iotivity-verify-tizen'
-        - 'iotivity-verify-linux_unsecured_with_tcp'
+        - 'iotivity-verify-linux_{security}_with_tcp':
+            security:
+                - 'secured'
+                - 'unsecured'
         - 'iotivity-verify-android'
         - 'iotivity-verify-android_{arch}':
             disabled: true
@@ -56,7 +59,7 @@
         - 'simulator'
 
 - job-template:
-    name: 'iotivity-verify-linux_unsecured_with_tcp'
+    name: 'iotivity-verify-linux_{security}_with_tcp'
 
     project-type: freestyle
     node: 'ubuntu1204'
@@ -99,7 +102,8 @@
     builders:
         - shell:
             !include-raw-escape: include-raw-iotivity-bootstrap.sh
-        - linux-tcp
+        - linux:
+            component: 'linux_{security}_with_tcp'
 
     publishers:
         - email-notification:
