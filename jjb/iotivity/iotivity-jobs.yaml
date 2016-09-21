@@ -9,7 +9,8 @@
         - 'iotivity-verify-tizen'
         - 'iotivity-verify-linux_{security}_with_tcp':
             security:
-                - 'secured'
+                - 'secured':
+                    disabled: true
                 - 'unsecured'
         - 'iotivity-verify-android'
         - 'iotivity-verify-android_{arch}':
