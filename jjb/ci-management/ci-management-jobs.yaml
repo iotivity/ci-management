@@ -12,12 +12,6 @@
     node: master
     concurrent: true
 
-    logrotate:
-        daysToKeep: 30
-        numToKeep: 10
-        artifactDaysToKeep: -1
-        artifactNumToKeep: -1
-
     parameters:
         - gerrit-project:
             project: '{project}'
@@ -68,12 +62,6 @@
 
     project-type: freestyle
     node: master
-
-    logrotate:
-        daysToKeep: 30
-        numToKeep: 40
-        artifactDaysToKeep: -1
-        artifactNumToKeep: 5
 
     parameters:
         - gerrit-project:
