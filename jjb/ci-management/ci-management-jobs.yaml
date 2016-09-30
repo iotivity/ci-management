@@ -52,10 +52,14 @@
                       pattern: jjb/**
 
     builders:
+        - shell:
+            !include-raw-escape: check-unicode.sh
         - shell: |
-            $WORKSPACE/scripts/check-unicode.sh jjb/
-        - shell: |
-            jenkins-jobs test --recursive jjb/
+            jenkins-jobs test -r jjb/
+        - shell:
+            !include-raw-escape: generate-job-diff.sh
+        - gerrit-comment:
+            file: 'job_diff.txt'
 
 - job-template:
     name: 'ci-management-merge'
@@ -97,3 +101,22 @@
     builders:
         - shell:
             jenkins-jobs update --delete-old --recursive jjb/
+
+- builder:
+    name: 'gerrit-comment'
+    builders:
+        - shell: |
+            #! /bin/bash
+
+            if [[ -e {file} ]] ; then
+                echo
+                echo "posting review comment to gerrit..."
+                echo
+                cat {file}
+                echo
+                ssh -p 29418 gerrit.iotivity.org \
+                    "gerrit review -p $GERRIT_PROJECT \
+                     -m '$(cat {file})' \
+                     $GERRIT_PATCHSET_REVISION \
+                     --notify NONE"
+            fi
