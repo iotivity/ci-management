@@ -16,7 +16,7 @@
             gerrit-branch: '1.2-rel'
     silent: true
     disabled: false
-    mailto: 'oicbuild@intel.com, joseph.l.morrow@intel.com, tbramwell@linuxfoundation.org'
+    mailto: 'oicbuild@intel.com, tbramwell@linuxfoundation.org'
     jobs:
         - 'iotivity-merge-{stream}-{component}':
             stream:
