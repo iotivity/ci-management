@@ -52,8 +52,8 @@
                       pattern: jjb/**
 
     builders:
-        - shell:
-            !include-raw-escape: check-unicode.sh
+        - shell: |
+            $WORKSPACE/scripts/check-unicode.sh jjb/
         - shell: |
             jenkins-jobs test -r jjb -o job_output
         - shell:
