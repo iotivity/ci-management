@@ -10,11 +10,38 @@
             branch: '1.1-rel'
             refspec: 'refs/heads/1.1-rel'
             gerrit-branch: '1.1-rel'
+        - '1.2-rel': &1_2-rel
+            branch: '1.2-rel'
+            refspec: 'refs/heads/1.2-rel'
+            gerrit-branch: '1.2-rel'
     silent: true
     disabled: false
     mailto: 'oicbuild@intel.com, joseph.l.morrow@intel.com, tbramwell@linuxfoundation.org'
     jobs:
-        - 'iotivity-merge-{stream}-{component}'
+        - 'iotivity-merge-{stream}-{component}':
+            stream:
+                - 'master':
+                    <<: *master
+                - '1.1-rel':
+                    <<: *1_1-rel
+            component:
+                - 'linux_unsecured'
+                - 'linux_secured'
+                - 'arduino'
+                - 'simulator'
+                - 'linux_unsecured_with_ra'
+                - 'linux_unsecured_with_rd'
+                - 'linux_secured_with_ra'
+                - 'linux_secured_with_rd'
+        - 'iotivity-merge-{stream}-{component}':
+            stream:
+                - '1.2-rel':
+                    <<: *1_2-rel
+            component:
+                - 'linux_unsecured'
+                - 'linux_secured'
+                - 'arduino'
+                - 'simulator'
         - 'iotivity-merge-{stream}-osx'
         - 'iotivity-merge-{stream}-tizen'
         - 'iotivity-merge-{stream}-linux_{security}_with_tcp':
@@ -24,12 +51,14 @@
             stream:
                 - 'master':
                     <<: *master
+                - '1.2-rel':
+                    <<: *1_2-rel
         - 'iotivity-merge-{stream}-android'
         - 'iotivity-merge-{stream}-android_{arch}':
             disabled: true
             stream:
                 - '1.1-rel':
-                    <<: *1_1-rel 
+                    <<: *1_1-rel
             arch:
                 - 'armeabi'
                 - 'x86'
@@ -52,6 +81,8 @@
             stream:
                 - 'master':
                     <<: *master
+                - '1.2-rel':
+                    <<: *1_2-rel
             vs-version:
                 - 'vs2013':
                     msvc-version: '12.0'
@@ -60,15 +91,6 @@
         - 'iotivity-merge-{stream}-unit_tests'
         - 'iotivity-sonar-runner':
             gerrit-branch: 'master'
-    component:
-        - 'linux_unsecured'
-        - 'linux_unsecured_with_ra'
-        - 'linux_unsecured_with_rd'
-        - 'linux_secured'
-        - 'linux_secured_with_ra'
-        - 'linux_secured_with_rd'
-        - 'arduino'
-        - 'simulator'
 
 - job-template:
     name: 'iotivity-merge-{stream}-linux_{security}_with_tcp'
