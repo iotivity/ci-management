@@ -98,4 +98,4 @@ if [ ! -d "${WORKSPACE}/extlibs/mbedtls" ]
 then
 	mkdir ${WORKSPACE}/extlibs/mbedtls
 fi
-ln -sv ${IOTIVITYEXTLIB}/mbedtls/mbedtls ${WORKSPACE}/extlibs/mbedtls/mbedtls
+cp -rv ${IOTIVITYEXTLIB}/mbedtls/mbedtls ${WORKSPACE}/extlibs/mbedtls/mbedtls
