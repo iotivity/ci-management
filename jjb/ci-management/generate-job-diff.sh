@@ -1,13 +1,13 @@
 #! /bin/bash
 # Jenkins Job Diff
 
-rm -r job_output_prev
-rm -r job_output
+rm -rf job_output_prev
+rm -rf job_output
 
 jenkins-jobs -l ERROR test -r jjb -o job_output
 
 git checkout -q -b master-one HEAD^ && jenkins-jobs -l ERROR test -r jjb -o job_output_prev
 
-diff -ru job_output_prev job_output > job_diff.txt
+diff -ru job_output_prev job_output &> job_diff.txt
 
-git checkout -q master && git branch -q -d master-one
+git checkout -q - && git branch -q -d master-one

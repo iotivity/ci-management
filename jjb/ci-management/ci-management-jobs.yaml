@@ -55,7 +55,7 @@
         - shell:
             !include-raw-escape: check-unicode.sh
         - shell: |
-            jenkins-jobs test -r jjb/
+            jenkins-jobs test -r jjb -o job_output
         - shell:
             !include-raw-escape: generate-job-diff.sh
         - gerrit-comment:
@@ -108,7 +108,7 @@
         - shell: |
             #! /bin/bash
 
-            if [[ -e {file} ]] ; then
+            if [[ -s {file} ]] ; then
                 echo
                 echo "posting review comment to gerrit..."
                 echo
