@@ -1,7 +1,4 @@
-#!/bin/bash -eu
-set -o pipefail
-
-# Jenkins Job Diff
+#!/bin/bash
 
 rm -rf job_output_prev
 rm -rf job_output
