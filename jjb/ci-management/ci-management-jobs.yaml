@@ -108,7 +108,7 @@
         - shell: |
             #!/bin/bash
 
-            if [[ -s {file} -a -n "$GERRIT_PATCHSET_REVISION" ]] ; then
+            if [ -s "{file}" -a -n "$GERRIT_PATCHSET_REVISION" ]; then
                 echo
                 echo "posting review comment to gerrit..."
                 echo
