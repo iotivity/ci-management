@@ -106,7 +106,7 @@
     name: 'gerrit-comment'
     builders:
         - shell: |
-            #! /bin/bash
+            #!/bin/bash
 
             if [[ -s {file} ]] ; then
                 echo
