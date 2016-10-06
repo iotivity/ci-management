@@ -1,0 +1,7 @@
+Verified+1: jenkins-iotivity <jenkins-iotivity@opendaylight.org>
+Code-Review+2: Trevor Bramwell <tbramwell@linuxfoundation.org>
+Submitted-by: Trevor Bramwell <tbramwell@linuxfoundation.org>
+Submitted-at: Thu, 06 Oct 2016 20:15:05 +0000
+Reviewed-on: https://gerrit.iotivity.org/gerrit/12919
+Project: ci-management
+Branch: refs/heads/master
