@@ -32,6 +32,7 @@
       "only": ["docker"],
       "scripts": [
         "scripts/baseline.sh",
+        "scripts/sshd.sh",
         "scripts/jenkins-user.sh",
         "scripts/cleanup.sh"
       ]
