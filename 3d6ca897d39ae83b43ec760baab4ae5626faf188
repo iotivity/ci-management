@@ -22,6 +22,30 @@
       "revId": "3d6ca897d39ae83b43ec760baab4ae5626faf188",
       "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da7095c5_95ad4034",
+        "filename": "jjb/iotivity/iotivity-macros.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 8389
+      },
+      "writtenOn": "2016-10-17T22:42:26Z",
+      "side": 1,
+      "message": "Dave is correct. However you could change this today to add a line above the new IF stmt to set the default TARGET_ARCH to amd64\n\nThen change the run.bat build line to the following\n\nrun.bat build -arch %TARGET_ARCH%\n\nAnd old run.bat files will ignore the param and when my update to master gets processed it will start building x86 binaries",
+      "parentUuid": "da7095c5_d5bbb870",
+      "range": {
+        "startLine": 41,
+        "startChar": 16,
+        "endLine": 41,
+        "endChar": 35
+      },
+      "revId": "3d6ca897d39ae83b43ec760baab4ae5626faf188",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
     }
   ]
 }
