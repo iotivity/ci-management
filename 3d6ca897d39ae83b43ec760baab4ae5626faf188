@@ -46,6 +46,30 @@
       "revId": "3d6ca897d39ae83b43ec760baab4ae5626faf188",
       "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da7095c5_957460d0",
+        "filename": "jjb/iotivity/iotivity-macros.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2016-10-17T22:46:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da7095c5_95ad4034",
+      "range": {
+        "startLine": 41,
+        "startChar": 16,
+        "endLine": 41,
+        "endChar": 35
+      },
+      "revId": "3d6ca897d39ae83b43ec760baab4ae5626faf188",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
     }
   ]
 }
