@@ -67,3 +67,7 @@ git clone https://gerrit.iotivity.org/gerrit/iotivity-xmpp /extlibs/raxmpp/raxmp
 git clone https://github.com/dascandy/hippomocks /extlibs/hippomocks-master \
 && cd /extlibs/hippomocks-master \
 && git checkout -qf 2f40aa11e31499432283b67f9d3449a3cd7b9c4d
+
+# mbedtls
+mkdir -p /extlibs/mbedtls
+git clone https://github.com/ARMmbed/mbedtls /extlibs/mbedtls/mbedtls
