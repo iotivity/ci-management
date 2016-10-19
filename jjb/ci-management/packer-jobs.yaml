@@ -6,6 +6,7 @@
     image:
         - 'baseline'
         - 'arduino'
+        - 'android'
     project: 'ci-management'
 
 - job-template:
