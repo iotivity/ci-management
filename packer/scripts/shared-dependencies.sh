@@ -27,7 +27,7 @@ wget -nv https://launchpad.net/ubuntu/+archive/primary/+files/expat_2.1.0.orig.t
 # gtest
 mkdir -p /extlibs/gtest
 cd /extlibs/gtest
-wget -nv https://googletest.googlecode.com/files/gtest-1.7.0.zip \
+wget -nv http://pkgs.fedoraproject.org/repo/pkgs/gtest/gtest-1.7.0.zip/2d6ec8ccdf5c46b05ba54a9fd1d130d7/gtest-1.7.0.zip \
 && unzip gtest-1.7.0.zip \
 && rm gtest-1.7.0.zip
 
