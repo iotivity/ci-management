@@ -102,5 +102,8 @@
 
     builders:
         - shell: |
+            # Clear out docker images
+            docker rmi -f $(docker images -qa) || true
+        - shell: |
             cd packer
             packer build -color=false {image}.json
