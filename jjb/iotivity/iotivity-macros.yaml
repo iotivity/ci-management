@@ -36,8 +36,14 @@
         - batch: |
             @echo off
             set MSVC_VERSION={msvc-version}
+            set TARGET_ARCH=amd64
+            IF "%MSVC_VERSION%" == "12.0" (
+              IF NOT "%GERRIT_BRANCH%" == "1.2-rel" (
+                set TARGET_ARCH=x86
+              )
+            )
             set
-            run.bat build
+            run.bat build -arch %TARGET_ARCH%
             run.bat test
             run.bat clean
 
