@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da7095c5_c4f30409",
+        "filename": "jjb/iotivity/iotivity-macros.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6009
+      },
+      "writtenOn": "2016-10-21T21:04:51Z",
+      "side": 1,
+      "message": "This exception is not needed if we don\u0027t cherry-pick this change back to 1.2-rel.\n\n   https://gerrit.iotivity.org/gerrit/13355/",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 53
+      },
+      "revId": "10a41cb5709b0c25f62e32001eeebc748352884d",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
