@@ -1,0 +1,9 @@
+Verified+1: jenkins-iotivity <jenkins-iotivity@opendaylight.org>
+Code-Review+1: Mike Fenelon <mike.fenelon@microsoft.com>
+Code-Review+1: David Antler <david.a.antler@intel.com>
+Code-Review+2: Dave Thaler <dthaler@microsoft.com>
+Submitted-by: Dave Thaler <dthaler@microsoft.com>
+Submitted-at: Fri, 21 Oct 2016 21:09:13 +0000
+Reviewed-on: https://gerrit.iotivity.org/gerrit/13351
+Project: ci-management
+Branch: refs/heads/master
