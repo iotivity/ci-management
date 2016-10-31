@@ -2,12 +2,16 @@
     name: packer-builds
     jobs:
         - 'packer-verify-{image}'
-        - 'packer-build-{image}'
+        - 'packer-build-{platform}-{image}'
     image:
+        - 'linux':
+            platform: 'googlecompute'
         - 'baseline'
         - 'arduino'
         - 'android'
         - 'tizen'
+    platform:
+        - 'docker'
     project: 'ci-management'
 
 - job-template:
@@ -52,7 +56,7 @@
                       branch-pattern: '**/master'
                   file-paths:
                     - compare-type: ANT
-                      pattern: packer/{image}.json
+                      pattern: 'packer/{image}.json'
 
     builders:
         - shell: |
@@ -61,7 +65,7 @@
             packer validate {image}.json
 
 - job-template:
-    name: 'packer-build-{image}'
+    name: 'packer-build-{platform}-{image}'
 
     project-type: freestyle
     node: packer
@@ -89,7 +93,7 @@
             trigger-on:
                 - change-merged-event
                 - comment-added-contains-event:
-                    comment-contains-value: 'rebuild {image}'
+                    comment-contains-value: 'rebuild {platform} {image}'
             projects:
                 - project-compare-type: 'ANT'
                   project-pattern: 'ci-management'
@@ -101,9 +105,20 @@
                       pattern: 'packer/{image}.json'
 
     builders:
+        - '{platform}-setup'
+        - shell: |
+            cd packer
+            packer build -color=false --only {platform} {image}.json
+
+- builder:
+    name: 'googlecompute-setup'
+    builders:
+        - shell: |
+            #!/bin/bash
+            exit 0
+- builder:
+    name: 'docker-setup'
+    builders:
         - shell: |
             # Clear out docker images
             docker rmi -f $(docker images -qa) || true
-        - shell: |
-            cd packer
-            packer build -color=false {image}.json
