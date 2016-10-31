@@ -50,6 +50,8 @@
                   file-paths:
                     - compare-type: ANT
                       pattern: jjb/**
+                    - compare-type: ANT
+                      pattern: packer/**
 
     builders:
         - shell: |
