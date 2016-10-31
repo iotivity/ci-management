@@ -1,7 +1,7 @@
 #!/bin/bash -eux
 set -o pipefail
 
-mkdir /var/run/sshd/
+[[ ! -d /var/run/sshd ]] && mkdir /var/run/sshd/
 
 cat << EOF > /etc/ssh/sshd_config
 Port 22
