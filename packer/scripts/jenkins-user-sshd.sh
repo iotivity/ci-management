@@ -10,7 +10,7 @@ wget -nv 'https://build.iotivity.org/ci/jnlpJars/slave.jar' -O /home/jenkins-ci/
 mkdir /home/jenkins-ci/.ssh/
 
 cat << EOF >> /home/jenkins-ci/.ssh/authorized_keys
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDJ0naz6uZp9vXJNmYZjARvRWwRbY3vBWlFhmif+6O8SvKX/9Fmh63X4eGGgqcxi9sbZIM2oLIUwoSO/oPFWJddjYpmnvN1z009EWt11FzQVYKJ4QYBVzc1yuzWeGvVE4V51YXJBEXYTidGp/t3cRxduCUuAhYmhYMzp5q0iH9zS4KcNR5aY1bSGzYRKj09FL50DMdFRFaSG9iMSfCZwd1xfOa1SkgRbJJywTWtfbbIlQL1BFXrvTYN8IiwnDTmK60HXkaj6wVzGtqWTezfxJpB3V525nfYWmdVyPJ2bqsZvIHLS1HjymgvodRpXFbWbT9XIFtTVGCvdZqihrMfHI11 iotivity-jobbuilder
+ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA7VhwOP6TYAFNf1muJbXMfVl00eFjBWgIW/8H09pyq10P6X7ss3U8M39lY5GHaVWyyH9nTPSJRM/CdPmgJhVswAJ3YEjVVkHz4Ni3xZKrb0Eeh4UlnN+iDta52vrRh+jFJNzxXmDauXH5GQzKcPsMW2zEimilWkRKJLWAQNaF1MXYrlFqvS1pfqgZlsSzGKgWwaoGTJZJkr/IZNVj/r7Y0I0S3Krzy0Hx3I5jQURXk+sIYfs0VLF+HlMVW7S83r5TEcMCVCCeQmhB5Lymt9dKSTBZITz6BsOu71Rxk5reZlexni2Eu+I98i6kbqGvr6qy/2lSo99eG0EZ5v9qqEtiRw== build.iotivity.org
 EOF
 
 chmod 700 /home/jenkins-ci/.ssh
