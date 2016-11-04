@@ -116,6 +116,7 @@ libsndfile1 \
 libssl-dev \
 libssl-doc \
 libstdc++6-4.6-dev \
+libsqlite3-dev \
 libsys-hostname-long-perl \
 libthai-data \
 libthai0 \
