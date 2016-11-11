@@ -49,6 +49,7 @@ java -jar \$HOME/swarm.jar \
  -labels \$JENKINS_LABELS \
  -passwordEnvVariable JENKINS_PASSWORD \
  -mode exclusive \
+ -fsroot \$HOME \
  -name \$HOSTNAME \
  -username \$JENKINS_USERNAME
 EOF
