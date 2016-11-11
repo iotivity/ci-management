@@ -42,8 +42,7 @@
       "only": ["googlecompute"],
       "scripts": [
         "scripts/baseline.sh",
-        "scripts/sshd.sh",
-        "scripts/jenkins-user-sshd.sh",
+        "scripts/jenkins-user-swarm.sh",
         "scripts/packages.sh",
         "scripts/shared-dependencies.sh",
         "scripts/android.sh",
