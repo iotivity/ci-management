@@ -5,7 +5,7 @@ set -o pipefail
 useradd -U -k /etc/skel -c "Jenkins User" -m jenkins-ci -d /home/jenkins-ci -s /bin/bash
 
 # Create Swarm Init Script
-cat << EOF >> /etc/init/jenkins-ci
+cat << EOF >> /etc/init/jenkins-ci.conf
 # jenkins-ci - Jenkins Swarm Client
 #
 # This service starts the Jenkins Swarm agent once the metadata server
