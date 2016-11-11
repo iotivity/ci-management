@@ -1,6 +1,8 @@
 #!/bin/bash -eux
 set -o pipefail
 
+apt-get -y -q install openssh-server
+
 [[ ! -d /var/run/sshd ]] && mkdir /var/run/sshd/
 
 cat << EOF > /etc/ssh/sshd_config
