@@ -71,4 +71,6 @@ git clone https://github.com/dascandy/hippomocks /extlibs/hippomocks-master \
 
 # mbedtls
 mkdir -p /extlibs/mbedtls
-git clone https://github.com/ARMmbed/mbedtls /extlibs/mbedtls/mbedtls
+git clone https://github.com/ARMmbed/mbedtls /extlibs/mbedtls/mbedtls \
+&& cd /extlibs/mbedtls/mbedtls \
+&& git fetch --all --tags
