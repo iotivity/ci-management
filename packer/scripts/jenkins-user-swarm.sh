@@ -19,11 +19,12 @@ stop on runlevel [!2345]
 respawn
 respawn limit 10 5
 
-env user=jenkins-ci
-env cmd=/home/jenkins-ci/jenkins-swarm.sh
+setuid jenkins-ci
+setgid jenkins-ci
+
 env HOME=/home/jenkins-ci
 
-exec su -s /bin/sh -c 'exec "\$0" "\$@"' \$user -- \$cmd
+exec /home/jenkins-ci/jenkins-swarm.sh
 EOF
 
 # Download Swarm
@@ -46,7 +47,7 @@ java -jar \$HOME/swarm.jar \
  -master http://\$JENKINS_HOSTNAME:8080/ci/ \
  -executors 1 \
  -description "IoTivity Swarm Client" \
- -labels \$JENKINS_LABELS \
+ -labels "\$JENKINS_LABELS" \
  -passwordEnvVariable JENKINS_PASSWORD \
  -mode exclusive \
  -fsroot \$HOME \
