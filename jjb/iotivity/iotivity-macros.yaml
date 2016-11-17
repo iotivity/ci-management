@@ -195,7 +195,7 @@
         - email:
             recipients: '{mailto}'
             notify-every-unstable-build: false
-            send-to-individuals: true
+            send-to-individuals: false
 
 - publisher:
     name: email-notification-unstable
