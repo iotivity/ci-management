@@ -12,23 +12,6 @@
                 - 'secured'
                 - 'unsecured'
         - 'iotivity-verify-android'
-        - 'iotivity-verify-android_{arch}':
-            disabled: true
-            arch:
-                - 'armeabi'
-                - 'x86'
-        - 'iotivity-verify-android_{arch}-{transport}':
-            disabled: true
-            arch:
-                - 'armeabi'
-                - 'x86'
-            transport:
-                - 'ip'
-                - 'bt'
-                - 'ble'
-                - 'rm_and_ip'
-                - 'rm_and_bt'
-                - 'rm_and_ble'
         - 'iotivity-verify-windows-{vs-version}':
             vs-version:
                 - 'vs2013':
@@ -38,15 +21,7 @@
         - 'iotivity-verify-unit_tests'
     component:
         - 'linux_unsecured'
-        - 'linux_unsecured_with_ra':
-            disabled: true
-        - 'linux_unsecured_with_rd':
-            disabled: true
         - 'linux_secured'
-        - 'linux_secured_with_ra':
-            disabled: true
-        - 'linux_secured_with_rd':
-            disabled: true
         - 'linux_secured_with_java':
             branch: 'generic-java'
             gerrit-branch: 'generic-java'

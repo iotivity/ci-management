@@ -30,11 +30,7 @@
                 - 'arduino'
                 - 'simulator'
                 - 'linux_unsecured_with_ra'
-                - 'linux_unsecured_with_rd':
-                    disabled: true
                 - 'linux_secured_with_ra'
-                - 'linux_secured_with_rd':
-                    disabled: true
         - 'iotivity-merge-{stream}-{component}':
             stream:
                 - '1.2-rel':
@@ -56,29 +52,6 @@
                 - '1.2-rel':
                     <<: *1_2-rel
         - 'iotivity-merge-{stream}-android'
-        - 'iotivity-merge-{stream}-android_{arch}':
-            disabled: true
-            stream:
-                - '1.1-rel':
-                    <<: *1_1-rel
-            arch:
-                - 'armeabi'
-                - 'x86'
-        - 'iotivity-merge-{stream}-android_{arch}-{transport}':
-            disabled: true
-            stream:
-                - 'master':
-                    <<: *master
-            arch:
-                - 'armeabi'
-                - 'x86'
-            transport:
-                - 'ip'
-                - 'bt'
-                - 'ble'
-                - 'rm_and_ip'
-                - 'rm_and_bt'
-                - 'rm_and_ble'
         - 'iotivity-merge-{stream}-windows-{vs-version}':
             stream:
                 - 'master':
