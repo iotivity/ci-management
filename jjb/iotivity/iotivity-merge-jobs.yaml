@@ -86,6 +86,7 @@
             credentials-id: '{ssh-credentials}'
 
     triggers:
+        - timed-twice-daily
         - gerrit-trigger-ref-updated:
             project: '{project}'
             silent: '{silent}'
@@ -123,6 +124,7 @@
             credentials-id: '{ssh-credentials}'
 
     triggers:
+        - timed-twice-daily
         - gerrit-trigger-ref-updated:
             silent: '{silent}'
             project: '{project}'
@@ -160,6 +162,7 @@
             credentials-id: '{ssh-credentials}'
 
     triggers:
+        - timed-twice-daily
         - gerrit-trigger-ref-updated:
             silent: '{silent}'
             project: '{project}'
@@ -199,6 +202,7 @@
             credentials-id: '{ssh-credentials}'
 
     triggers:
+        - timed-twice-daily
         - gerrit-trigger-ref-updated:
             silent: '{silent}'
             project: '{project}'
@@ -240,6 +244,7 @@
             credentials-id: '{ssh-credentials}'
 
     triggers:
+        - timed-twice-daily
         - gerrit-trigger-ref-updated:
             silent: '{silent}'
             project: '{project}'
@@ -279,6 +284,7 @@
             credentials-id: '{ssh-credentials}'
 
     triggers:
+        - timed-twice-daily
         - gerrit-trigger-ref-updated:
             silent: '{silent}'
             project: '{project}'
@@ -319,6 +325,7 @@
             credentials-id: '{ssh-credentials}'
 
     triggers:
+        - timed-twice-daily
         - gerrit-trigger-ref-updated:
             silent: '{silent}'
             project: '{project}'
@@ -366,6 +373,7 @@
             choosing-strategy: 'gerrit'
 
     triggers:
+        - timed-twice-daily
         - gerrit-trigger-ref-updated:
             project: '{project}'
             silent: '{silent}'
@@ -404,6 +412,7 @@
             credentials-id: '{ssh-credentials}'
 
     triggers:
+        - timed-twice-daily
         - gerrit-trigger-ref-updated:
             silent: '{silent}'
             project: '{project}'
