@@ -97,7 +97,7 @@
     builders:
         - shell:
             !include-raw-escape: include-raw-iotivity-bootstrap.sh
-        - linux:
+        - auto-build:
             component: 'linux_{security}_with_tcp'
 
     publishers:
@@ -134,7 +134,7 @@
     builders:
         - shell:
             !include-raw-escape: include-raw-iotivity-bootstrap.sh
-        - linux:
+        - auto-build:
             component: '{component}'
 
     publishers:
@@ -173,7 +173,8 @@
             !include-raw-escape: include-raw-iotivity-bootstrap.sh
         - shell:
             !include-raw-escape: include-raw-iotivity-tizen.sh
-        - tizen
+        - auto-build:
+            component: 'tizen'
 
     publishers:
         - email-notification-unstable:
@@ -250,7 +251,8 @@
     builders:
         - shell:
             !include-raw-escape: include-raw-iotivity-bootstrap.sh
-        - android
+        - auto-build:
+            component: 'android'
 
     publishers:
         - archive-artifacts:
@@ -288,8 +290,8 @@
     builders:
         - shell:
             !include-raw-escape: include-raw-iotivity-bootstrap.sh
-        - android-arch:
-            arch: '{arch}'
+        - auto-build:
+            component: 'android_{arch}'
 
     publishers:
         - archive-artifacts:

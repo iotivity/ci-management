@@ -19,7 +19,7 @@
 
 ## Builders
 - builder:
-    name: linux
+    name: auto-build
     builders:
         - shell: |
             #!/bin/bash -eux
@@ -75,46 +75,6 @@
             ./out/darwin/x86_64/debug/resource/csdk/stack/test/stacktests
 
 - builder:
-    name: tizen
-    builders:
-        - shell: |
-            #!/bin/bash -eux
-            set -o pipefail
-
-            export VERBOSE=false
-            export CCACHE_DISABLE=false
-
-            ./auto_build.sh tizen
-
-- builder:
-    name: android-arch
-    builders:
-        - shell: |
-            #!/bin/bash -eux
-            set -o pipefail
-
-            export VERBOSE=false
-            export CCACHE_DISABLE=false
-
-            if (git rev-list HEAD | grep -q 0a3b83222bfff7e44ecb60c89ce682a58a0ee762); then
-              echo "Using seperate android builds."
-            else
-              ./auto_build.sh android_{arch}
-            fi
-
-- builder:
-    name: android
-    builders:
-        - shell: |
-            #!/bin/bash -eux
-            set -o pipefail
-
-            export VERBOSE=false
-            export CCACHE_DISABLE=false
-
-            ./auto_build.sh android
-
-- builder:
     name: android-transport
     builders:
         - shell: |
@@ -164,18 +124,6 @@
                 sonar.cxx.vera.reportPath=vera-report.xml
                 sonar.cxx.cppcheck.reportPath=cppcheck-report.xml
                 sonar.cxx.rats.reportPath=rats-report.xml
-
-- builder:
-    name: linux-tcp
-    builders:
-        - shell: |
-            #!/bin/bash -eux
-            set -o pipefail
-
-            export VERBOSE=false
-            export CCACHE_DISABLE=false
-
-            ./auto_build.sh linux_unsecured_with_tcp
 
 ## Publishers
 - publisher:
