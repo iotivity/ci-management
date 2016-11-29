@@ -1,6 +1,7 @@
 - project:
     name: iotivity-upnp-bridge-verify-jobs
     project: 'iotivity-upnp-bridge-verify'
+    node: '{ubuntu-node}'
     disabled: false
     arch:
         - 'x86'
@@ -18,7 +19,7 @@
     name: 'iotivity-upnp-bridge-verify-android_{arch}-{transport}'
 
     project-type: freestyle
-    node: 'ubuntu1204'
+    node: '{node}'
     concurrent: true
     disabled: '{obj:disabled}'
 

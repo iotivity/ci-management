@@ -15,3 +15,5 @@
     gerrit-branch: '**'
 
     ssh-credentials: '6ba265b5-4270-46f3-aeaa-44b789a5d7a9'
+
+    ubuntu-node: 'ubuntu1204'
