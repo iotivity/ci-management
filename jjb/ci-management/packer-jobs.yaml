@@ -97,6 +97,8 @@
                   file-paths:
                     - compare-type: ANT
                       pattern: 'packer/{image}.json'
+                    - compare-type: ANT
+                      pattern: 'packer/scripts/*.sh'
 
     builders:
         - shell: |
