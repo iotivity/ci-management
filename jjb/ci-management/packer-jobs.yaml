@@ -6,12 +6,6 @@
     image:
         - 'linux':
             platform: 'googlecompute'
-        - 'baseline'
-        - 'arduino'
-        - 'android'
-        - 'tizen'
-    platform:
-        - 'docker'
     project: 'ci-management'
 
 - job-template:
@@ -105,20 +99,6 @@
                       pattern: 'packer/{image}.json'
 
     builders:
-        - '{platform}-setup'
         - shell: |
             cd packer
             packer build -color=false --only {platform} {image}.json
-
-- builder:
-    name: 'googlecompute-setup'
-    builders:
-        - shell: |
-            #!/bin/bash
-            exit 0
-- builder:
-    name: 'docker-setup'
-    builders:
-        - shell: |
-            # Clear out docker images
-            docker rmi -f $(docker images -qa) || true
