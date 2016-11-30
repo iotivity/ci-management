@@ -103,4 +103,4 @@
 - trigger:
     name: timed-twice-daily
     triggers:
-        - timed: "0 7,16 * * *"
+        - timed: "H 15,22 * * *"
