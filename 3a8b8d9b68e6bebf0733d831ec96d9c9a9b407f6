@@ -22,6 +22,30 @@
       "revId": "3a8b8d9b68e6bebf0733d831ec96d9c9a9b407f6",
       "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9adffdf1_07d121fb",
+        "filename": "packer/scripts/shared-dependencies.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2016-11-30T19:11:47Z",
+      "side": 1,
+      "message": "Moving forward, that\u0027s correct, but I\u0027ve noticed there a quite a few patchsets that get submitted with commit parents older than the current HEAD.\n\nWe\u0027ll remove this after a month, or when we decide to bump mbedtls to a new version.\n\nThanks!",
+      "parentUuid": "9adffdf1_27922558",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 81
+      },
+      "revId": "3a8b8d9b68e6bebf0733d831ec96d9c9a9b407f6",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
     }
   ]
 }
