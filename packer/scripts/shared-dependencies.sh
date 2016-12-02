@@ -77,3 +77,9 @@ git clone https://github.com/ARMmbed/mbedtls /extlibs/mbedtls/mbedtls \
 && cd /extlibs/mbedtls/mbedtls \
 && git fetch --all --tags \
 && echo "bbdbbda04f88545fa525490a64aac84e6cf08a6c" > .git/refs/tags/mbedtls-2.4.0
+
+# libcoap
+mkdir -p /extlibs/libcoap
+git clone https://github.com/dthaler/libcoap /extlibs/libcoap/libcoap -b IoTivity-1.2.1 \
+&& cd /extlibs/libcoap/libcoap \
+&& git fetch --all --tags
