@@ -80,6 +80,7 @@ git clone https://github.com/ARMmbed/mbedtls /extlibs/mbedtls/mbedtls \
 
 # libcoap
 mkdir -p /extlibs/libcoap
-git clone https://github.com/dthaler/libcoap /extlibs/libcoap/libcoap -b IoTivity-1.2.1 \
+git clone https://github.com/dthaler/libcoap /extlibs/libcoap/libcoap \
 && cd /extlibs/libcoap/libcoap \
-&& git fetch --all --tags
+&& git fetch --all --tags \
+&& git checkout tags/IoTivity-1.2.1
