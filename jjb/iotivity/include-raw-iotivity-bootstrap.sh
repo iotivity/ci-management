@@ -12,6 +12,7 @@ rm -rf ${WORKSPACE}/extlibs/android/ndk/android-ndk-r10d
 rm -rf ${WORKSPACE}/extlibs/android/sdk/android-sdk_r24.2
 rm -rf ${WORKSPACE}/extlibs/android/gradle/gradle-2.2.1
 rm -rf ${WORKSPACE}/extlibs/raxmpp/raxmpp
+rm -rf ${WORKSPACE}/extlibs/libcoap/libcoap
 
 if [ ! -d "${WORKSPACE}/extlibs/arduino" ]
 then
@@ -99,3 +100,9 @@ then
 	mkdir ${WORKSPACE}/extlibs/mbedtls
 fi
 cp -r ${IOTIVITYEXTLIB}/mbedtls/mbedtls ${WORKSPACE}/extlibs/mbedtls/mbedtls
+
+if [ ! -d "${WORKSPACE}/extlibs/libcoap" ]
+then
+	mkdir ${WORKSPACE}/extlibs/libcoap
+fi
+cp -r ${IOTIVITYEXTLIB}/libcoap/libcoap ${WORKSPACE}/extlibs/libcoap/libcoap
