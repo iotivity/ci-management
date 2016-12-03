@@ -16,3 +16,6 @@ ln -s ${IOTIVITYEXTLIB}/gtest/gtest-1.7.0.zip ${WORKSPACE}/extlibs/gtest/gtest-1
 # mbedtls
 mkdir -p ${WORKSPACE}/extlibs/mbedtls
 cp -r ${IOTIVITYEXTLIB}/mbedtls/mbedtls ${WORKSPACE}/extlibs/mbedtls/mbedtls
+# libcoap
+mkdir -p ${WORKSPACE}/extlibs/libcoap
+cp -r ${IOTIVITYEXTLIB}/libcoap/libcoap ${WORKSPACE}/extlibs/libcoap/libcoap

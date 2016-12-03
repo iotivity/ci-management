@@ -8,3 +8,5 @@ md %WORKSPACE%\extlibs\tinycbor\tinycbor
 xcopy /q /e C:\j\e\tinycbor\tinycbor-0.3.2 %WORKSPACE%\extlibs\tinycbor\tinycbor
 md %WORKSPACE%\extlibs\mbedtls\mbedtls
 xcopy /q /e /h C:\j\e\mbedtls\mbedtls %WORKSPACE%\extlibs\mbedtls\mbedtls
+md %WORKSPACE%\extlibs\libcoap\libcoap
+xcopy /q /e /h C:\j\e\libcoap\libcoap %WORKSPACE%\extlibs\libcoap\libcoap
