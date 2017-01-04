@@ -1,6 +1,6 @@
 - project:
     name: iotivity-upnp-bridge-verify-jobs
-    project: 'iotivity-upnp-bridge-verify'
+    project: 'iotivity-upnp-bridge'
     node: '{ubuntu-node}'
     disabled: false
     arch:
