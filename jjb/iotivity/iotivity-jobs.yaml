@@ -24,13 +24,9 @@
         - 'linux_unsecured'
         - 'linux_secured'
         - 'linux_secured_with_java':
-            branch: 'generic-java'
-            gerrit-branch: 'generic-java'
-            refspec: 'refs/heads/generic-java'
+            silent: true
         - 'linux_unsecured_with_java':
-            branch: 'generic-java'
-            gerrit-branch: 'generic-java'
-            refspec: 'refs/heads/generic-java'
+            silent: true
         - 'arduino'
         - 'simulator'
 
