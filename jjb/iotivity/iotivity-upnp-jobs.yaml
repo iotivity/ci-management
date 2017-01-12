@@ -67,6 +67,7 @@
             ./auto_build.sh android_{arch}_with_{transport}
 
     publishers:
+        - retry-build-on-builder-error
         - archive-artifacts:
             artifacts: 'android/android_api/base/build/outputs/**/*.xml, android/android_api/base/build/outputs/**/*.html'
         - email-notification:

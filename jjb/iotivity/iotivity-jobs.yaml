@@ -79,6 +79,7 @@
             component: 'linux_{security}_with_tcp'
 
     publishers:
+        - retry-build-on-builder-error
         - email-notification:
             mailto: 'oicbuild@intel.com'
 
@@ -116,6 +117,7 @@
             component: '{component}'
 
     publishers:
+        - retry-build-on-builder-error
         - email-notification:
             mailto: 'oicbuild@intel.com'
 
@@ -155,6 +157,7 @@
             component: 'tizen'
 
     publishers:
+        - retry-build-on-builder-error
         - email-notification:
             mailto: 'oicbuild@intel.com'
 
@@ -192,6 +195,7 @@
         - unit-tests
 
     publishers:
+        - retry-build-on-builder-error
         - valgrind-report
         - xunit-report
         - archive-artifacts:
@@ -233,6 +237,7 @@
             component: 'android'
 
     publishers:
+        - retry-build-on-builder-error
         - archive-artifacts:
             artifacts: 'android/android_api/base/build/outputs/**/*.xml, android/android_api/base/build/outputs/**/*.html'
         - email-notification:
@@ -272,6 +277,7 @@
             component: 'android_{arch}'
 
     publishers:
+        - retry-build-on-builder-error
         - archive-artifacts:
             artifacts: 'android/android_api/base/build/outputs/**/*.xml, android/android_api/base/build/outputs/**/*.html'
         - email-notification:
@@ -312,6 +318,7 @@
             transport: '{transport}'
 
     publishers:
+        - retry-build-on-builder-error
         - archive-artifacts:
             artifacts: 'android/android_api/base/build/outputs/**/*.xml, android/android_api/base/build/outputs/**/*.html'
         - email-notification:
@@ -380,6 +387,7 @@
             builders:
                 - windows-kill-unit-tests:
                     msvc-version: '{msvc-version}'
+        - retry-build-on-builder-error
         - email-notification:
             mailto: 'oicbuild@intel.com'
 
@@ -417,6 +425,7 @@
         - osx
 
     publishers:
+        - retry-build-on-builder-error
         - valgrind-report
         - xunit-report
         - archive-artifacts:
@@ -458,5 +467,6 @@
             component: 'linux_{security}_with_java'
 
     publishers:
+        - retry-build-on-builder-error
         - email-notification:
             mailto: 'oicbuild@intel.com'

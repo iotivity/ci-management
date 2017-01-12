@@ -181,3 +181,10 @@
                     fail-if-not-new: false
                     deleteoutput: true
                     stoponerror: false
+
+- publisher:
+    name: retry-build-on-builder-error
+    publishers:
+        - naginator:
+            regular-expression: "ERROR: Connection was broken: java.io.EOFException"
+            max-failed-builds: 2
