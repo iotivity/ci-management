@@ -9,11 +9,11 @@
         - 'iotivity-verify-osx'
         - 'iotivity-verify-tizen'
         - 'iotivity-verify-linux_{security}_with_tcp':
-            gerrit-branch: 'master'
             security:
                 - 'secured'
                 - 'unsecured'
         - 'iotivity-verify-linux_{security}_with_java':
+            gerrit-branch: 'master'
             security:
                 - 'secured'
                 - 'unsecured'
@@ -426,12 +426,6 @@
 
 - job-template:
     name: 'iotivity-verify-linux_{security}_with_java'
-
-    triggers:
-        - gerrit-trigger-patch-submitted:
-            silent: '{silent}'
-            project: '{project}'
-            branch: '{gerrit-branch}'
 
     project-type: freestyle
     node: '{node}'
