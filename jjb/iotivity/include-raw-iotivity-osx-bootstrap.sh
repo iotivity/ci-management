@@ -13,6 +13,7 @@ ln -s "${IOTIVITYEXTLIB}/tinycbor/tinycbor-${TINYCBOR_VERSION}" ${WORKSPACE}/ext
 # gtest
 unzip -oq ${IOTIVITYEXTLIB}/gtest/gtest-1.7.0.zip -d ${WORKSPACE}/extlibs/gtest
 ln -s ${IOTIVITYEXTLIB}/gtest/gtest-1.7.0.zip ${WORKSPACE}/extlibs/gtest/gtest-1.7.0.zip
+ln -s ${IOTIVITYEXTLIB}/gtest/gtest-1.7.0.zip ${WORKSPACE}/extlibs/gtest/release-1.7.0.zip
 # mbedtls
 mkdir -p ${WORKSPACE}/extlibs/mbedtls
 cp -r ${IOTIVITYEXTLIB}/mbedtls/mbedtls ${WORKSPACE}/extlibs/mbedtls/mbedtls
