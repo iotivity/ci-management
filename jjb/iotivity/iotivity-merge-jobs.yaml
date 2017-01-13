@@ -41,6 +41,13 @@
                 - 'linux_secured'
                 - 'arduino'
                 - 'simulator'
+        - 'iotivity-merge-{stream}-{component}':
+            stream:
+                - 'master':
+                    <<: *master
+            component:
+                - 'linux_unsecured_with_java'
+                - 'linux_secured_with_java'
         - 'iotivity-merge-{stream}-osx'
         - 'iotivity-merge-{stream}-tizen'
         - 'iotivity-merge-{stream}-linux_{security}_with_tcp':
