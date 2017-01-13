@@ -103,6 +103,7 @@
             component: 'linux_{security}_with_tcp'
 
     publishers:
+        - retry-build-on-builder-error
         - email-notification-unstable:
             mailto: '{mailto}'
 
@@ -141,6 +142,7 @@
             component: '{component}'
 
     publishers:
+        - retry-build-on-builder-error
         - email-notification-unstable:
             mailto: '{mailto}'
 
@@ -181,6 +183,7 @@
             component: 'tizen'
 
     publishers:
+        - retry-build-on-builder-error
         - email-notification-unstable:
             mailto: '{mailto}'
 
@@ -219,6 +222,7 @@
         - unit-tests
 
     publishers:
+        - retry-build-on-builder-error
         - valgrind-report
         - xunit-report
         - archive-artifacts:
@@ -261,6 +265,7 @@
             component: 'android'
 
     publishers:
+        - retry-build-on-builder-error
         - archive-artifacts:
             artifacts: 'android/android_api/base/build/outputs/**/*.xml, android/android_api/base/build/outputs/**/*.html'
         - email-notification-unstable:
@@ -301,6 +306,7 @@
             component: 'android_{arch}'
 
     publishers:
+        - retry-build-on-builder-error
         - archive-artifacts:
             artifacts: 'android/android_api/base/build/outputs/**/*.xml, android/android_api/base/build/outputs/**/*.html'
         - email-notification-unstable:
@@ -343,6 +349,7 @@
             transport: '{transport}'
 
     publishers:
+        - retry-build-on-builder-error
         - archive-artifacts:
             artifacts: 'android/android_api/base/build/outputs/**/*.xml, android/android_api/base/build/outputs/**/*.html'
         - email-notification-unstable:
@@ -391,6 +398,7 @@
             msvc-version: '{msvc-version}'
 
     publishers:
+        - retry-build-on-builder-error
         - email-notification-unstable:
             mailto: '{mailto}'
 
@@ -429,6 +437,7 @@
         - osx
 
     publishers:
+        - retry-build-on-builder-error
         - valgrind-report
         - xunit-report
         - archive-artifacts:
@@ -472,6 +481,7 @@
         - sonar-runner
 
     publishers:
+        - retry-build-on-builder-error
         - archive-artifacts:
             artifacts: '*-report.xml'
         - email-notification-unstable:
