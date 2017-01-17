@@ -110,15 +110,15 @@
             properties: |
                 sonar.projectKey=iotivity:master
                 sonar.projectName=Iotivity
-                sonar.projectVersion=1.1.0
+                sonar.projectVersion=1.2.0
 
-                sonar.sources=resource,service,examples,android,build_common,tools
+                sonar.sources=resource,service,examples,java,build_common,tools
                 sonar.language=c++
 
                 sonar.cxx.compiler.parser=GCC
                 sonar.cxx.errorRecoveryEnabled=True
 
-                sonar.cxx.includeDirectories=resource,service,examples,android,build_common,tools
+                sonar.cxx.includeDirectories=resource,service,examples,java,build_common,tools
 
                 sonar.cxx.valgrind.reportPath=*.memcheck
                 sonar.cxx.vera.reportPath=vera-report.xml
