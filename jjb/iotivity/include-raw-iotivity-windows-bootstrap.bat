@@ -13,7 +13,7 @@ xcopy /q /e C:\j\e\boost\* %WORKSPACE%\extlibs\boost\boost
 echo "done"
 echo | set /p="tinycbor..."
 md %WORKSPACE%\extlibs\tinycbor\tinycbor
-xcopy /q /e C:\j\e\tinycbor\tinycbor-0.3.2 %WORKSPACE%\extlibs\tinycbor\tinycbor
+xcopy /q /e C:\j\e\tinycbor\tinycbor-0.4 %WORKSPACE%\extlibs\tinycbor\tinycbor
 echo "done"
 echo | set /p="mbedtls..."
 md %WORKSPACE%\extlibs\mbedtls\mbedtls
