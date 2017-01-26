@@ -1,0 +1,10 @@
+Verified+1: jenkins-iotivity <jenkins@iotivity.org>
+Code-Review+1: Pawel Winogrodzki <pawelwi@microsoft.com>
+Code-Review+1: Andrew Grimberg <agrimberg@linuxfoundation.org>
+Code-Review+1: Ry Jones <rjones@linuxfoundation.org>
+Code-Review+2: C.J. Collier <cjcollier@linuxfoundation.org>
+Submitted-by: C.J. Collier <cjcollier@linuxfoundation.org>
+Submitted-at: Thu, 26 Jan 2017 00:51:59 +0000
+Reviewed-on: https://gerrit.iotivity.org/gerrit/16767
+Project: ci-management
+Branch: refs/heads/master
