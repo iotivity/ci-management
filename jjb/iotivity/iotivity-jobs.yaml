@@ -164,6 +164,11 @@
 - job-template:
     name: 'iotivity-verify-unit_tests'
 
+    properties:
+        - throttle:
+            max-total: 1
+            option: project
+
     project-type: freestyle
     node: '{node}'
     concurrent: true
