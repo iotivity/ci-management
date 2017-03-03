@@ -166,7 +166,7 @@
 
     properties:
         - throttle:
-            max-total: 1
+            max-total: 4
             option: project
 
     project-type: freestyle
