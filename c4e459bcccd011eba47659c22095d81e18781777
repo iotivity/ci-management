@@ -1,0 +1,10 @@
+Code-Review+1: Ryan Day <rday@linuxfoundation.org>
+Code-Review+1: Phil Coval <philippe.coval@osg.samsung.com>
+Code-Review+2: C.J. Collier <cjcollier@linuxfoundation.org>
+Verified+1: C.J. Collier <cjcollier@linuxfoundation.org>
+Code-Review+1: Greg Zaverucha <gregz@microsoft.com>
+Submitted-by: C.J. Collier <cjcollier@linuxfoundation.org>
+Submitted-at: Sat, 04 Mar 2017 00:57:28 +0000
+Reviewed-on: https://gerrit.iotivity.org/gerrit/17673
+Project: ci-management
+Branch: refs/heads/master
