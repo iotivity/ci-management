@@ -1,13 +1,14 @@
+---
 # Global Jenkins Defaults
 - defaults:
     name: global
 
     properties:
-        - build-discarder:
-            days-to-keep: 60
-            num-to-keep: -1
-            artifact-days-to-keep: 60
-            artifact-num-to-keep: -1
+      - build-discarder:
+          days-to-keep: 60
+          num-to-keep: -1
+          artifact-days-to-keep: 60
+          artifact-num-to-keep: -1
 
     silent: false
     branch: 'master'
