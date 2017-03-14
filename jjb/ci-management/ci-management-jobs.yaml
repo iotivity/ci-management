@@ -1,8 +1,9 @@
+---
 - project:
     name: ci-management-jobs
     jobs:
-        - 'ci-management-verify-jjb'
-        - 'ci-management-merge'
+      - 'ci-management-verify-jjb'
+      - 'ci-management-merge'
     project: 'ci-management'
 
 - job-template:
@@ -13,55 +14,55 @@
     concurrent: true
 
     parameters:
-        - gerrit-project:
-            project: '{project}'
-            branch: '{branch}'
-            refspec: '{refspec}'
+      - gerrit-project:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: '{refspec}'
 
     scm:
-        - gerrit-ci-management-scm:
-            credentials-id: '{ssh-credentials}'
-            refspec: '$GERRIT_REFSPEC'
-            choosing-strategy: 'gerrit'
+      - gerrit-ci-management-scm:
+          credentials-id: '{ssh-credentials}'
+          refspec: '$GERRIT_REFSPEC'
+          choosing-strategy: 'gerrit'
 
     wrappers:
-        - ssh-agent-credentials:
-            users:
-                - '{ssh-credentials}'
+      - ssh-agent-credentials:
+          users:
+            - '{ssh-credentials}'
 
     triggers:
-        - gerrit:
-            trigger-on:
-                - patchset-created-event:
-                    exclude-drafts: 'false'
-                    exclude-trivial-rebase: 'false'
-                    exclude-no-code-change: 'false'
-                - draft-published-event
-                - comment-added-contains-event:
-                    comment-contains-value: 'recheck'
-                - comment-added-contains-event:
-                    comment-contains-value: 'reverify'
-            projects:
-                - project-compare-type: 'ANT'
-                  project-pattern: 'ci-management'
-                  branches:
-                    - branch-compare-type: 'ANT'
-                      branch-pattern: '**/master'
-                  file-paths:
-                    - compare-type: ANT
-                      pattern: jjb/**
-                    - compare-type: ANT
-                      pattern: packer/**
+      - gerrit:
+          trigger-on:
+            - patchset-created-event:
+                exclude-drafts: 'false'
+                exclude-trivial-rebase: 'false'
+                exclude-no-code-change: 'false'
+            - draft-published-event
+            - comment-added-contains-event:
+                comment-contains-value: 'recheck'
+            - comment-added-contains-event:
+                comment-contains-value: 'reverify'
+          projects:
+            - project-compare-type: 'ANT'
+              project-pattern: 'ci-management'
+              branches:
+                - branch-compare-type: 'ANT'
+                  branch-pattern: '**/master'
+              file-paths:
+                - compare-type: ANT
+                  pattern: jjb/**
+                - compare-type: ANT
+                  pattern: packer/**
 
     builders:
-        - shell: |
-            $WORKSPACE/scripts/check-unicode.sh jjb/
-        - shell: |
-            jenkins-jobs test -r jjb -o job_output
-        - shell:
-            !include-raw-escape: generate-job-diff.sh
-        - gerrit-comment:
-            file: 'job_diff.txt'
+      - shell: |
+          $WORKSPACE/scripts/check-unicode.sh jjb/
+      - shell: |
+          jenkins-jobs test -r jjb -o job_output
+      - shell:
+          !include-raw-escape: generate-job-diff.sh
+      - gerrit-comment:
+          file: 'job_diff.txt'
 
 - job-template:
     name: 'ci-management-merge'
@@ -70,46 +71,46 @@
     node: master
 
     parameters:
-        - gerrit-project:
-            project: '{project}'
-            branch: '{branch}'
-            refspec: '{refspec}'
+      - gerrit-project:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: '{refspec}'
 
     scm:
-        - gerrit-ci-management-scm:
-            credentials-id: '{ssh-credentials}'
+      - gerrit-ci-management-scm:
+          credentials-id: '{ssh-credentials}'
 
     wrappers:
-        - ssh-agent-credentials:
-            users:
-                - '{ssh-credentials}'
+      - ssh-agent-credentials:
+          users:
+            - '{ssh-credentials}'
 
     triggers:
-        - gerrit:
-            trigger-on:
-                - change-merged-event
-                - comment-added-contains-event:
-                    comment-contains-value: 'remerge'
-            projects:
-                - project-compare-type: 'ANT'
-                  project-pattern: 'ci-management'
-                  branches:
-                    - branch-compare-type: 'ANT'
-                      branch-pattern: '**/master'
-                  file-paths:
-                    - compare-type: ANT
-                      pattern: jjb/**
-                    - compare-type: ANT
-                      pattern: packer/**
+      - gerrit:
+          trigger-on:
+            - change-merged-event
+            - comment-added-contains-event:
+                comment-contains-value: 'remerge'
+          projects:
+            - project-compare-type: 'ANT'
+              project-pattern: 'ci-management'
+              branches:
+                - branch-compare-type: 'ANT'
+                  branch-pattern: '**/master'
+              file-paths:
+                - compare-type: ANT
+                  pattern: jjb/**
+                - compare-type: ANT
+                  pattern: packer/**
 
     builders:
-        - shell:
-            jenkins-jobs update --workers 0 --delete-old --recursive jjb/
+      - shell:
+          jenkins-jobs update --workers 0 --delete-old --recursive jjb/
 
 - builder:
     name: 'gerrit-comment'
     builders:
-        - shell: |
+      - shell: |
             #!/bin/bash
 
             if [ -s "{file}" -a -n "$GERRIT_PATCHSET_REVISION" ]; then
