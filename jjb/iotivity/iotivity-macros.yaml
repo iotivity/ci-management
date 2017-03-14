@@ -1,27 +1,28 @@
+---
 # IoTivity Macros
 
 ## Wrappers
 - wrapper:
     name: build-timeout
     wrappers:
-        - timeout:
-            type: no-activity
-            timeout: 10
-            abort: true
+      - timeout:
+          type: no-activity
+          timeout: 10
+          abort: true
 
 - wrapper:
     name: build-timeout-fail
     wrappers:
-        - timeout:
-            type: no-activity
-            timeout: 10
-            fail: true
+      - timeout:
+          type: no-activity
+          timeout: 10
+          fail: true
 
 ## Builders
 - builder:
     name: auto-build
     builders:
-        - shell: |
+      - shell: |
             #!/bin/bash -eux
             set -o pipefail
 
@@ -33,7 +34,7 @@
 - builder:
     name: windows
     builders:
-        - batch: |
+      - batch: |
             @echo off
             set MSVC_VERSION={msvc-version}
             set TARGET_ARCH=amd64
@@ -50,7 +51,7 @@
 - builder:
     name: windows-kill-unit-tests
     builders:
-        - batch: |
+      - batch: |
             IF "{msvc-version}" == "12.0" (
               taskkill /F /IM "unittests.exe"
             )
@@ -58,7 +59,7 @@
 - builder:
     name: osx
     builders:
-        - shell: |
+      - shell: |
             #!/bin/bash -eux
             set -o pipefail
 
@@ -77,7 +78,7 @@
 - builder:
     name: android-transport
     builders:
-        - shell: |
+      - shell: |
             #!/bin/bash -eux
             set -o pipefail
 
@@ -93,7 +94,7 @@
 - builder:
     name: unit-tests
     builders:
-        - shell: |
+      - shell: |
             #!/bin/bash -eux
             set -o pipefail
 
@@ -105,64 +106,64 @@
 - builder:
     name: sonar-runner
     builders:
-        - sonar:
-            sonar-name: Sonar
-            properties: |
-                sonar.projectKey=iotivity:master
-                sonar.projectName=Iotivity
-                sonar.projectVersion=1.2.0
+      - sonar:
+          sonar-name: Sonar
+          properties: |
+            sonar.projectKey=iotivity:master
+            sonar.projectName=Iotivity
+            sonar.projectVersion=1.2.0
 
-                sonar.sources=resource,service,examples,java,build_common,tools
-                sonar.language=c++
+            sonar.sources=resource,service,examples,java,build_common,tools
+            sonar.language=c++
 
-                sonar.cxx.compiler.parser=GCC
-                sonar.cxx.errorRecoveryEnabled=True
+            sonar.cxx.compiler.parser=GCC
+            sonar.cxx.errorRecoveryEnabled=True
 
-                sonar.cxx.includeDirectories=resource,service,examples,java,build_common,tools
+            sonar.cxx.includeDirectories=resource,service,examples,java,build_common,tools
 
-                sonar.cxx.valgrind.reportPath=*.memcheck
-                sonar.cxx.vera.reportPath=vera-report.xml
-                sonar.cxx.cppcheck.reportPath=cppcheck-report.xml
-                sonar.cxx.rats.reportPath=rats-report.xml
+            sonar.cxx.valgrind.reportPath=*.memcheck
+            sonar.cxx.vera.reportPath=vera-report.xml
+            sonar.cxx.cppcheck.reportPath=cppcheck-report.xml
+            sonar.cxx.rats.reportPath=rats-report.xml
 
 ## Publishers
 - publisher:
     name: archive-artifacts
     publishers:
-        - archive:
-            artifacts: '{artifacts}'
-            latest-only: false
-            allow-empty: true
-            only-if-successful: false
-            fingerprint: true
-            default-excludes: true
+      - archive:
+          artifacts: '{artifacts}'
+          latest-only: false
+          allow-empty: true
+          only-if-successful: false
+          fingerprint: true
+          default-excludes: true
 
 - publisher:
     name: email-notification
     publishers:
-        - email:
-            recipients: '{mailto}'
-            notify-every-unstable-build: false
-            send-to-individuals: false
+      - email:
+          recipients: '{mailto}'
+          notify-every-unstable-build: false
+          send-to-individuals: false
 
 - publisher:
     name: email-notification-unstable
     publishers:
-        - email:
-            recipients: '{mailto}'
-            notify-every-unstable-build: true
-            send-to-individuals: true
+      - email:
+          recipients: '{mailto}'
+          notify-every-unstable-build: true
+          send-to-individuals: true
 
 - publisher:
     name: valgrind-report
     publishers:
-        - valgrind:
-            pattern: '*.memcheck'
-            thresholds:
-                failed:
-                    invalid-read-write: 0
-                    definitely-lost: 20
-                    total: 50
+      - valgrind:
+          pattern: '*.memcheck'
+          thresholds:
+            failed:
+              invalid-read-write: 0
+              definitely-lost: 20
+              total: 50
             fail-no-reports: false
             fail-invalid-reports: false
             publish-if-aborted: true
@@ -171,20 +172,20 @@
 - publisher:
     name: xunit-report
     publishers:
-        - xunit:
-            thresholdmode: '1'
-            test-time-margin: 3000
-            types:
-                - gtest:
-                    pattern: 'out/**/test_out/*.xml'
-                    skip-if-no-test-files: true
-                    fail-if-not-new: false
-                    deleteoutput: true
-                    stoponerror: false
+      - xunit:
+          thresholdmode: '1'
+          test-time-margin: 3000
+          types:
+            - gtest:
+                pattern: 'out/**/test_out/*.xml'
+                skip-if-no-test-files: true
+                fail-if-not-new: false
+                deleteoutput: true
+                stoponerror: false
 
 - publisher:
     name: retry-build-on-builder-error
     publishers:
-        - naginator:
-            regular-expression: "ERROR: Connection was broken: java.io.EOFException"
-            max-failed-builds: 2
+      - naginator:
+          regular-expression: "ERROR: Connection was broken: java.io.EOFException"
+          max-failed-builds: 2

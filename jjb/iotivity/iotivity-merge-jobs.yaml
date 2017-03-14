@@ -1,79 +1,80 @@
+---
 - project:
     name: iotivity-merge-master-jobs
     project: 'iotivity'
     node: '{ubuntu-node}'
     stream:
-        - 'master': &master
-            branch: 'master'
-            refspec: 'refs/heads/master'
-            gerrit-branch: 'master'
-        - '1.1-rel': &1_1-rel
-            branch: '1.1-rel'
-            refspec: 'refs/heads/1.1-rel'
-            gerrit-branch: '1.1-rel'
-        - '1.2-rel': &1_2-rel
-            branch: '1.2-rel'
-            refspec: 'refs/heads/1.2-rel'
-            gerrit-branch: '1.2-rel'
+      - 'master': &master
+          branch: 'master'
+          refspec: 'refs/heads/master'
+          gerrit-branch: 'master'
+      - '1.1-rel': &1_1-rel
+          branch: '1.1-rel'
+          refspec: 'refs/heads/1.1-rel'
+          gerrit-branch: '1.1-rel'
+      - '1.2-rel': &1_2-rel
+          branch: '1.2-rel'
+          refspec: 'refs/heads/1.2-rel'
+          gerrit-branch: '1.2-rel'
     silent: true
     disabled: false
     mailto: 'oicbuild@intel.com, tbramwell@linuxfoundation.org'
     jobs:
-        - 'iotivity-merge-{stream}-{component}':
-            stream:
-                - 'master':
-                    <<: *master
-                - '1.1-rel':
-                    <<: *1_1-rel
-            component:
-                - 'linux_unsecured'
-                - 'linux_secured'
-                - 'arduino'
-                - 'simulator'
-                - 'linux_unsecured_with_ra'
-                - 'linux_secured_with_ra'
-        - 'iotivity-merge-{stream}-{component}':
-            stream:
-                - '1.2-rel':
-                    <<: *1_2-rel
-            component:
-                - 'linux_unsecured'
-                - 'linux_secured'
-                - 'arduino'
-                - 'simulator'
-        - 'iotivity-merge-{stream}-{component}':
-            stream:
-                - 'master':
-                    <<: *master
-            component:
-                - 'linux_unsecured_with_java'
-                - 'linux_secured_with_java'
-        - 'iotivity-merge-{stream}-osx'
-        - 'iotivity-merge-{stream}-tizen'
-        - 'iotivity-merge-{stream}-linux_{security}_with_tcp':
-            security:
-              - 'unsecured'
-              - 'secured'
-            stream:
-                - 'master':
-                    <<: *master
-                - '1.2-rel':
-                    <<: *1_2-rel
-        - 'iotivity-merge-{stream}-android'
-        - 'iotivity-merge-{stream}-windows-{vs-version}':
-            stream:
-                - 'master':
-                    <<: *master
-                - '1.2-rel':
-                    <<: *1_2-rel
-            vs-version:
-                - 'vs2013':
-                    msvc-version: '12.0'
-                - 'vs2015':
-                    msvc-version: '14.0'
-        - 'iotivity-merge-{stream}-unit_tests'
-        - 'iotivity-sonar-runner':
-            gerrit-branch: 'master'
+      - 'iotivity-merge-{stream}-{component}':
+          stream:
+            - 'master':
+                <<: *master
+            - '1.1-rel':
+                <<: *1_1-rel
+          component:
+            - 'linux_unsecured'
+            - 'linux_secured'
+            - 'arduino'
+            - 'simulator'
+            - 'linux_unsecured_with_ra'
+            - 'linux_secured_with_ra'
+      - 'iotivity-merge-{stream}-{component}':
+          stream:
+            - '1.2-rel':
+                <<: *1_2-rel
+          component:
+            - 'linux_unsecured'
+            - 'linux_secured'
+            - 'arduino'
+            - 'simulator'
+      - 'iotivity-merge-{stream}-{component}':
+          stream:
+            - 'master':
+                <<: *master
+          component:
+            - 'linux_unsecured_with_java'
+            - 'linux_secured_with_java'
+      - 'iotivity-merge-{stream}-osx'
+      - 'iotivity-merge-{stream}-tizen'
+      - 'iotivity-merge-{stream}-linux_{security}_with_tcp':
+          security:
+            - 'unsecured'
+            - 'secured'
+          stream:
+            - 'master':
+                <<: *master
+            - '1.2-rel':
+                <<: *1_2-rel
+      - 'iotivity-merge-{stream}-android'
+      - 'iotivity-merge-{stream}-windows-{vs-version}':
+          stream:
+            - 'master':
+                <<: *master
+            - '1.2-rel':
+                <<: *1_2-rel
+          vs-version:
+            - 'vs2013':
+                msvc-version: '12.0'
+            - 'vs2015':
+                msvc-version: '14.0'
+      - 'iotivity-merge-{stream}-unit_tests'
+      - 'iotivity-sonar-runner':
+          gerrit-branch: 'master'
 
 - job-template:
     name: 'iotivity-merge-{stream}-linux_{security}_with_tcp'
@@ -84,35 +85,35 @@
     disabled: '{obj:disabled}'
 
     parameters:
-        - gerrit-project:
-            project: '{project}'
-            branch: '{branch}'
-            refspec: '{refspec}'
+      - gerrit-project:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: '{refspec}'
 
     scm:
-        - gerrit-branch-scm:
-            credentials-id: '{ssh-credentials}'
+      - gerrit-branch-scm:
+          credentials-id: '{ssh-credentials}'
 
     triggers:
-        - timed-twice-daily
-        - gerrit-trigger-ref-updated:
-            project: '{project}'
-            silent: '{silent}'
-            branch: '{gerrit-branch}'
+      - timed-twice-daily
+      - gerrit-trigger-ref-updated:
+          project: '{project}'
+          silent: '{silent}'
+          branch: '{gerrit-branch}'
 
     wrappers:
-        - timestamps
+      - timestamps
 
     builders:
-        - shell:
-            !include-raw-escape: include-raw-iotivity-bootstrap.sh
-        - auto-build:
-            component: 'linux_{security}_with_tcp'
+      - shell:
+          !include-raw-escape: include-raw-iotivity-bootstrap.sh
+      - auto-build:
+          component: 'linux_{security}_with_tcp'
 
     publishers:
-        - retry-build-on-builder-error
-        - email-notification-unstable:
-            mailto: '{mailto}'
+      - retry-build-on-builder-error
+      - email-notification-unstable:
+          mailto: '{mailto}'
 
 - job-template:
     name: 'iotivity-merge-{stream}-{component}'
@@ -123,35 +124,35 @@
     disabled: '{obj:disabled}'
 
     parameters:
-        - gerrit-project:
-            project: '{project}'
-            branch: '{branch}'
-            refspec: '{refspec}'
+      - gerrit-project:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: '{refspec}'
 
     scm:
-        - gerrit-branch-scm:
-            credentials-id: '{ssh-credentials}'
+      - gerrit-branch-scm:
+          credentials-id: '{ssh-credentials}'
 
     triggers:
-        - timed-twice-daily
-        - gerrit-trigger-ref-updated:
-            silent: '{silent}'
-            project: '{project}'
-            branch: '{gerrit-branch}'
+      - timed-twice-daily
+      - gerrit-trigger-ref-updated:
+          silent: '{silent}'
+          project: '{project}'
+          branch: '{gerrit-branch}'
 
     wrappers:
-        - timestamps
+      - timestamps
 
     builders:
-        - shell:
-            !include-raw-escape: include-raw-iotivity-bootstrap.sh
-        - auto-build:
-            component: '{component}'
+      - shell:
+          !include-raw-escape: include-raw-iotivity-bootstrap.sh
+      - auto-build:
+          component: '{component}'
 
     publishers:
-        - retry-build-on-builder-error
-        - email-notification-unstable:
-            mailto: '{mailto}'
+      - retry-build-on-builder-error
+      - email-notification-unstable:
+          mailto: '{mailto}'
 
 - job-template:
     name: 'iotivity-merge-{stream}-tizen'
@@ -162,37 +163,37 @@
     disabled: '{obj:disabled}'
 
     parameters:
-        - gerrit-project:
-            project: '{project}'
-            branch: '{branch}'
-            refspec: '{refspec}'
+      - gerrit-project:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: '{refspec}'
 
     scm:
-        - gerrit-branch-scm:
-            credentials-id: '{ssh-credentials}'
+      - gerrit-branch-scm:
+          credentials-id: '{ssh-credentials}'
 
     triggers:
-        - timed-twice-daily
-        - gerrit-trigger-ref-updated:
-            silent: '{silent}'
-            project: '{project}'
-            branch: '{gerrit-branch}'
+      - timed-twice-daily
+      - gerrit-trigger-ref-updated:
+          silent: '{silent}'
+          project: '{project}'
+          branch: '{gerrit-branch}'
 
     wrappers:
-        - timestamps
+      - timestamps
 
     builders:
-        - shell:
-            !include-raw-escape: include-raw-iotivity-bootstrap.sh
-        - shell:
-            !include-raw-escape: include-raw-iotivity-tizen.sh
-        - auto-build:
-            component: 'tizen'
+      - shell:
+          !include-raw-escape: include-raw-iotivity-bootstrap.sh
+      - shell:
+          !include-raw-escape: include-raw-iotivity-tizen.sh
+      - auto-build:
+          component: 'tizen'
 
     publishers:
-        - retry-build-on-builder-error
-        - email-notification-unstable:
-            mailto: '{mailto}'
+      - retry-build-on-builder-error
+      - email-notification-unstable:
+          mailto: '{mailto}'
 
 - job-template:
     name: 'iotivity-merge-{stream}-unit_tests'
@@ -203,39 +204,39 @@
     disabled: '{obj:disabled}'
 
     parameters:
-        - gerrit-project:
-            project: '{project}'
-            branch: '{branch}'
-            refspec: '{refspec}'
+      - gerrit-project:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: '{refspec}'
 
     scm:
-        - gerrit-branch-scm:
-            credentials-id: '{ssh-credentials}'
+      - gerrit-branch-scm:
+          credentials-id: '{ssh-credentials}'
 
     triggers:
-        - timed-twice-daily
-        - gerrit-trigger-ref-updated:
-            silent: '{silent}'
-            project: '{project}'
-            branch: '{gerrit-branch}'
+      - timed-twice-daily
+      - gerrit-trigger-ref-updated:
+          silent: '{silent}'
+          project: '{project}'
+          branch: '{gerrit-branch}'
 
     wrappers:
-        - timestamps
-        - build-timeout
+      - timestamps
+      - build-timeout
 
     builders:
-        - shell:
-            !include-raw-escape: include-raw-iotivity-bootstrap.sh
-        - unit-tests
+      - shell:
+          !include-raw-escape: include-raw-iotivity-bootstrap.sh
+      - unit-tests
 
     publishers:
-        - retry-build-on-builder-error
-        - valgrind-report
-        - xunit-report
-        - archive-artifacts:
-            artifacts: '*.memcheck, out/**/test_out/*.xml'
-        - email-notification-unstable:
-            mailto: '{mailto}'
+      - retry-build-on-builder-error
+      - valgrind-report
+      - xunit-report
+      - archive-artifacts:
+          artifacts: '*.memcheck, out/**/test_out/*.xml'
+      - email-notification-unstable:
+          mailto: '{mailto}'
 
 - job-template:
     name: 'iotivity-merge-{stream}-android'
@@ -246,37 +247,37 @@
     disabled: '{obj:disabled}'
 
     parameters:
-        - gerrit-project:
-            project: '{project}'
-            branch: '{branch}'
-            refspec: '{refspec}'
+      - gerrit-project:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: '{refspec}'
 
     scm:
-        - gerrit-branch-scm:
-            credentials-id: '{ssh-credentials}'
+      - gerrit-branch-scm:
+          credentials-id: '{ssh-credentials}'
 
     triggers:
-        - timed-twice-daily
-        - gerrit-trigger-ref-updated:
-            silent: '{silent}'
-            project: '{project}'
-            branch: '{gerrit-branch}'
+      - timed-twice-daily
+      - gerrit-trigger-ref-updated:
+          silent: '{silent}'
+          project: '{project}'
+          branch: '{gerrit-branch}'
 
     wrappers:
-        - timestamps
+      - timestamps
 
     builders:
-        - shell:
-            !include-raw-escape: include-raw-iotivity-bootstrap.sh
-        - auto-build:
-            component: 'android'
+      - shell:
+          !include-raw-escape: include-raw-iotivity-bootstrap.sh
+      - auto-build:
+          component: 'android'
 
     publishers:
-        - retry-build-on-builder-error
-        - archive-artifacts:
-            artifacts: 'android/android_api/base/build/outputs/**/*.xml, android/android_api/base/build/outputs/**/*.html'
-        - email-notification-unstable:
-            mailto: '{mailto}'
+      - retry-build-on-builder-error
+      - archive-artifacts:
+          artifacts: 'android/android_api/base/build/outputs/**/*.xml, android/android_api/base/build/outputs/**/*.html'
+      - email-notification-unstable:
+          mailto: '{mailto}'
 
 - job-template:
     name: 'iotivity-merge-{stream}-android_{arch}'
@@ -287,38 +288,37 @@
     disabled: '{obj:disabled}'
 
     parameters:
-        - gerrit-project:
-            project: '{project}'
-            branch: '{branch}'
-            refspec: '{refspec}'
+      - gerrit-project:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: '{refspec}'
 
     scm:
-        - gerrit-branch-scm:
-            credentials-id: '{ssh-credentials}'
+      - gerrit-branch-scm:
+          credentials-id: '{ssh-credentials}'
 
     triggers:
-        - timed-twice-daily
-        - gerrit-trigger-ref-updated:
-            silent: '{silent}'
-            project: '{project}'
-            branch: '{gerrit-branch}'
+      - timed-twice-daily
+      - gerrit-trigger-ref-updated:
+          silent: '{silent}'
+          project: '{project}'
+          branch: '{gerrit-branch}'
 
     wrappers:
-        - timestamps
+      - timestamps
 
     builders:
-        - shell:
-            !include-raw-escape: include-raw-iotivity-bootstrap.sh
-        - auto-build:
-            component: 'android_{arch}'
+      - shell:
+          !include-raw-escape: include-raw-iotivity-bootstrap.sh
+      - auto-build:
+          component: 'android_{arch}'
 
     publishers:
-        - retry-build-on-builder-error
-        - archive-artifacts:
-            artifacts: 'android/android_api/base/build/outputs/**/*.xml, android/android_api/base/build/outputs/**/*.html'
-        - email-notification-unstable:
-            mailto: '{mailto}'
-
+      - retry-build-on-builder-error
+      - archive-artifacts:
+          artifacts: 'android/android_api/base/build/outputs/**/*.xml, android/android_api/base/build/outputs/**/*.html'
+      - email-notification-unstable:
+          mailto: '{mailto}'
 
 - job-template:
     name: 'iotivity-merge-{stream}-android_{arch}-{transport}'
@@ -329,38 +329,38 @@
     disabled: '{obj:disabled}'
 
     parameters:
-        - gerrit-project:
-            project: '{project}'
-            branch: '{branch}'
-            refspec: '{refspec}'
+      - gerrit-project:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: '{refspec}'
 
     scm:
-        - gerrit-branch-scm:
-            credentials-id: '{ssh-credentials}'
+      - gerrit-branch-scm:
+          credentials-id: '{ssh-credentials}'
 
     triggers:
-        - timed-twice-daily
-        - gerrit-trigger-ref-updated:
-            silent: '{silent}'
-            project: '{project}'
-            branch: '{gerrit-branch}'
+      - timed-twice-daily
+      - gerrit-trigger-ref-updated:
+          silent: '{silent}'
+          project: '{project}'
+          branch: '{gerrit-branch}'
 
     wrappers:
-        - timestamps
+      - timestamps
 
     builders:
-        - shell:
-            !include-raw-escape: include-raw-iotivity-bootstrap.sh
-        - android-transport:
-            arch: '{arch}'
-            transport: '{transport}'
+      - shell:
+          !include-raw-escape: include-raw-iotivity-bootstrap.sh
+      - android-transport:
+          arch: '{arch}'
+          transport: '{transport}'
 
     publishers:
-        - retry-build-on-builder-error
-        - archive-artifacts:
-            artifacts: 'android/android_api/base/build/outputs/**/*.xml, android/android_api/base/build/outputs/**/*.html'
-        - email-notification-unstable:
-            mailto: '{mailto}'
+      - retry-build-on-builder-error
+      - archive-artifacts:
+          artifacts: 'android/android_api/base/build/outputs/**/*.xml, android/android_api/base/build/outputs/**/*.html'
+      - email-notification-unstable:
+          mailto: '{mailto}'
 
 - job-template:
     name: 'iotivity-merge-{stream}-windows-{vs-version}'
@@ -371,43 +371,43 @@
     disabled: '{obj:disabled}'
 
     parameters:
-        - gerrit-project:
-            project: '{project}'
-            branch: '{branch}'
-            refspec: '{refspec}'
+      - gerrit-project:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: '{refspec}'
 
     scm:
-        - git:
-            credentials-id: '6466b968-939a-4d87-9f7f-0ceb5fca54dc'
-            url: 'ssh://jenkins-iotivity@gerrit.iotivity.org:29418/iotivity'
-            refspec: '$GERRIT_REFSPEC'
-            branches:
-                - 'origin/$GERRIT_BRANCH'
-            skip-tag: true
-            wipe-workspace: true
-            choosing-strategy: 'gerrit'
+      - git:
+          credentials-id: '6466b968-939a-4d87-9f7f-0ceb5fca54dc'
+          url: 'ssh://jenkins-iotivity@gerrit.iotivity.org:29418/iotivity'
+          refspec: '$GERRIT_REFSPEC'
+          branches:
+            - 'origin/$GERRIT_BRANCH'
+          skip-tag: true
+          wipe-workspace: true
+          choosing-strategy: 'gerrit'
 
     triggers:
-        - timed-twice-daily
-        - gerrit-trigger-ref-updated:
-            project: '{project}'
-            silent: '{silent}'
-            branch: '{gerrit-branch}'
+      - timed-twice-daily
+      - gerrit-trigger-ref-updated:
+          project: '{project}'
+          silent: '{silent}'
+          branch: '{gerrit-branch}'
 
     wrappers:
-        - timestamps
-        - build-timeout
+      - timestamps
+      - build-timeout
 
     builders:
-        - batch:
-            !include-raw-escape: include-raw-iotivity-windows-bootstrap.bat
-        - windows:
-            msvc-version: '{msvc-version}'
+      - batch:
+          !include-raw-escape: include-raw-iotivity-windows-bootstrap.bat
+      - windows:
+          msvc-version: '{msvc-version}'
 
     publishers:
-        - retry-build-on-builder-error
-        - email-notification-unstable:
-            mailto: '{mailto}'
+      - retry-build-on-builder-error
+      - email-notification-unstable:
+          mailto: '{mailto}'
 
 - job-template:
     name: 'iotivity-merge-{stream}-osx'
@@ -418,39 +418,39 @@
     disabled: '{obj:disabled}'
 
     parameters:
-        - gerrit-project:
-            project: '{project}'
-            branch: '{branch}'
-            refspec: '{refspec}'
+      - gerrit-project:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: '{refspec}'
 
     scm:
-        - gerrit-branch-scm:
-            credentials-id: '{ssh-credentials}'
+      - gerrit-branch-scm:
+          credentials-id: '{ssh-credentials}'
 
     triggers:
-        - timed-twice-daily
-        - gerrit-trigger-ref-updated:
-            silent: '{silent}'
-            project: '{project}'
-            branch: '{gerrit-branch}'
+      - timed-twice-daily
+      - gerrit-trigger-ref-updated:
+          silent: '{silent}'
+          project: '{project}'
+          branch: '{gerrit-branch}'
 
     wrappers:
-        - timestamps
-        - build-timeout
+      - timestamps
+      - build-timeout
 
     builders:
-        - shell:
-            !include-raw-escape: include-raw-iotivity-osx-bootstrap.sh
-        - osx
+      - shell:
+          !include-raw-escape: include-raw-iotivity-osx-bootstrap.sh
+      - osx
 
     publishers:
-        - retry-build-on-builder-error
-        - valgrind-report
-        - xunit-report
-        - archive-artifacts:
-            artifacts: '*.memcheck'
-        - email-notification-unstable:
-            mailto: '{mailto}'
+      - retry-build-on-builder-error
+      - valgrind-report
+      - xunit-report
+      - archive-artifacts:
+          artifacts: '*.memcheck'
+      - email-notification-unstable:
+          mailto: '{mailto}'
 
 - job-template:
     name: 'iotivity-sonar-runner'
@@ -461,35 +461,35 @@
     disabled: '{obj:disabled}'
 
     parameters:
-        - gerrit-project:
-            project: '{project}'
-            branch: '{branch}'
-            refspec: '{refspec}'
+      - gerrit-project:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: '{refspec}'
 
     scm:
-        - gerrit-branch-scm:
-            credentials-id: '{ssh-credentials}'
+      - gerrit-branch-scm:
+          credentials-id: '{ssh-credentials}'
 
     triggers:
-        - gerrit-trigger-ref-updated:
-            project: '{project}'
-            silent: '{silent}'
-            branch: '{gerrit-branch}'
+      - gerrit-trigger-ref-updated:
+          project: '{project}'
+          silent: '{silent}'
+          branch: '{gerrit-branch}'
 
     wrappers:
-        - timestamps
-        - ssh-agent-credentials:
-            users:
-                - '{ssh-credentials}'
+      - timestamps
+      - ssh-agent-credentials:
+          users:
+            - '{ssh-credentials}'
 
     builders:
-        - shell:
-            !include-raw-escape: include-raw-iotivity-sonar.sh
-        - sonar-runner
+      - shell:
+          !include-raw-escape: include-raw-iotivity-sonar.sh
+      - sonar-runner
 
     publishers:
-        - retry-build-on-builder-error
-        - archive-artifacts:
-            artifacts: '*-report.xml'
-        - email-notification-unstable:
-            mailto: '{mailto}'
+      - retry-build-on-builder-error
+      - archive-artifacts:
+          artifacts: '*-report.xml'
+      - email-notification-unstable:
+          mailto: '{mailto}'
