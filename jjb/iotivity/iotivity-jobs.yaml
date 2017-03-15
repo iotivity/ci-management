@@ -1,3 +1,4 @@
+---
 - project:
     name: iotivity-verify-jobs
     project: 'iotivity'
@@ -5,31 +6,31 @@
     node: '{ubuntu-node}'
     silent: false
     jobs:
-        - 'iotivity-verify-{component}'
-        - 'iotivity-verify-osx'
-        - 'iotivity-verify-tizen'
-        - 'iotivity-verify-linux_{security}_with_tcp':
-            security:
-                - 'secured'
-                - 'unsecured'
-        - 'iotivity-verify-linux_{security}_with_java':
-            gerrit-branch: 'master'
-            security:
-                - 'secured'
-                - 'unsecured'
-        - 'iotivity-verify-android'
-        - 'iotivity-verify-windows-{vs-version}':
-            vs-version:
-                - 'vs2013':
-                    msvc-version: '12.0'
-                - 'vs2015':
-                    msvc-version: '14.0'
-        - 'iotivity-verify-unit_tests'
+      - 'iotivity-verify-{component}'
+      - 'iotivity-verify-osx'
+      - 'iotivity-verify-tizen'
+      - 'iotivity-verify-linux_{security}_with_tcp':
+          security:
+            - 'secured'
+            - 'unsecured'
+      - 'iotivity-verify-linux_{security}_with_java':
+          gerrit-branch: 'master'
+          security:
+            - 'secured'
+            - 'unsecured'
+      - 'iotivity-verify-android'
+      - 'iotivity-verify-windows-{vs-version}':
+          vs-version:
+            - 'vs2013':
+                msvc-version: '12.0'
+            - 'vs2015':
+                msvc-version: '14.0'
+      - 'iotivity-verify-unit_tests'
     component:
-        - 'linux_unsecured'
-        - 'linux_secured'
-        - 'arduino'
-        - 'simulator'
+      - 'linux_unsecured'
+      - 'linux_secured'
+      - 'arduino'
+      - 'simulator'
 
 - job-template:
     name: 'iotivity-verify-linux_{security}_with_tcp'
@@ -40,48 +41,48 @@
     disabled: '{obj:disabled}'
 
     parameters:
-        - gerrit-project:
-            project: '{project}'
-            branch: '{branch}'
-            refspec: '{refspec}'
+      - gerrit-project:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: '{refspec}'
 
     scm:
-        - gerrit-branch-scm:
-            credentials-id: '{ssh-credentials}'
+      - gerrit-branch-scm:
+          credentials-id: '{ssh-credentials}'
 
     triggers:
-        - gerrit:
-            server-name: 'iotivity'
-            trigger-on:
-                - patchset-created-event:
-                    exclude-drafts: 'false'
-                    exclude-trivial-rebase: 'false'
-                    exclude-no-code-change: 'true'
-                - draft-published-event
-                - comment-added-contains-event:
-                    comment-contains-value: 'verify all'
-                - comment-added-contains-event:
-                    comment-contains-value: 'reverify'
-            projects:
-                - project-compare-type: 'ANT'
-                  project-pattern: '{project}'
-                  branches:
-                    - branch-compare-type: 'REG_EXP'
-                      branch-pattern: '^(?!.*1.1-rel).*$'
+      - gerrit:
+          server-name: 'iotivity'
+          trigger-on:
+            - patchset-created-event:
+                exclude-drafts: 'false'
+                exclude-trivial-rebase: 'false'
+                exclude-no-code-change: 'true'
+            - draft-published-event
+            - comment-added-contains-event:
+                comment-contains-value: 'verify all'
+            - comment-added-contains-event:
+                comment-contains-value: 'reverify'
+          projects:
+            - project-compare-type: 'ANT'
+              project-pattern: '{project}'
+              branches:
+                - branch-compare-type: 'REG_EXP'
+                  branch-pattern: '^(?!.*1.1-rel).*$'
 
     wrappers:
-        - timestamps
+      - timestamps
 
     builders:
-        - shell:
-            !include-raw-escape: include-raw-iotivity-bootstrap.sh
-        - auto-build:
-            component: 'linux_{security}_with_tcp'
+      - shell:
+          !include-raw-escape: include-raw-iotivity-bootstrap.sh
+      - auto-build:
+          component: 'linux_{security}_with_tcp'
 
     publishers:
-        - retry-build-on-builder-error
-        - email-notification:
-            mailto: 'oicbuild@intel.com'
+      - retry-build-on-builder-error
+      - email-notification:
+          mailto: 'oicbuild@intel.com'
 
 - job-template:
     name: 'iotivity-verify-{component}'
@@ -92,34 +93,34 @@
     disabled: '{obj:disabled}'
 
     parameters:
-        - gerrit-project:
-            project: '{project}'
-            branch: '{branch}'
-            refspec: '{refspec}'
+      - gerrit-project:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: '{refspec}'
 
     scm:
-        - gerrit-branch-scm:
-            credentials-id: '{ssh-credentials}'
+      - gerrit-branch-scm:
+          credentials-id: '{ssh-credentials}'
 
     triggers:
-        - gerrit-trigger-patch-submitted:
-            silent: '{silent}'
-            project: '{project}'
-            branch: '{gerrit-branch}'
+      - gerrit-trigger-patch-submitted:
+          silent: '{silent}'
+          project: '{project}'
+          branch: '{gerrit-branch}'
 
     wrappers:
-        - timestamps
+      - timestamps
 
     builders:
-        - shell:
-            !include-raw-escape: include-raw-iotivity-bootstrap.sh
-        - auto-build:
-            component: '{component}'
+      - shell:
+          !include-raw-escape: include-raw-iotivity-bootstrap.sh
+      - auto-build:
+          component: '{component}'
 
     publishers:
-        - retry-build-on-builder-error
-        - email-notification:
-            mailto: 'oicbuild@intel.com'
+      - retry-build-on-builder-error
+      - email-notification:
+          mailto: 'oicbuild@intel.com'
 
 - job-template:
     name: 'iotivity-verify-tizen'
@@ -130,44 +131,44 @@
     disabled: '{obj:disabled}'
 
     parameters:
-        - gerrit-project:
-            project: '{project}'
-            branch: '{branch}'
-            refspec: '{refspec}'
+      - gerrit-project:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: '{refspec}'
 
     scm:
-        - gerrit-branch-scm:
-            credentials-id: '{ssh-credentials}'
+      - gerrit-branch-scm:
+          credentials-id: '{ssh-credentials}'
 
     triggers:
-        - gerrit-trigger-patch-submitted:
-            silent: '{silent}'
-            project: '{project}'
-            branch: '{gerrit-branch}'
+      - gerrit-trigger-patch-submitted:
+          silent: '{silent}'
+          project: '{project}'
+          branch: '{gerrit-branch}'
 
     wrappers:
-        - timestamps
+      - timestamps
 
     builders:
-        - shell:
-            !include-raw-escape: include-raw-iotivity-bootstrap.sh
-        - shell:
-            !include-raw-escape: include-raw-iotivity-tizen.sh
-        - auto-build:
-            component: 'tizen'
+      - shell:
+          !include-raw-escape: include-raw-iotivity-bootstrap.sh
+      - shell:
+          !include-raw-escape: include-raw-iotivity-tizen.sh
+      - auto-build:
+          component: 'tizen'
 
     publishers:
-        - retry-build-on-builder-error
-        - email-notification:
-            mailto: 'oicbuild@intel.com'
+      - retry-build-on-builder-error
+      - email-notification:
+          mailto: 'oicbuild@intel.com'
 
 - job-template:
     name: 'iotivity-verify-unit_tests'
 
     properties:
-        - throttle:
-            max-total: 4
-            option: project
+      - throttle:
+          max-total: 4
+          option: project
 
     project-type: freestyle
     node: '{node}'
@@ -175,38 +176,38 @@
     disabled: '{obj:disabled}'
 
     parameters:
-        - gerrit-project:
-            project: '{project}'
-            branch: '{branch}'
-            refspec: '{refspec}'
+      - gerrit-project:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: '{refspec}'
 
     scm:
-        - gerrit-branch-scm:
-            credentials-id: '{ssh-credentials}'
+      - gerrit-branch-scm:
+          credentials-id: '{ssh-credentials}'
 
     triggers:
-        - gerrit-trigger-patch-submitted:
-            silent: '{silent}'
-            project: '{project}'
-            branch: '{gerrit-branch}'
+      - gerrit-trigger-patch-submitted:
+          silent: '{silent}'
+          project: '{project}'
+          branch: '{gerrit-branch}'
 
     wrappers:
-        - timestamps
-        - build-timeout
+      - timestamps
+      - build-timeout
 
     builders:
-        - shell:
-            !include-raw-escape: include-raw-iotivity-bootstrap.sh
-        - unit-tests
+      - shell:
+          !include-raw-escape: include-raw-iotivity-bootstrap.sh
+      - unit-tests
 
     publishers:
-        - retry-build-on-builder-error
-        - valgrind-report
-        - xunit-report
-        - archive-artifacts:
-            artifacts: '*.memcheck, out/**/test_out/*.xml'
-        - email-notification:
-            mailto: 'oicbuild@intel.com'
+      - retry-build-on-builder-error
+      - valgrind-report
+      - xunit-report
+      - archive-artifacts:
+          artifacts: '*.memcheck, out/**/test_out/*.xml'
+      - email-notification:
+          mailto: 'oicbuild@intel.com'
 
 - job-template:
     name: 'iotivity-verify-android'
@@ -217,36 +218,36 @@
     disabled: '{obj:disabled}'
 
     parameters:
-        - gerrit-project:
-            project: '{project}'
-            branch: '{branch}'
-            refspec: '{refspec}'
+      - gerrit-project:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: '{refspec}'
 
     scm:
-        - gerrit-branch-scm:
-            credentials-id: '{ssh-credentials}'
+      - gerrit-branch-scm:
+          credentials-id: '{ssh-credentials}'
 
     triggers:
-        - gerrit-trigger-patch-submitted:
-            silent: '{silent}'
-            project: '{project}'
-            branch: '{gerrit-branch}'
+      - gerrit-trigger-patch-submitted:
+          silent: '{silent}'
+          project: '{project}'
+          branch: '{gerrit-branch}'
 
     wrappers:
-        - timestamps
+      - timestamps
 
     builders:
-        - shell:
-            !include-raw-escape: include-raw-iotivity-bootstrap.sh
-        - auto-build:
-            component: 'android'
+      - shell:
+          !include-raw-escape: include-raw-iotivity-bootstrap.sh
+      - auto-build:
+          component: 'android'
 
     publishers:
-        - retry-build-on-builder-error
-        - archive-artifacts:
-            artifacts: 'android/android_api/base/build/outputs/**/*.xml, android/android_api/base/build/outputs/**/*.html'
-        - email-notification:
-            mailto: 'oicbuild@intel.com'
+      - retry-build-on-builder-error
+      - archive-artifacts:
+          artifacts: 'android/android_api/base/build/outputs/**/*.xml, android/android_api/base/build/outputs/**/*.html'
+      - email-notification:
+          mailto: 'oicbuild@intel.com'
 
 - job-template:
     name: 'iotivity-verify-android_{arch}'
@@ -257,36 +258,36 @@
     disabled: '{obj:disabled}'
 
     parameters:
-        - gerrit-project:
-            project: '{project}'
-            branch: '{branch}'
-            refspec: '{refspec}'
+      - gerrit-project:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: '{refspec}'
 
     scm:
-        - gerrit-branch-scm:
-            credentials-id: '{ssh-credentials}'
+      - gerrit-branch-scm:
+          credentials-id: '{ssh-credentials}'
 
     triggers:
-        - gerrit-trigger-patch-submitted:
-            silent: '{silent}'
-            project: '{project}'
-            branch: '{gerrit-branch}'
+      - gerrit-trigger-patch-submitted:
+          silent: '{silent}'
+          project: '{project}'
+          branch: '{gerrit-branch}'
 
     wrappers:
-        - timestamps
+      - timestamps
 
     builders:
-        - shell:
-            !include-raw-escape: include-raw-iotivity-bootstrap.sh
-        - auto-build:
-            component: 'android_{arch}'
+      - shell:
+          !include-raw-escape: include-raw-iotivity-bootstrap.sh
+      - auto-build:
+          component: 'android_{arch}'
 
     publishers:
-        - retry-build-on-builder-error
-        - archive-artifacts:
-            artifacts: 'android/android_api/base/build/outputs/**/*.xml, android/android_api/base/build/outputs/**/*.html'
-        - email-notification:
-            mailto: 'oicbuild@intel.com'
+      - retry-build-on-builder-error
+      - archive-artifacts:
+          artifacts: 'android/android_api/base/build/outputs/**/*.xml, android/android_api/base/build/outputs/**/*.html'
+      - email-notification:
+          mailto: 'oicbuild@intel.com'
 
 - job-template:
     name: 'iotivity-verify-android_{arch}-{transport}'
@@ -297,37 +298,37 @@
     disabled: '{obj:disabled}'
 
     parameters:
-        - gerrit-project:
-            project: '{project}'
-            branch: '{branch}'
-            refspec: '{refspec}'
+      - gerrit-project:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: '{refspec}'
 
     scm:
-        - gerrit-branch-scm:
-            credentials-id: '{ssh-credentials}'
+      - gerrit-branch-scm:
+          credentials-id: '{ssh-credentials}'
 
     triggers:
-        - gerrit-trigger-patch-submitted:
-            silent: '{silent}'
-            project: '{project}'
-            branch: '{gerrit-branch}'
+      - gerrit-trigger-patch-submitted:
+          silent: '{silent}'
+          project: '{project}'
+          branch: '{gerrit-branch}'
 
     wrappers:
-        - timestamps
+      - timestamps
 
     builders:
-        - shell:
-            !include-raw-escape: include-raw-iotivity-bootstrap.sh
-        - android-transport:
-            arch: '{arch}'
-            transport: '{transport}'
+      - shell:
+          !include-raw-escape: include-raw-iotivity-bootstrap.sh
+      - android-transport:
+          arch: '{arch}'
+          transport: '{transport}'
 
     publishers:
-        - retry-build-on-builder-error
-        - archive-artifacts:
-            artifacts: 'android/android_api/base/build/outputs/**/*.xml, android/android_api/base/build/outputs/**/*.html'
-        - email-notification:
-            mailto: 'oicbuild@intel.com'
+      - retry-build-on-builder-error
+      - archive-artifacts:
+          artifacts: 'android/android_api/base/build/outputs/**/*.xml, android/android_api/base/build/outputs/**/*.html'
+      - email-notification:
+          mailto: 'oicbuild@intel.com'
 
 - job-template:
     name: 'iotivity-verify-windows-{vs-version}'
@@ -338,63 +339,63 @@
     disabled: '{obj:disabled}'
 
     parameters:
-        - gerrit-project:
-            project: '{project}'
-            branch: '{branch}'
-            refspec: '{refspec}'
+      - gerrit-project:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: '{refspec}'
 
     scm:
-        - git:
-            credentials-id: '6466b968-939a-4d87-9f7f-0ceb5fca54dc'
-            url: 'ssh://jenkins-iotivity@gerrit.iotivity.org:29418/iotivity'
-            refspec: '$GERRIT_REFSPEC'
-            branches:
-                - 'origin/$GERRIT_BRANCH'
-            skip-tag: true
-            wipe-workspace: true
-            choosing-strategy: 'gerrit'
+      - git:
+          credentials-id: '6466b968-939a-4d87-9f7f-0ceb5fca54dc'
+          url: 'ssh://jenkins-iotivity@gerrit.iotivity.org:29418/iotivity'
+          refspec: '$GERRIT_REFSPEC'
+          branches:
+            - 'origin/$GERRIT_BRANCH'
+          skip-tag: true
+          wipe-workspace: true
+          choosing-strategy: 'gerrit'
 
     triggers:
-        - gerrit:
-            server-name: 'iotivity'
-            silent: '{obj:silent}'
-            trigger-on:
-                - patchset-created-event:
-                    exclude-drafts: 'false'
-                    exclude-trivial-rebase: 'false'
-                    exclude-no-code-change: 'true'
-                - draft-published-event
-                - comment-added-contains-event:
-                    comment-contains-value: 'verify all'
-                - comment-added-contains-event:
-                    comment-contains-value: 'reverify'
-            projects:
-                - project-compare-type: 'ANT'
-                  project-pattern: '{project}'
-                  branches:
-                    - branch-compare-type: 'REG_EXP'
-                      branch-pattern: '^(?!.*1.1-rel).*$'
+      - gerrit:
+          server-name: 'iotivity'
+          silent: '{obj:silent}'
+          trigger-on:
+            - patchset-created-event:
+                exclude-drafts: 'false'
+                exclude-trivial-rebase: 'false'
+                exclude-no-code-change: 'true'
+            - draft-published-event
+            - comment-added-contains-event:
+                comment-contains-value: 'verify all'
+            - comment-added-contains-event:
+                comment-contains-value: 'reverify'
+          projects:
+            - project-compare-type: 'ANT'
+              project-pattern: '{project}'
+              branches:
+                - branch-compare-type: 'REG_EXP'
+                  branch-pattern: '^(?!.*1.1-rel).*$'
 
     wrappers:
-        - timestamps
-        - build-timeout-fail
+      - timestamps
+      - build-timeout-fail
 
     builders:
-        - batch:
-            !include-raw-escape: include-raw-iotivity-windows-bootstrap.bat
-        - windows:
-            msvc-version: '{msvc-version}'
+      - batch:
+          !include-raw-escape: include-raw-iotivity-windows-bootstrap.bat
+      - windows:
+          msvc-version: '{msvc-version}'
 
     publishers:
-        - postbuildscript:
-            script-only-if-succeeded: false
-            script-only-if-failed: true
-            builders:
-                - windows-kill-unit-tests:
-                    msvc-version: '{msvc-version}'
-        - retry-build-on-builder-error
-        - email-notification:
-            mailto: 'oicbuild@intel.com'
+      - postbuildscript:
+          script-only-if-succeeded: false
+          script-only-if-failed: true
+          builders:
+            - windows-kill-unit-tests:
+                msvc-version: '{msvc-version}'
+      - retry-build-on-builder-error
+      - email-notification:
+          mailto: 'oicbuild@intel.com'
 
 - job-template:
     name: 'iotivity-verify-osx'
@@ -405,38 +406,38 @@
     disabled: '{obj:disabled}'
 
     parameters:
-        - gerrit-project:
-            project: '{project}'
-            branch: '{branch}'
-            refspec: '{refspec}'
+      - gerrit-project:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: '{refspec}'
 
     scm:
-        - gerrit-branch-scm:
-            credentials-id: '{ssh-credentials}'
+      - gerrit-branch-scm:
+          credentials-id: '{ssh-credentials}'
 
     triggers:
-        - gerrit-trigger-patch-submitted:
-            silent: '{silent}'
-            project: '{project}'
-            branch: '{gerrit-branch}'
+      - gerrit-trigger-patch-submitted:
+          silent: '{silent}'
+          project: '{project}'
+          branch: '{gerrit-branch}'
 
     wrappers:
-        - timestamps
-        - build-timeout
+      - timestamps
+      - build-timeout
 
     builders:
-        - shell:
-            !include-raw-escape: include-raw-iotivity-osx-bootstrap.sh
-        - osx
+      - shell:
+          !include-raw-escape: include-raw-iotivity-osx-bootstrap.sh
+      - osx
 
     publishers:
-        - retry-build-on-builder-error
-        - valgrind-report
-        - xunit-report
-        - archive-artifacts:
-            artifacts: '*.memcheck'
-        - email-notification:
-            mailto: 'oicbuild@intel.com'
+      - retry-build-on-builder-error
+      - valgrind-report
+      - xunit-report
+      - archive-artifacts:
+          artifacts: '*.memcheck'
+      - email-notification:
+          mailto: 'oicbuild@intel.com'
 
 - job-template:
     name: 'iotivity-verify-linux_{security}_with_java'
@@ -447,31 +448,31 @@
     disabled: '{obj:disabled}'
 
     parameters:
-        - gerrit-project:
-            project: '{project}'
-            branch: '{branch}'
-            refspec: '{refspec}'
+      - gerrit-project:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: '{refspec}'
 
     scm:
-        - gerrit-branch-scm:
-            credentials-id: '{ssh-credentials}'
+      - gerrit-branch-scm:
+          credentials-id: '{ssh-credentials}'
 
     triggers:
-        - gerrit-trigger-patch-submitted-skip-vote:
-            silent: '{silent}'
-            project: '{project}'
-            branch: '{gerrit-branch}'
+      - gerrit-trigger-patch-submitted-skip-vote:
+          silent: '{silent}'
+          project: '{project}'
+          branch: '{gerrit-branch}'
 
     wrappers:
-        - timestamps
+      - timestamps
 
     builders:
-        - shell:
-            !include-raw-escape: include-raw-iotivity-bootstrap.sh
-        - auto-build:
-            component: 'linux_{security}_with_java'
+      - shell:
+          !include-raw-escape: include-raw-iotivity-bootstrap.sh
+      - auto-build:
+          component: 'linux_{security}_with_java'
 
     publishers:
-        - retry-build-on-builder-error
-        - email-notification:
-            mailto: 'oicbuild@intel.com'
+      - retry-build-on-builder-error
+      - email-notification:
+          mailto: 'oicbuild@intel.com'
