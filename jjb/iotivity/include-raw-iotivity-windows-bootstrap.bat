@@ -11,6 +11,9 @@ mklink %WORKSPACE%\extlibs\boost\boost_1_60_0.zip C:\j\e\boost_1_60_0.zip > NUL 
 md %WORKSPACE%\extlibs\boost\boost\
 xcopy /q /e C:\j\e\boost\* %WORKSPACE%\extlibs\boost\boost
 echo "done"
+echo | set /p="sqlite3..."
+mklink %WORKSPACE%\extlibs\sqlite3\sqlite-amalgamation-3081101.zip C:\j\e\sqlite-amalgamation-3081101.zip > NUL 2>&1
+echo "done"
 echo | set /p="tinycbor..."
 md %WORKSPACE%\extlibs\tinycbor\tinycbor
 xcopy /q /e C:\j\e\tinycbor\tinycbor-0.4 %WORKSPACE%\extlibs\tinycbor\tinycbor
