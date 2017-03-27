@@ -43,6 +43,7 @@
                 set TARGET_ARCH=x86
               )
             )
+            set UWP_APP=1
             set
             run.bat build -arch %TARGET_ARCH%
             run.bat test
