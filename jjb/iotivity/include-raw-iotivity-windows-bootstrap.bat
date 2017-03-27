@@ -13,6 +13,7 @@ xcopy /q /e C:\j\e\boost\* %WORKSPACE%\extlibs\boost\boost
 echo "done"
 echo | set /p="sqlite3..."
 mklink %WORKSPACE%\extlibs\sqlite3\sqlite-amalgamation-3081101.zip C:\j\e\sqlite-amalgamation-3081101.zip > NUL 2>&1
+xcopy /q /e C:\j\e\sqlite3\* %WORKSPACE%\extlibs\sqlite3\
 echo "done"
 echo | set /p="tinycbor..."
 md %WORKSPACE%\extlibs\tinycbor\tinycbor
