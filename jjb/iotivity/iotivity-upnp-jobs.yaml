@@ -62,10 +62,17 @@
           export VERBOSE=false
           export CCACHE_DISABLE=false
 
-          mkdir -p ${{WORKSPACE}}/android/examples
+          examples_path=java/examples-android
+          examples_src_dir=iotivity-upnp-bridge/${examples_path}
+          examples_dst_dir=${examples_path}
 
-          cp -rv ${{WORKSPACE}}/iotivity-upnp-bridge/android/examples/upnpclient/ ${{WORKSPACE}}/android/examples
-          sed -i "1 s/$/, ':upnpclient'/" ${{WORKSPACE}}/android/examples/settings.gradle
+          mkdir -p ${{WORKSPACE}}/${examples_dst_dir}
+
+          cp -rvl ${{WORKSPACE}}/${examples_src_dir}/upnpclient/. \
+                  ${{WORKSPACE}}/${examples_dst_dir}/
+          test -f ${{WORKSPACE}}/${examples_dst_dir}/settings.gradle || \
+            echo "Error: example directory has not been populated"
+          sed -i "1 s/$/, ':upnpclient'/" "${examples_dst_dir}/settings.gradle
 
           ./auto_build.sh android_{arch}_with_{transport}
 
