@@ -22,6 +22,29 @@
       "revId": "ffc920b43e78ac5c5f3903f5feef0d51988d3a2c",
       "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_1a3de58f",
+        "filename": "jjb/iotivity/iotivity-upnp-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 4407
+      },
+      "writtenOn": "2017-04-05T20:25:23Z",
+      "side": 1,
+      "message": "I think this should be\nartifacts: \u0027java/iotivity-android/build/outputs/**/*.xml, java/iotivity-android/build/outputs/**/*.html\u0027\n\n\nIt looks to me that the artifacts is looking for the lint-results.html and lint-results.xml files.",
+      "range": {
+        "startLine": 82,
+        "startChar": 10,
+        "endLine": 82,
+        "endChar": 120
+      },
+      "revId": "ffc920b43e78ac5c5f3903f5feef0d51988d3a2c",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
     }
   ]
 }
