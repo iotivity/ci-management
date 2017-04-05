@@ -62,16 +62,26 @@
           export VERBOSE=false
           export CCACHE_DISABLE=false
 
-          mkdir -p ${{WORKSPACE}}/android/examples
+          examples_src_dir=iotivity-upnp-bridge/android/examples
+          examples_dst_dir=java/examples-android
 
-          cp -rv ${{WORKSPACE}}/iotivity-upnp-bridge/android/examples/upnpclient/ ${{WORKSPACE}}/android/examples
-          sed -i "1 s/$/, ':upnpclient'/" ${{WORKSPACE}}/android/examples/settings.gradle
+          mkdir -p ${{WORKSPACE}}/${{examples_dst_dir}}
+
+          cp -rvl ${{WORKSPACE}}/${{examples_src_dir}}/upnpclient/. \
+                  ${{WORKSPACE}}/${{examples_dst_dir}}/
+          test -f ${{WORKSPACE}}/${{examples_dst_dir}}/settings.gradle || \
+            echo "Error: example directory has not been populated"
+          sed -i "1 s/$/, ':upnpclient'/" "${{examples_dst_dir}}/settings.gradle
 
           ./auto_build.sh android_{arch}_with_{transport}
 
     publishers:
-      - retry-build-on-builder-error
-      - archive-artifacts:
-          artifacts: 'android/android_api/base/build/outputs/**/*.xml, android/android_api/base/build/outputs/**/*.html'
-      - email-notification:
-          mailto: 'oicbuild@intel.com'
+        - retry-build-on-builder-error
+        - archive:
+            artifacts: 'java/iotivity-android/build/outputs/**/*.(x|ht)ml'
+            allow-empty: 'true'
+            fingerprint: false
+            only-if-success: true
+            default-excludes: false
+        - email-notification:
+            mailto: 'oicbuild@intel.com'
