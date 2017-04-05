@@ -9,35 +9,12 @@ rm -rf ${WORKSPACE}/extlibs/tinycbor/tinycbor
 rm -rf ${WORKSPACE}/extlibs/gtest/gtest-1.7.0
 rm -rf ${WORKSPACE}/extlibs/gtest/google-release-1.7.0
 rm -rf ${WORKSPACE}/extlibs/hippomocks-master
-rm -rf ${WORKSPACE}/extlibs/android/ndk/android-ndk-r10d
-rm -rf ${WORKSPACE}/extlibs/android/sdk/android-sdk_r24.2
-rm -rf ${WORKSPACE}/extlibs/android/gradle/gradle-2.2.1
 rm -rf ${WORKSPACE}/extlibs/raxmpp/raxmpp
 rm -rf ${WORKSPACE}/extlibs/libcoap/libcoap
 
 if [ ! -d "${WORKSPACE}/extlibs/arduino" ]
 then
 	mkdir ${WORKSPACE}/extlibs/arduino
-fi
-
-if [ ! -d "${WORKSPACE}/extlibs/android" ]
-then
-	mkdir ${WORKSPACE}/extlibs/android
-fi
-
-if [ ! -d "${WORKSPACE}/extlibs/android/ndk" ]
-then
-	mkdir ${WORKSPACE}/extlibs/android/ndk
-fi
-
-if [ ! -d "${WORKSPACE}/extlibs/android/sdk" ]
-then
-	mkdir ${WORKSPACE}/extlibs/android/sdk
-fi
-
-if [ ! -d "${WORKSPACE}/extlibs/android/gradle" ]
-then
-	mkdir ${WORKSPACE}/extlibs/android/gradle
 fi
 
 if [ ! -d "${WORKSPACE}/extlibs/expat" ]
@@ -73,9 +50,6 @@ fi
 unzip -oq "${IOTIVITYEXTLIB}/tinycbor/v${TINYCBOR_VERSION}.zip" -d ${IOTIVITYEXTLIB}/tinycbor/
 ln -sv "${IOTIVITYEXTLIB}/tinycbor/tinycbor-${TINYCBOR_VERSION}" ${WORKSPACE}/extlibs/tinycbor/tinycbor
 
-ln -sv ${IOTIVITYEXTLIB}/android/android-ndk-r10d.bin ${WORKSPACE}/extlibs/android/ndk/android-ndk-r10d
-ln -sv ${IOTIVITYEXTLIB}/android/sdk/android-sdk_r24.2 ${WORKSPACE}/extlibs/android/sdk/android-sdk_r24.2
-ln -sv ${IOTIVITYEXTLIB}/android/gradle-2.2.1 ${WORKSPACE}/extlibs/android/gradle/gradle-2.2.1
 ln -sv ${IOTIVITYEXTLIB}/expat/expat-2.1.0 ${WORKSPACE}/extlibs/expat/expat-2.1.0
 ln -sv ${IOTIVITYEXTLIB}/raxmpp/raxmpp ${WORKSPACE}/extlibs/raxmpp/raxmpp
 
