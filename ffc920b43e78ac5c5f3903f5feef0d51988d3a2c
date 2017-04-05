@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "5ac10518_3a6c619c",
+        "filename": "jjb/iotivity/iotivity-upnp-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 4407
+      },
+      "writtenOn": "2017-04-05T20:44:03Z",
+      "side": 1,
+      "message": "this should be android/examples/upnpclient\n\nI think this was my fault.  I left the wrong comment in the other ticket.",
+      "range": {
+        "startLine": 66,
+        "startChar": 48,
+        "endLine": 66,
+        "endChar": 64
+      },
+      "revId": "ffc920b43e78ac5c5f3903f5feef0d51988d3a2c",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_1a0ba5d7",
+        "filename": "jjb/iotivity/iotivity-upnp-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 4407
+      },
+      "writtenOn": "2017-04-05T20:44:03Z",
+      "side": 1,
+      "message": "the result of this command should end up\n\n  cp -rv ${{WORKSPACE}}/iotivity-upnp-bridge/android/examples/upnpclient/ ${{WORKSPACE}}/java/examples-android",
+      "range": {
+        "startLine": 71,
+        "startChar": 10,
+        "endLine": 72,
+        "endChar": 53
+      },
+      "revId": "ffc920b43e78ac5c5f3903f5feef0d51988d3a2c",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_1ad64550",
         "filename": "jjb/iotivity/iotivity-upnp-jobs.yaml",
         "patchSetId": 3
