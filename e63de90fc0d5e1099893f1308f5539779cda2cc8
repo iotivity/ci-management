@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ac10518_da467d23",
+        "filename": "jjb/iotivity/include-raw-iotivity-bootstrap.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 4407
+      },
+      "writtenOn": "2017-04-05T20:28:08Z",
+      "side": 0,
+      "message": "this is still needed.",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 55
+      },
+      "revId": "e63de90fc0d5e1099893f1308f5539779cda2cc8",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_7a4bc92b",
+        "filename": "jjb/iotivity/include-raw-iotivity-bootstrap.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 4407
+      },
+      "writtenOn": "2017-04-05T20:28:08Z",
+      "side": 0,
+      "message": "this is still needed.",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 42
+      },
+      "revId": "e63de90fc0d5e1099893f1308f5539779cda2cc8",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac10518_9a48f52e",
+        "filename": "jjb/iotivity/include-raw-iotivity-bootstrap.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 4407
+      },
+      "writtenOn": "2017-04-05T20:28:08Z",
+      "side": 0,
+      "message": "this is still needed.",
+      "range": {
+        "startLine": 76,
+        "startChar": 0,
+        "endLine": 78,
+        "endChar": 94
+      },
+      "revId": "e63de90fc0d5e1099893f1308f5539779cda2cc8",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
