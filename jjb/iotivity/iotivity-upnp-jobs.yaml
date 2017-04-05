@@ -62,6 +62,8 @@
           export VERBOSE=false
           export CCACHE_DISABLE=false
 
+          mkdir -p ${{WORKSPACE}}/android/examples
+
           cp -rv ${{WORKSPACE}}/iotivity-upnp-bridge/android/examples/upnpclient/ ${{WORKSPACE}}/android/examples
           sed -i "1 s/$/, ':upnpclient'/" ${{WORKSPACE}}/android/examples/settings.gradle
 
