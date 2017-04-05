@@ -1,6 +1,8 @@
 #!/bin/bash -eux
 set -o pipefail
 
+local_jre=android
+
 rm -rf ${WORKSPACE}/extlibs/arduino/arduino-1.5.8
 rm -rf ${WORKSPACE}/extlibs/boost/boost_1_58_0
 rm -rf ${WORKSPACE}/extlibs/boost/boost_1_58_0.zip
@@ -9,9 +11,9 @@ rm -rf ${WORKSPACE}/extlibs/tinycbor/tinycbor
 rm -rf ${WORKSPACE}/extlibs/gtest/gtest-1.7.0
 rm -rf ${WORKSPACE}/extlibs/gtest/google-release-1.7.0
 rm -rf ${WORKSPACE}/extlibs/hippomocks-master
-rm -rf ${WORKSPACE}/extlibs/android/ndk/android-ndk-r10d
-rm -rf ${WORKSPACE}/extlibs/android/sdk/android-sdk_r24.2
-rm -rf ${WORKSPACE}/extlibs/android/gradle/gradle-2.2.1
+rm -rf ${WORKSPACE}/extlibs/${local_jre}/ndk/android-ndk-r10d
+rm -rf ${WORKSPACE}/extlibs/${local_jre}/sdk/android-sdk_r24.2
+rm -rf ${WORKSPACE}/extlibs/${local_jre}/gradle/gradle-2.2.1
 rm -rf ${WORKSPACE}/extlibs/raxmpp/raxmpp
 rm -rf ${WORKSPACE}/extlibs/libcoap/libcoap
 
@@ -20,24 +22,24 @@ then
 	mkdir ${WORKSPACE}/extlibs/arduino
 fi
 
-if [ ! -d "${WORKSPACE}/extlibs/android" ]
+if [ ! -d "${WORKSPACE}/extlibs/${local_jre}" ]
 then
-	mkdir ${WORKSPACE}/extlibs/android
+	mkdir ${WORKSPACE}/extlibs/${local_jre}
 fi
 
-if [ ! -d "${WORKSPACE}/extlibs/android/ndk" ]
+if [ ! -d "${WORKSPACE}/extlibs/${local_jre}/ndk" ]
 then
-	mkdir ${WORKSPACE}/extlibs/android/ndk
+	mkdir ${WORKSPACE}/extlibs/${local_jre}/ndk
 fi
 
-if [ ! -d "${WORKSPACE}/extlibs/android/sdk" ]
+if [ ! -d "${WORKSPACE}/extlibs/${local_jre}/sdk" ]
 then
-	mkdir ${WORKSPACE}/extlibs/android/sdk
+	mkdir ${WORKSPACE}/extlibs/${local_jre}/sdk
 fi
 
-if [ ! -d "${WORKSPACE}/extlibs/android/gradle" ]
+if [ ! -d "${WORKSPACE}/extlibs/${local_jre}/gradle" ]
 then
-	mkdir ${WORKSPACE}/extlibs/android/gradle
+	mkdir ${WORKSPACE}/extlibs/${local_jre}/gradle
 fi
 
 if [ ! -d "${WORKSPACE}/extlibs/expat" ]
@@ -73,9 +75,9 @@ fi
 unzip -oq "${IOTIVITYEXTLIB}/tinycbor/v${TINYCBOR_VERSION}.zip" -d ${IOTIVITYEXTLIB}/tinycbor/
 ln -sv "${IOTIVITYEXTLIB}/tinycbor/tinycbor-${TINYCBOR_VERSION}" ${WORKSPACE}/extlibs/tinycbor/tinycbor
 
-ln -sv ${IOTIVITYEXTLIB}/android/android-ndk-r10d.bin ${WORKSPACE}/extlibs/android/ndk/android-ndk-r10d
-ln -sv ${IOTIVITYEXTLIB}/android/sdk/android-sdk_r24.2 ${WORKSPACE}/extlibs/android/sdk/android-sdk_r24.2
-ln -sv ${IOTIVITYEXTLIB}/android/gradle-2.2.1 ${WORKSPACE}/extlibs/android/gradle/gradle-2.2.1
+ln -sv ${IOTIVITYEXTLIB}/${local_jre}/android-ndk-r10d.bin ${WORKSPACE}/extlibs/${local_jre}/ndk/android-ndk-r10d
+ln -sv ${IOTIVITYEXTLIB}/${local_jre}/sdk/android-sdk_r24.2 ${WORKSPACE}/extlibs/${local_jre}/sdk/android-sdk_r24.2
+ln -sv ${IOTIVITYEXTLIB}/${local_jre}/gradle-2.2.1 ${WORKSPACE}/extlibs/${local_jre}/gradle/gradle-2.2.1
 ln -sv ${IOTIVITYEXTLIB}/expat/expat-2.1.0 ${WORKSPACE}/extlibs/expat/expat-2.1.0
 ln -sv ${IOTIVITYEXTLIB}/raxmpp/raxmpp ${WORKSPACE}/extlibs/raxmpp/raxmpp
 
