@@ -68,6 +68,7 @@
           mkdir -p ${{WORKSPACE}}/${{examples_dst_dir}}
 
           cp -rvl ${{WORKSPACE}}/${{examples_src_dir}}/upnpclient/. \
+                  ${{WORKSPACE}}/${{examples_src_dir}}/settings.gradle. \
                   ${{WORKSPACE}}/${{examples_dst_dir}}/
           gradle_file=${{WORKSPACE}}/${{examples_dst_dir}}/settings.gradle
           test -f ${{gradle_file}} || echo "Error: example directory has not been populated"
