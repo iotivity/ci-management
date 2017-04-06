@@ -2,6 +2,75 @@
   "comments": [
     {
       "key": {
+        "uuid": "1acb0d3e_cb125558",
+        "filename": "jjb/iotivity/iotivity-upnp-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 4407
+      },
+      "writtenOn": "2017-04-06T23:04:10Z",
+      "side": 1,
+      "message": "[cut down number of builds.]\nWe don\u0027t need to support all of these build outputs.  This is a by product of the way android was built in the past.\n\nLets cut this down to a single android build remove both arch and transport.",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 15,
+        "endChar": 20
+      },
+      "revId": "0249303bed050c9c823023862bc40cc473514b53",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1acb0d3e_eb0f112d",
+        "filename": "jjb/iotivity/iotivity-upnp-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4407
+      },
+      "writtenOn": "2017-04-06T23:04:10Z",
+      "side": 1,
+      "message": "[cut down number of builds.]\n\u0027iotivity-upnp-bridge-verify-android\u0027",
+      "range": {
+        "startLine": 17,
+        "startChar": 8,
+        "endLine": 17,
+        "endChar": 64
+      },
+      "revId": "0249303bed050c9c823023862bc40cc473514b53",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1acb0d3e_8b1c4d6c",
+        "filename": "jjb/iotivity/iotivity-upnp-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4407
+      },
+      "writtenOn": "2017-04-06T23:04:10Z",
+      "side": 1,
+      "message": "[cut down number of builds.]\n\u0027iotivity-upnp-bridge-verify-android\u0027",
+      "range": {
+        "startLine": 20,
+        "startChar": 10,
+        "endLine": 20,
+        "endChar": 66
+      },
+      "revId": "0249303bed050c9c823023862bc40cc473514b53",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1acb0d3e_4bff4502",
         "filename": "jjb/iotivity/iotivity-upnp-jobs.yaml",
         "patchSetId": 1
@@ -64,6 +133,29 @@
         "startChar": 10,
         "endLine": 72,
         "endChar": 55
+      },
+      "revId": "0249303bed050c9c823023862bc40cc473514b53",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1acb0d3e_ab19097b",
+        "filename": "jjb/iotivity/iotivity-upnp-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 4407
+      },
+      "writtenOn": "2017-04-06T23:04:10Z",
+      "side": 1,
+      "message": "[cut down number of builds.]\nandroid",
+      "range": {
+        "startLine": 77,
+        "startChar": 26,
+        "endLine": 77,
+        "endChar": 57
       },
       "revId": "0249303bed050c9c823023862bc40cc473514b53",
       "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
