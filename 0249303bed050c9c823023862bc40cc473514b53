@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "1acb0d3e_4bff4502",
+        "filename": "jjb/iotivity/iotivity-upnp-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 4407
+      },
+      "writtenOn": "2017-04-06T22:53:32Z",
+      "side": 1,
+      "message": "probably change this to check if the directory exists and fail if it does not exits.\n\nThe `sed` command on line 75 works on the assumption that iotivity already has the folder java/examples-android containing the settings.gradle file.\n\nmaybe move line 74 to here.",
+      "range": {
+        "startLine": 68,
+        "startChar": 9,
+        "endLine": 68,
+        "endChar": 55
+      },
+      "revId": "0249303bed050c9c823023862bc40cc473514b53",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5ac10518_002c9401",
         "filename": "jjb/iotivity/iotivity-upnp-jobs.yaml",
         "patchSetId": 1
@@ -18,6 +41,29 @@
         "startChar": 0,
         "endLine": 71,
         "endChar": 73
+      },
+      "revId": "0249303bed050c9c823023862bc40cc473514b53",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1acb0d3e_6b048115",
+        "filename": "jjb/iotivity/iotivity-upnp-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 4407
+      },
+      "writtenOn": "2017-04-06T22:53:32Z",
+      "side": 1,
+      "message": "this needs to be:\n  cp -rvl ${{WORKSPACE}}/${{examples_src_dir}}/upnpclient/ \\\n          ${{WORKSPACE}}/${{examples_dst_dir}}/\n\nThe settings.gradle does not exist in the iotivity-upnp-bridge it is a file that already exists in iotivity.\n\nWe want to copy the entier folder to the dst_dir not just the contents of the folder.",
+      "range": {
+        "startLine": 70,
+        "startChar": 10,
+        "endLine": 72,
+        "endChar": 55
       },
       "revId": "0249303bed050c9c823023862bc40cc473514b53",
       "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
