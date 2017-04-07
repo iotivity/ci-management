@@ -72,9 +72,10 @@
 
           cp -rvl ${{src}}/upnpclient/. ${{dst}}/upnpclient/
 
-          sed "1 s/$/, ':upnpclient'/" \
-            < "${{src}}/settings.gradle" \
-            > "${{dst}}/settings.gradle"
+          gradle_file=${{dst}}/settings.gradle
+          test -f ${{gradle_file}} || \
+            echo "Error: example directory has not been populated"
+          sed -i "1 s/$/, ':upnpclient'/" "${{gradle_file}}"
 
           ./auto_build.sh android_{arch}_with_{transport}
 
