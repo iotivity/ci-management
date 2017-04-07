@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1acb0d3e_ab4a69aa",
+        "filename": "jjb/iotivity/iotivity-upnp-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 4407
+      },
+      "writtenOn": "2017-04-07T16:02:11Z",
+      "side": 1,
+      "message": "change back to what was used before. We are editing an already existing file to add the upnpclient to the build. There is no setting.gradle from ${{src}}.\n\n  gradle_file\u003d${{dst}}/settings.gradle\n  test -f ${{gradle_file}} || echo \"Error: example directory has not been populated\"\n  sed -i \"1 s/$/, \u0027:upnpclient\u0027/\" \"${{gradle_file}}\"",
+      "range": {
+        "startLine": 75,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 40
+      },
+      "revId": "37be69a161e4c5c8c4def4c673e7616d5c61f130",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
