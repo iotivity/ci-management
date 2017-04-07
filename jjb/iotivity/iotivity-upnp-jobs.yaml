@@ -4,20 +4,11 @@
     project: 'iotivity-upnp-bridge'
     node: '{ubuntu-node}'
     disabled: false
-    arch:
-      - 'x86'
-    transport:
-      - 'ip'
-      - 'bt'
-      - 'ble'
-      - 'rm_and_ip'
-      - 'rm_and_bt'
-      - 'rm_and_ble'
     jobs:
-      - 'iotivity-upnp-bridge-verify-android_{arch}-{transport}'
+      - 'iotivity-upnp-bridge-verify-android'
 
 - job-template:
-    name: 'iotivity-upnp-bridge-verify-android_{arch}-{transport}'
+    name: 'iotivity-upnp-bridge-verify-android'
 
     project-type: freestyle
     node: '{node}'
@@ -77,7 +68,7 @@
             echo "Error: example directory has not been populated"
           sed -i "1 s/$/, ':upnpclient'/" "${{gradle_file}}"
 
-          ./auto_build.sh android_{arch}_with_{transport}
+          ./auto_build.sh android
 
     publishers:
         - retry-build-on-builder-error
