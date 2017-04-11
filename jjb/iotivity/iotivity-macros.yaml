@@ -54,6 +54,8 @@
       - batch: |
             IF "{msvc-version}" == "12.0" (
               taskkill /F /IM "unittests.exe"
+              taskkill /F /IM "unittest.exe"
+              taskkill /F /IM "catests.exe"
             )
 
 - builder:
