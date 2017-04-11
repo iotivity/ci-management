@@ -35,7 +35,6 @@
           component:
             - 'linux_unsecured'
             - 'linux_secured'
-            - 'arduino'
             - 'simulator'
             - 'linux_unsecured_with_ra'
             - 'linux_secured_with_ra'
@@ -48,7 +47,6 @@
           component:
             - 'linux_unsecured'
             - 'linux_secured'
-            - 'arduino'
             - 'simulator'
       - 'iotivity-merge-{stream}-{component}':
           stream:
