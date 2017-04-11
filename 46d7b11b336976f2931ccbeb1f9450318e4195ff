@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1acb0d3e_f464cee6",
+        "filename": "jjb/iotivity/iotivity-macros.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 7511
+      },
+      "writtenOn": "2017-04-11T15:32:36Z",
+      "side": 1,
+      "message": "I think you should always kill these (remove the check for msvc-version).",
+      "range": {
+        "startLine": 55,
+        "startChar": 12,
+        "endLine": 55,
+        "endChar": 41
+      },
+      "revId": "46d7b11b336976f2931ccbeb1f9450318e4195ff",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
