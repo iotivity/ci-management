@@ -22,6 +22,30 @@
       "revId": "46d7b11b336976f2931ccbeb1f9450318e4195ff",
       "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1acb0d3e_14f39a0b",
+        "filename": "jjb/iotivity/iotivity-macros.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 9257
+      },
+      "writtenOn": "2017-04-11T17:56:46Z",
+      "side": 1,
+      "message": "I agree with Dan here, why would this be specific to msvc-version?",
+      "parentUuid": "1acb0d3e_f464cee6",
+      "range": {
+        "startLine": 55,
+        "startChar": 12,
+        "endLine": 55,
+        "endChar": 41
+      },
+      "revId": "46d7b11b336976f2931ccbeb1f9450318e4195ff",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
     }
   ]
 }
