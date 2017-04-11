@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1acb0d3e_140f1ae3",
+        "filename": "jjb/iotivity/iotivity-macros.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 9681
+      },
+      "writtenOn": "2017-04-11T18:42:34Z",
+      "side": 1,
+      "message": "See run.bat for the full list of tests. Perhaps we can add a new argument called \"killtests\" into run.bat and have this call it?",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 39
+      },
+      "revId": "f81d4173be61d583a88b79e07be99ce33df28527",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
