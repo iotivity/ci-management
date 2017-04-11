@@ -52,9 +52,12 @@
     name: windows-kill-unit-tests
     builders:
       - batch: |
-          taskkill /F /IM "unittests.exe"
-          taskkill /F /IM "unittest.exe"
-          taskkill /F /IM "catests.exe"
+          tasklist /FI "IMAGENAME eq unittests.exe" 2>NUL | find /I /N "unittests.exe">NUL
+          if "%ERRORLEVEL%"=="0" taskkill /F /IM "unittests.exe"
+          tasklist /FI "IMAGENAME eq unittest.exe" 2>NUL | find /I /N "unittest.exe">NUL
+          if "%ERRORLEVEL%"=="0" taskkill /F /IM "unittest.exe"
+          tasklist /FI "IMAGENAME eq catests.exe" 2>NUL | find /I /N "catests.exe">NUL
+          if "%ERRORLEVEL%"=="0" taskkill /F /IM "catests.exe"
 
 - builder:
     name: osx
