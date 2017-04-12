@@ -19,7 +19,12 @@
             - 'secured'
             - 'unsecured'
       - 'iotivity-verify-android'
-      - 'iotivity-verify-windows-{vs-version}':
+      - 'iotivity-verify-windows-{arch}-{vs-version}':
+          arch:
+            - 'x86':
+                arch-name: 'x86'
+            - 'amd64':
+                arch-name: 'amd64'
           vs-version:
             - 'vs2013':
                 msvc-version: '12.0'
@@ -331,7 +336,7 @@
           mailto: 'oicbuild@intel.com'
 
 - job-template:
-    name: 'iotivity-verify-windows-{vs-version}'
+    name: 'iotivity-verify-windows-{arch}-{vs-version}'
 
     project-type: freestyle
     node: '{vs-version}'
@@ -385,6 +390,7 @@
           !include-raw-escape: include-raw-iotivity-windows-bootstrap.bat
       - windows:
           msvc-version: '{msvc-version}'
+          arch-name: '{arch-name}'
 
     publishers:
       - postbuildscript:
@@ -393,6 +399,7 @@
           builders:
             - windows-kill-unit-tests:
                 msvc-version: '{msvc-version}'
+                arch-name: '{arch-name}'
       - retry-build-on-builder-error
       - email-notification:
           mailto: 'oicbuild@intel.com'
