@@ -1,0 +1,10 @@
+Verified+1: jenkins-iotivity <jenkins@iotivity.org>
+Code-Review+1: Way Vadhanasin <wayvad@microsoft.com>
+Code-Review+1: Omar Maabreh <omarm@microsoft.com>
+Code-Review+1: Dave Thaler <dthaler@microsoft.com>
+Code-Review+2: C.J. Collier <cjcollier@linuxfoundation.org>
+Submitted-by: C.J. Collier <cjcollier@linuxfoundation.org>
+Submitted-at: Wed, 12 Apr 2017 18:30:38 +0000
+Reviewed-on: https://gerrit.iotivity.org/gerrit/18821
+Project: ci-management
+Branch: refs/heads/master
