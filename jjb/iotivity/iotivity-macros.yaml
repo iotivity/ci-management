@@ -58,6 +58,8 @@
           if "%ERRORLEVEL%"=="0" taskkill /F /IM "unittest.exe"
           tasklist /FI "IMAGENAME eq catests.exe" 2>NUL | find /I /N "catests.exe">NUL
           if "%ERRORLEVEL%"=="0" taskkill /F /IM "catests.exe"
+          tasklist /FI "IMAGENAME eq provisiontests.exe" 2>NUL | find /I /N "provisiontests.exe">NUL
+          if "%ERRORLEVEL%"=="0" taskkill /F /IM "provisiontests.exe"
 
 - builder:
     name: osx
