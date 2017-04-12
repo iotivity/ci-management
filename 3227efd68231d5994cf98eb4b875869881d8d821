@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1acb0d3e_df5d2b4a",
+        "filename": "jjb/iotivity/iotivity-macros.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 9681
+      },
+      "writtenOn": "2017-04-12T14:19:24Z",
+      "side": 1,
+      "message": "This is fine, but please consider my suggestion about moving these to run.bat since it already has the list of tests. Having multiple such lists is not desirable.\n\nIt also won\u0027t require CJ if tomorrow we run into another stuck test.",
+      "revId": "3227efd68231d5994cf98eb4b875869881d8d821",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
