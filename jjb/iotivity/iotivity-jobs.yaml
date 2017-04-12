@@ -19,7 +19,10 @@
             - 'secured'
             - 'unsecured'
       - 'iotivity-verify-android'
-      - 'iotivity-verify-windows-{vs-version}':
+      - 'iotivity-verify-windows-{arch}-{vs-version}':
+          arch:
+            - 'x86'
+            - 'amd64'
           vs-version:
             - 'vs2013':
                 msvc-version: '12.0'
