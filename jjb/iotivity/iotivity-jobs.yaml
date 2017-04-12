@@ -19,12 +19,21 @@
             - 'secured'
             - 'unsecured'
       - 'iotivity-verify-android'
-      - 'iotivity-verify-windows-{vs-version}':
+      - 'iotivity-verify-windows-{arch}-{vs-version}-{build-mode}-{security}':
+          arch:
+            - 'x86'
+            - 'amd64'
           vs-version:
             - 'vs2013':
                 msvc-version: '12.0'
             - 'vs2015':
                 msvc-version: '14.0'
+          build-mode:
+            - 'release'
+            - 'debug'
+          security:
+            - 'secured'
+            - 'unsecured'
       - 'iotivity-verify-unit_tests'
     component:
       - 'linux_unsecured'
