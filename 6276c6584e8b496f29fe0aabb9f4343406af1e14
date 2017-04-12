@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1acb0d3e_7ad8c553",
+        "filename": "jjb/iotivity/iotivity-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2017-04-12T22:22:21Z",
+      "side": 1,
+      "message": "Thanks, I\u0027ll give that a try!",
+      "parentUuid": "1acb0d3e_9a5491cb",
+      "range": {
+        "startLine": 23,
+        "startChar": 10,
+        "endLine": 36,
+        "endChar": 25
+      },
+      "revId": "6276c6584e8b496f29fe0aabb9f4343406af1e14",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1acb0d3e_3a5d5dea",
         "filename": "jjb/iotivity/iotivity-macros.yaml",
         "patchSetId": 2
