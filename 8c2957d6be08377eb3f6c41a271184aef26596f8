@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "1acb0d3e_207c5072",
+        "filename": "jjb/iotivity/iotivity-macros.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 8389
+      },
+      "writtenOn": "2017-04-13T17:49:23Z",
+      "side": 1,
+      "message": "Please add -noMOT to this build to test this configuration also. See comment below.",
+      "range": {
+        "startLine": 45,
+        "startChar": 34,
+        "endLine": 45,
+        "endChar": 51
+      },
+      "revId": "8c2957d6be08377eb3f6c41a271184aef26596f8",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1acb0d3e_400e3c36",
         "filename": "jjb/iotivity/iotivity-macros.yaml",
         "patchSetId": 3
@@ -13,6 +36,30 @@
       "writtenOn": "2017-04-13T16:20:57Z",
       "side": 1,
       "message": "Can you also add -noMOT here. There have been some breaks in this feature also lately.",
+      "range": {
+        "startLine": 55,
+        "startChar": 16,
+        "endLine": 55,
+        "endChar": 44
+      },
+      "revId": "8c2957d6be08377eb3f6c41a271184aef26596f8",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1acb0d3e_80874461",
+        "filename": "jjb/iotivity/iotivity-macros.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 8389
+      },
+      "writtenOn": "2017-04-13T17:49:23Z",
+      "side": 1,
+      "message": "After discussing with Luiz we decided that this should be added to the VS2013 x86 build instead since the WACK test will run on the VS2015 amd64 build.",
+      "parentUuid": "1acb0d3e_400e3c36",
       "range": {
         "startLine": 55,
         "startChar": 16,
