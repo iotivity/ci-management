@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1acb0d3e_d7474f4a",
+        "filename": "jjb/iotivity/iotivity-macros.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2017-04-14T17:43:17Z",
+      "side": 1,
+      "message": "Doesn\u0027t look like that was it:\n\njenkins_jobs.errors.JenkinsJobsException: arch-name parameter missing to format \n@echo off\nset MSVC_VERSION\u003d\u0027{msvc-version}\u0027\nset TARGET_ARCH\u003d\u0027{arch-name}\u0027\nset",
+      "parentUuid": "1acb0d3e_f7404b37",
+      "range": {
+        "startLine": 39,
+        "startChar": 29,
+        "endLine": 39,
+        "endChar": 43
+      },
+      "revId": "49f3415cd4de600258bc1859ed8614fbf2594181",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1acb0d3e_173e37b9",
         "filename": "jjb/iotivity/iotivity-macros.yaml",
         "patchSetId": 4
