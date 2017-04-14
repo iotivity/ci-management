@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1acb0d3e_3757b304",
+        "filename": "jjb/iotivity/iotivity-macros.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 8333
+      },
+      "writtenOn": "2017-04-14T17:29:49Z",
+      "side": 1,
+      "message": "Once this is merged with change 18837 (https://gerrit.iotivity.org/gerrit/#/c/18837/4/jjb/iotivity/iotivity-macros.yaml), UWP_APP\u003d1 should be set if \"%MSVC_VERSION%\" \u003d\u003d \"14.0\"  and   \"%TARGET_ARCH%\" \u003d\u003d \"amd64\"",
+      "range": {
+        "startLine": 46,
+        "startChar": 12,
+        "endLine": 46,
+        "endChar": 25
+      },
+      "revId": "a78620f48fcd8a91a8af3f4a2d1413c5f5da95ed",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
