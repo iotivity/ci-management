@@ -22,6 +22,30 @@
       "revId": "a78620f48fcd8a91a8af3f4a2d1413c5f5da95ed",
       "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1acb0d3e_b7f083ca",
+        "filename": "jjb/iotivity/iotivity-macros.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 8333
+      },
+      "writtenOn": "2017-04-15T00:14:03Z",
+      "side": 1,
+      "message": "Also, after discussing with Mike Fenelon, we decided that the flag should be \"RUN_WACK\" instead of \"UWP_APP\", so please update \"set UWP_APP\u003d1\" to \"set RUN_WACK\u003d1\"",
+      "parentUuid": "1acb0d3e_3757b304",
+      "range": {
+        "startLine": 46,
+        "startChar": 12,
+        "endLine": 46,
+        "endChar": 25
+      },
+      "revId": "a78620f48fcd8a91a8af3f4a2d1413c5f5da95ed",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
     }
   ]
 }
