@@ -67,9 +67,6 @@ ln -sv ${IOTIVITYEXTLIB}/boost/boost_1_58_0.zip ${WORKSPACE}/extlibs/boost/boost
 ln -sv ${IOTIVITYEXTLIB}/cereal ${WORKSPACE}/extlibs/cereal
 
 TINYCBOR_VERSION='0.3.2'
-if [ "$GERRIT_BRANCH" = "1.1-rel" ]; then
-    TINYCBOR_VERSION='0.2.1'
-fi
 unzip -oq "${IOTIVITYEXTLIB}/tinycbor/v${TINYCBOR_VERSION}.zip" -d ${IOTIVITYEXTLIB}/tinycbor/
 ln -sv "${IOTIVITYEXTLIB}/tinycbor/tinycbor-${TINYCBOR_VERSION}" ${WORKSPACE}/extlibs/tinycbor/tinycbor
 

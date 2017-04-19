@@ -8,10 +8,6 @@
           branch: 'master'
           refspec: 'refs/heads/master'
           gerrit-branch: 'master'
-      - '1.1-rel': &1_1-rel
-          branch: '1.1-rel'
-          refspec: 'refs/heads/1.1-rel'
-          gerrit-branch: '1.1-rel'
       - '1.2-rel': &1_2-rel
           branch: '1.2-rel'
           refspec: 'refs/heads/1.2-rel'
@@ -24,8 +20,6 @@
           stream:
             - 'master':
                 <<: *master
-            - '1.1-rel':
-                <<: *1_1-rel
           component:
             - 'linux_unsecured'
             - 'linux_secured'

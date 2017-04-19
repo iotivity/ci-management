@@ -56,24 +56,10 @@
           credentials-id: '{ssh-credentials}'
 
     triggers:
-      - gerrit:
-          server-name: 'iotivity'
-          trigger-on:
-            - patchset-created-event:
-                exclude-drafts: 'false'
-                exclude-trivial-rebase: 'false'
-                exclude-no-code-change: 'true'
-            - draft-published-event
-            - comment-added-contains-event:
-                comment-contains-value: 'verify all'
-            - comment-added-contains-event:
-                comment-contains-value: 'reverify'
-          projects:
-            - project-compare-type: 'ANT'
-              project-pattern: '{project}'
-              branches:
-                - branch-compare-type: 'REG_EXP'
-                  branch-pattern: '^(?!.*1.1-rel).*$'
+      - gerrit-trigger-patch-submitted:
+          silent: '{silent}'
+          project: '{project}'
+          branch: '{gerrit-branch}'
 
     wrappers:
       - timestamps
@@ -361,25 +347,10 @@
           choosing-strategy: 'gerrit'
 
     triggers:
-      - gerrit:
-          server-name: 'iotivity'
-          silent: '{obj:silent}'
-          trigger-on:
-            - patchset-created-event:
-                exclude-drafts: 'false'
-                exclude-trivial-rebase: 'false'
-                exclude-no-code-change: 'true'
-            - draft-published-event
-            - comment-added-contains-event:
-                comment-contains-value: 'verify all'
-            - comment-added-contains-event:
-                comment-contains-value: 'reverify'
-          projects:
-            - project-compare-type: 'ANT'
-              project-pattern: '{project}'
-              branches:
-                - branch-compare-type: 'REG_EXP'
-                  branch-pattern: '^(?!.*1.1-rel).*$'
+      - gerrit-trigger-patch-submitted:
+          silent: '{silent}'
+          project: '{project}'
+          branch: '{gerrit-branch}'
 
     wrappers:
       - timestamps
