@@ -82,9 +82,6 @@ fi
 if [ "$GERRIT_BRANCH" = "1.2-rel" ]; then
     TINYCBOR_VERSION='0.4'
 fi
-if [ "$GERRIT_BRANCH" = "1.1-rel" ]; then
-    TINYCBOR_VERSION='0.2.1'
-fi
 if [ ! -f "${IOTIVITYEXTLIB}/tinycbor/v${TINYCBOR_VERSION}.zip" ]
 then
   wget -O "${IOTIVITYEXTLIB}/tinycbor/v${TINYCBOR_VERSION}.zip" -nv "https://github.com/intel/tinycbor/archive/v${TINYCBOR_VERSION}.zip"

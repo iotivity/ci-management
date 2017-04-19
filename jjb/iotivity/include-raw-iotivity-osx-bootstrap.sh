@@ -10,9 +10,6 @@ fi
 if [ "$GERRIT_BRANCH" = "1.2-rel" ]; then
     TINYCBOR_VERSION='0.4'
 fi
-if [ "$GERRIT_BRANCH" = "1.1-rel" ]; then
-    TINYCBOR_VERSION='0.2.1'
-fi
 
 # tinycbor
 unzip -oq "${IOTIVITYEXTLIB}/tinycbor/v${TINYCBOR_VERSION}.zip" -d ${IOTIVITYEXTLIB}/tinycbor/
