@@ -36,8 +36,8 @@
     builders:
       - batch: |
             @echo off
-            set MSVC_VERSION='{msvc-version}'
-            set TARGET_ARCH='{arch-name}'
+            set MSVC_VERSION={msvc-version}
+            set TARGET_ARCH={arch-name}
             set
 
             IF "%MSVC_VERSION%" == "12.0" (
