@@ -10,6 +10,6 @@ git checkout -q -b master-one HEAD^ && jenkins-jobs -l ERROR test -r jjb -o job_
 diff -r -u0 job_output_prev job_output &> job_diff.txt
 # Add a space at the beginning of each line so Gerrit sees it as a block
 # comment
-sed -i.bak 's/^/>/' job_diff.txt
+sed -i 's/^/> /' job_diff.txt
 
 git checkout -q - && git branch -q -d master-one
