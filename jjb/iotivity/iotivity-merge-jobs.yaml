@@ -16,6 +16,10 @@
           branch: '1.2-rel'
           refspec: 'refs/heads/1.2-rel'
           gerrit-branch: '1.2-rel'
+      - '1.3-rel': &1_3-rel
+          branch: '1.3-rel'
+          refspec: 'refs/heads/1.3-rel'
+          gerrit-branch: '1.3-rel'
     silent: true
     disabled: false
     mailto: 'oicbuild@intel.com, tbramwell@linuxfoundation.org'
@@ -37,6 +41,8 @@
           stream:
             - '1.2-rel':
                 <<: *1_2-rel
+            - '1.3-rel':
+                <<: *1_3-rel
           component:
             - 'linux_unsecured'
             - 'linux_secured'
@@ -60,20 +66,37 @@
                 <<: *master
             - '1.2-rel':
                 <<: *1_2-rel
+            - '1.3-rel':
+                <<: *1_3-rel
       - 'iotivity-merge-{stream}-android'
-      - 'iotivity-merge-{stream}-windows-{vs-version}':
+      - 'iotivity-merge-{stream}-windows-{arch}-{vs-version}':
           stream:
-            - 'master':
-                <<: *master
             - '1.2-rel':
                 <<: *1_2-rel
+          arch:
+            - 'x86':
+                arch-name: 'x86'
           vs-version:
             - 'vs2013':
                 msvc-version: '12.0'
-                arch-name: 'x86'
             - 'vs2015':
                 msvc-version: '14.0'
+      - 'iotivity-merge-{stream}-windows-{arch}-{vs-version}':
+          stream:
+            - 'master':
+                <<: *master
+            - '1.3-rel':
+                <<: *1_3-rel
+          arch:
+            - 'x86':
+                arch-name: 'x86'
+            - 'amd64':
                 arch-name: 'amd64'
+          vs-version:
+            - 'vs2013':
+                msvc-version: '12.0'
+            - 'vs2015':
+                msvc-version: '14.0'
       - 'iotivity-merge-{stream}-unit_tests'
       - 'iotivity-sonar-runner':
           gerrit-branch: 'master'
@@ -365,7 +388,7 @@
           mailto: '{mailto}'
 
 - job-template:
-    name: 'iotivity-merge-{stream}-windows-{vs-version}'
+    name: 'iotivity-merge-{stream}-windows-{arch}-{vs-version}'
 
     project-type: freestyle
     node: '{vs-version}'
@@ -408,6 +431,13 @@
           arch-name: '{arch-name}'
 
     publishers:
+      - postbuildscript:
+          script-only-if-succeeded: false
+          script-only-if-failed: true
+          builders:
+            - windows-kill-unit-tests:
+                msvc-version: '{msvc-version}'
+                arch-name: '{arch-name}'
       - retry-build-on-builder-error
       - email-notification-unstable:
           mailto: '{mailto}'
