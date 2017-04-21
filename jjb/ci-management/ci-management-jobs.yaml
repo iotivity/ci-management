@@ -105,7 +105,7 @@
 
     builders:
       - shell:
-          jenkins-jobs update --workers 0 --delete-old --recursive jjb/
+          jenkins-jobs update --workers 4 --delete-old --recursive jjb/
 
 - builder:
     name: 'gerrit-comment'
