@@ -38,27 +38,33 @@
             @echo off
             set MSVC_VERSION={msvc-version}
             set TARGET_ARCH={arch-name}
-            set
 
             IF "%MSVC_VERSION%" == "12.0" (
               IF "%TARGET_ARCH%" == "x86" (
-                run.bat -arch x86 -release -logging -noMOT
+                set BUILD_ARGS=-release -logging -noMOT
               ) ELSE IF "%TARGET_ARCH%" == "amd64" (
-                run.bat -arch amd64 -noSecurity
+                set BUILD_ARGS=-noSecurity
               ) ELSE (
                 echo "unsupported architecture: %TARGET_ARCH%"
+                exit 1
               )
             ) ELSE IF "%MSVC_VERSION%" == "14.0" (
               IF "%TARGET_ARCH%" == "x86" (
-                run.bat -arch x86 -logging -noSecurity
+                set BUILD_ARGS=-logging -noSecurity
               ) ELSE IF "%TARGET_ARCH%" == "amd64" (
-                run.bat -arch amd64 -release
+                set BUILD_ARGS=-release
               ) ELSE (
                 echo "unsupported architecture: %TARGET_ARCH%"
+                exit 1
               )
             ) ELSE (
               echo "unsupported MSVC version: %MSVC_VERSION%"
+              exit 2
             )
+
+            set
+            run.bat build -arch %TARGET_ARCH% %BUILD_ARGS% || exit %ERRORLEVEL%
+
             run.bat test
             run.bat clean
 
