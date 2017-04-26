@@ -42,23 +42,27 @@
 
             IF "%MSVC_VERSION%" == "12.0" (
               IF "%TARGET_ARCH%" == "x86" (
-                run.bat -arch x86 -release -logging -noMOT
+                run.bat -arch x86 -release -logging -noMOT || exit %ERRORLEVEL%
               ) ELSE IF "%TARGET_ARCH%" == "amd64" (
-                run.bat -arch amd64 -noSecurity
+                run.bat -arch amd64 -noSecurity || exit %ERRORLEVEL%
               ) ELSE (
                 echo "unsupported architecture: %TARGET_ARCH%"
+                exit 1
               )
             ) ELSE IF "%MSVC_VERSION%" == "14.0" (
               IF "%TARGET_ARCH%" == "x86" (
-                run.bat -arch x86 -logging -noSecurity
+                run.bat -arch x86 -logging -noSecurity || exit %ERRORLEVEL%
               ) ELSE IF "%TARGET_ARCH%" == "amd64" (
-                run.bat -arch amd64 -release
+                run.bat -arch amd64 -release || exit %ERRORLEVEL%
               ) ELSE (
                 echo "unsupported architecture: %TARGET_ARCH%"
+                exit 1
               )
             ) ELSE (
               echo "unsupported MSVC version: %MSVC_VERSION%"
+              exit 2
             )
+
             run.bat test
             run.bat clean
 
