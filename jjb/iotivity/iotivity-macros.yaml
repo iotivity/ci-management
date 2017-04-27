@@ -120,6 +120,8 @@
             #!/bin/bash -eux
             set -o pipefail
 
+            ulimit -c unlimited
+
             export VERBOSE=true
             export CCACHE_DISABLE=true
 
