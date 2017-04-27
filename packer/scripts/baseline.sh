@@ -3,6 +3,8 @@ set -o pipefail
 
 export DEBIAN_FRONTEND=noninteractive
 
+echo 'kernel.core_pattern=%e-%t-SIG%s.core' >> /etc/sysctl.conf
+
 apt-get clean \
 && rm -rf /var/lib/apt/lists \
 && apt-get -y -q update
