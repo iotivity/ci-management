@@ -210,7 +210,7 @@
       - valgrind-report
       - xunit-report
       - archive-artifacts:
-          artifacts: '*.memcheck, out/**/test_out/*.xml'
+          artifacts: '*.memcheck, out/**/test_out/*.xml, **/*.core, *.core'
       - email-notification:
           mailto: 'oicbuild@intel.com'
 
