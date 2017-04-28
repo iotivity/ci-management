@@ -1,0 +1,11 @@
+Verified+1: jenkins-iotivity <jenkins@iotivity.org>
+Code-Review+1: Alex Kelley <alexke@microsoft.com>
+Code-Review+1: Way Vadhanasin <wayvad@microsoft.com>
+Code-Review+1: Omar Maabreh <omarm@microsoft.com>
+Code-Review+1: Phil Coval <philippe.coval@osg.samsung.com>
+Code-Review+2: Mike Fenelon <mike.fenelon@microsoft.com>
+Submitted-by: Mike Fenelon <mike.fenelon@microsoft.com>
+Submitted-at: Fri, 28 Apr 2017 18:22:02 +0000
+Reviewed-on: https://gerrit.iotivity.org/gerrit/19431
+Project: ci-management
+Branch: refs/heads/master
