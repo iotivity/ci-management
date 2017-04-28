@@ -390,6 +390,7 @@
 
     builders:
       - batch:
+          !include-raw-escape: include-raw-iotivity-windows-cleanproc.bat
           !include-raw-escape: include-raw-iotivity-windows-bootstrap.bat
       - windows:
           msvc-version: '{msvc-version}'
