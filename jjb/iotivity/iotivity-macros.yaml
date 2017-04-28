@@ -75,42 +75,8 @@
 - builder:
     name: windows-kill-unit-tests
     builders:
-      - batch: |
-          tasklist /FI "IMAGENAME eq unittests.exe" 2>NUL | find /I /N "unittests.exe">NUL
-          if "%ERRORLEVEL%"=="0" taskkill /F /IM "unittests.exe"
-
-          tasklist /FI "IMAGENAME eq unittest.exe" 2>NUL | find /I /N "unittest.exe">NUL
-          if "%ERRORLEVEL%"=="0" taskkill /F /IM "unittest.exe"
-
-          tasklist /FI "IMAGENAME eq catests.exe" 2>NUL | find /I /N "catests.exe">NUL
-          if "%ERRORLEVEL%"=="0" taskkill /F /IM "catests.exe"
-
-          tasklist /FI "IMAGENAME eq provisiontests.exe" 2>NUL | find /I /N "provisiontests.exe">NUL
-          if "%ERRORLEVEL%"=="0" taskkill /F /IM "provisiontests.exe"
-
-          tasklist /FI "IMAGENAME eq cbortests.exe" 2>NUL | find /I /N "cbortests.exe">NUL
-          if "%ERRORLEVEL%"=="0" taskkill /F /IM "cbortests.exe"
-
-          tasklist /FI "IMAGENAME eq stacktests.exe" 2>NUL | find /I /N "stacktests.exe">NUL
-          if "%ERRORLEVEL%"=="0" taskkill /F /IM "stacktests.exe"
-
-          tasklist /FI "IMAGENAME eq randomtests.exe" 2>NUL | find /I /N "randomtests.exe">NUL
-          if "%ERRORLEVEL%"=="0" taskkill /F /IM "randomtests.exe"
-
-          tasklist /FI "IMAGENAME eq malloctests.exe" 2>NUL | find /I /N "malloctests.exe">NUL
-          if "%ERRORLEVEL%"=="0" taskkill /F /IM "malloctests.exe"
-
-          tasklist /FI "IMAGENAME eq stringtests.exe" 2>NUL | find /I /N "stringtests.exe">NUL
-          if "%ERRORLEVEL%"=="0" taskkill /F /IM "stringtests.exe"
-
-          tasklist /FI "IMAGENAME eq timetests.exe" 2>NUL | find /I /N "timetests.exe">NUL
-          if "%ERRORLEVEL%"=="0" taskkill /F /IM "timetests.exe"
-
-          tasklist /FI "IMAGENAME eq c_common_windows_tests.exe" 2>NUL | find /I /N "c_common_windows_tests.exe">NUL
-          if "%ERRORLEVEL%"=="0" taskkill /F /IM "c_common_windows_tests.exe"
-
-          tasklist /FI "IMAGENAME eq ipcatests.exe" 2>NUL | find /I /N "ipcatests.exe">NUL
-          if "%ERRORLEVEL%"=="0" taskkill /F /IM "ipcatests.exe"
+      - batch:
+          !include-raw-escape: include-raw-iotivity-windows-cleanproc.bat
 
 - builder:
     name: osx
