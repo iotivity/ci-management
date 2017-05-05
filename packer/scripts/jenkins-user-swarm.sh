@@ -28,7 +28,7 @@ exec /home/jenkins-ci/jenkins-swarm.sh
 EOF
 
 # Download Swarm
-wget -nv 'https://repo.jenkins-ci.org/releases/org/jenkins-ci/plugins/swarm-client/2.2/swarm-client-2.2-jar-with-dependencies.jar' -O /home/jenkins-ci/swarm.jar
+wget -nv 'https://repo.jenkins-ci.org/releases/org/jenkins-ci/plugins/swarm-client/3.4/swarm-client-3.4.jar' -O /home/jenkins-ci/swarm.jar
 
 # Create Swarm Connection Script
 cat << EOF >> /home/jenkins-ci/jenkins-swarm.sh
