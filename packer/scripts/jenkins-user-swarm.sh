@@ -45,6 +45,7 @@ export JENKINS_PASSWORD="\$(curl -sL -H "Metadata-Flavor: Google" http://metadat
 # Connect to Jenkins
 java -jar \$HOME/swarm.jar \
  -master http://\$JENKINS_HOSTNAME:8080/ci/ \
+ -disableSslVerification \
  -executors 1 \
  -description "IoTivity Swarm Client" \
  -labels "\$JENKINS_LABELS" \
@@ -56,3 +57,7 @@ java -jar \$HOME/swarm.jar \
 EOF
 
 chmod +x /home/jenkins-ci/jenkins-swarm.sh
+
+# Pull the SSH Hostkey from Gerrit
+mkdir -p /home/jenkins-ci/.ssh
+ssh-keyscan -p 29418 gerrit.iotivity.org > /home/jenkins-ci/.ssh/known_hosts
