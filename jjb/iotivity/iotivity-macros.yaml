@@ -46,7 +46,7 @@
                 set BUILD_ARGS=-noSecurity
               ) ELSE (
                 echo "unsupported architecture: %TARGET_ARCH%"
-                exit 1
+                exit /B 1
               )
             ) ELSE IF "%MSVC_VERSION%" == "14.0" (
               IF "%TARGET_ARCH%" == "x86" (
@@ -55,18 +55,22 @@
                 set BUILD_ARGS=-release
               ) ELSE (
                 echo "unsupported architecture: %TARGET_ARCH%"
-                exit 1
+                exit /B 1
               )
             ) ELSE (
               echo "unsupported MSVC version: %MSVC_VERSION%"
-              exit 2
+              exit /B 2
             )
 
             set
-            run.bat build -arch %TARGET_ARCH% %BUILD_ARGS% || exit %ERRORLEVEL%
+            call run.bat build -arch %TARGET_ARCH% %BUILD_ARGS%
 
-            run.bat test
-            run.bat clean
+            if ERRORLEVEL 1 (
+                echo "run.bat failed"
+                exit /B 3
+            )
+
+            call run.bat clean
 
 - builder:
     name: windows-kill-unit-tests
