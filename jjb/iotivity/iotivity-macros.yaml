@@ -63,11 +63,20 @@
             )
 
             set
-            call run.bat build -arch %TARGET_ARCH% %BUILD_ARGS%
 
+            REM Multi-threaded build, for increased performance.
+            call run.bat build -notest -arch %TARGET_ARCH% %BUILD_ARGS%
             if ERRORLEVEL 1 (
-                echo "run.bat failed"
+                echo "run.bat failed, exiting with status 3"
                 exit /B 3
+            )
+
+            REM Single-threaded unit test run, for increased test reliability
+            REM and for easier test failure investigation.
+            call run.bat build -threads 1 -arch %TARGET_ARCH% %BUILD_ARGS%
+            if ERRORLEVEL 1 (
+                echo "run.bat failed, exiting with status 4"
+                exit /B 4
             )
 
             call run.bat clean
