@@ -13,3 +13,4 @@ diff -r -u0 job_output_prev job_output &> job_diff.txt
 sed -i.bak 's/^/>/' job_diff.txt
 
 git checkout -q - && git branch -q -d master-one
+
