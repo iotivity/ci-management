@@ -58,7 +58,10 @@
             - 'linux_unsecured_with_java'
             - 'linux_secured_with_java'
       - 'iotivity-merge-{stream}-osx'
-      - 'iotivity-merge-{stream}-tizen'
+      - 'iotivity-merge-{stream}-tizen_{security}':
+          security:
+            - 'unsecured'
+            - 'secured'
       - 'iotivity-merge-{stream}-linux_{security}_with_tcp':
           security:
             - 'unsecured'
@@ -182,7 +185,7 @@
           mailto: '{mailto}'
 
 - job-template:
-    name: 'iotivity-merge-{stream}-tizen'
+    name: 'iotivity-merge-{stream}-tizen_{security}'
 
     project-type: freestyle
     node: '{node}'
