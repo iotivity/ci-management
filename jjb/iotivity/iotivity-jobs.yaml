@@ -163,7 +163,7 @@
       - shell:
           !include-raw-escape: include-raw-iotivity-tizen.sh
       - auto-build:
-          component: 'tizen'
+          component: 'tizen_{security}'
 
     publishers:
       - retry-build-on-builder-error
