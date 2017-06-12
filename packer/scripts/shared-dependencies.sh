@@ -76,7 +76,7 @@ mkdir -p /extlibs/mbedtls
 git clone https://github.com/ARMmbed/mbedtls /extlibs/mbedtls/mbedtls \
 && cd /extlibs/mbedtls/mbedtls \
 && git fetch --all --tags \
-&& echo "bbdbbda04f88545fa525490a64aac84e6cf08a6c" > .git/refs/tags/mbedtls-2.4.0
+&& echo "59ae96f167a19f4d04dc6db61f6587b37ccd429f" > .git/refs/tags/mbedtls-2.4.2
 
 # libcoap
 mkdir -p /extlibs/libcoap
