@@ -37,6 +37,8 @@
     component:
       - 'linux_unsecured'
       - 'linux_secured'
+      - 'tizen_unsecured'
+      - 'tizen_secured'
       - 'arduino'
       - 'simulator'
 
