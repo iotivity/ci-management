@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1acb0d3e_5259f2fc",
+        "filename": "jjb/iotivity/iotivity-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 12779
+      },
+      "writtenOn": "2017-06-15T21:58:33Z",
+      "side": 1,
+      "message": "This section should just include the name of the builder from the macro right?\nFor example:\n\nbuilders:\n  - windows-kill-unit-tests\n\nRather than describing again the macro",
+      "range": {
+        "startLine": 393,
+        "startChar": 0,
+        "endLine": 393,
+        "endChar": 73
+      },
+      "revId": "7afd2e646d785af4e4756d2d10d75198a13022c5",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
