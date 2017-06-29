@@ -1,0 +1,7 @@
+Verified+1: jenkins-iotivity <jenkins@iotivity.org>
+Code-Review+2: Dave Thaler <dthaler@microsoft.com>
+Submitted-by: Dave Thaler <dthaler@microsoft.com>
+Submitted-at: Thu, 29 Jun 2017 00:10:02 +0000
+Reviewed-on: https://gerrit.iotivity.org/gerrit/18711
+Project: ci-management
+Branch: refs/heads/master
