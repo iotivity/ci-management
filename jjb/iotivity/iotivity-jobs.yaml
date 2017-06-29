@@ -37,7 +37,6 @@
     component:
       - 'linux_unsecured'
       - 'linux_secured'
-      - 'arduino'
       - 'simulator'
 
 - job-template:
