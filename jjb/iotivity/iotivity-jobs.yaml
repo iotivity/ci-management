@@ -1,4 +1,4 @@
----
+`---
 - project:
     name: iotivity-verify-jobs
     project: 'iotivity'
@@ -21,7 +21,10 @@
           security:
             - 'secured'
             - 'unsecured'
-      - 'iotivity-verify-android'
+      - 'iotivity-verify-android_{security}':
+          security:
+            - 'secured'
+            - 'unsecured'
       - 'iotivity-verify-windows-{arch}-{vs-version}':
           arch:
             - 'x86':
@@ -217,7 +220,7 @@
           mailto: 'oicbuild@intel.com'
 
 - job-template:
-    name: 'iotivity-verify-android'
+    name: 'iotivity-verify-android_{security}'
 
     project-type: freestyle
     node: '{node}'
@@ -247,7 +250,7 @@
       - shell:
           !include-raw-escape: include-raw-iotivity-bootstrap.sh
       - auto-build:
-          component: 'android'
+          component: 'android_{security}'
 
     publishers:
       - retry-build-on-builder-error
