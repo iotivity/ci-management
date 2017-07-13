@@ -71,7 +71,10 @@
                 <<: *1_2-rel
             - '1.3-rel':
                 <<: *1_3-rel
-      - 'iotivity-merge-{stream}-android'
+      - 'iotivity-merge-{stream}-android_{security}':
+          security:
+            - 'unsecured'
+            - 'secured'
       - 'iotivity-merge-{stream}-windows-{arch}-{vs-version}':
           stream:
             - '1.2-rel':
@@ -267,7 +270,7 @@
           mailto: '{mailto}'
 
 - job-template:
-    name: 'iotivity-merge-{stream}-android'
+    name: 'iotivity-merge-{stream}-android_{security}'
 
     project-type: freestyle
     node: '{node}'
@@ -298,7 +301,7 @@
       - shell:
           !include-raw-escape: include-raw-iotivity-bootstrap.sh
       - auto-build:
-          component: 'android'
+          component: 'android_{security}'
 
     publishers:
       - retry-build-on-builder-error
