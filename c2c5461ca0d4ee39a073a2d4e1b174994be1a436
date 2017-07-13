@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aaae553_cef817c7",
+        "filename": "jjb/iotivity/iotivity-merge-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2017-07-13T23:24:13Z",
+      "side": 1,
+      "message": "This should be restricted to master and 1.3-rel, no?\n\n stream:\n   - \u0027master\u0027:\n     \u003c\u003c: *master\n   - \u00271.3-rel\u0027:\n     \u003c\u003c: *1_3-rel",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 53
+      },
+      "revId": "c2c5461ca0d4ee39a073a2d4e1b174994be1a436",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
