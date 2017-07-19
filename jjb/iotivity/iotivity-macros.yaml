@@ -157,7 +157,7 @@
           latest-only: false
           allow-empty: true
           only-if-successful: false
-          fingerprint: true
+          fingerprint: false
           default-excludes: true
 
 - publisher:
