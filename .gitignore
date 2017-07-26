@@ -4,5 +4,6 @@
 packer/builds
 packer/bin
 packer/packer_cache
+packer/vars/cloud-env.json
 
 jenkins.ini
