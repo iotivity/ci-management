@@ -1,0 +1,7 @@
+{
+  "base_image": "Ubuntu 12.04 - baseline - 20171026-1925",
+  "cloud_user": "ubuntu",
+
+  "distro": "Ubuntu 12.04",
+  "cloud_user_data": "provision/null_data.sh"
+}

@@ -1,0 +1,8 @@
+{
+  "base_image": "Windows Server 2012-R2-Standard Eval (2017-10-14) - LF upload",
+  "cloud_user": "vagrant",
+  "arch": "amd64",
+
+  "distro": "Windows 2012-R2",
+  "cloud_user_data": "provision/userdata.ps1"
+}

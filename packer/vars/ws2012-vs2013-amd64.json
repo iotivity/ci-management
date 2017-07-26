@@ -1,0 +1,8 @@
+{
+  "base_image": "Windows 2012-R2 - amd64 - basebuild - 20171024-1852",
+  "cloud_user": "vagrant",
+  "arch": "amd64",
+  "toolchain": "vs2013",
+  "distro": "Windows 2012-R2",
+  "cloud_user_data": "provision/userdata.ps1"
+}
