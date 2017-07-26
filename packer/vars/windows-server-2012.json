@@ -1,0 +1,7 @@
+{
+  "base_image": "Windows Server Standard 2012 [2017-07-26]",
+  "cloud_user": "windows",
+
+  "distro": "Windows Server 2012",
+  "cloud_user_data": "provision/null_data.ps1"
+}
