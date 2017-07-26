@@ -1,0 +1,66 @@
+{
+  "variables": {
+    "stack_tenant": null,
+    "stack_user": null,
+    "stack_pass": null,
+    "stack_network": null,
+    "base_image": null,
+    "cloud_user": null,
+    "distro": null,
+    "cloud_user_data": null,
+    "winrm_username": null,
+    "winrm_username": null,
+    "jenkins_username": null,
+    "jenkins_username": null,
+    "admin_username": null,
+    "admin_username": null
+
+  },
+  "builders": [
+    {
+      "type": "openstack",
+      "identity_endpoint": "https://auth.vexxhost.net/v2.0/",
+      "tenant_name": "{{user `stack_tenant`}}",
+      "username": "{{user `stack_user`}}",
+      "password": "{{user `stack_pass`}}",
+      "region": "ca-ymq-1",
+      "ssh_username": "{{user `cloud_user`}}",
+      "image_name": "{{user `distro`}} - baseline - {{isotime \"20060102-1504\"}}",
+      "source_image_name": "{{user `base_image`}}",
+      "flavor": "v1-standard-1",
+      "availability_zone": "ca-ymq-2",
+      "communicator": "winrm",
+      "winrm_timeout": "10000s",
+      "winrm_username": "{{user `winrm_username`}}",
+      "winrm_password": "{{user `winrm_password`}}",
+      "networks": [
+        "{{user `stack_network`}}"
+      ],
+      "user_data_file": "{{user `cloud_user_data`}}"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "file",
+      "source": "provision/basebuild/",
+      "destination": "c:\\packer"
+    },
+    {
+      "type": "powershell",
+      "scripts": [
+	  "provision/baseline.ps1",
+	  "provision/basebuild/fetch-curl.ps1",
+	  "provision/basebuild/install-vs2015.ps1"
+      ]
+    },
+    {
+      "type": "windows-shell",
+      "inline": [
+	  "net user {{ user `admin_username`}} {{ user `admin_password`}} /add",
+	  "net localgroup administrators {{ user `admin_username`}} /add",
+	  "net user {{ user `jenkins_username`}} {{ user `jenkins_password`}} /add"
+      ]
+    }
+
+  ]
+}
