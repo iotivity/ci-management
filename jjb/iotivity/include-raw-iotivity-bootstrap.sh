@@ -1,6 +1,8 @@
 #!/bin/bash -eux
 set -o pipefail
 
+IOTIVITYEXTLIB=${IOTIVITYEXTLIB:-/extlibs}
+
 rm -rf ${WORKSPACE}/extlibs/arduino/arduino-1.5.8
 rm -rf ${WORKSPACE}/extlibs/boost/boost_1_58_0
 rm -rf ${WORKSPACE}/extlibs/boost/boost_1_58_0.zip
