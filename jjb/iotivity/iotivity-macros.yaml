@@ -7,7 +7,7 @@
     wrappers:
       - timeout:
           type: no-activity
-          timeout: 10
+          timeout: 35
           abort: true
 
 - wrapper:
@@ -15,7 +15,7 @@
     wrappers:
       - timeout:
           type: no-activity
-          timeout: 10
+          timeout: 35
           fail: true
 
 ## Builders
