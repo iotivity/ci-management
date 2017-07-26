@@ -36,8 +36,8 @@
             - 'linux_unsecured'
             - 'linux_secured'
             - 'simulator'
-            - 'linux_unsecured_with_ra'
-            - 'linux_secured_with_ra'
+            - 'linux_unsecured_with_rd'
+            - 'linux_secured_with_rd'
       - 'iotivity-merge-{stream}-{component}':
           stream:
             - '1.2-rel':
@@ -421,8 +421,8 @@
 
     scm:
       - git:
-          credentials-id: '6466b968-939a-4d87-9f7f-0ceb5fca54dc'
-          url: 'ssh://jenkins-iotivity@gerrit.iotivity.org:29418/iotivity'
+          credentials-id: '6ba265b5-4270-46f3-aeaa-44b789a5d7a9'
+          url: 'ssh://iotivity-jobbuilder@gerrit.iotivity.org:29418/iotivity'
           refspec: '$GERRIT_REFSPEC'
           branches:
             - 'origin/$GERRIT_BRANCH'
