@@ -1,6 +1,8 @@
 #!/bin/bash -eux
 set -o pipefail
 
+IOTIVITYEXTLIB=${IOTIVITYEXTLIB:-/extlibs}
+
 rm -rf ${WORKSPACE}/extlibs/arduino/arduino-1.5.8
 rm -rf ${WORKSPACE}/extlibs/boost/boost_1_58_0
 rm -rf ${WORKSPACE}/extlibs/boost/boost_1_58_0.zip
@@ -75,7 +77,7 @@ ln -sv "${IOTIVITYEXTLIB}/tinycbor/tinycbor-${TINYCBOR_VERSION}" ${WORKSPACE}/ex
 
 ln -sv ${IOTIVITYEXTLIB}/android/android-ndk-r10d.bin ${WORKSPACE}/extlibs/android/ndk/android-ndk-r10d
 ln -sv ${IOTIVITYEXTLIB}/android/sdk/android-sdk_r24.2 ${WORKSPACE}/extlibs/android/sdk/android-sdk_r24.2
-ln -sv ${IOTIVITYEXTLIB}/android/gradle-2.2.1 ${WORKSPACE}/extlibs/android/gradle/gradle-2.2.1
+ln -sv ${IOTIVITYEXTLIB}/android/gradle/gradle-2.2.1 ${WORKSPACE}/extlibs/android/gradle/gradle-2.2.1
 ln -sv ${IOTIVITYEXTLIB}/expat/expat-2.1.0 ${WORKSPACE}/extlibs/expat/expat-2.1.0
 ln -sv ${IOTIVITYEXTLIB}/raxmpp/raxmpp ${WORKSPACE}/extlibs/raxmpp/raxmpp
 
