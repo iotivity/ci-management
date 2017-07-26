@@ -1,0 +1,8 @@
+{
+  "base_image": "Windows Server Standard 2012-R2 64-bit - basebuild - 20171017-2237",
+  "cloud_user": "vagrant",
+  "arch": "amd64",
+
+  "distro": "Windows Server Standard 2012-R2 64-bit",
+  "cloud_user_data": "provision/null_data.ps1"
+}
