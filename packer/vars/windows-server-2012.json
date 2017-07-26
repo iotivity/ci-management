@@ -1,0 +1,7 @@
+{
+  "base_image": "Windows Server 2012-R2-Standard (2017-08-02) - LF upload",
+  "cloud_user": "vagrant",
+
+  "distro": "Windows Server 2016",
+  "cloud_user_data": "provision/null_data.ps1"
+}
