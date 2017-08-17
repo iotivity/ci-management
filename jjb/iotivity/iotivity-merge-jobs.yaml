@@ -71,6 +71,11 @@
                 <<: *1_2-rel
             - '1.3-rel':
                 <<: *1_3-rel
+      - 'iotivity-merge-{stream}-linux_full':
+          stream:
+            - 'master':
+            - '1.3-rel':
+                <<: *1_3-rel
       - 'iotivity-merge-{stream}-android_{security}':
           security:
             - 'unsecured'
@@ -145,6 +150,41 @@
           !include-raw-escape: include-raw-iotivity-bootstrap.sh
       - auto-build:
           component: 'linux_{security}_with_tcp'
+
+    publishers:
+      - retry-build-on-builder-error
+      - email-notification-unstable:
+          mailto: '{mailto}'
+
+- job-template:
+    name: 'iotivity-merge-{stream}-linux_full'
+
+    project-type: freestyle
+    node: '{node}'
+    concurrent: true
+    disabled: '{obj:disabled}'
+
+    parameters:
+      - gerrit-project:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: '{refspec}'
+
+    scm:
+      - gerrit-branch-scm:
+          credentials-id: '{ssh-credentials}'
+
+    triggers:
+      - timed-twice-daily
+
+    wrappers:
+      - timestamps
+
+    builders:
+      - shell:
+          !include-raw-escape: include-raw-iotivity-bootstrap.sh
+      - auto-build:
+          component: 'linux_full'
 
     publishers:
       - retry-build-on-builder-error
