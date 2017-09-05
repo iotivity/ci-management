@@ -184,8 +184,8 @@
           thresholds:
             failed:
               invalid-read-write: 0
-              definitely-lost: 20
-              total: 50
+              definitely-lost: 50
+              total: 100
             fail-no-reports: false
             fail-invalid-reports: false
             publish-if-aborted: true
