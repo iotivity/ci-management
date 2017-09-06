@@ -1,0 +1,9 @@
+Verified+1: jenkins-iotivity <jenkins@iotivity.org>
+Code-Review+1: Mats Wichmann <mats@linux.com>
+Code-Review+2: C.J. Collier <cjcollier@linuxfoundation.org>
+Code-Review+1: Phil Coval <philippe.coval@osg.samsung.com>
+Submitted-by: C.J. Collier <cjcollier@linuxfoundation.org>
+Submitted-at: Wed, 06 Sep 2017 19:49:15 +0000
+Reviewed-on: https://gerrit.iotivity.org/gerrit/22323
+Project: ci-management
+Branch: refs/heads/master
