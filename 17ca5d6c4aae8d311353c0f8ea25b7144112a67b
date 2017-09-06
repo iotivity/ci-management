@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa4ed85_2f576404",
+        "filename": "jjb/iotivity/iotivity-macros.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 429
+      },
+      "writtenOn": "2017-09-06T17:31:09Z",
+      "side": 1,
+      "message": "it will keep failing if we keep it set to zero",
+      "range": {
+        "startLine": 186,
+        "startChar": 33,
+        "endLine": 186,
+        "endChar": 35
+      },
+      "revId": "17ca5d6c4aae8d311353c0f8ea25b7144112a67b",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
