@@ -3,12 +3,13 @@
     {
       "type": "googlecompute",
       "project_id": "gce-iotivity-ci",
-      "source_image": "ubuntu-1204-precise-v20161020",
+      "source_image": "ubuntu-1204-precise-v20170502",
       "zone": "us-central1-a",
       "machine_type": "n1-standard-4",
       "network": "gce-iotivity",
       "disk_size": "110",
-      "image_name": "gce-iotivity-build-{{uuid}}"
+      "image_name": "gce-iotivity-build-ssh-{{uuid}}",
+      "ssh_username": "root"
     }
   ],
   "provisioners": [
@@ -17,7 +18,8 @@
       "only": ["googlecompute"],
       "scripts": [
         "scripts/baseline.sh",
-        "scripts/jenkins-user-swarm.sh",
+        "scripts/sshd.sh",
+        "scripts/jenkins-user-sshd.sh",
         "scripts/packages.sh",
         "scripts/shared-dependencies.sh",
         "scripts/android.sh",

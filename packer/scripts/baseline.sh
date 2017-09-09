@@ -7,7 +7,8 @@ apt-get clean \
 && rm -rf /var/lib/apt/lists \
 && apt-get -y -q update
 
-apt-get -y -q install software-properties-common python-software-properties
+apt-get -y -q install software-properties-common python-software-properties \
+  openssh-server
 
 apt-add-repository -y ppa:openjdk-r/ppa
 apt-get -y -q update
