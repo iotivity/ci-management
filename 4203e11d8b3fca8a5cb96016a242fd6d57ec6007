@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa4ed85_3b0c8294",
+        "filename": "jjb/iotivity/iotivity-macros.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 445
+      },
+      "writtenOn": "2017-09-17T22:47:31Z",
+      "side": 1,
+      "message": "assuming this is the actual work, not sure what it means...",
+      "range": {
+        "startLine": 215,
+        "startChar": 0,
+        "endLine": 220,
+        "endChar": 29
+      },
+      "revId": "4203e11d8b3fca8a5cb96016a242fd6d57ec6007",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
