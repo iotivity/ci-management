@@ -148,6 +148,7 @@
 
     publishers:
       - retry-build-on-builder-error
+      - wipe-workspace
       - email-notification-unstable:
           mailto: '{mailto}'
 
@@ -187,6 +188,7 @@
 
     publishers:
       - retry-build-on-builder-error
+      - wipe-workspace
       - email-notification-unstable:
           mailto: '{mailto}'
 
@@ -228,6 +230,7 @@
 
     publishers:
       - retry-build-on-builder-error
+      - wipe-workspace
       - email-notification-unstable:
           mailto: '{mailto}'
 
@@ -271,6 +274,7 @@
       - xunit-report
       - archive-artifacts:
           artifacts: '*.memcheck, out/**/test_out/*.xml'
+      - wipe-workspace
       - email-notification-unstable:
           mailto: '{mailto}'
 
@@ -312,6 +316,7 @@
       - retry-build-on-builder-error
       - archive-artifacts:
           artifacts: 'android/android_api/base/build/outputs/**/*.xml, android/android_api/base/build/outputs/**/*.html'
+      - wipe-workspace
       - email-notification-unstable:
           mailto: '{mailto}'
 
@@ -353,6 +358,7 @@
       - retry-build-on-builder-error
       - archive-artifacts:
           artifacts: 'android/android_api/base/build/outputs/**/*.xml, android/android_api/base/build/outputs/**/*.html'
+      - wipe-workspace
       - email-notification-unstable:
           mailto: '{mailto}'
 
@@ -395,6 +401,7 @@
       - retry-build-on-builder-error
       - archive-artifacts:
           artifacts: 'android/android_api/base/build/outputs/**/*.xml, android/android_api/base/build/outputs/**/*.html'
+      - wipe-workspace
       - email-notification-unstable:
           mailto: '{mailto}'
 
@@ -535,5 +542,6 @@
       - retry-build-on-builder-error
       - archive-artifacts:
           artifacts: '*-report.xml'
+      - wipe-workspace
       - email-notification-unstable:
           mailto: '{mailto}'

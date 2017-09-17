@@ -78,5 +78,6 @@
             fingerprint: false
             only-if-success: true
             default-excludes: false
+        - wipe-workspace
         - email-notification:
             mailto: 'oicbuild@intel.com'

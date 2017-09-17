@@ -211,3 +211,10 @@
       - naginator:
           regular-expression: "ERROR: Connection was broken: java.io.EOFException"
           max-failed-builds: 2
+
+- publisher:
+    name: wipe-workspace
+    publishers:
+        - workspace-cleanup:
+            include: '**'
+            fail-build: false
