@@ -22,6 +22,30 @@
       "revId": "4203e11d8b3fca8a5cb96016a242fd6d57ec6007",
       "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa4ed85_75bbe672",
+        "filename": "jjb/iotivity/iotivity-macros.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2017-09-26T17:06:02Z",
+      "side": 1,
+      "message": "Put my comment in the wrong place, sorry! See my last comment regarding what this is and where it comes from.",
+      "parentUuid": "1aa4ed85_3b0c8294",
+      "range": {
+        "startLine": 215,
+        "startChar": 0,
+        "endLine": 220,
+        "endChar": 29
+      },
+      "revId": "4203e11d8b3fca8a5cb96016a242fd6d57ec6007",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
     }
   ]
 }
