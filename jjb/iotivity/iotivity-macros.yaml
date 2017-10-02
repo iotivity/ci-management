@@ -216,5 +216,4 @@
     name: wipe-workspace
     publishers:
         - workspace-cleanup:
-            include: '**'
             fail-build: false
