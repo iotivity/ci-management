@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa4ed85_67c48e92",
+        "filename": "packer/README.markdown",
+        "patchSetId": 73
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 445
+      },
+      "writtenOn": "2017-11-06T17:25:21Z",
+      "side": 1,
+      "message": "might want to call it README.md per usual conventions...",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 20
+      },
+      "revId": "96514cc39bb07e12ad913f514e1a1b613e17c017",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
