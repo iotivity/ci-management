@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa4ed85_6dc46d92",
+        "filename": "jjb/iotivity/iotivity-merge-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 445
+      },
+      "writtenOn": "2017-11-13T17:12:03Z",
+      "side": 1,
+      "message": "why these particular five? (there are many other linux options available).  When is this script used/what is the purpose?  Knowing that maybe can answer what the right set of combinations is.  I\u0027d be more inclined to approve if we just removed the two that were with_ra, and then figured out the question I\u0027m asking here.",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 37
+      },
+      "revId": "0466caa8ab756d17ad144ff247e2c5171f7ced74",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
