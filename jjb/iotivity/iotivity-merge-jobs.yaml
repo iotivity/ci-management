@@ -36,8 +36,8 @@
             - 'linux_unsecured'
             - 'linux_secured'
             - 'simulator'
-            - 'linux_unsecured_with_ra'
-            - 'linux_secured_with_ra'
+            - 'linux_unsecured_with_rd'
+            - 'linux_secured_with_rd'
       - 'iotivity-merge-{stream}-{component}':
           stream:
             - '1.2-rel':
