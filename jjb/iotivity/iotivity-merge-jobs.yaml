@@ -55,7 +55,8 @@
           component:
             - 'linux_unsecured_with_java'
             - 'linux_secured_with_java'
-      - 'iotivity-merge-{stream}-osx'
+      - 'iotivity-merge-{stream}-osx':
+          disabled: true
       - 'iotivity-merge-{stream}-tizen_{security}':
           security:
             - 'unsecured'

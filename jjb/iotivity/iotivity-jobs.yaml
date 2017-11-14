@@ -7,7 +7,8 @@
     silent: false
     jobs:
       - 'iotivity-verify-{component}'
-      - 'iotivity-verify-osx'
+      - 'iotivity-verify-osx':
+          disabled: true
       - 'iotivity-verify-tizen_{security}':
           security:
             - 'secured'
