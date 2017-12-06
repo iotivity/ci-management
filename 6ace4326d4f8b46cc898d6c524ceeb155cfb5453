@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa4ed85_c9e9cc1b",
+        "filename": "packer/provision/basebuild/install-vs2017.ps1",
+        "patchSetId": 79
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 12781
+      },
+      "writtenOn": "2017-12-06T00:53:22Z",
+      "side": 1,
+      "message": "Need to add here the Whole UWP Workload to successfully build for UWP. i.e.\n--add Microsoft.VisualStudio.Workload.Universal",
+      "range": {
+        "startLine": 22,
+        "startChar": 322,
+        "endLine": 22,
+        "endChar": 323
+      },
+      "revId": "6ace4326d4f8b46cc898d6c524ceeb155cfb5453",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
