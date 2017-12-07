@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa4ed85_896d1407",
+        "filename": "packer/provision/basebuild/install-vs2017.ps1",
+        "patchSetId": 82
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 12781
+      },
+      "writtenOn": "2017-12-07T20:08:11Z",
+      "side": 1,
+      "message": "Why did you move away from Start-Process which can actually wait till it\u0027s done?",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 9
+      },
+      "revId": "7ced6560a1da71f3456404489acda3517076d89f",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
