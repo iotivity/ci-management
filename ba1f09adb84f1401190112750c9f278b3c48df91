@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa4ed85_7fc72646",
+        "filename": "packer/provision/arduino.sh",
+        "patchSetId": 83
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 7423
+      },
+      "writtenOn": "2017-12-12T01:22:27Z",
+      "side": 1,
+      "message": "I guess this can be removed now that Arduino is being dropped.",
+      "range": {
+        "startLine": 4,
+        "startChar": 2,
+        "endLine": 4,
+        "endChar": 9
+      },
+      "revId": "ba1f09adb84f1401190112750c9f278b3c48df91",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
