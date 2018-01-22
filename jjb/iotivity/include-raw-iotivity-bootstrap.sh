@@ -66,7 +66,14 @@ unzip -oq ${IOTIVITYEXTLIB}/boost/boost_1_58_0.zip -d ${WORKSPACE}/extlibs/boost
 ln -sv ${IOTIVITYEXTLIB}/boost/boost_1_58_0.zip ${WORKSPACE}/extlibs/boost/boost_1_58_0.zip
 ln -sv ${IOTIVITYEXTLIB}/cereal ${WORKSPACE}/extlibs/cereal
 
-TINYCBOR_VERSION='0.3.2'
+TINYCBOR_VERSION='0.4.2'
+# except use the version that went through QA with each branch:
+if [ "$GERRIT_BRANCH" = "1.3-rel" ]; then
+    TINYCBOR_VERSION='0.4.1'
+fi
+if [ "$GERRIT_BRANCH" = "1.2-rel" ]; then
+    TINYCBOR_VERSION='0.4'
+fi
 if [ "$GERRIT_BRANCH" = "1.1-rel" ]; then
     TINYCBOR_VERSION='0.2.1'
 fi
