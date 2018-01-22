@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa4ed85_42328e11",
+        "filename": "jjb/iotivity/include-raw-iotivity-bootstrap.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 429
+      },
+      "writtenOn": "2018-01-22T14:54:03Z",
+      "side": 1,
+      "message": "0.4.1 is working fine\nnot 0.4.2 or master",
+      "revId": "69eef6659965440a3c140893de15cae878cb486f",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
