@@ -23,7 +23,6 @@
         "scripts/packages.sh",
         "scripts/shared-dependencies.sh",
         "scripts/android.sh",
-        "scripts/arduino.sh",
         "scripts/tizen.sh",
         "scripts/cleanup.sh"
       ]
