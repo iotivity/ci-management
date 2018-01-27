@@ -80,6 +80,10 @@ fi
 if [ "$GERRIT_BRANCH" = "1.1-rel" ]; then
     TINYCBOR_VERSION='0.2.1'
 fi
+if [ ! -f "${IOTIVITYEXTLIB}/tinycbor/v${TINYCBOR_VERSION}.zip" ]
+then
+  wget -O "${IOTIVITYEXTLIB}/tinycbor/v${TINYCBOR_VERSION}.zip" -nv "https://github.com/01org/tinycbor/archive/v${TINYCBOR_VERSION}.zip" 
+fi
 unzip -oq "${IOTIVITYEXTLIB}/tinycbor/v${TINYCBOR_VERSION}.zip" -d ${IOTIVITYEXTLIB}/tinycbor/
 ln -sv "${IOTIVITYEXTLIB}/tinycbor/tinycbor-${TINYCBOR_VERSION}" ${WORKSPACE}/extlibs/tinycbor/tinycbor
 
