@@ -55,7 +55,7 @@ cd /extlibs/tinycbor
 tinycbor_pfx=https://github.com/01org/tinycbor/archive
 for tinycbor_ver in 0.4.2 0.4.1 0.4 0.3.2 0.2.1
 do
-  wget -nv "${tinycbor_pfx}/${tinycbor_ver}.zip"
+  wget -nv "${tinycbor_pfx}/v${tinycbor_ver}.zip"
 done
 
 cd /extlibs/
