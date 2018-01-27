@@ -2,7 +2,7 @@
 set -o pipefail
 
 #IOTIVITYEXTLIB=${IOTIVITYEXTLIB:-/extlibs}
-IOTIVITYEXTLIB=${extlibs}
+IOTIVITYEXTLIB=extlibs
 
 mkdir -p "${IOTIVITYEXTLIB}"/
 
