@@ -3,6 +3,19 @@
 - defaults:
     name: global
 
+    # lf-infra defaults
+    jenkins-ssh-credential: jenkins-iotivity
+    gerrit-server-name: IoTivity
+    github-org: lfit
+    github_pr_whitelist:
+      - cjac
+      - tykeal
+      - zxiiro
+    github_pr_admin_list:
+      - cjcollier
+    lftools-version: '<1.0.0'
+    mvn-site-id: iotivity-site
+
     properties:
       - build-discarder:
           days-to-keep: 14
