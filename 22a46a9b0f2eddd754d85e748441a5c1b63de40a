@@ -1,0 +1,7 @@
+Verified+1: jenkins-iotivity <jenkins@iotivity.org>
+Code-Review+2: C.J. Collier <cjcollier@linuxfoundation.org>
+Submitted-by: C.J. Collier <cjcollier@linuxfoundation.org>
+Submitted-at: Mon, 29 Jan 2018 21:37:13 +0000
+Reviewed-on: https://gerrit.iotivity.org/gerrit/24037
+Project: ci-management
+Branch: refs/heads/master
