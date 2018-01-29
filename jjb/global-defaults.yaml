@@ -3,6 +3,19 @@
 - defaults:
     name: global
 
+    # lf-infra defaults
+    jenkins-ssh-credential: jenkins-iotivity
+    gerrit-server-name: IoTivity
+    github-org: lfit
+    github_pr_whitelist:
+      - cjcollier
+      - tykeal
+      - zxiiro
+    github_pr_admin_list:
+      - cjcollier
+    lftools-version: '<1.0.0'
+    mvn-site-id: iotivity-site
+
     properties:
       - build-discarder:
           days-to-keep: 14
@@ -17,4 +30,4 @@
 
     ssh-credentials: '6ba265b5-4270-46f3-aeaa-44b789a5d7a9'
 
-    ubuntu-node: 'ubuntu1204-20170505-2'
+    ubuntu-node: 'ubuntu'
