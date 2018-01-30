@@ -7,6 +7,7 @@ binutils
 blcr-util
 build-essential
 ca-certificates-java
+cmake
 cmap-adobe-japan1
 cpp
 doc-base
