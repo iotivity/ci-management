@@ -1,6 +1,6 @@
 {
   "base_image": "Ubuntu 16.04 - baseline - 20180122-2217",
-  "cloud_user": "ubuntu",
+  "ssh_user": "ubuntu",
 
   "distro": "Ubuntu 16.04",
   "cloud_user_data": "provision/null_data.sh"
