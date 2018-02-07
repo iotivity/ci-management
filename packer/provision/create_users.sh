@@ -68,7 +68,7 @@ perl -pi -e 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/s
 
 
 # Download slave.jar
-wget -nv 'https://jenkins.iotivity.org/ci/jnlpJars/slave.jar' -O /home/jenkins-ci/slave.jar
+wget -nv 'https://jenkins.iotivity.org/jnlpJars/slave.jar' -O /home/jenkins-ci/slave.jar
 
 
 cat << EOF >> /home/jenkins-ci/.ssh/authorized_keys

@@ -1,6 +1,21 @@
 #!/bin/bash -ex
 set -o pipefail
 
+ORIGIN=$(facter operatingsystem | tr '[:upper:]' '[:lower:]')
+
+case "${ORIGIN}" in
+    fedora|centos|redhat)
+        echo "---> RH type system detected"
+        exit 0
+    ;;
+    ubuntu)
+        echo "---> Ubuntu system detected"
+    ;;
+    *)
+        echo "---> Unknown operating system"
+    ;;
+esac
+
 # Add Tizen tool repo, and install GBS
 RELEASE=$(lsb_release -r | awk '{print $2}')
 

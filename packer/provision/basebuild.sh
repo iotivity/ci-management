@@ -5,7 +5,7 @@
 # force any errors to cause the script and job to end in failure
 set -xeu -o pipefail
 
-PACKERVER=1.0.0
+PACKERVER=1.1.3
 
 rh_systems() {
     # Make sure the 'Development Tools' group is installed
