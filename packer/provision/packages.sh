@@ -1,6 +1,21 @@
 #! /bin/bash -ex
 set -o pipefail
 
+ORIGIN=$(facter operatingsystem | tr '[:upper:]' '[:lower:]')
+
+case "${ORIGIN}" in
+    fedora|centos|redhat)
+        echo "---> RH type system detected"
+        exit 0
+    ;;
+    ubuntu)
+        echo "---> Ubuntu system detected"
+    ;;
+    *)
+        echo "---> Unknown operating system"
+    ;;
+esac
+
 COMMON_PKGS="autoconf
 autotools-dev
 binutils
