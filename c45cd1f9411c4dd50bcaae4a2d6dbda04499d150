@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa4ed85_7b03ac0f",
+        "filename": "jenkins-scripts/README",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2018-02-08T22:22:20Z",
+      "side": 1,
+      "message": "should be iotivity",
+      "range": {
+        "startLine": 7,
+        "startChar": 29,
+        "endLine": 7,
+        "endChar": 41
+      },
+      "revId": "c45cd1f9411c4dd50bcaae4a2d6dbda04499d150",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
