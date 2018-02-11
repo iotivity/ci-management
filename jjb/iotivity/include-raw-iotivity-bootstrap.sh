@@ -74,7 +74,7 @@ fi
 ln -sv ${IOTIVITYEXTLIB}/boost/boost_1_58_0.zip ${WORKSPACE}/extlibs/boost/boost_1_58_0.zip
 ln -sv ${IOTIVITYEXTLIB}/cereal ${WORKSPACE}/extlibs/cereal
 
-TINYCBOR_VERSION='0.4.1'
+TINYCBOR_VERSION='0.5.0'
 # always use the version that went through QA with each branch:
 if [ "$GERRIT_BRANCH" = "1.3-rel" ]; then
     TINYCBOR_VERSION='0.4.1'
