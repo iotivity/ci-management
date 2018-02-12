@@ -38,7 +38,8 @@
             - 'vs2015':
                 msvc-version: '14.0'
             - 'vs2017':
-                msvc-version: '14.1'
+                msvc-version: '14.0'
+                disabled: true
       - 'iotivity-verify-unit_tests'
     component:
       - 'linux_unsecured'
