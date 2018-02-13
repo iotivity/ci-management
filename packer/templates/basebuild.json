@@ -1,9 +1,9 @@
 {
   "variables": {
-    "stack_tenant": null,
-    "stack_user": null,
-    "stack_pass": null,
-    "stack_network": null,
+    "cloud_tenant": null,
+    "cloud_user": null,
+    "cloud_pass": null,
+    "cloud_network": null,
 
     "base_image": null,
     "cloud_user": null,
@@ -14,17 +14,17 @@
     {
       "type": "openstack",
       "identity_endpoint": "https://auth.vexxhost.net/v2.0/",
-      "tenant_name": "{{user `stack_tenant`}}",
-      "username": "{{user `stack_user`}}",
-      "password": "{{user `stack_pass`}}",
+      "tenant_name": "{{user `cloud_tenant`}}",
+      "username": "{{user `cloud_user`}}",
+      "password": "{{user `cloud_pass`}}",
       "region": "ca-ymq-1",
-      "ssh_username": "{{user `cloud_user`}}",
+      "ssh_username": "{{user `ssh_user`}}",
       "image_name": "{{user `distro`}} - basebuild - {{isotime \"20060102-1504\"}}",
       "source_image_name": "{{user `base_image`}}",
       "flavor": "v1-standard-1",
       "availability_zone": "ca-ymq-2",
       "networks": [
-        "{{user `stack_network`}}"
+        "{{user `cloud_network`}}"
       ],
       "user_data_file": "{{user `cloud_user_data`}}"
     }
