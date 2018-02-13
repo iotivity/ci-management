@@ -1,5 +1,9 @@
 BUILD_ROOTS="GBS-ROOT GBS-ROOT-RI GBS-ROOT-ES GBS-ROOT-OIC GBS-ROOT-RI-OIC"
 
+# link tizen's gbs cache to expected location
+IOTIVITYEXTLIB=/extlibs
+ln -s ${IOTIVITYEXTLIB}/GBS/* ${HOME}/
+
 for build_dir in $BUILD_ROOTS; do
   if [ -d "$HOME/${build_dir}" ]; then
     echo "$build_dir Exists. Ensuring clean chroot"
