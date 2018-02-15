@@ -17,7 +17,7 @@
 
     ssh-credentials: '6ba265b5-4270-46f3-aeaa-44b789a5d7a9'
 
-    ubuntu-node: 'ubuntu1204-20170505-2'
+    ubuntu-node: 'ubuntu'
 
     # lftools
     lftools-version: <1.0.0
