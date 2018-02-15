@@ -19,11 +19,11 @@ OS=$(facter operatingsystem | tr '[:upper:]' '[:lower:]')
 os_username="${OS}"
 os_groupname="${OS}"
 
-ci_username="jenkins-ci"
-ci_groupname="jenkins-ci"
+ci_username="jenkins"
+ci_groupname="jenkins"
 
 # Create User
-useradd -U -k /etc/skel -c "Jenkins User" -m jenkins-ci -d /home/jenkins-ci -s /bin/bash
+useradd -U -k /etc/skel -c "Jenkins User" -m ${ci_username} -d /home/${ci_username} -s /bin/bash
 #useradd -m -s /bin/bash ${ci_username}
 
 # Check if docker group exists
@@ -65,17 +65,15 @@ perl -pi -e 's{^ubuntu:.+?:}{ubuntu:\Q$6$WmC4QVis$4SxluIFMVCKqvJws7BYW7gRy0L4aK4
 # allow password authentication
 perl -pi -e 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
 
-
-
 # Download slave.jar
-wget -nv 'https://jenkins.iotivity.org/ci/jnlpJars/slave.jar' -O /home/jenkins-ci/slave.jar
+wget -nv 'https://jenkins.iotivity.org/ci/jnlpJars/slave.jar' -O /home/${ci_username}/slave.jar
 
 
-cat << EOF >> /home/jenkins-ci/.ssh/authorized_keys
+cat << EOF >> /home/${ci_username}/.ssh/authorized_keys
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDJKWRPbQaCVukxGxE2A5EyJfjqqRPWztq7xNUdUewPipDIULixh5+TZdBDrlGJGGxL8Pom2INsV7VO4I++eiy71eiSdt4oZJCbdATvSV+OeSP6ZvK5lnrlhcAG2CUum6fxVIGDhsRXG3yN2EafabNaKXV594pCYZeaAMQ9ycBlOOxoidpCUifUHFKUQNq2sELeEP5N/JYAAJ16rL+kIVAQ2MBX7zBAFXJwCWto+yQcRyB+NAJ7wr8PniJcyjg1vKDK8qtIQemtM4HtiqA3BSpfbYpLazx4vk52SDOeSjCrmbIPQdRhVLrDp1irOHKzT7BQBBA/1LevXjEexv0HIhHN
 EOF
 
-cat << EOF >> /home/jenkins-ci/.ssh/authorized_keys
+cat << EOF >> /home/${ci_username}/.ssh/authorized_keys
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDJKWRPbQaCVukxGxE2A5EyJfjqqRPWztq7xNUdUewPipDIULixh5+TZdBDrlGJGGxL8Pom2INsV7VO4I++eiy71eiSdt4oZJCbdATvSV+OeSP6ZvK5lnrlhcAG2CUum6fxVIGDhsRXG3yN2EafabNaKXV594pCYZeaAMQ9ycBlOOxoidpCUifUHFKUQNq2sELeEP5N/JYAAJ16rL+kIVAQ2MBX7zBAFXJwCWto+yQcRyB+NAJ7wr8PniJcyjg1vKDK8qtIQemtM4HtiqA3BSpfbYpLazx4vk52SDOeSjCrmbIPQdRhVLrDp1irOHKzT7BQBBA/1LevXjEexv0HIhHN
 EOF
 
@@ -86,5 +84,5 @@ chmod 700 /home/${os_username}/.ssh
 chmod 600 /home/${os_username}/.ssh/authorized_keys
 
 mkdir /w
-chown -R ${ci_username}:${ci_groupname} /home/${ci_username}/.ssh /w
+chown -R ${ci_username}:${ci_groupname} /home/${ci_username}/.ssh /w /extlibs
 chown -R ${os_username}:${os_groupname} /home/${os_username}/.ssh

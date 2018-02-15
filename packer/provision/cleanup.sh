@@ -7,9 +7,12 @@ then
   rm /swap
 fi
 
+ci_username='jenkins'
+ci_groupname='jenkins'
+
 # Ensure Jenkins user has the required file permissions
-chown -R jenkins-ci:jenkins-ci /home/jenkins-ci
+chown -R ${ci_username}:${ci_groupname} /home/${ci_username}
 
 if [ -d /extlibs/ ]; then
-  chown -R jenkins-ci:jenkins-ci /extlibs/
+  chown -R ${ci_username}:${ci_groupname} /extlibs/
 fi
