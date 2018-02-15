@@ -38,7 +38,6 @@
         "provision/shared-dependencies.sh",
         "provision/android.sh",
         "provision/tizen.sh",
-        "provision/create_users.sh",
         "provision/baseline.sh",
         "provision/cleanup.sh",
         "provision/system_reseal_local_env.sh"
