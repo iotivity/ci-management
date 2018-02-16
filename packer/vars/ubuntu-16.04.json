@@ -1,5 +1,5 @@
 {
-  "base_image": "Ubuntu 16.04 - baseline - 20180215-2032",
+  "base_image": "Ubuntu 16.04 - baseline - 20180216-0016",
   "ssh_user": "ubuntu",
 
   "distro": "Ubuntu 16.04",
