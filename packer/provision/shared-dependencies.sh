@@ -98,3 +98,12 @@ git clone https://github.com/dthaler/libcoap "${IOTIVITYEXTLIB}"/libcoap/libcoap
 && cd "${IOTIVITYEXTLIB}"/libcoap/libcoap \
 && git fetch --all --tags \
 && git checkout tags/IoTivity-1.2.1
+
+# source of gerrit projects
+mkdir "${IOTIVITYEXTLIB}/gerrit"
+for project in iotivity iotivity-alljoyn-bridge iotivity-constrained \
+               iotivity-contrib iotivity-node iotivity-test iotivity-upnp-bridge \
+               iotivity-voice iotivity-xmpp
+do
+  git clone "https://gerrit.iotivity.org/gerrit/p/$project.git" "${IOTIVITYEXTLIB}/gerrit/$project"
+done

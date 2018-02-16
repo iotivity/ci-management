@@ -368,6 +368,7 @@
     scm:
       - git:
           credentials-id: '6ba265b5-4270-46f3-aeaa-44b789a5d7a9'
+          reference-repo: 'C:\j\src\{project}'
           url: 'ssh://iotivity-jobbuilder@gerrit.iotivity.org:29418/iotivity'
           refspec: '$GERRIT_REFSPEC'
           branches:
@@ -375,6 +376,7 @@
           skip-tag: true
           wipe-workspace: true
           choosing-strategy: 'gerrit'
+          shallow-clone: true
 
     triggers:
       - gerrit:
