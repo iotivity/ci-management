@@ -24,6 +24,7 @@
     scm:
       - git:
           credentials-id: '{credentials-id}'
+          reference-repo: '/extlibs/gerrit/iotivity'
           url: 'ssh://iotivity-jobbuilder@gerrit.iotivity.org:29418/iotivity'
           refspec: '$GERRIT_REFSPEC'
           branches:
@@ -31,12 +32,14 @@
           skip-tag: true
           wipe-workspace: true
           choosing-strategy: 'gerrit'
+          shallow-clone: true
 
 - scm:
     name: gerrit-ci-management-scm
     scm:
       - git:
           credentials-id: '{credentials-id}'
+          reference-repo: '/extlibs/gerrit/ci-management'
           url: 'ssh://iotivity-jobbuilder@gerrit.iotivity.org:29418/ci-management'
           refspec: '$GERRIT_REFSPEC'
           branches:
@@ -46,12 +49,14 @@
           submodule:
             recursive: true
           choosing-strategy: 'gerrit'
+          shallow-clone: true
 
 - scm:
     name: gerrit-iotivity-upnp-scm
     scm:
       - git:
           credentials-id: '{credentials-id}'
+          reference-repo: '/extlibs/gerrit/iotivity-upnp-bridge'
           url: 'ssh://iotivity-jobbuilder@gerrit.iotivity.org:29418/iotivity-upnp-bridge'
           refspec: '$GERRIT_REFSPEC'
           branches:
@@ -60,6 +65,7 @@
           wipe-workspace: true
           basedir: 'iotivity-upnp-bridge'
           choosing-strategy: 'gerrit'
+          shallow-clone: true
 
 ## Triggers
 - trigger:
