@@ -48,7 +48,7 @@ function fetch-github-repo
 
 fetch-github-repo "libcoap" "dthaler" "IoTivity-1.2.1d"
 fetch-github-repo "mbedtls" "armmbed" "mbedtls-2.4.2"
-fetch-github-repo "tinycbor" "01org" "v0.4.1"
+fetch-github-repo "tinycbor" "intel" "v0.4.1"
 
 mkdir c:\j\src
 function fetch-gerrit-repo

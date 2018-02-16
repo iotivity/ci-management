@@ -66,9 +66,9 @@ wget -nv 'http://www.sqlite.org/2015/sqlite-amalgamation-3081101.zip' \
 # tinycbor
 mkdir -p "${IOTIVITYEXTLIB}"/tinycbor
 cd "${IOTIVITYEXTLIB}"/tinycbor
-wget -nv 'https://github.com/01org/tinycbor/archive/v0.4.zip'
-wget -nv 'https://github.com/01org/tinycbor/archive/v0.3.2.zip'
-wget -nv 'https://github.com/01org/tinycbor/archive/v0.2.1.zip'
+wget -nv 'https://github.com/intel/tinycbor/archive/v0.4.zip'
+wget -nv 'https://github.com/intel/tinycbor/archive/v0.3.2.zip'
+wget -nv 'https://github.com/intel/tinycbor/archive/v0.2.1.zip'
 
 cd "${IOTIVITYEXTLIB}"/
 
