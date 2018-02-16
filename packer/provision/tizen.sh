@@ -22,5 +22,5 @@ apt-get -y update
 apt-get -y install --force-yes gbs
 
 # populate tizen package cache
-mkdir /extlibs/GBS
-curl https://moonunit.colliertech.org/~cjac/tmp/GBS.tar.bz2 | sudo tar -C /extlibs/GBS -xj
+mkdir /GBS
+curl https://moonunit.colliertech.org/~cjac/tmp/GBS.tar.bz2 | sudo tar -C /GBS -xj
