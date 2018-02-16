@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa4ed85_4e6e2b03",
+        "filename": "jjb/global-defaults.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 12679
+      },
+      "writtenOn": "2018-02-16T21:25:36Z",
+      "side": 1,
+      "message": "This may be the one spot I\u0027m not sure about since project is not defined this high.  Can you try doing\n\"jenkins-jobs test --recursive jj/\" and see if it errs?",
+      "revId": "c0addb5cf8636f683a7695e1fd419579e3423e50",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
