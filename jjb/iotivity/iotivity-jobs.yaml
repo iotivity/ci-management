@@ -27,6 +27,7 @@
             - 'secured'
             - 'unsecured'
       - 'iotivity-verify-windows-{arch}-{vs-version}':
+          reference-repo: 'C:\j\src\{project}'
           arch:
             - 'x86':
                 arch-name: 'x86'

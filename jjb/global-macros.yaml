@@ -31,6 +31,8 @@
           skip-tag: true
           wipe-workspace: true
           choosing-strategy: 'gerrit'
+          shallow-clone: true
+          reference-repo: '{reference-repo}'
 
 - scm:
     name: gerrit-ci-management-scm
@@ -46,6 +48,8 @@
           submodule:
             recursive: true
           choosing-strategy: 'gerrit'
+          shallow-clone: true
+          reference-repo: '{reference-repo}'
 
 - scm:
     name: gerrit-iotivity-upnp-scm
@@ -60,6 +64,8 @@
           wipe-workspace: true
           basedir: 'iotivity-upnp-bridge'
           choosing-strategy: 'gerrit'
+          shallow-clone: true
+          reference-repo: '{reference-repo}'
 
 ## Triggers
 - trigger:
