@@ -65,7 +65,12 @@ fi
 
 
 ln -sv ${IOTIVITYEXTLIB}/arduino/arduino-1.5.8 ${WORKSPACE}/extlibs/arduino/arduino-1.5.8
-unzip -oq ${IOTIVITYEXTLIB}/boost/boost_1_58_0.zip -d ${WORKSPACE}/extlibs/boost/
+if [ -d "${IOTIVITYEXTLIB}/boost/boost_1_58_0" ]
+then
+  cp -al "${IOTIVITYEXTLIB}/boost/boost_1_58_0" "${WORKSPACE}/extlibs/boost/"
+else
+  unzip -oq ${IOTIVITYEXTLIB}/boost/boost_1_58_0.zip -d ${WORKSPACE}/extlibs/boost/
+fi
 ln -sv ${IOTIVITYEXTLIB}/boost/boost_1_58_0.zip ${WORKSPACE}/extlibs/boost/boost_1_58_0.zip
 ln -sv ${IOTIVITYEXTLIB}/cereal ${WORKSPACE}/extlibs/cereal
 
