@@ -1,6 +1,6 @@
 {
   "base_image": "Windows Server Standard 2016 [2017-02-20]",
-  "cloud_user": "vagrant",
+  "ssh_user": "vagrant",
   "arch": "amd64",
   "toolchain": "basebuild",
   "distro": "Windows 2016",

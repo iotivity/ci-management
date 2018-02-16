@@ -1,6 +1,6 @@
 {
   "base_image": "Windows 2012-R2 - basebuild - 20180125-2013",
-  "cloud_user": "vagrant",
+  "ssh_user": "vagrant",
   "arch": "amd64",
   "toolchain": "vs2013",
   "distro": "Windows 2012-R2",

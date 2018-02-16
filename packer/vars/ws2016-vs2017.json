@@ -1,6 +1,6 @@
 {
   "base_image": "Windows 2016 - basebuild - 20180126-0015",
-  "cloud_user": "vagrant",
+  "ssh_user": "vagrant",
   "arch": "amd64",
   "toolchain": "vs2017",
   "distro": "Windows 2016",

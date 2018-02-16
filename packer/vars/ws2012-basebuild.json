@@ -1,6 +1,6 @@
 {
   "base_image": "Windows Server 2012-R2-Standard Eval (2017-10-14) - LF upload",
-  "cloud_user": "vagrant",
+  "ssh_user": "vagrant",
   "arch": "amd64",
   "toolchain": "basebuild",
   "distro": "Windows 2012-R2",
