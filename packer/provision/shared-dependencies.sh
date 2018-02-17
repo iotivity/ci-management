@@ -98,3 +98,10 @@ git clone https://github.com/dthaler/libcoap "${IOTIVITYEXTLIB}"/libcoap/libcoap
 && cd "${IOTIVITYEXTLIB}"/libcoap/libcoap \
 && git fetch --all --tags \
 && git checkout tags/IoTivity-1.2.1
+
+# rapidjson
+mkdir -p "${IOTIVITYEXTLIB}"/rapidjson
+git clone https://github.com/miloyip/rapidjson "${IOTIVITYEXTLIB}"/rapidjson/rapidjson \
+&& cd "${IOTIVITYEXTLIB}"/rapidjson/rapidjson \
+&& git fetch --all --tags \
+&& git checkout tags/v1.0.2
