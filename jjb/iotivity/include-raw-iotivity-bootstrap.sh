@@ -63,6 +63,12 @@ then
 	mkdir ${WORKSPACE}/extlibs/raxmpp
 fi
 
+if [ ! -d "${WORKSPACE}/extlibs/rapidjson" ]
+then
+	mkdir ${WORKSPACE}/extlibs/rapidjson
+fi
+
+
 
 ln -sv ${IOTIVITYEXTLIB}/arduino/arduino-1.5.8 ${WORKSPACE}/extlibs/arduino/arduino-1.5.8
 if [ -d "${IOTIVITYEXTLIB}/boost/boost_1_58_0" ]
