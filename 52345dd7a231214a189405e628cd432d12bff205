@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa4ed85_71a988de",
+        "filename": "packer/provision/shared-dependencies.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 445
+      },
+      "writtenOn": "2018-02-17T14:17:53Z",
+      "side": 1,
+      "message": "you should be able to leave this commented out - haven\u0027t gotten the word to drop completely yet, but unused.",
+      "range": {
+        "startLine": 102,
+        "startChar": 0,
+        "endLine": 106,
+        "endChar": 56
+      },
+      "revId": "52345dd7a231214a189405e628cd432d12bff205",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa4ed85_11b05442",
+        "filename": "packer/provision/shared-dependencies.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 445
+      },
+      "writtenOn": "2018-02-17T14:17:53Z",
+      "side": 1,
+      "message": "you should be able to leave this commented out - haven\u0027t gotten the word to drop completely yet, but unused.",
+      "range": {
+        "startLine": 116,
+        "startChar": 0,
+        "endLine": 119,
+        "endChar": 56
+      },
+      "revId": "52345dd7a231214a189405e628cd432d12bff205",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa4ed85_31ab10d8",
+        "filename": "packer/provision/shared-dependencies.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 445
+      },
+      "writtenOn": "2018-02-17T14:17:53Z",
+      "side": 1,
+      "message": "you should be able to leave this commented out - haven\u0027t gotten the word to drop completely yet, but unused.",
+      "range": {
+        "startLine": 125,
+        "startChar": 30,
+        "endLine": 125,
+        "endChar": 43
+      },
+      "revId": "52345dd7a231214a189405e628cd432d12bff205",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
