@@ -103,6 +103,25 @@ git clone https://github.com/dthaler/libcoap "${IOTIVITYEXTLIB}"/libcoap/libcoap
 && git fetch --all --tags \
 && git checkout tags/IoTivity-1.2.1
 
+# libstrophe
+mkdir -p "${IOTIVITYEXTLIB}"/libstrophe
+git clone https://github.com/strophe/libstrophe.git "${IOTIVITYEXTLIB}"/libstrophe/libstrophe \
+&& cd "${IOTIVITYEXTLIB}"/libstrophe/libstrophe \
+&& git checkout 527bc0573a52f2af3ecad5b9ef39aeec7b669f77
+
+# rapidjson
+mkdir -p "${IOTIVITYEXTLIB}"/rapidjson
+git clone https://github.com/miloyip/rapidjson "${IOTIVITYEXTLIB}"/rapidjson/rapidjson \
+&& cd "${IOTIVITYEXTLIB}"/rapidjson/rapidjson \
+&& git fetch --all --tags \
+&& git checkout tags/v1.0.2
+
+# wksxmpp_chat
+mkdir -p "${IOTIVITYEXTLIB}"/wksxmppxep
+git clone https://github.com/WorksSystems/wksxmpp_chat.git "${IOTIVITYEXTLIB}"/wksxmppxep/wksxmpp_chat \
+&& cd "${IOTIVITYEXTLIB}"/wksxmppxep/wksxmpp_chat
+&& git checkout 8e9f42d02a0f416001065d1cddc1ab07974cef14
+
 # source of gerrit projects
 mkdir "${IOTIVITYEXTLIB}/gerrit"
 for project in iotivity iotivity-alljoyn-bridge iotivity-constrained \
