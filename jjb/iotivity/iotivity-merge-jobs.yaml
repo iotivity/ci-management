@@ -470,7 +470,7 @@
     scm:
       - git:
           credentials-id: '6ba265b5-4270-46f3-aeaa-44b789a5d7a9'
-          url: 'ssh://iotivity-jobbuilder@gerrit.iotivity.org:29418/iotivity'
+          url: '$GIT_URL/iotivity'
           refspec: '$GERRIT_REFSPEC'
           branches:
             - 'origin/$GERRIT_BRANCH'
