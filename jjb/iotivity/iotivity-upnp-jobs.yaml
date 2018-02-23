@@ -24,7 +24,7 @@
     scm:
       - git:
           credentials-id: '{ssh-credentials}'
-          url: 'ssh://iotivity-jobbuilder@gerrit.iotivity.org:29418/iotivity'
+          url: '$GIT_URL/iotivity'
           refspec: 'refs/heads/master'
           branches:
             - 'origin/master'

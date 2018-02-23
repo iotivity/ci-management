@@ -25,7 +25,7 @@
       - git:
           credentials-id: '{credentials-id}'
           reference-repo: '/extlibs/gerrit/iotivity'
-          url: 'ssh://iotivity-jobbuilder@gerrit.iotivity.org:29418/iotivity'
+          url: '$GIT_URL/iotivity'
           refspec: '$GERRIT_REFSPEC'
           branches:
             - 'origin/$GERRIT_BRANCH'
@@ -40,7 +40,7 @@
       - git:
           credentials-id: '{credentials-id}'
           reference-repo: '/extlibs/gerrit/ci-management'
-          url: 'ssh://iotivity-jobbuilder@gerrit.iotivity.org:29418/ci-management'
+          url: '$GIT_URL/ci-management'
           refspec: '$GERRIT_REFSPEC'
           branches:
             - 'origin/$GERRIT_BRANCH'
@@ -57,7 +57,7 @@
       - git:
           credentials-id: '{credentials-id}'
           reference-repo: '/extlibs/gerrit/iotivity-upnp-bridge'
-          url: 'ssh://iotivity-jobbuilder@gerrit.iotivity.org:29418/iotivity-upnp-bridge'
+          url: '$GIT_URL/iotivity-upnp-bridge'
           refspec: '$GERRIT_REFSPEC'
           branches:
             - 'origin/$GERRIT_BRANCH'
