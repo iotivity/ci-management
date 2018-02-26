@@ -42,6 +42,8 @@
 
     wrappers:
       - timestamps
+      - openstack:
+          single-use: true
 
     builders:
       - shell:

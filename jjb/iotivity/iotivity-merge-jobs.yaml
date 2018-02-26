@@ -152,6 +152,8 @@
 
     wrappers:
       - timestamps
+      - openstack:
+          single-use: true
 
     builders:
       - shell:
@@ -188,6 +190,8 @@
 
     wrappers:
       - timestamps
+      - openstack:
+          single-use: true
 
     builders:
       - shell:
@@ -227,6 +231,8 @@
 
     wrappers:
       - timestamps
+      - openstack:
+          single-use: true
 
     builders:
       - shell:
@@ -267,6 +273,8 @@
 
     wrappers:
       - timestamps
+      - openstack:
+          single-use: true
 
     builders:
       - shell:
@@ -310,6 +318,8 @@
     wrappers:
       - timestamps
       - build-timeout
+      - openstack:
+          single-use: true
 
     builders:
       - shell:
@@ -353,6 +363,8 @@
 
     wrappers:
       - timestamps
+      - openstack:
+          single-use: true
 
     builders:
       - shell:
@@ -395,6 +407,8 @@
 
     wrappers:
       - timestamps
+      - openstack:
+          single-use: true
 
     builders:
       - shell:
@@ -437,6 +451,8 @@
 
     wrappers:
       - timestamps
+      - openstack:
+          single-use: true
 
     builders:
       - shell:
@@ -488,6 +504,8 @@
     wrappers:
       - timestamps
       - build-timeout
+      - openstack:
+          single-use: true
 
     builders:
       - batch:
@@ -536,6 +554,8 @@
     wrappers:
       - timestamps
       - build-timeout
+      - openstack:
+          single-use: true
 
     builders:
       - shell:
@@ -580,6 +600,8 @@
       - ssh-agent-credentials:
           users:
             - '{ssh-credentials}'
+      - openstack:
+          single-use: true
 
     builders:
       - shell:
