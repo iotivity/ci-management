@@ -82,6 +82,14 @@ xcopy /q /e /i /y "$deps_dir\tinycbor\tinycbor" "$deps_dir\tinycbor\tinycbor-0.4
 #
 # gtest-1.7.0.zip
 # https://codeload.github.com/google/googletest/zip/release-1.7.0
+# https://github.com/google/googletest/archive/release-1.7.0.zip
+# https://github.com/google/googletest/archive/release-1.8.0.zip
+c:\ProgramData\chocolatey\bin\curl.exe -o "$deps_dir\release-1.7.0.zip" "https://github.com/google/googletest/archive/release-1.7.0.zip"
+& cp "$deps_dir\release-1.7.0.zip" "$deps_dir\gtest-1.7.0.zip"
+& cp "$deps_dir\release-1.7.0.zip" "$deps_dir\googletest-release-1.7.0.zip"
+c:\ProgramData\chocolatey\bin\curl.exe -o "$deps_dir\release-1.8.0.zip" "https://github.com/google/googletest/archive/release-1.8.0.zip"
+& cp "$deps_dir\release-1.8.0.zip" "$deps_dir\gtest-1.8.0.zip"
+& cp "$deps_dir\release-1.8.0.zip" "$deps_dir\googletest-release-1.8.0.zip"
 #
 # sqlite-amalgamation-3081101.zip
 # https://downloads.sourceforge.net/project/cyqlite/3.8.11/sqlite-amalgamation-3081101.zip?ts=1504225376&use_mirror=gigenet
@@ -89,8 +97,6 @@ xcopy /q /e /i /y "$deps_dir\tinycbor\tinycbor" "$deps_dir\tinycbor\tinycbor-0.4
 $boost_file='boost_1_60_0.zip'
 
 $filenames = @($boost_file,
-	       'gtest-1.7.0.zip',
-	       'googletest-release-1.7.0.zip',
 	       'sqlite-amalgamation-3081101.zip',
 	       'slave.jar'
 	       )
