@@ -80,16 +80,15 @@ xcopy /q /e /i /y "$deps_dir\tinycbor\tinycbor" "$deps_dir\tinycbor\tinycbor-0.4
 # boost_1_60_0.zip
 # https://dl.bintray.com/boostorg/release/1.64.0/source/boost_1_64_0.zip
 #
-# gtest-1.7.0.zip
-# https://codeload.github.com/google/googletest/zip/release-1.7.0
-# https://github.com/google/googletest/archive/release-1.7.0.zip
-# https://github.com/google/googletest/archive/release-1.8.0.zip
-c:\ProgramData\chocolatey\bin\curl.exe -o "$deps_dir\release-1.7.0.zip" "https://github.com/google/googletest/archive/release-1.7.0.zip"
-& cp "$deps_dir\release-1.7.0.zip" "$deps_dir\gtest-1.7.0.zip"
-& cp "$deps_dir\release-1.7.0.zip" "$deps_dir\googletest-release-1.7.0.zip"
-c:\ProgramData\chocolatey\bin\curl.exe -o "$deps_dir\release-1.8.0.zip" "https://github.com/google/googletest/archive/release-1.8.0.zip"
-& cp "$deps_dir\release-1.8.0.zip" "$deps_dir\gtest-1.8.0.zip"
-& cp "$deps_dir\release-1.8.0.zip" "$deps_dir\googletest-release-1.8.0.zip"
+# gtest-1.[78].0.zip
+# https://github.com/google/googletest/archive/release-1.[78].0.zip
+$gtest_versions = @('1.7.0','1.8.0')
+foreach ($gtest_ver in $gtest_versions) {
+  c:\ProgramData\chocolatey\bin\curl.exe -o "$deps_dir\release-$gtest_ver.zip" "https://github.com/google/googletest/archive/release-$gtest_ver.zip"
+  & cp "$deps_dir\release-$gtest_ver.zip" "$deps_dir\gtest-$gtest_ver.zip"
+  & cp "$deps_dir\release-$gtest_ver.zip" "$deps_dir\googletest-release-$gtest_ver.zip"
+}
+
 #
 # sqlite-amalgamation-3081101.zip
 # https://downloads.sourceforge.net/project/cyqlite/3.8.11/sqlite-amalgamation-3081101.zip?ts=1504225376&use_mirror=gigenet
