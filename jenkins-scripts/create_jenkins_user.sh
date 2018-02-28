@@ -50,7 +50,3 @@ chmod 700 /home/${ci_username}/.ssh
 chmod 600 ${ci_pubkeys}
 
 chown -R ${ci_username}:${ci_groupname} /home/${ci_username}/.ssh /w /extlibs
-
-dd if=/dev/zero of=/swap bs=1M count=16384
-mkswap /swap
-swapon /swap
