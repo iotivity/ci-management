@@ -42,9 +42,11 @@ wget -nv https://launchpad.net/ubuntu/+archive/primary/+files/expat_2.1.0.orig.t
 # gtest
 mkdir -p "${IOTIVITYEXTLIB}"/gtest
 cd "${IOTIVITYEXTLIB}"/gtest
-wget -nv http://pkgs.fedoraproject.org/repo/pkgs/gtest/gtest-1.7.0.zip/2d6ec8ccdf5c46b05ba54a9fd1d130d7/gtest-1.7.0.zip \
-&& unzip gtest-1.7.0.zip \
-&& rm gtest-1.7.0.zip
+for version in 1.7.0 1.8.0
+do
+  wget -nv -O "gtest-${version}.zip" "https://github.com/google/googletest/archive/release-${version}.zip" \
+  && unzip "gtest-${version}.zip"
+done
 
 # tinydtls - currently not used
 #mkdir -p "${IOTIVITYEXTLIB}"/tinydtls
