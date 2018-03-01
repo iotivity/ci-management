@@ -67,7 +67,7 @@ fi
 ln -sv ${IOTIVITYEXTLIB}/arduino/arduino-1.5.8 ${WORKSPACE}/extlibs/arduino/arduino-1.5.8
 if [ -d "${IOTIVITYEXTLIB}/boost/boost_1_58_0" ]
 then
-  cp -al "${IOTIVITYEXTLIB}/boost/boost_1_58_0" "${WORKSPACE}/extlibs/boost/"
+  ln -s "${IOTIVITYEXTLIB}/boost/boost_1_58_0" "${WORKSPACE}/extlibs/boost/"
 else
   unzip -oq ${IOTIVITYEXTLIB}/boost/boost_1_58_0.zip -d ${WORKSPACE}/extlibs/boost/
 fi
@@ -120,10 +120,10 @@ if [ ! -d "${WORKSPACE}/extlibs/mbedtls" ]
 then
 	mkdir ${WORKSPACE}/extlibs/mbedtls
 fi
-cp -al ${IOTIVITYEXTLIB}/mbedtls/mbedtls ${WORKSPACE}/extlibs/mbedtls/mbedtls
+ln -s ${IOTIVITYEXTLIB}/mbedtls/mbedtls ${WORKSPACE}/extlibs/mbedtls/mbedtls
 
 if [ ! -d "${WORKSPACE}/extlibs/libcoap" ]
 then
 	mkdir ${WORKSPACE}/extlibs/libcoap
 fi
-cp -al ${IOTIVITYEXTLIB}/libcoap/libcoap ${WORKSPACE}/extlibs/libcoap/libcoap
+ln -s ${IOTIVITYEXTLIB}/libcoap/libcoap ${WORKSPACE}/extlibs/libcoap/libcoap
