@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da33351e_e4ff34a9",
+        "filename": "jjb/iotivity/include-raw-iotivity-bootstrap.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 445
+      },
+      "writtenOn": "2018-03-01T21:50:34Z",
+      "side": 1,
+      "message": "looks fine to me, but... if the failure is \"cp: cannot access \u0027/extlibs/boost/boost_1_58_0\u0027: Permission denied\" then it implies boost_1_58_0 isn\u0027t readable, and I\u0027m not sure that later reading through that symlink is going to work either. I guess we\u0027ll see...",
+      "range": {
+        "startLine": 70,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 76
+      },
+      "revId": "f1932de6dcf94552cac20a1408cead23ff3c8a2d",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
