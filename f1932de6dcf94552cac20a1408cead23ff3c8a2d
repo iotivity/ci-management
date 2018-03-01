@@ -22,6 +22,30 @@
       "revId": "f1932de6dcf94552cac20a1408cead23ff3c8a2d",
       "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_24311ca3",
+        "filename": "jjb/iotivity/include-raw-iotivity-bootstrap.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2018-03-01T21:57:10Z",
+      "side": 1,
+      "message": "at least this will be only one disk operation instead of thousands.  we\u0027ll see, I guess!",
+      "parentUuid": "da33351e_e4ff34a9",
+      "range": {
+        "startLine": 70,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 76
+      },
+      "revId": "f1932de6dcf94552cac20a1408cead23ff3c8a2d",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
     }
   ]
 }
