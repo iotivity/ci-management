@@ -120,10 +120,10 @@ if [ ! -d "${WORKSPACE}/extlibs/mbedtls" ]
 then
 	mkdir ${WORKSPACE}/extlibs/mbedtls
 fi
-ln -s ${IOTIVITYEXTLIB}/mbedtls/mbedtls ${WORKSPACE}/extlibs/mbedtls/mbedtls
+cp -al ${IOTIVITYEXTLIB}/mbedtls/mbedtls ${WORKSPACE}/extlibs/mbedtls/mbedtls
 
 if [ ! -d "${WORKSPACE}/extlibs/libcoap" ]
 then
 	mkdir ${WORKSPACE}/extlibs/libcoap
 fi
-ln -s ${IOTIVITYEXTLIB}/libcoap/libcoap ${WORKSPACE}/extlibs/libcoap/libcoap
+cp -al ${IOTIVITYEXTLIB}/libcoap/libcoap ${WORKSPACE}/extlibs/libcoap/libcoap
