@@ -82,7 +82,9 @@ ubuntu_systems() {
 }
 
 all_systems() {
-    echo 'No common distribution configuration to perform'
+    IOTIVITYEXTLIB=/extlibs
+    find ${IOTIVITYEXTLIB} -type f -print0 | xargs -0 chmod -R a+rw
+    find ${IOTIVITYEXTLIB} -type d -print0 | xargs -0 chmod -R a+rwx
 }
 
 echo "---> Detecting OS"
