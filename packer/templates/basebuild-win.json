@@ -8,12 +8,6 @@
     "ssh_user": null,
     "distro": null,
     "cloud_user_data": null,
-    "winrm_username": null,
-    "winrm_password": null,
-    "jenkins_username": null,
-    "jenkins_password": null,
-    "admin_username": null,
-    "admin_password": null,
     "arch": null,
     "toolchain": null
 

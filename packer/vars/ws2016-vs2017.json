@@ -1,5 +1,5 @@
 {
-  "base_image": "Windows 2016 - basebuild - 20180126-0015",
+  "base_image": "Windows 2016 - basebuild - 20180228-2320",
   "ssh_user": "vagrant",
   "arch": "amd64",
   "toolchain": "vs2017",
