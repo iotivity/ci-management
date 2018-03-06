@@ -21,6 +21,6 @@ export PACKER_LOG_PATH="${PWD}/log/packer-${OS}-${TOOLCHAIN}-${TS}.log"
 ${HOME}/bin/packer build   \
   -var-file=vars/cloud-env.json   \
   -var-file=vars/${OS}-${TOOLCHAIN}.json   \
-  templates/${TEMPLATE}-win.json
+  templates/windows/${TEMPLATE}.json
 
 unset -v TS
