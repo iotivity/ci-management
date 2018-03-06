@@ -124,6 +124,7 @@
       - 'iotivity-merge-{stream}-unit_tests'
       - 'iotivity-sonar-runner':
           gerrit-branch: 'master'
+          disabled: true
 
 - job-template:
     name: 'iotivity-merge-{stream}-linux_{security}_with_tcp'
