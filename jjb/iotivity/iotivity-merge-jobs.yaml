@@ -332,7 +332,7 @@
       - valgrind-report
       - xunit-report
       - archive-artifacts:
-          artifacts: '*.memcheck, out/**/test_out/*.xml'
+          artifacts: '*.memcheck, out/**/test_out/*.xml, **/*.core, *.core'
       - wipe-workspace
       - email-notification-unstable:
           mailto: '{mailto}'
