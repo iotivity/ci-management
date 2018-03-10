@@ -85,6 +85,8 @@ all_systems() {
     IOTIVITYEXTLIB=/extlibs
     find ${IOTIVITYEXTLIB} -type f -print0 | xargs -0 chmod -R a+rw
     find ${IOTIVITYEXTLIB} -type d -print0 | xargs -0 chmod -R a+rwx
+
+    echo 'kernel.core_pattern=%e-%t-SIG%s.core' >> /etc/sysctl.conf
 }
 
 echo "---> Detecting OS"
