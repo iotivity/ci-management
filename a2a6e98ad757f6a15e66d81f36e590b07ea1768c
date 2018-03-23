@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da33351e_36794e94",
+        "filename": "jjb/iotivity/include-raw-iotivity-bootstrap.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2018-03-23T15:53:30Z",
+      "side": 1,
+      "message": "while you\u0027re at it, could you snip this trailing whitespace?",
+      "range": {
+        "startLine": 90,
+        "startChar": 136,
+        "endLine": 90,
+        "endChar": 137
+      },
+      "revId": "a2a6e98ad757f6a15e66d81f36e590b07ea1768c",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
