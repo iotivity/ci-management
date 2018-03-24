@@ -7,6 +7,7 @@ binutils
 blcr-util
 build-essential
 ca-certificates-java
+chrpath
 cmake
 cmap-adobe-japan1
 cpp
