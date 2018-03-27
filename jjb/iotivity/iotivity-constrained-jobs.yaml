@@ -1,0 +1,52 @@
+---
+- project:
+    name: iotivity-constrained-verify-jobs
+    project: 'iotivity-constrained'
+    disabled: false
+    node: '{ubuntu-node}'
+    silent: false
+    jobs:
+      - '{project}-verify-{component}'
+    component:
+      - 'linux'
+
+- job-template:
+    name: '{project}-verify-{component}'
+
+    project-type: freestyle
+    node: '{node}'
+    concurrent: true
+    disabled: '{obj:disabled}'
+
+    parameters:
+      - gerrit-project:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: '{refspec}'
+
+    scm:
+      - gerrit-branch-scm:
+          credentials-id: '{ssh-credentials}'
+
+    triggers:
+      - gerrit-trigger-patch-submitted:
+          silent: '{silent}'
+          project: '{project}'
+          branch: '{gerrit-branch}'
+
+    wrappers:
+      - timestamps
+      - openstack:
+          single-use: true
+
+    builders:
+      - shell:
+      - auto-build:
+          component: '{component}'
+
+    publishers:
+      - retry-build-on-builder-error
+      - wipe-workspace
+      - email-notification:
+          mailto: 'oicbuild@intel.com'
+
