@@ -46,13 +46,7 @@
     },
     { "type": "windows-shell",
       "scripts": [
-        "provision/basebuild/unlimited-password-expiration.bat",
-        "provision/basebuild/enable-rdp.bat",
-        "provision/basebuild/disablewinupdate.bat",
-        "provision/basebuild/uac-disable.bat",
-        "provision/basebuild/disable-hibernate.bat",
-        "provision/basebuild/firewall-open-ping.bat",
-        "provision/basebuild/firewall-open-rdp.bat"
+        "provision/basebuild/win-prep.bat"
       ]
     },
     { "type": "windows-restart" },
