@@ -1,0 +1,15 @@
+---
+# IoTivity Constrained Macros
+
+## Builders
+- builder:
+    name: iotivity-constrained-auto-build
+    builders:
+      - shell: |
+            #!/bin/bash -eux
+            set -o pipefail
+
+            export VERBOSE=false
+            export CCACHE_DISABLE=false
+            cd tests
+            ./auto_build.sh {component}

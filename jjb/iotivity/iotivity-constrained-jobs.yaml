@@ -41,7 +41,7 @@
 
     builders:
       - shell:
-      - auto-build:
+      - {project}-auto-build:
           component: '{component}'
 
     publishers:
