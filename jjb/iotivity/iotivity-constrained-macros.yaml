@@ -7,7 +7,7 @@
       - git:
           credentials-id: '{credentials-id}'
           reference-repo: '/extlibs/gerrit/iotivity-constrained'
-          url: '$GIT_URL/iotivity'
+          url: '$GIT_URL/iotivity-constrained'
           refspec: '$GERRIT_REFSPEC'
           branches:
             - 'origin/$GERRIT_BRANCH'
