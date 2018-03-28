@@ -25,7 +25,7 @@
           refspec: '{refspec}'
 
     scm:
-      - gerrit-branch-scm:
+      - gerrit-branch-iotivity-constrained-scm:
           credentials-id: '{ssh-credentials}'
 
     triggers:

@@ -1,5 +1,21 @@
 # IoTivity Constrained Macros
 
+## SCMs
+- scm:
+    name: gerrit-branch-iotivity-constrained-scm
+    scm:
+      - git:
+          credentials-id: '{credentials-id}'
+          reference-repo: '/extlibs/gerrit/iotivity-constrained'
+          url: '$GIT_URL/iotivity'
+          refspec: '$GERRIT_REFSPEC'
+          branches:
+            - 'origin/$GERRIT_BRANCH'
+          skip-tag: true
+          wipe-workspace: true
+          choosing-strategy: 'gerrit'
+          shallow-clone: true
+
 ## Builders
 - builder:
     name: iotivity-constrained-auto-build
