@@ -4,6 +4,7 @@
     jobs:
       - 'packer-verify-{image}'
       - 'packer-build-{platform}-{image}'
+          disabled: true
     image:
       - 'linux':
           platform: 'googlecompute'
