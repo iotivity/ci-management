@@ -1,0 +1,7 @@
+Verified+1: IoTivity Jenkins <jenkins-daemon@iotivity.org>
+Code-Review+2: C.J. Collier <cjcollier@linuxfoundation.org>
+Submitted-by: Phil Coval <philippe.coval@osg.samsung.com>
+Submitted-at: Wed, 28 Mar 2018 22:47:25 +0000
+Reviewed-on: https://gerrit.iotivity.org/gerrit/24507
+Project: ci-management
+Branch: refs/heads/master
