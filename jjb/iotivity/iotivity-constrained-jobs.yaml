@@ -41,7 +41,7 @@
 
     builders:
       - shell:
-      - auto-build:
+      - iotivity-constrained-auto-build:
           component: '{component}'
 
     publishers:
