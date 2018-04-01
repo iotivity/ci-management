@@ -2,7 +2,7 @@
 set -o pipefail
 PATH=$PATH:/usr/local/bin/
 IOTIVITYEXTLIB=/Users/jenkins-ci/extlibs
-TINYCBOR_VERSION='0.5.0'
+TINYCBOR_VERSION='0.5.1'
 # always use the version that went through QA with each branch:
 if [ "$GERRIT_BRANCH" = "1.3-rel" ]; then
     TINYCBOR_VERSION='0.4.1'
