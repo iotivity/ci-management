@@ -517,15 +517,34 @@
 
     publishers:
       - postbuildscript:
-          script-only-if-succeeded: false
-          script-only-if-failed: true
           builders:
-            - windows-kill-unit-tests:
-                msvc-version: '{msvc-version}'
-                arch-name: '{arch-name}'
+            - role: BOTH
+              build-on:
+                - ABORTED
+                - FAILURE
+                - NOT_BUILT
+                - SUCCESS
+                - UNSTABLE
+              build-steps:
+                - lf-infra-sysstat
+                - lf-infra-ship-logs
+                - windows-kill-unit-tests:
+                    msvc-version: '{msvc-version}'
+                    arch-name: '{arch-name}'
+          mark-unstable-if-failed: true
       - retry-build-on-builder-error
       - email-notification-unstable:
           mailto: '{mailto}'
+      - workspace-cleanup:
+          exclude:
+            # Do not clean up *.jenkins-trigger files for jobs that use a
+            # properties file as input for triggering another build.
+            - '**/*.jenkins-trigger'
+          fail-build: false
+      - retry-build-on-builder-error
+      - email-notification-unstable:
+          mailto: '{mailto}'
+
 
 - job-template:
     name: 'iotivity-merge-{stream}-osx'
