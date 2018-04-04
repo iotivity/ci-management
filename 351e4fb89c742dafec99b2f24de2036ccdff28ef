@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da33351e_a0122f60",
+        "filename": "jjb/iotivity/iotivity-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2018-04-04T00:07:46Z",
+      "side": 1,
+      "message": "i",
+      "range": {
+        "startLine": 443,
+        "startChar": 24,
+        "endLine": 443,
+        "endChar": 25
+      },
+      "revId": "351e4fb89c742dafec99b2f24de2036ccdff28ef",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_80172b51",
+        "filename": "jjb/iotivity/iotivity-merge-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 530,
+      "author": {
+        "id": 9235
+      },
+      "writtenOn": "2018-04-04T00:07:46Z",
+      "side": 1,
+      "message": "i",
+      "range": {
+        "startLine": 530,
+        "startChar": 24,
+        "endLine": 530,
+        "endChar": 25
+      },
+      "revId": "351e4fb89c742dafec99b2f24de2036ccdff28ef",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
