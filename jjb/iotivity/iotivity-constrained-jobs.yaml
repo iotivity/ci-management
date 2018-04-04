@@ -40,7 +40,6 @@
           single-use: true
 
     builders:
-      - shell:
       - iotivity-constrained-auto-build:
           component: '{component}'
 
@@ -49,4 +48,3 @@
       - wipe-workspace
       - email-notification:
           mailto: 'oicbuild@intel.com'
-
