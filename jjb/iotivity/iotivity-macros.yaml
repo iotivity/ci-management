@@ -184,7 +184,7 @@
       - valgrind:
           pattern: '*.memcheck'
           thresholds:
-            failed:
+            unstable:
               invalid-read-write: 0
               definitely-lost: 50
               total: 100
