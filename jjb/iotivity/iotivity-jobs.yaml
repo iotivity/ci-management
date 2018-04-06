@@ -429,18 +429,6 @@
           arch-name: '{arch-name}'
 
     publishers:
-      - postbuildscript:
-          builders:
-            - role: BOTH
-              build-on:
-                - ABORTED
-                - FAILURE
-                - NOT_BUILT
-                - SUCCESS
-                - UNSTABLE
-              build-steps:
-                - windows-kill-unit-tests
-          mark-unstable-if-failed: true
       - retry-build-on-builder-error
       - email-notification:
           mailto: 'oicbuild@intel.com'
