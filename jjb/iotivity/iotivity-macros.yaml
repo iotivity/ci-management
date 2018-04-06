@@ -186,6 +186,10 @@
           thresholds:
             failed:
               invalid-read-write: 0
+              definitely-lost: 500
+              total: 1000
+            unstable:
+              invalid-read-write: 0
               definitely-lost: 50
               total: 100
             fail-no-reports: false
