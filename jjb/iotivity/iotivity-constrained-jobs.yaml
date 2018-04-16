@@ -9,6 +9,7 @@
       - '{project}-verify-{component}'
     component:
       - 'linux'
+      - 'linux_test'
 
 - job-template:
     name: '{project}-verify-{component}'
