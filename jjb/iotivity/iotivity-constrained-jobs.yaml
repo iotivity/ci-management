@@ -8,6 +8,7 @@
     jobs:
       - '{project}-verify-{component}'
     component:
+      - 'freertos'
       - 'linux'
       - 'linux_test'
       - 'tizenrt'
