@@ -79,25 +79,6 @@
           !include-raw-escape: include-raw-iotivity-windows-cleanproc.bat
 
 - builder:
-    name: osx
-    builders:
-      - shell: |
-            #!/bin/bash -eux
-            set -o pipefail
-
-            PATH=$PATH:/usr/local/bin/
-            if (git rev-list HEAD | grep -q d0b861c0276208b3fd1b29bf98908e401c7ca17f); then
-              ./auto_build.sh darwin
-            fi
-            # Run Tests against OSX 10.10 without Logging
-            echo "*********** Build for OSX 10.10 *************"
-            scons TARGET_OS=darwin SYS_VERSION=10.10 RELEASE=false
-            scons TARGET_OS=darwin SYS_VERSION=10.10 RELEASE=false -c
-            scons TARGET_OS=darwin SYS_VERSION=10.10 RELEASE=false LOGGING=false
-            export DYLD_LIBRARY_PATH=./extlibs/gtest/gtest-1.7.0/lib/.libs
-            ./out/darwin/x86_64/debug/resource/csdk/stack/test/stacktests
-
-- builder:
     name: android-transport
     builders:
       - shell: |

@@ -55,8 +55,6 @@
           component:
             - 'linux_unsecured_with_java'
             - 'linux_secured_with_java'
-      - 'iotivity-merge-{stream}-osx':
-          disabled: true
       - 'iotivity-merge-{stream}-tizen_{security}':
           security:
             - 'unsecured'
@@ -517,51 +515,6 @@
 
     publishers:
       - retry-build-on-builder-error
-      - email-notification-unstable:
-          mailto: '{mailto}'
-
-- job-template:
-    name: 'iotivity-merge-{stream}-osx'
-
-    project-type: freestyle
-    node: 'osx1010'
-    concurrent: true
-    disabled: '{obj:disabled}'
-
-    parameters:
-      - gerrit-project:
-          project: '{project}'
-          branch: '{branch}'
-          refspec: '{refspec}'
-
-    scm:
-      - gerrit-branch-scm:
-          credentials-id: '{ssh-credentials}'
-
-    triggers:
-      - timed-twice-daily
-      - gerrit-trigger-ref-updated:
-          silent: '{silent}'
-          project: '{project}'
-          branch: '{gerrit-branch}'
-
-    wrappers:
-      - timestamps
-      - build-timeout
-      - openstack:
-          single-use: true
-
-    builders:
-      - shell:
-          !include-raw-escape: include-raw-iotivity-osx-bootstrap.sh
-      - osx
-
-    publishers:
-      - retry-build-on-builder-error
-      - valgrind-report
-      - xunit-report
-      - archive-artifacts:
-          artifacts: '*.memcheck'
       - email-notification-unstable:
           mailto: '{mailto}'
 
