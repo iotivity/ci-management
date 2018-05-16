@@ -72,9 +72,11 @@
                 exclude-no-code-change: 'true'
             - draft-published-event
             - comment-added-contains-event:
-                comment-contains-value: 'verify all'
+                comment-contains-value: 'verify all$'
             - comment-added-contains-event:
-                comment-contains-value: 'reverify'
+                comment-contains-value: 'reverify$'
+            - comment-added-contains-event:
+                comment-contains-value: 'reverify linux_{security}_with_tcp$'
           projects:
             - project-compare-type: 'ANT'
               project-pattern: '{project}'
@@ -122,6 +124,7 @@
           silent: '{silent}'
           project: '{project}'
           branch: '{gerrit-branch}'
+          recheck-component: '{component}'
 
     wrappers:
       - timestamps
@@ -163,6 +166,7 @@
           silent: '{silent}'
           project: '{project}'
           branch: '{gerrit-branch}'
+          recheck-component: 'tizen_{security}'
 
     wrappers:
       - timestamps
@@ -211,6 +215,7 @@
           silent: '{silent}'
           project: '{project}'
           branch: '{gerrit-branch}'
+          recheck-component: 'unit_tests'
 
     wrappers:
       - timestamps
@@ -256,6 +261,7 @@
           silent: '{silent}'
           project: '{project}'
           branch: '{gerrit-branch}'
+          recheck-component: 'android_{security}'
 
     wrappers:
       - timestamps
@@ -299,6 +305,7 @@
           silent: '{silent}'
           project: '{project}'
           branch: '{gerrit-branch}'
+          recheck-component: 'android_{arch}'
 
     wrappers:
       - timestamps
@@ -342,6 +349,7 @@
           silent: '{silent}'
           project: '{project}'
           branch: '{gerrit-branch}'
+          recheck-component: 'android_{arch}-{transport}'
 
     wrappers:
       - timestamps
@@ -401,9 +409,11 @@
                 exclude-no-code-change: 'true'
             - draft-published-event
             - comment-added-contains-event:
-                comment-contains-value: 'verify all'
+                comment-contains-value: 'verify all$'
             - comment-added-contains-event:
-                comment-contains-value: 'reverify'
+                comment-contains-value: 'reverify$'
+            - comment-added-contains-event:
+                comment-contains-value: 'reverify windows-{arch}-{vs-version}$'
           projects:
             - project-compare-type: 'ANT'
               project-pattern: '{project}'
