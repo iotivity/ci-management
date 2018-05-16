@@ -39,6 +39,7 @@
           silent: '{silent}'
           project: '{project}'
           branch: '{gerrit-branch}'
+          recheck-component: 'upnp-bridge'
 
     wrappers:
       - timestamps

@@ -35,6 +35,7 @@
           silent: '{silent}'
           project: '{project}'
           branch: '{gerrit-branch}'
+          recheck-component: '{component}'
 
     wrappers:
       - timestamps
