@@ -187,6 +187,11 @@
     name: 'iotivity-verify-unit_tests'
 
     properties:
+      - build-discarder:
+          days-to-keep: 14
+          num-to-keep: -1
+          artifact-days-to-keep: 7
+          artifact-num-to-keep: -1
       - throttle:
           max-total: 4
           option: project
