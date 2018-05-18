@@ -18,7 +18,6 @@
             - 'secured'
             - 'unsecured'
       - 'iotivity-verify-linux_{security}_with_java':
-          gerrit-branch: 'master'
           security:
             - 'secured'
             - 'unsecured'
@@ -496,7 +495,7 @@
           credentials-id: '{ssh-credentials}'
 
     triggers:
-      - gerrit-trigger-patch-submitted-skip-vote:
+      - gerrit-trigger-patch-submitted:
           silent: '{silent}'
           project: '{project}'
           branch: '{gerrit-branch}'
