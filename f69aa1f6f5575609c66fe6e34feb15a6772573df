@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da33351e_dd262868",
+        "filename": "jjb/global-macros.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 445
+      },
+      "writtenOn": "2018-05-19T12:49:26Z",
+      "side": 1,
+      "message": "what does the trailing $ mean?  I often add a comment to a reverify request, so it would be good to know if that would now break after this change.",
+      "range": {
+        "startLine": 87,
+        "startChar": 16,
+        "endLine": 87,
+        "endChar": 50
+      },
+      "revId": "f69aa1f6f5575609c66fe6e34feb15a6772573df",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
