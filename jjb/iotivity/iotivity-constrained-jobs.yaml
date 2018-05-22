@@ -10,6 +10,8 @@
     component:
       - 'linux'
       - 'linux_test'
+      - 'linux_unsecured'
+      - 'linux_unsecured_test'
       - 'tizenrt'
 
 - job-template:
