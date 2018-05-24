@@ -1,0 +1,9 @@
+Verified+1: IoTivity Jenkins <jenkins-daemon@iotivity.org>
+Code-Review+1: Kishen Maloor <kishen.maloor@intel.com>
+Verified+1: Phil Coval <p.coval@samsung.com>
+Code-Review+2: Phil Coval <p.coval@samsung.com>
+Submitted-by: Phil Coval <p.coval@samsung.com>
+Submitted-at: Thu, 24 May 2018 07:47:24 +0000
+Reviewed-on: https://gerrit.iotivity.org/gerrit/24767
+Project: ci-management
+Branch: refs/heads/master
