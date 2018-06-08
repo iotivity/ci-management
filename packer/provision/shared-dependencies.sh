@@ -101,7 +101,7 @@ mkdir -p "${IOTIVITYEXTLIB}"/libcoap
 git clone https://github.com/dthaler/libcoap "${IOTIVITYEXTLIB}"/libcoap/libcoap \
 && cd "${IOTIVITYEXTLIB}"/libcoap/libcoap \
 && git fetch --all --tags \
-&& git checkout tags/IoTivity-1.2.1
+&& git checkout tags/IoTivity-1.2.1d
 
 # source of gerrit projects
 mkdir "${IOTIVITYEXTLIB}/gerrit"
