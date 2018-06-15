@@ -1,5 +1,6 @@
 {
   "variables": {
+    "cloud_auth_url": null,
     "cloud_tenant": null,
     "cloud_user": null,
     "cloud_pass": null,
@@ -8,13 +9,13 @@
     "ssh_user": null,
     "distro": null,
     "cloud_user_data": null,
-    "arch": null
-
+    "toolchain": "vs2013"
   },
   "builders": [
     {
       "type": "openstack",
-      "identity_endpoint": "https://auth.vexxhost.net/v2.0/",
+      "identity_endpoint": "{{user `cloud_auth_url`}}",
+      "domain_name": "Default",
       "tenant_name": "{{user `cloud_tenant`}}",
       "username": "{{user `cloud_user`}}",
       "password": "{{user `cloud_pass`}}",
