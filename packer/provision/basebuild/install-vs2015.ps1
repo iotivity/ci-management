@@ -2,18 +2,21 @@
 echo "Disk usage:"
 Get-WmiObject win32_logicaldisk
 
-# Resize first partition of first disk to maximum size
-Get-Partition -DiskNumber 0 -PartitionNumber 1
-$size = (Get-PartitionSupportedSize -DiskNumber 0 -PartitionNumber 1)
-Resize-Partition -DiskNumber 0 -PartitionNumber 1 -Size $size.SizeMax
+# # Resize first partition of first disk to maximum size
+# Get-Partition -DiskNumber 0 -PartitionNumber 1
+# $size = (Get-PartitionSupportedSize -DiskNumber 0 -PartitionNumber 1)
+# Resize-Partition -DiskNumber 0 -PartitionNumber 1 -Size $size.SizeMax
+#
+# # Print disk size
+# echo "Disk usage:"
+# Get-WmiObject win32_logicaldisk
 
-# Print disk size
-echo "Disk usage:"
-Get-WmiObject win32_logicaldisk
+Write-Host "Installing Visual Studio 2015"
 
-echo "Installing Visual Studio 2015"
+# # https://chocolatey.org/packages/VisualStudio2015Community
+# choco install -y visualstudio2015community
 
-echo "Free disk Space:"
+Write-Host "Free disk Space:"
 Get-WMIObject Win32_LogicalDisk | ForEach-Object {$_.freespace / 1GB}
 
 $vsSource="https://download.microsoft.com/download/0/B/C/0BC321A4-013F-479C-84E6-4A2F90B11269/vs_community.exe"
@@ -37,11 +40,11 @@ Function Test-VS-Install{
   }
 }
 
-For($i=0; $i -lt 3; $i++){
-  if( Test-VS-Install == False ){
-    # sleep for 50 minutes
-    Start-Sleep -s 3000
-  }
-}
+# For($i=0; $i -lt 3; $i++){
+#   if( Test-VS-Install == False ){
+#     # sleep for 50 minutes
+#     Start-Sleep -s 3000
+#   }
+# }
 
 

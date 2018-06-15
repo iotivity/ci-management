@@ -1,13 +1,5 @@
 @echo off
 echo "Copying dependencies..."
-echo | set /p="gtest..."
-mklink %WORKSPACE%\extlibs\gtest\gtest-1.7.0.zip C:\j\e\gtest-1.7.0.zip > NUL 2>&1
-mklink %WORKSPACE%\extlibs\gtest\gtest-1.8.0.zip C:\j\e\gtest-1.8.0.zip > NUL 2>&1
-echo "done"
-echo | set /p="gtest-release..."
-mklink %WORKSPACE%\extlibs\gtest\release-1.7.0.zip C:\j\e\googletest-release-1.7.0.zip > NUL 2>&1
-mklink %WORKSPACE%\extlibs\gtest\release-1.8.0.zip C:\j\e\googletest-release-1.8.0.zip > NUL 2>&1
-echo "done"
 echo | set /p="boost..."
 mklink %WORKSPACE%\extlibs\boost\boost_1_60_0.zip C:\j\e\boost_1_60_0.zip > NUL 2>&1
 md %WORKSPACE%\extlibs\boost\boost\

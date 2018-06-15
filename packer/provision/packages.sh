@@ -72,6 +72,7 @@ libibverbs1
 libice6
 libicu-dev
 libijs-0.35
+libiw-dev
 libjasper1
 libjbig2dec0
 libjpeg-turbo8
@@ -176,7 +177,6 @@ fonts-dejavu-core"
   dpkg --add-architecture i386
   add-apt-repository universe
 
-  find /etc/apt/ -name '*.list' | xargs perl -pi -e 's{ubuntu.mirror.vexxhost.com}{mirrors.kernel.org}g' 
   apt-get update
 
   apt-get -y -q install ${PKG_LIST}
@@ -358,28 +358,3 @@ wget
 exit 0
 
 fi
-
-
-## These may be all the files required
-##apt-get -y install \
-##  autotools-dev \
-##  dpkg-dev \
-##  libbz2-dev \
-##  libc-dev-bin \
-##  libc6-dev \
-##  libexpat1-dev \
-##  libffi-dev \
-##  libglib2.0-dev \
-##  libibverbs-dev \
-##  libicu-dev \
-##  libopenmpi-dev \
-##  libpcre3-dev \
-##  libssl-dev \
-##  libstdc++6-4.6-dev \
-##  linux-libc-dev \
-##  mpi-default-dev \
-##  python-dev \
-##  python2.7-dev \
-##  uuid-dev \
-##  zlib1g-dev \
-##  libcurl4-openssl-dev

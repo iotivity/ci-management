@@ -2,6 +2,12 @@
 
 # vim: sw=2 ts=2 sts=2 et :
 
+if [ -e /swap ]
+then
+  swapoff /swap
+  rm /swap
+fi
+
 rm -rf /etc/Pegasus/*.cnf /etc/Pegasus/*.crt /etc/Pegasus/*.csr \
   /etc/Pegasus/*.pem /etc/Pegasus/*.srl /root/anaconda-ks.cfg \
   /root/anaconda-post.log /root/initial-setup-ks.cfg /root/install.log \
@@ -28,9 +34,6 @@ rm -rf ~/.viminfo /etc/ssh/ssh*key* /root/.ssh/*
 
 # kill any cloud-init related bits
 rm -rf /var/lib/cloud/*
-
-# clean-up any manual packer uploads
-rm -rf /tmp/packer
 
 # Force a system sync and sleep to get around any SSD issues
 echo "Forcing sync and sleep for 10sec"
