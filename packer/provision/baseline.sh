@@ -217,7 +217,7 @@ EOF
 
     echo "---> Updating operating system"
 
-    apt-get install -q -y software-properties-common python-software-properties
+    apt-get install -q -y software-properties-common
     # add additional repositories
     add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe restricted multiverse"
     apt-get update -m -q
