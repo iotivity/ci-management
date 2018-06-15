@@ -1,5 +1,6 @@
 {
   "variables": {
+    "cloud_auth_url": null,
     "cloud_tenant": null,
     "cloud_user": null,
     "cloud_pass": null,
@@ -12,7 +13,8 @@
   "builders": [
     {
       "type": "openstack",
-      "identity_endpoint": "https://auth.vexxhost.net/v2.0/",
+      "identity_endpoint": "{{user `cloud_auth_url`}}",
+      "domain_name": "Default",
       "tenant_name": "{{user `cloud_tenant`}}",
       "username": "{{user `cloud_user`}}",
       "password": "{{user `cloud_pass`}}",
@@ -32,13 +34,12 @@
     {
       "type": "shell",
       "scripts": [
-
+        "provision/baseline.sh",
         "provision/sshd.sh",
         "provision/packages.sh",
         "provision/shared-dependencies.sh",
         "provision/android.sh",
         "provision/tizen.sh",
-        "provision/baseline.sh",
         "provision/cleanup.sh",
         "provision/system_reseal_local_env.sh"
       ],
