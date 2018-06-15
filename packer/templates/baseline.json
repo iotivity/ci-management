@@ -1,5 +1,7 @@
 {
   "variables": {
+    "ansible_roles_path": ".galaxy",
+    "cloud_auth_url": null,
     "cloud_tenant": null,
     "cloud_user": null,
     "cloud_pass": null,
@@ -7,40 +9,45 @@
     "base_image": null,
     "ssh_user": null,
     "distro": null,
-    "cloud_user_data": null
+    "cloud_user_data": null,
+    "ssh_proxy_host": ""
   },
   "builders": [
     {
       "type": "openstack",
-      "identity_endpoint": "https://auth.vexxhost.net/v2.0/",
+      "identity_endpoint": "{{user `cloud_auth_url`}}",
+      "domain_name": "Default",
       "tenant_name": "{{user `cloud_tenant`}}",
       "username": "{{user `cloud_user`}}",
+      "instance_name": "{{user `distro`}}-baseline-{{uuid}}",
       "password": "{{user `cloud_pass`}}",
       "region": "ca-ymq-1",
+      "ssh_proxy_host": "{{user `ssh_proxy_host`}}",
       "ssh_username": "{{user `ssh_user`}}",
-      "image_name": "{{user `distro`}} - baseline - {{isotime \"20060102-1504\"}}",
+      "image_name": "ZZCI - {{user `distro`}} - baseline - {{isotime \"20060102-150405.000\"}}",
       "source_image_name": "{{user `base_image`}}",
       "flavor": "v1-standard-1",
       "availability_zone": "ca-ymq-2",
       "networks": [
         "{{user `cloud_network`}}"
       ],
-      "user_data_file": "{{user `cloud_user_data`}}"
+      "user_data_file": "{{user `cloud_user_data`}}",
+      "metadata": {
+        "ci_managed": "yes"
+      }
     }
   ],
   "provisioners": [
     {
       "type": "shell",
       "scripts": [
-
+        "provision/baseline.sh",
         "provision/sshd.sh",
         "provision/packages.sh",
         "provision/shared-dependencies.sh",
         "provision/android.sh",
         "provision/tizen.sh",
-        "provision/baseline.sh",
-        "provision/cleanup.sh",
-        "provision/system_reseal_local_env.sh"
+        "provision/system_reseal.sh"
       ],
       "execute_command": "chmod +x {{ .Path }}; if [ \"$UID\" == \"0\" ]; then {{ .Vars }} '{{ .Path }}'; else {{ .Vars }} sudo -E '{{ .Path }}'; fi"
     }
