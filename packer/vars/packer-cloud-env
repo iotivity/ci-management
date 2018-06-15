@@ -1,0 +1,8 @@
+{
+  "cloud_tenant": "bef2b857-e8cf-42e9-90f2-9808e50cbe5f",
+  "cloud_user": "01e4c11a-675f-4758-a43a-b6de59be4613",
+  "cloud_pass": "E95P7mMXHdM23uZ7uRx7Iqoi9L3cCpKfzYhrckqMBYSzBNSQ",
+  "cloud_network": "1085d02e-d8f3-4f0a-9d9a-f1b01068798c",
+  "cloud_auth_url": "https://auth.vexxhost.net/v3/",
+  "ssh_proxy_host": ""
+}
