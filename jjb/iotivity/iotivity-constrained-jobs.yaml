@@ -50,6 +50,9 @@
 
     publishers:
       - retry-build-on-builder-error
+      - archive-artifacts:
+          artifacts: '**/*.out.*'
+      - wipe-workspace
       - wipe-workspace
       - email-notification:
           mailto: 'oicbuild@intel.com'
