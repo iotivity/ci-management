@@ -82,6 +82,7 @@ libice6 \
 libicu-dev \
 libicu48 \
 libijs-0.35 \
+libiw-dev \
 libjasper1 \
 libjbig2dec0 \
 libjpeg-turbo8 \
