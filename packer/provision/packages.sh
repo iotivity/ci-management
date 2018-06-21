@@ -72,6 +72,7 @@ libibverbs1
 libice6
 libicu-dev
 libijs-0.35
+libiw-dev
 libjasper1
 libjbig2dec0
 libjpeg-turbo8
