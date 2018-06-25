@@ -85,4 +85,4 @@ mkdir -p /extlibs/libcoap
 git clone https://github.com/dthaler/libcoap /extlibs/libcoap/libcoap \
 && cd /extlibs/libcoap/libcoap \
 && git fetch --all --tags \
-&& git checkout tags/IoTivity-1.2.1d
+&& git checkout tags/IoTivity-1.4
