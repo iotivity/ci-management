@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da33351e_abc4ab92",
+        "filename": "jjb/iotivity/iotivity-constrained-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-06-26T22:07:26Z",
+      "side": 1,
+      "message": "duplicate",
+      "range": {
+        "startLine": 55,
+        "startChar": 7,
+        "endLine": 55,
+        "endChar": 22
+      },
+      "revId": "a7bfc3d90580b92070beaa592c36323b62b7e637",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
