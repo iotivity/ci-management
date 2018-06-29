@@ -10,10 +10,26 @@
     component:
       - 'freertos'
       - 'linux'
-      - 'linux_test'
+      - 'linux_test':
+          constrained_wrappers:
+            - timestamps
+            - openstack:
+                single-use: true
+            - timeout:
+                timeout: 3
+                type: absolute
+                fail: false
+                abort: true
       - 'linux_unsecured'
       - 'linux_unsecured_test'
       - 'tizenrt'
+
+- default_wrappers: &default_wrappers
+    name: default-wrappers
+    constrained_wrappers:
+      - timestamps
+      - openstack:
+          single-use: true
 
 - job-template:
     name: '{project}-verify-{component}'
@@ -22,6 +38,7 @@
     node: '{node}'
     concurrent: true
     disabled: '{obj:disabled}'
+    <<: *default_wrappers
 
     parameters:
       - gerrit-project:
@@ -39,10 +56,7 @@
           project: '{project}'
           branch: '{gerrit-branch}'
 
-    wrappers:
-      - timestamps
-      - openstack:
-          single-use: true
+    wrappers: '{obj:constrained_wrappers}'
 
     builders:
       - iotivity-constrained-auto-build:
