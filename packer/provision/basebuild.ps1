@@ -46,7 +46,7 @@ function fetch-github-repo
   & git checkout $tag
 }
 
-fetch-github-repo "libcoap" "dthaler" "IoTivity-1.2.1d"
+fetch-github-repo "libcoap" "dthaler" "IoTivity-1.4"
 fetch-github-repo "mbedtls" "armmbed" "mbedtls-2.4.2"
 fetch-github-repo "tinycbor" "intel" "v0.5.1"
 
