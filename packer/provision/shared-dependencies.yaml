@@ -1,0 +1,145 @@
+---
+vars:
+  extlibs: '/extlibs'
+  boost_version: 'boost_1_58_0'
+  boost_file: '{{ boost_version }}.zip'
+  boost_url: 'https://storage.googleapis.com/iotivity/boost'
+  expat_version: 'expat_2.1.0'
+  gtest_url:  'github.com/google/googletest/archive'
+  gtest_versions:
+    - 1.7.0
+    - 1.8.0
+  tinycbor_url: 'github.com/intel/tinycbor/archive'
+  tinycbor_versions:
+    - 0.2.1
+    - 0.3.2
+    - 0.4
+    - 0.4.1
+    - 0.4.2
+    - 0.5.0
+    - 0.5.1
+  sqlite_version: 'sqlite-amalgamation-3081101'
+  sqlite_url: 'www.sqlite.org/2015/{{ sqlite_version }}.zip'
+
+tasks:
+  - name: Create Extlibs
+    file:
+      path: '{{ extlibs }}'
+      state: directory
+  - name: Install Boost
+    block:
+      - set_fact:
+          boost_zip: '{{ extlibs }}/boost/{{ boost_version }}.zip'
+          boost_dir: '{{ extlibs }}/boost/{{ boost_version }}'
+          cacheble: true
+      - name: Create Boost Directory
+        file:
+          path: 'boost'
+          state: directory
+      - name: Download Boost
+        get_url: 
+          url: '{{ boost_url }}/{{ boost_version }}.zip'
+          dest: '{{ boost_zip }}'
+      - name: Unzip Boost
+        unarchive: 
+          src: '{{ boost_zip }}'
+          dest: '{{ extlibs }}/boost/'
+          remote_src: yes
+      - name: Bootstrap Boost
+        command: ./bootstrap.sh --with-libraries=system,filesystem,date_time,thread,regex,log,iostreams,program_options,atomic
+        args:
+            chdir: '{{ boost_dir }}'
+        registers: boost_bootstrapped
+      - name: Install Boost to System
+        command: ./b2 -j4 install
+        when: boost_bootstrapped
+        register: boost_installed
+      - name: Reload Dynamic Linking
+        command: ldconfig
+        when: boost_installed
+  - name: Expat
+    block:
+      - name: Create Expat Directory
+        file: path='{{ extlibs }}/expat' state=directory
+      - name: Download Expat
+        unarchive:
+          src: '://launchpad.net/ubuntu/+archive/primary/+files/{{ expat_version }}.orig.tar.gz'
+          dest: '{{ extlibs }}/expat/'
+          remote_src: yes
+  - name: Gtest
+    block:
+      - name: Create Gtest Directory
+        file: path='{{ extlibs }}/gtest' state=directory
+      - name: 'Download Gtest {{ item }}'
+        unarchive:
+          src: '://{{ gtest_url }}/release-{{ item }}.zip'
+          dest: '{{ extlibs }}/gtest/'
+          remote_src: yes
+        with_items: gtest_versions
+  - name: TinyCBOR
+    block:
+      - name: Create TinyCBOR Directory
+        file: path='{{ extlibs }}/tinycbor' state=directory
+      - name: 'Download TinyCBOR {{ item }}'
+        unarchive:
+          src: '://{{ tinycbor_url }}/v{{ item }}.zip'
+          dest: '{{ extlibs }}/tinycbor/'
+          remote_src: yes
+        with_items: tinycbor_versions
+  - name: SQLite
+    block:
+      - name: Create SQLite Directory
+        file: path='{{ extlibs }}/sqlite' state=directory
+      - name: 'Download SQLite {{ sqlite_version }}'
+        unarchive:
+          src: '://{{ sqlite_url }}'
+          dest: '{{ extlibs }}/sqlite/'
+          remote_src: yes
+		  - name: Move SQLite Files
+        copy:
+          dest: '{{ extlibs }}/sqlite/'
+          src: '{{ extlibs }}/{{ sqlite_verson }}/{{ item }}'
+          remote_src: yes
+        register: 
+        with_items:
+          - sqlite3.c
+          - sqlite3.h
+      - name: Remove extra SQLite Files
+        file: path='{{ extlibs }}/sqlite/{{ sqlite_version }} state=absent
+   - name: YAML CPP
+     git:
+       repo: https://github.com/jbeder/yaml-cpp.git
+       dest: '{{ extlibs }}/yaml/yaml'
+   - name: RAXMPP
+     git:
+       repo: https://gerrit.iotivity.org/gerrit/iotivity-xmpp
+       dest: '{{ extlibs }}/raxmpp/raxmpp'
+   - name: Hippomocks
+     git:
+       repo: https://github.com/dascandy/hippomocks
+       dest: '{{ extlibs }}/hippomocks-master'
+       version: 2f40aa11e31499432283b67f9d3449a3cd7b9c4d
+   - name: mbedtls
+     git:
+       repo: https://github.com/ARMmbed/mbedtls
+       dest: '{{ extlibs }}/mbedtls/mbedtls'
+       version: mbedtls-2.4.2
+   - name: libcoap
+     git:
+       repo: https://github.com/dthaler/libcoap
+       dest: '{{ extlibs }}/libcoap/libcoap'
+       version: IoTivity-1.2.1d
+   - name: Gerrit Projects
+     git:
+       repo: 'https://gerrit.iotivity.org/gerrit/p/{{ item }}.git'
+       dest: '{{ extlibs }}/gerrit/{{ item }}'
+     with_items: 
+       - iotivity
+       - iotivity-alljoyn-bridge
+       - iotivity-constrained
+       - iotivity-contrib
+       - iotivity-node
+       - iotivity-test
+       - iotivity-upnp-bridge
+       - iotivity-voice
+       - iotivity-xmpp

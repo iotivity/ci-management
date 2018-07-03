@@ -1,0 +1,4 @@
+---
+tasks:
+  - name: Tizen
+    script: provision/tizen.sh
