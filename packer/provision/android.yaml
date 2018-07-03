@@ -1,0 +1,3 @@
+---
+- name: Android
+  script: provision/android.sh
