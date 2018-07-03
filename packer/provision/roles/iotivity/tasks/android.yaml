@@ -1,0 +1,5 @@
+---
+- name: Android
+  script: android.sh
+  args:
+    creates: '{{ extlibs }}/android/ndk'

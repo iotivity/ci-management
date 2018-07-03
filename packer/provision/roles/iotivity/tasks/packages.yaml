@@ -1,0 +1,9 @@
+---
+- name: Install Base Packages
+  apt:
+    name: '{{ packages }}'
+    state: present
+    update_cache: true
+  become: true
+# dpkg --add-architecture i386
+# add-apt-repository universe
