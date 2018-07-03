@@ -1,0 +1,16 @@
+---
+- name: Add Tizen Repository
+  apt_repository:
+    repo: 'deb [trusted=yes] http://download.tizen.org/tools/latest-release/{{ ansible_distribution }}_{{ ansible_distribution_version }}/ /'
+    filename: tizen
+    state: present
+  become: true
+  tags: debug
+
+- name: Install GBS
+  apt:
+    name: gbs
+    state: present
+    update_cache: true
+  become: true
+  tags: debug

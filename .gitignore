@@ -1,5 +1,6 @@
 *.swp
 *.vagrant
+*.retry
 
 packer/builds
 packer/bin

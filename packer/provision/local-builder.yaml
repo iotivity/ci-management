@@ -1,2 +1,9 @@
 ---
-- import_playbook: ../common-packer/provision/baseline.yaml
+- name: Start with the Common-Packer Baseline
+  import_playbook: ../common-packer/provision/baseline.yaml
+
+- name: Layer IoTivity requirements on top
+  hosts: all
+  become: true
+  roles:
+   - iotivity
