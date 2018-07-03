@@ -1,0 +1,7 @@
+---
+- name: Tizen Dependencies
+  hosts: all
+  become: yes
+  tasks:
+    - name: Tizen
+      script: tizen.sh

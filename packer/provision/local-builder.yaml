@@ -1,2 +1,7 @@
 ---
 - import_playbook: ../common-packer/provision/baseline.yaml
+- import_playbook: sshd.yaml
+- import_playbook: packages.yaml
+- import_playbook: shared-dependencies.yaml
+- import_playbook: android.yaml
+- import_playbook: tizen.yaml
