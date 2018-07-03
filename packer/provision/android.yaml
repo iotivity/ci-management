@@ -1,0 +1,6 @@
+---
+- name: Android Dependencies
+  hosts: all
+  tasks:
+    - name: Android
+      script: android.sh
