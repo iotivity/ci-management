@@ -1,0 +1,22 @@
+---
+extlibs: '/extlibs'
+boost_version: 'boost_1_58_0'
+boost_file: '{{ boost_version }}.zip'
+boost_url: 'https://storage.googleapis.com/iotivity/boost'
+expat_version: 'expat_2.1.0'
+expat_url: 'https://launchpad.net/ubuntu/+archive/primary/+files'
+gtest_url: 'https://github.com/google/googletest/archive'
+gtest_versions:
+  - 1.7.0
+  - 1.8.0
+tinycbor_url: 'https://github.com/intel/tinycbor/archive'
+tinycbor_versions:
+  - 0.2.1
+  - 0.3.2
+  - 0.4
+  - 0.4.1
+  - 0.4.2
+  - 0.5.0
+  - 0.5.1
+sqlite_version: 'sqlite-amalgamation-3081101'
+sqlite_url: 'https://www.sqlite.org/2015/{{ sqlite_version }}.zip'

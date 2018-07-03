@@ -1,0 +1,11 @@
+---
+- name: Install Base Packages
+  apt:
+    name: '{{ packages }}'
+    state: present
+    update_cache: true
+  retries: 3
+  register: apt_run
+  until: apt_run | success
+  # dpkg --add-architecture i386
+  # add-apt-repository universe

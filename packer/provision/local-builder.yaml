@@ -1,2 +1,6 @@
 ---
 - import_playbook: ../common-packer/provision/baseline.yaml
+- name: Packer Build
+  hosts: all
+  roles:
+   - iotivity
