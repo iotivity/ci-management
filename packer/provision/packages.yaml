@@ -1,0 +1,14 @@
+---
+- name: Packages
+  hosts: all
+  become: true
+  vars_files:
+    - vars/packages.yaml
+  tasks:
+    - name: Install Base Packages
+      apt:
+        name: '{{ packages }}'
+        state: present
+        update_cache: true
+        # dpkg --add-architecture i386
+        # add-apt-repository universe
