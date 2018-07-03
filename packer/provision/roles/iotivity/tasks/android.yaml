@@ -1,0 +1,91 @@
+---
+- name: Android - Create extlibs directory
+  file:
+    path: '{{ extlibs }}/android'
+    state: directory
+- name: Android - NDK
+  block:
+    - name: NDK - Create Directory
+      file:
+        path: '{{ android_ndk_dir }}'
+        state: directory
+    - name: NDK - Download
+      get_url:
+        url: '{{ android_ndk_url }}'
+        dest: '{{ android_ndk_dir }}'
+        mode: 'u+x'
+    - name: NDK - Install
+      command: './android-ndk-{{ android_ndk_version }}-linux-x86_64.bin'
+      args:
+        chdir: '{{ android_ndk_dir }}'
+        creates: '{{ android_ndk_dir }}/android-ndk-{{ android_ndk_version }}'
+    - name: NDK - Cleanup
+      file:
+        path: './android-ndk-{{ android_ndk_version }}-linux-x86_64.bin'
+        state: absent
+- name: Android - SDK
+  block:
+    - name: SDK - Create Directory
+      file:
+        path: '{{ android_sdk_dir }}'
+        state: directory
+    - name: SDK - Download & Extract
+      unarchive:
+        src: '{{ android_sdk_url }}'
+        dest: '{{ android_sdk_dir }}'
+        creates: '{{ android_sdk_dir }}/android-sdk_{{ android_sdk_version }}'
+        remote_src: true
+    - name: SDK - Rename SDK Directory
+      command: 'mv {{ android_sdk_dir }}/android-sdk-linux {{ android_sdk_dir }}/android-sdk_{{ android_sdk_version }}'
+      args:
+        creates: '{{ android_sdk_dir }}/android-sdk_{{ android_sdk_version }}'
+    - name: SDK - Export SDK Directory as Fact
+      set_fact:
+        android_sdk_location: '{{ android_sdk_dir }}/android-sdk_{{ android_sdk_version }}'
+- name: Android - Platform
+  block:
+    - name: Platform - Create Directory
+      file:
+        path: '{{ android_sdk_location }}/platforms'
+        state: directory
+    - name: Platform - Download & Extract
+      unarchive:
+        src: '{{ android_platform_url }}'
+        dest: '{{ android_sdk_location }}/platforms'
+        creates: '{{ android_sdk_location }}/platforms/android-{{ android_platform_api_major_version }}'
+        remote_src: true
+    - name: Platform - Rename Platform Version to API Version Directory
+      command: 'mv {{ android_sdk_location }}/platforms/android-{{ android_platform_version}} {{ android_sdk_location }}/platforms/android-{{ android_platform_api_major_version }}'
+      args:
+        creates: '{{ android_sdk_location }}/platforms/android-{{ android_platform_api_major_version }}'
+- name: Android - Buildtools
+  block:
+    - name: Buildtools - Export Directory as Fact
+      set_fact:
+        android_build_tools_dir: '{{ android_sdk_location }}/build-tools'
+    - name: Buildtools - Create Directory
+      file:
+        path: '{{ android_build_tools_dir }}'
+        state: directory
+    - name: Buildtools - Download & Extract
+      unarchive:
+        src: '{{ android_build_tools_url }}'
+        dest: '{{ android_build_tools_dir }}'
+        creates: '{{ android_build_tools_dir }}/{{ android_build_tools_expanded_version }}'
+        remote_src: true
+    - name: Buildtools - Rename
+      command: 'mv {{ android_build_tools_dir }}/android-{{ android_build_tools_api_version }} {{ android_build_tools_dir }}/{{ android_build_tools_expanded_version }}'
+      args:
+        creates: '{{ android_build_tools_dir }}/{{ android_build_tools_expanded_version }}'
+- name: Gradle
+  block:
+    - name: Gradle - Create Directory
+      file:
+        path: '{{ android_gradle_dir }}'
+        state: directory
+    - name: Gradle - Download & Extract
+      unarchive:
+        src: '{{ android_gradle_url }}'
+        dest: '{{ android_gradle_dir }}'
+        creates: '{{ android_gradle_dir }}/gradle-{{ android_gradle_version }}'
+        remote_src: true
