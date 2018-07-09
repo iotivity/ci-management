@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da33351e_60363a54",
+        "filename": "jjb/iotivity/include-raw-iotivity-constrained-tizenrt-bootstrap.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-07-09T17:35:05Z",
+      "side": 1,
+      "message": "Not used, though I assume this is for later use?",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 22
+      },
+      "revId": "9f931b1c197da99a0a66e00a70605c9ad771b8bb",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_00312e5a",
+        "filename": "jjb/iotivity/include-raw-iotivity-constrained-tizenrt-bootstrap.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-07-09T17:35:05Z",
+      "side": 1,
+      "message": "Not defined",
+      "range": {
+        "startLine": 12,
+        "startChar": 97,
+        "endLine": 12,
+        "endChar": 114
+      },
+      "revId": "9f931b1c197da99a0a66e00a70605c9ad771b8bb",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_c0ef46af",
+        "filename": "jjb/iotivity/include-raw-iotivity-constrained-tizenrt-bootstrap.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-07-09T17:35:05Z",
+      "side": 1,
+      "message": "This is repeated in \u0027${toolchain_dir}\u0027",
+      "range": {
+        "startLine": 18,
+        "startChar": 11,
+        "endLine": 18,
+        "endChar": 28
+      },
+      "revId": "9f931b1c197da99a0a66e00a70605c9ad771b8bb",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_202c3202",
+        "filename": "jjb/iotivity/include-raw-iotivity-constrained-tizenrt-bootstrap.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-07-09T17:35:05Z",
+      "side": 1,
+      "message": "Repeated here again.",
+      "range": {
+        "startLine": 22,
+        "startChar": 12,
+        "endLine": 22,
+        "endChar": 29
+      },
+      "revId": "9f931b1c197da99a0a66e00a70605c9ad771b8bb",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
