@@ -62,6 +62,8 @@
     wrappers: '{obj:constrained_wrappers}'
 
     builders:
+      - shell:
+          !include-raw-escape: include-raw-{project}-{component}-bootstrap.sh
       - iotivity-constrained-auto-build:
           component: '{component}'
 
@@ -72,3 +74,4 @@
       - wipe-workspace
       - email-notification:
           mailto: 'oicbuild@intel.com'
+
