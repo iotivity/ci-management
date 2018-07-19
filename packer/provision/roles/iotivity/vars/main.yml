@@ -1,0 +1,53 @@
+---
+extlibs: '/extlibs'
+
+swap_file: '/swap'
+swap_file_size_mb: 4096
+
+boost_dir: '{{ extlibs }}/boost'
+boost_version: 'boost_1_58_0'
+boost_url: 'https://storage.googleapis.com/iotivity/boost/{{ boost_version}}.zip'
+
+expat_version: 'expat_2.1.0'
+expat_url: 'https://launchpad.net/ubuntu/+archive/primary/+files'
+
+gtest_url: 'https://github.com/google/googletest/archive'
+gtest_versions:
+  - 1.7.0
+  - 1.8.0
+
+tinycbor_url: 'https://github.com/intel/tinycbor/archive'
+tinycbor_versions:
+  - 0.2.1
+  - 0.3.2
+  - 0.4
+  - 0.4.1
+  - 0.4.2
+  - 0.5.0
+  - 0.5.1
+
+sqlite_version: 'sqlite-amalgamation-3081101'
+sqlite_url: 'https://www.sqlite.org/2015/{{ sqlite_version }}.zip'
+
+android_ndk_version: 'r10d'
+android_ndk_dir: '{{ extlibs }}/android/ndk'
+android_ndk_url: 'http://dl.google.com/android/ndk/android-ndk-{{ android_ndk_version }}-linux-x86_64.bin'
+
+android_sdk_version: 'r24.2'
+android_sdk_dir: '{{ extlibs }}/android/sdk'
+android_sdk_url: 'http://dl.google.com/android/android-sdk_{{ android_sdk_version }}-linux.tgz'
+
+android_platform_version: '5.0.1'
+android_platform_api_major_version: '21'
+android_platform_api_minor_version: 'r02'
+android_platform_api_version: '{{ android_platform_api_major_version }}_{{ android_platform_api_minor_version }}'
+android_platform_url: 'http://dl.google.com/android/repository/android-{{ android_platform_api_version }}.zip'
+
+android_build_tools_api_version: '4.4W'
+android_build_tools_version: 'r20'
+android_build_tools_expanded_version: '20.0.0'
+android_build_tools_url: 'https://dl.google.com/android/repository/build-tools_{{ android_build_tools_version }}-linux.zip'
+
+android_gradle_version: '2.2.1'
+android_gradle_dir: '{{ extlibs }}/android/gradle'
+android_gradle_url: 'https://services.gradle.org/distributions/gradle-{{ android_gradle_version }}-all.zip'
