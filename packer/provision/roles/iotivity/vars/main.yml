@@ -29,7 +29,7 @@ tinycbor_versions:
 sqlite_version: 'sqlite-amalgamation-3081101'
 sqlite_url: 'https://www.sqlite.org/2015/{{ sqlite_version }}.zip'
 
-android_ndk_version: 'r10d'
+android_ndk_version: 'r10e'
 android_ndk_dir: '{{ extlibs }}/android/ndk'
 android_ndk_url: 'http://dl.google.com/android/ndk/android-ndk-{{ android_ndk_version }}-linux-x86_64.bin'
 
