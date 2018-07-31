@@ -12,7 +12,7 @@ rm -rf ${WORKSPACE}/extlibs/tinycbor/tinycbor
 rm -rf ${WORKSPACE}/extlibs/gtest/gtest-1.7.0
 rm -rf ${WORKSPACE}/extlibs/gtest/google-release-1.7.0
 rm -rf ${WORKSPACE}/extlibs/hippomocks-master
-rm -rf ${WORKSPACE}/extlibs/android/ndk/android-ndk-r10d
+rm -rf ${WORKSPACE}/extlibs/android/ndk/android-ndk-r10e
 rm -rf ${WORKSPACE}/extlibs/android/sdk/android-sdk_r24.2
 rm -rf ${WORKSPACE}/extlibs/android/gradle/gradle-2.2.1
 rm -rf ${WORKSPACE}/extlibs/raxmpp/raxmpp
@@ -92,7 +92,7 @@ fi
 unzip -oq "${IOTIVITYEXTLIB}/tinycbor/v${TINYCBOR_VERSION}.zip" -d ${IOTIVITYEXTLIB}/tinycbor/
 ln -sv "${IOTIVITYEXTLIB}/tinycbor/tinycbor-${TINYCBOR_VERSION}" ${WORKSPACE}/extlibs/tinycbor/tinycbor
 
-ln -sv ${IOTIVITYEXTLIB}/android/android-ndk-r10d.bin ${WORKSPACE}/extlibs/android/ndk/android-ndk-r10d
+ln -sv ${IOTIVITYEXTLIB}/android/android-ndk-r10e.bin ${WORKSPACE}/extlibs/android/ndk/android-ndk-r10e
 ln -sv ${IOTIVITYEXTLIB}/android/sdk/android-sdk_r24.2 ${WORKSPACE}/extlibs/android/sdk/android-sdk_r24.2
 ln -sv ${IOTIVITYEXTLIB}/android/gradle/gradle-2.2.1 ${WORKSPACE}/extlibs/android/gradle/gradle-2.2.1
 ln -sv ${IOTIVITYEXTLIB}/expat/expat-2.1.0 ${WORKSPACE}/extlibs/expat/expat-2.1.0
