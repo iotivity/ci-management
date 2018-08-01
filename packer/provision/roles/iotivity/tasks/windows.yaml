@@ -1,0 +1,10 @@
+---
+- name: Chocolatly Packages
+  win_chocolatey:
+        name: '{{item}}'
+        state: present
+  with_items:
+    - 'dotnet4.5.1'
+    - 'windows-sdk-10.1'
+    - '7zip.install'
+    - 'sqlite'

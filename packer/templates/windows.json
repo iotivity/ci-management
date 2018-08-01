@@ -41,40 +41,12 @@
       "source": "provision/basebuild/",
       "destination": "c:\\packer"
     },
-    { "type": "powershell",
-      "scripts": [
-	  "provision/resize_partition.ps1"
-      ]
-    },
     { "type": "windows-shell",
       "scripts": [
         "provision/basebuild/win-prep.bat"
       ]
     },
     { "type": "windows-restart" },
-    { "type": "powershell",
-      "inline": [
-        "Set-ExecutionPolicy Bypass -Force; & C:\\packer\\install-chocolatey.ps1"
-      ]
-    },
-    { "type": "powershell",
-      "inline": [
-        "choco install -y puppet-agent"
-      ]
-    },
-    { "type": "windows-restart" },
-    { "type": "powershell",
-      "inline": [
-        "puppet module install chocolatey-chocolatey",
-        "puppet module install puppetlabs-dsc",
-        "puppet module install noma4i-windows_updates",
-        "puppet module install puppetlabs-reboot"
-      ]
-    },
-    { "type": "powershell",
-      "valid_exit_codes": [0, 3010],
-      "inline": [ "puppet apply C:\\packer\\iotivity-build-minion.pp" ]
-    },
     { "type": "powershell",
       "scripts": [
 	  "provision/basebuild/install-python-pkgs.ps1",
