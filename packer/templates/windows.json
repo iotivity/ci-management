@@ -46,11 +46,6 @@
 	  "provision/resize_partition.ps1"
       ]
     },
-    { "type": "windows-shell",
-      "scripts": [
-        "provision/basebuild/win-prep.bat"
-      ]
-    },
     { "type": "windows-restart" },
     { "type": "powershell",
       "inline": [
