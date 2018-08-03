@@ -182,7 +182,13 @@
     name: xunit-report
     publishers:
       - xunit:
-          thresholdmode: '1'
+          thresholdmode: 'number'
+          thresholds:
+              - failed:
+                  unstable: 0
+                  unstablenew: 0
+                  failure: 47
+                  failurenew: 0
           test-time-margin: 3000
           types:
             - gtest:
