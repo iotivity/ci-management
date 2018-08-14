@@ -1,0 +1,7 @@
+Verified+1: IoTivity Jenkins <jenkins-daemon@iotivity.org>
+Code-Review+2: Trevor Bramwell <tbramwell@linuxfoundation.org>
+Submitted-by: Trevor Bramwell <tbramwell@linuxfoundation.org>
+Submitted-at: Tue, 14 Aug 2018 22:24:09 +0000
+Reviewed-on: https://gerrit.iotivity.org/gerrit/26785
+Project: ci-management
+Branch: refs/heads/master
