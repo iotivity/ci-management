@@ -66,9 +66,9 @@
   block:
     - name: Create Hippomocks Directory
       file: path='{{ extlibs }}/hippomocks-master' state=directory
-    - name: Download Gtest Versions
+    - name: Download Hippomocks Versions
       unarchive:
-        src: '{{ gtest_url }}/v{{ item }}.zip'
+        src: '{{ hippomocks_url }}/v{{ item }}.zip'
         dest: '{{ extlibs }}/hippomocks-master/'
         creates: '{{ extlibs }}/hippomcks-master/hippomocks-{{ item }}'
         remote_src: true
