@@ -110,13 +110,7 @@ fi
 unzip -oq "${IOTIVITYEXTLIB}/hippomocks/v${HIPPOMOCKS_VERSION}.zip" -d ${IOTIVITYEXTLIB}/hippomocks-master/
 ln -sv ${IOTIVITYEXTLIB}/hippomocks-master ${WORKSPACE}/extlibs/hippomocks-master
 
-RAPIDJSON_VERSION='1.0.2'
-if [ ! -f "${IOTIVITYEXTLIB}/rapidjson/v${RAPIDJSON_VERSION}.zip" ]
-then
-  wget -O "${IOTIVITYEXTLIB}/rapidjson/v${RAPIDJSON_VERSION}.zip" -nv "https://github.com/miloyip/rapidjson/archive/v${RAPIDJSON_VERSION}.zip"
-fi
-unzip -oq "${IOTIVITYEXTLIB}/rapidjson/v${RAPIDJSON_VERSION}.zip" -d ${IOTIVITYEXTLIB}/rapidjson/
-ln -sv ${IOTIVITYEXTLIB}/rapidjson ${WORKSPACE}/extlibs/rapidjson
+
 
 
 
