@@ -63,6 +63,10 @@ then
 	mkdir ${WORKSPACE}/extlibs/raxmpp
 fi
 
+if [ ! -d "${WORKSPACE}/extlibs/hippomocks-master" ]
+then
+        mkdir ${WORKSPACE}/extlibs/hippomocks-master
+fi
 
 ln -sv ${IOTIVITYEXTLIB}/arduino/arduino-1.5.8 ${WORKSPACE}/extlibs/arduino/arduino-1.5.8
 if [ -d "${IOTIVITYEXTLIB}/boost/boost_1_58_0" ]
@@ -98,6 +102,18 @@ ln -sv ${IOTIVITYEXTLIB}/android/gradle/gradle-2.2.1 ${WORKSPACE}/extlibs/androi
 ln -sv ${IOTIVITYEXTLIB}/expat/expat-2.1.0 ${WORKSPACE}/extlibs/expat/expat-2.1.0
 ln -sv ${IOTIVITYEXTLIB}/raxmpp/raxmpp ${WORKSPACE}/extlibs/raxmpp/raxmpp
 
+HIPPOMOCKS_VERSION='5.0'
+if [ ! -f "${IOTIVITYEXTLIB}/hippomocks/v${HIPPOMOCKS_VERSION}.zip" ]
+then
+  wget -O "${IOTIVITYEXTLIB}/hippomocks/v${HIPPOMOCKS_VERSION}.zip" -nv "https://github.com/dascandy/hippomocks/archive/v${HIPPOMOCKS_VERSION}.zip"
+fi
+unzip -oq "${IOTIVITYEXTLIB}/hippomocks/v${HIPPOMOCKS_VERSION}.zip" -d ${IOTIVITYEXTLIB}/hippomocks-master/
+ln -sv ${IOTIVITYEXTLIB}/hippomocks-master ${WORKSPACE}/extlibs/hippomocks-master
+
+
+
+
+
 if [ ! -d "${WORKSPACE}/extlibs/gtest" ]
 then
 	mkdir ${WORKSPACE}/extlibs/gtest
@@ -105,7 +121,7 @@ fi
 
 ln -sv ${IOTIVITYEXTLIB}/gtest/gtest-1.7.0 ${WORKSPACE}/extlibs/gtest/gtest-1.7.0
 ln -sv ${IOTIVITYEXTLIB}/gtest/gtest-1.7.0 ${WORKSPACE}/extlibs/gtest/google-release-1.7.0
-ln -sv ${IOTIVITYEXTLIB}/hippomocks-master ${WORKSPACE}/extlibs/hippomocks-master
+#ln -sv ${IOTIVITYEXTLIB}/hippomocks-master ${WORKSPACE}/extlibs/hippomocks-master
 
 if [ ! -d "${WORKSPACE}/extlibs/yaml" ]
 then
