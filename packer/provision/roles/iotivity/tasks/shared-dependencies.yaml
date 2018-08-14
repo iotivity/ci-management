@@ -62,21 +62,6 @@
         dest: '{{ extlibs }}/expat/'
         creates: "{{ extlibs }}/expat/expat-{{ expat_version | regex_replace('_','-') }}"
         remote_src: true
-- name: Hippomocks
-  block:
-    - name: Create Hippomocks Directory
-      file: path='{{ extlibs }}/hippomocks-master' state=directory
-    - name: Download Gtest Versions
-      unarchive:
-        src: '{{ gtest_url }}/v{{ item }}.zip'
-        dest: '{{ extlibs }}/hippomocks-master/'
-        creates: '{{ extlibs }}/hippomcks-master/hippomocks-{{ item }}'
-        remote_src: true
-      with_items: '{{ hippomocks_versions }}'
-
-
-
-
 - name: Gtest
   block:
     - name: Create Gtest Directory
@@ -130,11 +115,11 @@
     repo: https://gerrit.iotivity.org/gerrit/iotivity-xmpp
     dest: '{{ extlibs }}/raxmpp/raxmpp'
     version: master
-#- name: Hippomocks
-#  git:
-#    repo: https://github.com/dascandy/hippomocks
-#    dest: '{{ extlibs }}/hippomocks-master'
-#    version: 2f40aa11e31499432283b67f9d3449a3cd7b9c4d
+- name: Hippomocks
+  git:
+    repo: https://github.com/dascandy/hippomocks
+    dest: '{{ extlibs }}/hippomocks-master'
+    version: 2f40aa11e31499432283b67f9d3449a3cd7b9c4d
 - name: mbedtls
   git:
     repo: https://github.com/ARMmbed/mbedtls
