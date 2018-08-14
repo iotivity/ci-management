@@ -1,6 +1,7 @@
 #!/bin/bash -eux
 set -o pipefail
 
+
 #IOTIVITYEXTLIB=${IOTIVITYEXTLIB:-/extlibs}
 IOTIVITYEXTLIB=/extlibs
 
