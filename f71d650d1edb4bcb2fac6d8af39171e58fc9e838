@@ -1,0 +1,188 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da33351e_08730781",
+        "filename": "android.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-08-15T20:25:41Z",
+      "side": 1,
+      "message": "This file should be removed, as we are now doing this work through Ansible.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 15
+      },
+      "revId": "f71d650d1edb4bcb2fac6d8af39171e58fc9e838",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_e86d039b",
+        "filename": "include-raw-iotivity-bootstrap.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-08-15T20:25:41Z",
+      "side": 1,
+      "message": "Remove this file. It Looks like you copied this over from jjb/iotivity/",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 15
+      },
+      "revId": "f71d650d1edb4bcb2fac6d8af39171e58fc9e838",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_2851abd8",
+        "filename": "jjb/iotivity/include-raw-iotivity-bootstrap.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-08-15T20:25:41Z",
+      "side": 1,
+      "message": "This file shouldn\u0027t be pulling down any dependencies.",
+      "range": {
+        "startLine": 104,
+        "startChar": 2,
+        "endLine": 105,
+        "endChar": 2
+      },
+      "revId": "f71d650d1edb4bcb2fac6d8af39171e58fc9e838",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_686293ae",
+        "filename": "jjb/iotivity/include-raw-iotivity-bootstrap.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-08-15T20:25:41Z",
+      "side": 1,
+      "message": "Looking at the Sconscripts, hippomocks-master isn\u0027t referenced at all.\n\nWhat should be linked here is the extracted zip directory \u0027hippomocks-v5\u0027 to extlibs/hippomocks/hippomocks.",
+      "range": {
+        "startLine": 107,
+        "startChar": 2,
+        "endLine": 107,
+        "endChar": 81
+      },
+      "revId": "f71d650d1edb4bcb2fac6d8af39171e58fc9e838",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_885f17e5",
+        "filename": "jjb/iotivity/include-raw-iotivity-bootstrap.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-08-15T20:25:41Z",
+      "side": 1,
+      "message": "same issue here",
+      "range": {
+        "startLine": 112,
+        "startChar": 2,
+        "endLine": 112,
+        "endChar": 66
+      },
+      "revId": "f71d650d1edb4bcb2fac6d8af39171e58fc9e838",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_486d0f98",
+        "filename": "packer/provision/android.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-08-15T20:25:41Z",
+      "side": 1,
+      "message": "No need to modify this as this file should go away.",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 39
+      },
+      "revId": "f71d650d1edb4bcb2fac6d8af39171e58fc9e838",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_c8591f00",
+        "filename": "packer/provision/roles/iotivity/tasks/shared-dependencies.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-08-15T20:25:41Z",
+      "side": 1,
+      "message": "This can just be removed instead of commented out.",
+      "range": {
+        "startLine": 132,
+        "startChar": 0,
+        "endLine": 136,
+        "endChar": 54
+      },
+      "revId": "f71d650d1edb4bcb2fac6d8af39171e58fc9e838",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_a85c9bee",
+        "filename": "shared-dependencies.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-08-15T20:25:41Z",
+      "side": 1,
+      "message": "This looks file like it was copied from packer/provision/roles/iotivity/\n\nand should be removed.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 7
+      },
+      "revId": "f71d650d1edb4bcb2fac6d8af39171e58fc9e838",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
