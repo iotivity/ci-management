@@ -98,6 +98,23 @@ ln -sv ${IOTIVITYEXTLIB}/android/gradle/gradle-2.2.1 ${WORKSPACE}/extlibs/androi
 ln -sv ${IOTIVITYEXTLIB}/expat/expat-2.1.0 ${WORKSPACE}/extlibs/expat/expat-2.1.0
 ln -sv ${IOTIVITYEXTLIB}/raxmpp/raxmpp ${WORKSPACE}/extlibs/raxmpp/raxmpp
 
+HIPPOMOCKS_VERSION='5.0'
+if [ ! -f "${IOTIVITYEXTLIB}/hippomocks/v${HIPPOMOCKS_VERSION}.zip" ]
+then
+   wget -O "${IOTIVITYEXTLIB}/hippomocks/v${HIPPOMOCKS_VERSION}.zip" -nv "https://github.com/dascandy/hippomocks/archive/v${HIPPOMOCKS_VERSION}.zip"
+fi
+unzip -oq "${IOTIVITYEXTLIB}/hippomocks/v${HIPPOMOCKS_VERSION}.zip" -d ${IOTIVITYEXTLIB}/hippomock-master
+ln -sv ${IOTIVITYEXTLIB}/hippomocks/v${HIPPOMOCKS_VERSION} ${WORKSPACE}/extlibs/hippomocks/hippomocks
+ 
+RAPIDJSON_VERSION='1.0.2'
+if [ ! -f "${IOTIVITYEXTLIB}/rapidjson/v${RAPIDJSON_VERSION}.zip" ]
+then
+   wget -O "${IOTIVITYEXTLIB}/rapidjson/v${RAPIDJSON_VERSION}.zip" -nv "https://github.com/miloyip/rapidjson/archive/v${RAPIDJSON_VERSION}.zip"
+fi
+unzip -oq "${IOTIVITYEXTLIB}/rapidjson/v${TINYCBOR_VERSION}.zip" -d ${IOTIVITYEXTLIB}/rapidjson/
+ln -sv "${IOTIVITYEXTLIB}/rapidjson/rapidjson-${RAPIDJSON_VERSION}" ${WORKSPACE}/extlibs/rapidjson/rapidjson
+
+
 if [ ! -d "${WORKSPACE}/extlibs/gtest" ]
 then
 	mkdir ${WORKSPACE}/extlibs/gtest
