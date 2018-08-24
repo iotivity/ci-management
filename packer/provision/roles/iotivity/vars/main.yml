@@ -51,3 +51,4 @@ android_build_tools_url: 'https://dl.google.com/android/repository/build-tools_{
 android_gradle_version: '2.2.1'
 android_gradle_dir: '{{ extlibs }}/android/gradle'
 android_gradle_url: 'https://services.gradle.org/distributions/gradle-{{ android_gradle_version }}-all.zip'
+hippmocks_version: '5.0'
