@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da33351e_73644849",
+        "filename": "packer/provision/roles/iotivity/tasks/shared-dependencies.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-08-24T19:11:43Z",
+      "side": 1,
+      "message": "hippomocks_url is not defined.",
+      "range": {
+        "startLine": 71,
+        "startChar": 17,
+        "endLine": 71,
+        "endChar": 31
+      },
+      "revId": "28f07638e54340c0a106ea5dc8064b2ae513f68d",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_d35b9485",
+        "filename": "packer/provision/roles/iotivity/tasks/shared-dependencies.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-08-24T19:11:43Z",
+      "side": 1,
+      "message": "Please remove these 3 empty lines.",
+      "range": {
+        "startLine": 75,
+        "startChar": 0,
+        "endLine": 76,
+        "endChar": 0
+      },
+      "revId": "28f07638e54340c0a106ea5dc8064b2ae513f68d",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_f34fb8bc",
+        "filename": "packer/provision/roles/iotivity/vars/main.yml",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-08-24T19:11:43Z",
+      "side": 1,
+      "message": "This should either be moved toward the top, or at least seperated from the android vars by a blank line.\n\nhippomocks_url should be added next to wherever this line end up.",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 24
+      },
+      "revId": "28f07638e54340c0a106ea5dc8064b2ae513f68d",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
