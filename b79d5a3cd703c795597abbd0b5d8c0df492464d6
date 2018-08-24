@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da33351e_13033c43",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2018-08-24T21:37:42Z",
+      "side": 1,
+      "message": "This is a completely useless commit message.\n\nPlease do something better. See: https://docs.releng.linuxfoundation.org/en/latest/best-practices.html on coding best practices. In particular the first bullet",
+      "revId": "b79d5a3cd703c795597abbd0b5d8c0df492464d6",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
