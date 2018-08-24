@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da33351e_b339b043",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-08-24T17:28:26Z",
+      "side": 1,
+      "message": "Please use a more descriptive summary, and read this on how to write a good git commit message:https://chris.beams.io/posts/git-commit/",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 19
+      },
+      "revId": "4747d2513cb9237056387f872303ff4dad814d04",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_732f28f7",
+        "filename": "packer/provision/roles/iotivity/tasks/shared-dependencies.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-08-24T17:28:26Z",
+      "side": 1,
+      "message": "It\u0027s confusing to include `-master` here as we won\u0027t be cloning the repo, but downloading a specific version of hippomocks. Please remove `-master` and make this path just `{{ extlibs }}/hippomocks`",
+      "range": {
+        "startLine": 68,
+        "startChar": 42,
+        "endLine": 68,
+        "endChar": 49
+      },
+      "revId": "4747d2513cb9237056387f872303ff4dad814d04",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_33ee40b5",
+        "filename": "packer/provision/roles/iotivity/tasks/shared-dependencies.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-08-24T17:28:26Z",
+      "side": 1,
+      "message": "This should be `hippomocks_version`",
+      "range": {
+        "startLine": 71,
+        "startChar": 39,
+        "endLine": 71,
+        "endChar": 44
+      },
+      "revId": "4747d2513cb9237056387f872303ff4dad814d04",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_d336f451",
+        "filename": "packer/provision/roles/iotivity/tasks/shared-dependencies.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-08-24T17:28:26Z",
+      "side": 1,
+      "message": "The path will need to be updated here.",
+      "range": {
+        "startLine": 72,
+        "startChar": 38,
+        "endLine": 73,
+        "endChar": 50
+      },
+      "revId": "4747d2513cb9237056387f872303ff4dad814d04",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_932c6c04",
+        "filename": "packer/provision/roles/iotivity/tasks/shared-dependencies.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-08-24T17:28:26Z",
+      "side": 1,
+      "message": "This should be `hippomocks-version`",
+      "range": {
+        "startLine": 73,
+        "startChar": 64,
+        "endLine": 73,
+        "endChar": 68
+      },
+      "revId": "4747d2513cb9237056387f872303ff4dad814d04",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_53f3049e",
+        "filename": "packer/provision/roles/iotivity/tasks/shared-dependencies.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-08-24T17:28:26Z",
+      "side": 1,
+      "message": "There should only be one hippomocks_version, so we don\u0027t need `with_items` here.",
+      "range": {
+        "startLine": 75,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 45
+      },
+      "revId": "4747d2513cb9237056387f872303ff4dad814d04",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_f3f3389d",
+        "filename": "packer/provision/roles/iotivity/tasks/shared-dependencies.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-08-24T17:28:26Z",
+      "side": 1,
+      "message": "Just remove instead of commenting this out, please.",
+      "range": {
+        "startLine": 132,
+        "startChar": 0,
+        "endLine": 136,
+        "endChar": 54
+      },
+      "revId": "4747d2513cb9237056387f872303ff4dad814d04",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
