@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da33351e_532144fa",
+        "filename": "jjb/iotivity/include-raw-iotivity-bootstrap.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-08-24T18:38:22Z",
+      "side": 1,
+      "message": "I believe this should be `v${HIPPOMOCKS_VERSION}`, though you\u0027ll need to parse the Sconscript to verify.",
+      "range": {
+        "startLine": 102,
+        "startChar": 74,
+        "endLine": 102,
+        "endChar": 81
+      },
+      "revId": "7190c698a11c489cc83ce197b4f734ecd654e498",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_f32178fd",
+        "filename": "jjb/iotivity/include-raw-iotivity-bootstrap.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-08-24T18:38:22Z",
+      "side": 1,
+      "message": "Please remove, as this will just be \u0027hippomocks\u0027",
+      "range": {
+        "startLine": 102,
+        "startChar": 35,
+        "endLine": 102,
+        "endChar": 42
+      },
+      "revId": "7190c698a11c489cc83ce197b4f734ecd654e498",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_331c80c1",
+        "filename": "packer/provision/roles/iotivity/tasks/shared-dependencies.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-08-24T18:38:22Z",
+      "side": 1,
+      "message": "version, no \u0027s\u0027",
+      "range": {
+        "startLine": 71,
+        "startChar": 57,
+        "endLine": 71,
+        "endChar": 58
+      },
+      "revId": "7190c698a11c489cc83ce197b4f734ecd654e498",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_737d68e7",
+        "filename": "packer/provision/roles/iotivity/tasks/shared-dependencies.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-08-24T18:38:22Z",
+      "side": 1,
+      "message": "version, no \u0027s\u0027",
+      "range": {
+        "startLine": 73,
+        "startChar": 82,
+        "endLine": 73,
+        "endChar": 83
+      },
+      "revId": "7190c698a11c489cc83ce197b4f734ecd654e498",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_937aacef",
+        "filename": "packer/provision/roles/iotivity/tasks/shared-dependencies.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-08-24T18:38:22Z",
+      "side": 1,
+      "message": "Please remove \u0027-master\u0027",
+      "range": {
+        "startLine": 73,
+        "startChar": 42,
+        "endLine": 73,
+        "endChar": 49
+      },
+      "revId": "7190c698a11c489cc83ce197b4f734ecd654e498",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_d38434d6",
+        "filename": "packer/provision/roles/iotivity/tasks/shared-dependencies.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-08-24T18:38:22Z",
+      "side": 1,
+      "message": "See my comment from the last patch about this.",
+      "range": {
+        "startLine": 131,
+        "startChar": 0,
+        "endLine": 135,
+        "endChar": 54
+      },
+      "revId": "7190c698a11c489cc83ce197b4f734ecd654e498",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
