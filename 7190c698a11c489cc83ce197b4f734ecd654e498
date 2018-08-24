@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "da33351e_136e9c2f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-08-24T18:39:10Z",
+      "side": 1,
+      "message": "Please see my comments from the last patch regarding the summary line and commit message.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 28
+      },
+      "revId": "7190c698a11c489cc83ce197b4f734ecd654e498",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da33351e_532144fa",
         "filename": "jjb/iotivity/include-raw-iotivity-bootstrap.sh",
         "patchSetId": 2
