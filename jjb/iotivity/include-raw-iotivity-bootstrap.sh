@@ -98,6 +98,10 @@ ln -sv ${IOTIVITYEXTLIB}/android/gradle/gradle-2.2.1 ${WORKSPACE}/extlibs/androi
 ln -sv ${IOTIVITYEXTLIB}/expat/expat-2.1.0 ${WORKSPACE}/extlibs/expat/expat-2.1.0
 ln -sv ${IOTIVITYEXTLIB}/raxmpp/raxmpp ${WORKSPACE}/extlibs/raxmpp/raxmpp
 
+HIPPOMOCKS_VERSION='5.0'
+ln -sv ${IOTIVITYEXTLIB}/hippomocks-${HIPPOMOCKS_VERSION} ${WORKSPACE}/extlibs/hippomocks/hippomocks
+
+
 if [ ! -d "${WORKSPACE}/extlibs/gtest" ]
 then
 	mkdir ${WORKSPACE}/extlibs/gtest
