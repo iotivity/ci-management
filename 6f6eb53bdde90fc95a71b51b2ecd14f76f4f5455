@@ -33,6 +33,29 @@
       "revId": "6f6eb53bdde90fc95a71b51b2ecd14f76f4f5455",
       "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_934bcc86",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2018-08-25T15:33:58Z",
+      "side": 1,
+      "message": "This should be your displayed name. Right now you\u0027re showing up as \u0027suresh channamallu\u0027 as the owner therefore this should be:\n\nSigned-off-by: suresh channamallu \u003cschannamallu@linuxfoundation.org\u003e\n\nThis assumes that schannamallu@linuxfoundation.org is your registered email address with Gerrit, it will default to your LFID address. Make sure this is accurate if you\u0027re editing the commit message via the UI (which you shouldn\u0027t be doing)",
+      "range": {
+        "startLine": 10,
+        "startChar": 15,
+        "endLine": 10,
+        "endChar": 28
+      },
+      "revId": "6f6eb53bdde90fc95a71b51b2ecd14f76f4f5455",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
     }
   ]
 }
