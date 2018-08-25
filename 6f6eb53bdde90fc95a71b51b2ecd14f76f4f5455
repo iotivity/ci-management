@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da33351e_f37218e2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2018-08-25T15:31:47Z",
+      "side": 1,
+      "message": "Don\u0027t double quote the subject line (it\u0027s not needed)\n\nUse imperative language. \u0027Add hippomocks dependencies and config\u0027\n\nIn the body give a reason why it\u0027s being added.",
+      "revId": "6f6eb53bdde90fc95a71b51b2ecd14f76f4f5455",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_5382e494",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2018-08-25T15:31:47Z",
+      "side": 1,
+      "message": "If there is a JIRA issue associated with this work add an Issue-Id: or JIRA: footer line with the card number in it\n\nexample:\nIssue-Id: IOT-1",
+      "revId": "6f6eb53bdde90fc95a71b51b2ecd14f76f4f5455",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
