@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da33351e_733568f6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 12677
+      },
+      "writtenOn": "2018-08-25T18:23:24Z",
+      "side": 1,
+      "message": "this single quote is not required.",
+      "revId": "4962504ebf2036b536a2af70dc914098e69c4794",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_9332ac0e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 12677
+      },
+      "writtenOn": "2018-08-25T18:23:24Z",
+      "side": 1,
+      "message": "You need to add a space after Issue-Id: \u003cJIRA-NO\u003e, or this will match the regex to convert the issue to a Jira link.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 17
+      },
+      "revId": "4962504ebf2036b536a2af70dc914098e69c4794",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
