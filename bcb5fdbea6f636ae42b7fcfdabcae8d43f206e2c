@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da33351e_f32058b2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2018-08-26T05:14:06Z",
+      "side": 1,
+      "message": "This needs to be moved down one line into the footer. Issue linking should be footer meta-data and not commit body data unless it\u0027s being used in a paragraph",
+      "revId": "bcb5fdbea6f636ae42b7fcfdabcae8d43f206e2c",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
