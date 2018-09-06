@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da33351e_185fd442",
+        "filename": "packer/provision/roles/iotivity/vars/main.yml",
+        "patchSetId": 16
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-09-06T20:09:14Z",
+      "side": 1,
+      "message": "Missing a single quote on the end.",
+      "range": {
+        "startLine": 56,
+        "startChar": 62,
+        "endLine": 56,
+        "endChar": 63
+      },
+      "revId": "6897a99600144f2a897d20e38d09e1506a3357b5",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
