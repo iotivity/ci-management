@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da33351e_7b641a49",
+        "filename": "packer/provision/roles/iotivity/vars/main.yml",
+        "patchSetId": 18
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-09-10T16:15:46Z",
+      "side": 1,
+      "message": "hippomocks",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 9
+      },
+      "revId": "dfcd347b57435d578dce18c3d2a77bb1475b306e",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
