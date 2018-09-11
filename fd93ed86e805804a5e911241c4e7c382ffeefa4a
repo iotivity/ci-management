@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da33351e_f67de16f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 19
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-09-11T20:43:01Z",
+      "side": 1,
+      "message": "Please update this to summary something more descriptive and include the \u0027why\u0027 in the message body.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 31
+      },
+      "revId": "fd93ed86e805804a5e911241c4e7c382ffeefa4a",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_96861564",
+        "filename": "jjb/iotivity/include-raw-iotivity-bootstrap.sh",
+        "patchSetId": 19
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-09-11T20:43:01Z",
+      "side": 1,
+      "message": "As you found in your testing, this needs to have `$(HOPPOMOCKS_VERSION}` appended.",
+      "range": {
+        "startLine": 102,
+        "startChar": 90,
+        "endLine": 102,
+        "endChar": 100
+      },
+      "revId": "fd93ed86e805804a5e911241c4e7c382ffeefa4a",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
