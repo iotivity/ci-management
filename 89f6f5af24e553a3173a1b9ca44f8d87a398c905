@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da33351e_111ccf12",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 22
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-09-17T16:05:13Z",
+      "side": 1,
+      "message": "There is still no explanation of why this change is needed here in the commit body.",
+      "revId": "89f6f5af24e553a3173a1b9ca44f8d87a398c905",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_d12a672b",
+        "filename": "jjb/iotivity/include-raw-iotivity-bootstrap.sh",
+        "patchSetId": 22
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-09-17T16:05:13Z",
+      "side": 1,
+      "message": "This still needs to be moved to another patch.",
+      "range": {
+        "startLine": 101,
+        "startChar": 0,
+        "endLine": 102,
+        "endChar": 111
+      },
+      "revId": "89f6f5af24e553a3173a1b9ca44f8d87a398c905",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
