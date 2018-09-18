@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da33351e_cc248ab1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 28
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-09-18T17:26:43Z",
+      "side": 1,
+      "message": "This doesn\u0027t reflect the change anymore.\n\nPlease update the commit summary and add a body. Here is an example of how the body should be written:\nhttps://chris.beams.io/posts/git-commit/#why-not-how",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 32
+      },
+      "revId": "02b5f3b4a994ad188c58130c80d0a00066dc682d",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
