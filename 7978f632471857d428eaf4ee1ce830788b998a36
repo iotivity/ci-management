@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da33351e_ec6fcec3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 30
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-09-18T20:25:56Z",
+      "side": 1,
+      "message": "This is good, but should be wrapped at 72 characters. :)",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 101
+      },
+      "revId": "7978f632471857d428eaf4ee1ce830788b998a36",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_8c78c290",
+        "filename": "jjb/iotivity/include-raw-iotivity-bootstrap.sh",
+        "patchSetId": 30
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-09-18T20:25:56Z",
+      "side": 1,
+      "message": "Looks like this got added back.",
+      "range": {
+        "startLine": 101,
+        "startChar": 0,
+        "endLine": 102,
+        "endChar": 111
+      },
+      "revId": "7978f632471857d428eaf4ee1ce830788b998a36",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
