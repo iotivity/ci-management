@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da33351e_cc5bea2c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 29
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-09-18T18:31:02Z",
+      "side": 1,
+      "message": "This is the opposite of what the change is doing. You\u0027re adding hippomocks to the Packer built images to enable caching of hippomocks in the IoTivity extlibs.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 65
+      },
+      "revId": "cf2f63fe20a51d535a537c746aef78bdb3fea5cd",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
