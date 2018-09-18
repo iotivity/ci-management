@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da33351e_cc0daa39",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 27
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 12679
+      },
+      "writtenOn": "2018-09-18T17:05:21Z",
+      "side": 1,
+      "message": "This should be updated to summarize the current diff.",
+      "revId": "149a0515c6fe132ac0de1090b7352992facd10e0",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_ec0a2e20",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 27
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 12679
+      },
+      "writtenOn": "2018-09-18T17:05:21Z",
+      "side": 1,
+      "message": "Then you can add a body here with more explanation.  Leave one blank line in between commit message summary and body.",
+      "revId": "149a0515c6fe132ac0de1090b7352992facd10e0",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
