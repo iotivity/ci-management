@@ -1,0 +1,8 @@
+---
+ - name: Installing windows dependencies
+   win_chocolatey:
+      name:
+      - windows-sdk-10.1       
+      - VisualStudio2015Community
+      - pip
+      state: present
