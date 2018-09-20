@@ -1,0 +1,9 @@
+---
+ - name: Installing windows dependencies
+   win_chocolatey:
+      name: '{{ item }}'
+      state: present
+   with_items:
+     - '{{ win_packages }}'
+   debugger: on_failed
+
