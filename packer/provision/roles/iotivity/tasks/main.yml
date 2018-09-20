@@ -1,13 +1,22 @@
 ---
 - name: Include Packages to Install
   include_vars: vars/packages.yaml
+  when: ansible_facts['os_family'] == 'Windows'
 - name: Packages
   include: packages.yaml
+  when: ansible_facts['os_family'] !== 'Windows'
 - name: Configure sshd
-  import_tasks: sshd.yaml
+- import_tasks: sshd.yaml
+  when: ansible_facts['os_family'] !== 'Windows'
 - name: Install Shared IoTivity Dependencies
-  include: shared-dependencies.yaml
+- include: shared-dependencies.yaml
+  when: ansible_facts['os_family'] !== 'Windows'
 - name: Install Android Dependencies
   include: android.yaml
+  when: ansible_facts['os_family'] !== 'Windows'
 - name: Install Tizen Dependencies
   include: tizen.yaml
+  when: ansible_facts['os_family'] !== 'Windows'
+- name: Install Windows Dependencies
+  include: windows.yaml
+  when: ansible_facts['os_family'] == 'Windows'
