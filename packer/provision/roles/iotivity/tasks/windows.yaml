@@ -1,0 +1,21 @@
+---
+- name: Download earthrise.jpg to specified path
+  win_get_url:
+    url: https://download.microsoft.com/download/D/1/3/D13E3150-3BB2-4B22-9D8A-47EE2D609FFF/Windows8.1-KB2999226-x64.msu
+    dest: C:\Windows8.1-KB2999226-x64.msu
+
+- name: install hotfix without validating the KB and Identifier
+  win_hotfix:
+    source: C:\Windows8.1-KB2999226-x64.msu
+    state: present
+  register: hotfix_install
+
+- win_reboot:
+  when: hotfix_install.reboot_required
+
+ - name: Installing windows dependencies
+   win_chocolatey:
+      name: '{{ item }}'
+      state: present
+   with_items:
+     - VisualStudio2015Community
