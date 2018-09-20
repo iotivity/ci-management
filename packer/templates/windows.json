@@ -52,9 +52,17 @@
       ]
     },
     { "type": "windows-restart" },
-    { "type": "powershell",
-      "inline": [
-        "Set-ExecutionPolicy Bypass -Force; & C:\\packer\\install-chocolatey.ps1"
+    {
+      "type": "powershell",
+      "pause_before": "120s",
+      "inline": ["dir c:\\"]
+    },
+    {
+      "type": "ansible",
+      "playbook_file": "provision/local-windows.yaml",
+      "extra_arguments": [
+        "--extra-vars",
+        "ansible_shell_type=powershell"
       ]
     },
     { "type": "powershell",
@@ -77,7 +85,6 @@
     },
     { "type": "powershell",
       "scripts": [
-	  "provision/basebuild/install-python-pkgs.ps1",
 	  "provision/basebuild.ps1"
       ]
     },
