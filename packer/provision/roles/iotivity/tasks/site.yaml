@@ -1,0 +1,5 @@
+---
+- hosts: all
+- name: Install pip and windows sdk
+  import_playbook: windows.yaml
+  when: ansible_facts['os_family'] == 'Windows'
