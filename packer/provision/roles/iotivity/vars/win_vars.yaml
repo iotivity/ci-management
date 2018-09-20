@@ -1,0 +1,7 @@
+---
+ansible_connection: winrm
+ansible_password: W!nRMB00tStrap.
+win_packages:
+  - VisualStudio2015Community
+  - windows-sdk-10.1
+  - pip
