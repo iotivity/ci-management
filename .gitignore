@@ -11,3 +11,4 @@ packer/.galaxy/
 
 jenkins.ini
 job_output
+.tox/
