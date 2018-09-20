@@ -1,0 +1,6 @@
+---
+- name: Layer IoTivity requirements on top
+  hosts: default
+  gather_facts: false
+  roles:
+   - iotivity
