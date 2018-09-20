@@ -1,0 +1,8 @@
+---
+- name: Layer IoTivity requirements on top
+  hosts: all
+  connection: local
+  user: Administrator
+  gather_facts: false
+  roles:
+   - iotivity
