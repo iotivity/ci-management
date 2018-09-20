@@ -1,6 +1,7 @@
 ---
 - name: Start with the Common-Packer Baseline
   import_playbook: ../common-packer/provision/baseline.yaml
+  when: ansible_facts['os_family'] != 'Windows'
 
 - name: Layer IoTivity requirements on top
   hosts: all
