@@ -1,0 +1,8 @@
+Verified+1: IoTivity Jenkins <jenkins-daemon@iotivity.org>
+Code-Review+1: suresh channamallu <schannamallu@linuxfoundation.org>
+Code-Review+2: Jeremy Phelps <jphelps@linuxfoundation.org>
+Submitted-by: Jeremy Phelps <jphelps@linuxfoundation.org>
+Submitted-at: Thu, 20 Sep 2018 20:08:07 +0000
+Reviewed-on: https://gerrit.iotivity.org/gerrit/27035
+Project: ci-management
+Branch: refs/heads/master
