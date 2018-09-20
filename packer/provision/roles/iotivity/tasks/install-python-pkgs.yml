@@ -1,0 +1,23 @@
+---
+- hosts: all
+  tasks:
+  - name: Install Python
+    win_chocolatey:
+      name: python
+      state: present
+
+  - name: Install Python pip
+    win_chocolatey:
+      name: pip
+      state: present
+
+  - name: Install Python PyWin32
+    win_chocolatey:
+      name: PyWin32
+      state: present
+
+  - name: Install Python scons
+    win_chocolatey:
+      name: scons
+      state: present
+      version: '2.5.1'
