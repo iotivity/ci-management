@@ -1,0 +1,10 @@
+---
+ - name: Installing windows dependencies
+   win_chocolatey:
+      name: '{{ item }}'
+      state: present
+   with_items:
+     - windows-sdk-10.1
+     - VisualStudio2015Community
+     - pip
+   delegate_to: localhost
