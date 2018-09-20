@@ -52,9 +52,28 @@
       ]
     },
     { "type": "windows-restart" },
-    { "type": "powershell",
+    {
+      "type": "powershell",
+      "pause_before": "120s",
+      "inline": ["dir c:\\"]
+    },
+    {
+      "type": "powershell",
+      "inline": ["Get-ExecutionPolicy"]
+    },
+   { "type": "powershell",
       "inline": [
         "Set-ExecutionPolicy Bypass -Force; & C:\\packer\\install-chocolatey.ps1"
+      ]
+    },
+    {
+      "type": "ansible",
+      "playbook_file": "provision/local-windows.yaml",
+      "ansible_env_vars": [ "ANSIBLE_HOST_KEY_CHECKING=False" ],
+      "extra_arguments": [
+        "-vvvv",
+        "--extra-vars",
+        "ansible_shell_type=powershell os_type=Windows"
       ]
     },
     { "type": "powershell",
@@ -77,7 +96,6 @@
     },
     { "type": "powershell",
       "scripts": [
-	  "provision/basebuild/install-python-pkgs.ps1",
 	  "provision/basebuild.ps1"
       ]
     },
