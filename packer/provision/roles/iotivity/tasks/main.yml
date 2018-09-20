@@ -1,13 +1,21 @@
 ---
-- name: Include Packages to Install
-  include_vars: vars/packages.yaml
-- name: Packages
-  include: packages.yaml
-- name: Configure sshd
-  import_tasks: sshd.yaml
-- name: Install Shared IoTivity Dependencies
-  include: shared-dependencies.yaml
-- name: Install Android Dependencies
-  include: android.yaml
-- name: Install Tizen Dependencies
-  include: tizen.yaml
+  - name: installing packages
+    block:
+      - name: Include Packages to Install
+        include_vars: vars/packages.yaml
+      - name: Packages
+        include: packages.yaml
+      - name: Configure sshd
+        import_tasks: sshd.yaml
+      - name: Install Shared IoTivity Dependencies
+        include: shared-dependencies.yaml
+      - name: Install Android Dependencies
+        include: android.yaml
+      - name: Install Tizen Dependencies
+        include: tizen.yaml
+    $when: ansible_facts['os_family'] != 'Windows'
+    when: "{{ os_type }}" != "Windows"
+
+  - name: Install Windows Dependencies
+    include: windows.yaml
+    when: "{{ os_type }}" == "Windows"
