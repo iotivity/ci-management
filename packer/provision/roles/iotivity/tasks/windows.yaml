@@ -1,0 +1,8 @@
+---
+ - name: Installing windows dependencies
+   win_chocolatey:
+      name: '{{ item }}'
+      state: present
+   with_items:
+     - Visualstudio2017community
+     - Visualstudio2017-workload-nativedesktop
