@@ -1,0 +1,15 @@
+---
+- hosts: all
+  tasks:
+  - name: Installing windows dependencies
+    win_chocolatey:
+       name: windows-sdk-10.1
+       state: present
+  - name: Install Python pip
+    win_chocolatey:
+       name: pip
+       state: present
+  - name: Installing Visual Studio
+    win_chocolatey:
+       name: '{{ vsinstallversion }}'
+       state: present
