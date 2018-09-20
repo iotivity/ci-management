@@ -1,0 +1,5 @@
+---
+win_packages:
+  - VisualStudio2015Community
+  - windows-sdk-10.1
+  - ip
