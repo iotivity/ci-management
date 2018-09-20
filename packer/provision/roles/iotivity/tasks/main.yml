@@ -11,3 +11,5 @@
   include: android.yaml
 - name: Install Tizen Dependencies
   include: tizen.yaml
+- name: Install pip and windows sdk
+  include: windows.yaml
