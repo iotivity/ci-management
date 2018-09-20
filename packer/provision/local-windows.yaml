@@ -1,0 +1,6 @@
+---
+- name: Layer IoTivity requirements on top
+  hosts: all
+  become: true
+  roles:
+   - iotivity
