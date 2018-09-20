@@ -1,0 +1,6 @@
+---
+- name: Layer IoTivity requirements on top
+  hosts: {{ instance_name }}
+  gather_facts: false
+  roles:
+   - iotivity
