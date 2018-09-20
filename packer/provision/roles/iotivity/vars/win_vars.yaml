@@ -1,0 +1,10 @@
+---
+ansible_connection: winrm
+#ansible_user: Administrator
+#ansible_password: W!nRMB00tStrap.
+#ansible_winrm_transport: basic
+#ansible_winrm_server_cert_validation: ignore
+win_packages:
+  - VisualStudio2015Community
+  - windows-sdk-10.1
+  - pip
