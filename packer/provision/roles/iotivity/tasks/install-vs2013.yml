@@ -1,0 +1,7 @@
+---
+ - hosts: all
+   tasks:
+   - name: Installing Visual Studio 2013
+     win_chocolatey:
+        name: VisualStudioCommunity2013
+        state: present
