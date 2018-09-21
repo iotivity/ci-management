@@ -7,3 +7,4 @@
   become: true
   roles:
    - iotivity
+  when: ansible_distribution == "Ubuntu"
