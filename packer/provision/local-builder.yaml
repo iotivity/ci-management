@@ -6,4 +6,4 @@
   hosts: all
   become: true
   roles:
-   - iotivity
+    - { role: iotivity, when: ansible_distribution == "Ubuntu" }
