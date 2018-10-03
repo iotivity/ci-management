@@ -1,0 +1,22 @@
+---
+ - hosts: all
+   tasks:
+    - name: Installing windows-sdk
+      win_chocolatey:
+         name: windows-sdk-10.1
+         state: present
+
+    - name: Installing  Java jdk8
+      win_chocolatey:
+         name: jdk8
+         state: present
+
+    - name: Installing Visual Studio 2017 build tools
+      win_chocolatey:
+         name: VisualStudio2017buildtools
+         state: present
+
+    - name: Visual Studio installer executed.
+      win_chocolatey:
+         name: VisualStudio2017Community
+         state: present
