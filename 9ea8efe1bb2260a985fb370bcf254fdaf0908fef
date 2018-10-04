@@ -71,6 +71,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_ff805f8d",
+        "filename": "packer/provision/roles/iotivity/tasks/install-python-pkgs.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 14275
+      },
+      "writtenOn": "2018-10-04T20:31:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_7fb60f8c",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 22
+      },
+      "revId": "9ea8efe1bb2260a985fb370bcf254fdaf0908fef",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_5fbb4b72",
         "filename": "packer/provision/roles/iotivity/tasks/install-vs2017.yml",
         "patchSetId": 1
@@ -82,6 +106,30 @@
       "writtenOn": "2018-10-04T16:39:49Z",
       "side": 1,
       "message": "These are all in the common-packer windows provisioning.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 23
+      },
+      "revId": "9ea8efe1bb2260a985fb370bcf254fdaf0908fef",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_9f7313e7",
+        "filename": "packer/provision/roles/iotivity/tasks/install-vs2017.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 14275
+      },
+      "writtenOn": "2018-10-04T20:31:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_5fbb4b72",
       "range": {
         "startLine": 9,
         "startChar": 0,
