@@ -1,0 +1,188 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_22bbd0c5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-10-08T19:17:05Z",
+      "side": 1,
+      "message": "Please update to reflect that overall this change is adding windows support to the iotivity role.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 58
+      },
+      "revId": "f1ca283b1fe3e6c7de56b66c9dee9250e84f4cd3",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_42b6d4dd",
+        "filename": "packer/provision/roles/iotivity/tasks/install-vs2013.yml",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-10-08T19:17:05Z",
+      "side": 1,
+      "message": "Remove",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 22
+      },
+      "revId": "f1ca283b1fe3e6c7de56b66c9dee9250e84f4cd3",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_82b0dcde",
+        "filename": "packer/provision/roles/iotivity/tasks/install-vs2015.yml",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-10-08T19:17:05Z",
+      "side": 1,
+      "message": "This file should either be renamed \u0027windows.yaml\u0027 or merged with the \u0027windows.yaml\u0027.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 3
+      },
+      "revId": "f1ca283b1fe3e6c7de56b66c9dee9250e84f4cd3",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_e2a9e87c",
+        "filename": "packer/provision/roles/iotivity/tasks/main.yml",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-10-08T19:17:05Z",
+      "side": 1,
+      "message": "Unless I\u0027m mistaken on where \u0027when\u0027 statements should go, the \u0027when: ansible_os_family \u003d\u003d \u0027Windows\u0027 should be added here, and the other files above should have \u0027when: ansible_os_family !\u003d \u0027Windows\u0027\u0027.\n\nAlso this should be \u0027windows.yaml\u0027, which should contain just a list of tasks.",
+      "range": {
+        "startLine": 15,
+        "startChar": 2,
+        "endLine": 15,
+        "endChar": 20
+      },
+      "revId": "f1ca283b1fe3e6c7de56b66c9dee9250e84f4cd3",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_62b5d8cc",
+        "filename": "packer/provision/roles/iotivity/tasks/site.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-10-08T19:17:05Z",
+      "side": 1,
+      "message": "Remove. As these files are tasks under the iotivity role, there should be no references to playbooks.\nSee: https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html#role-directory-structure for documentation on the Ansible role directory structure.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 47
+      },
+      "revId": "f1ca283b1fe3e6c7de56b66c9dee9250e84f4cd3",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_02c4cc3e",
+        "filename": "packer/provision/roles/iotivity/tasks/windows.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-10-08T19:17:05Z",
+      "side": 1,
+      "message": "Similar to https://gerrit.linuxfoundation.org/infra/gitweb?p\u003dreleng/common-packer.git;a\u003dblob;f\u003dprovision/windows-builder.yaml;h\u003de6bc00dbb4845c3ca98ddd3c4261eac4b31182b8;hb\u003drefs/heads/master#l6,\n\nThis should be named \u0027Install Windows depedencies\u0027 or something similar and use the \u0027with_items\u0027 syntax to install:\n\u003e - windows-sdk-10.1\n\u003e - pip\n\u003e - \u0027{{ vsinstallversion }}\u0027",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 21
+      },
+      "revId": "f1ca283b1fe3e6c7de56b66c9dee9250e84f4cd3",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_c2c9445c",
+        "filename": "packer/provision/roles/iotivity/tasks/windows.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-10-08T19:17:05Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 8,
+        "startChar": 4,
+        "endLine": 8,
+        "endChar": 49
+      },
+      "revId": "f1ca283b1fe3e6c7de56b66c9dee9250e84f4cd3",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_a2c6c047",
+        "filename": "packer/provision/roles/iotivity/tasks/windows.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-10-08T19:17:05Z",
+      "side": 1,
+      "message": "remove. \u0027when\u0027 isn\u0027t needed inside the task file since it\u0027s being conditionally included in main.yaml.",
+      "range": {
+        "startLine": 13,
+        "startChar": 4,
+        "endLine": 13,
+        "endChar": 49
+      },
+      "revId": "f1ca283b1fe3e6c7de56b66c9dee9250e84f4cd3",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
