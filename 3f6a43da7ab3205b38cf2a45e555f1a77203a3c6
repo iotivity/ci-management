@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_a8f5ffcc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 14275
+      },
+      "writtenOn": "2018-10-12T16:30:26Z",
+      "side": 1,
+      "message": "i will follow  from next time",
+      "parentUuid": "9a3d3df0_e502920a",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 67
+      },
+      "revId": "3f6a43da7ab3205b38cf2a45e555f1a77203a3c6",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_a5088a2e",
         "filename": "packer/provision/roles/iotivity/tasks/main.yml",
         "patchSetId": 10
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_c8f843c7",
+        "filename": "packer/provision/roles/iotivity/tasks/main.yml",
+        "patchSetId": 10
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 14275
+      },
+      "writtenOn": "2018-10-12T16:30:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a3d3df0_a5088a2e",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 47
+      },
+      "revId": "3f6a43da7ab3205b38cf2a45e555f1a77203a3c6",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_05069620",
         "filename": "packer/provision/roles/iotivity/tasks/windows.yaml",
         "patchSetId": 10
@@ -59,6 +107,30 @@
       "writtenOn": "2018-10-11T20:13:53Z",
       "side": 1,
       "message": "Since all this is doing is installing win_chocolately packages, we can collapse this to one task.\n\n\u003e - name: Install Windows Dependencies\n\u003e   win_chocolatey:\n\u003e      name: \u0027{{ item }}\u0027\n\u003e      state: present\n\u003e   with_items:\n\u003e       - windows-sdk-10.1\n\u003e       - pip\n\u003e       - \u0027{{ vsinstallversion }}\u0027",
+      "range": {
+        "startLine": 4,
+        "startChar": 2,
+        "endLine": 15,
+        "endChar": 21
+      },
+      "revId": "3f6a43da7ab3205b38cf2a45e555f1a77203a3c6",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_681497f5",
+        "filename": "packer/provision/roles/iotivity/tasks/windows.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 14275
+      },
+      "writtenOn": "2018-10-12T16:30:26Z",
+      "side": 1,
+      "message": "done As per comments",
+      "parentUuid": "9a3d3df0_05069620",
       "range": {
         "startLine": 4,
         "startChar": 2,
