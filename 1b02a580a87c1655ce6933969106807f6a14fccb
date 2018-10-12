@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_c8e68316",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 14345
+      },
+      "writtenOn": "2018-10-12T17:47:28Z",
+      "side": 1,
+      "message": "This subject tells us how you implemented the change, we want to know what this change was.\nMaybe:\n    Use Ansible to configure windows clients\n    Configure windows image with Ansible",
+      "revId": "1b02a580a87c1655ce6933969106807f6a14fccb",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
