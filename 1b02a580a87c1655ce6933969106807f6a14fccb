@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_88abdb88",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 14275
+      },
+      "writtenOn": "2018-10-13T17:53:24Z",
+      "side": 1,
+      "message": "I have already changed in patch 12 commit message",
+      "parentUuid": "9a3d3df0_28bf2fd2",
+      "revId": "1b02a580a87c1655ce6933969106807f6a14fccb",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_88b47bf3",
         "filename": "packer/provision/roles/iotivity/tasks/main.yml",
         "patchSetId": 11
@@ -48,6 +66,30 @@
       "writtenOn": "2018-10-12T18:29:19Z",
       "side": 1,
       "message": "This is already a \u0027tasks\u0027 file in a role. Adding \u0027tasks\u0027 and \u0027hosts\u0027 here is invalid syntax. Please read the roles documentation: https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html#roles",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 8
+      },
+      "revId": "1b02a580a87c1655ce6933969106807f6a14fccb",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_48a1d3a8",
+        "filename": "packer/provision/roles/iotivity/tasks/main.yml",
+        "patchSetId": 11
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 14275
+      },
+      "writtenOn": "2018-10-13T17:53:24Z",
+      "side": 1,
+      "message": "When I check the syntax with \"ansible-playbook --syntax-check main.yml\" it thrown some errors to fix them I have added the  two lines. Now I have removed in patch 13.",
+      "parentUuid": "9a3d3df0_88b47bf3",
       "range": {
         "startLine": 2,
         "startChar": 0,
