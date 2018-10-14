@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_c894c346",
+        "filename": "packer/provision/roles/iotivity/tasks/main.yml",
+        "patchSetId": 13
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 12677
+      },
+      "writtenOn": "2018-10-14T08:01:02Z",
+      "side": 1,
+      "message": "rm black line within block",
+      "revId": "411c68908323d5482a106121246679dde06681c0",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_a8917f54",
+        "filename": "packer/provision/roles/iotivity/tasks/main.yml",
+        "patchSetId": 13
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 12677
+      },
+      "writtenOn": "2018-10-14T08:01:02Z",
+      "side": 1,
+      "message": "rm blank line in block",
+      "revId": "411c68908323d5482a106121246679dde06681c0",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
