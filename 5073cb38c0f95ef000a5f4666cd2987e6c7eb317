@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_ee4a6fab",
+        "filename": "packer/provision/roles/iotivity/tasks/shared-dependencies.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 12677
+      },
+      "writtenOn": "2018-10-24T04:00:59Z",
+      "side": 1,
+      "message": "Do you want to configure \"Kernel Dump\" kdump. Then for that you\u0027ll need to install the kexec-tool package, update kdump config and regenerate mkinitrd.",
+      "range": {
+        "startLine": 153,
+        "startChar": 2,
+        "endLine": 153,
+        "endChar": 19
+      },
+      "revId": "5073cb38c0f95ef000a5f4666cd2987e6c7eb317",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_4ec71b13",
+        "filename": "packer/provision/roles/iotivity/tasks/shared-dependencies.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 12677
+      },
+      "writtenOn": "2018-10-24T04:00:59Z",
+      "side": 1,
+      "message": "If you only want to set a core file pattern + default path. \n\nThis will only set the file name of the code file (ex: $HOME/core-program-name-timestamp) and when a segfault(SIGSEGV or SIGQUIT) signal received. \n\nI\u0027d probably set this in /etc/sysctl.conf so that this setting is available in the next boot along with the prefix path.\n\nex:\n\necho \"kernel.core_pattern\u003d/tmp/core.%e.%p.%h.%t\" \u003e\u003e \"/etc/sysctl.conf\"\n\nNow the files are not lost when the vm is cleaned up. Next is to have a builder check for these files and cp them to $WORKSPACE/archives.",
+      "range": {
+        "startLine": 154,
+        "startChar": 2,
+        "endLine": 154,
+        "endChar": 57
+      },
+      "revId": "5073cb38c0f95ef000a5f4666cd2987e6c7eb317",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
