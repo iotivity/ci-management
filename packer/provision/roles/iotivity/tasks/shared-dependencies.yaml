@@ -150,3 +150,7 @@
     - iotivity-upnp-bridge
     - iotivity-voice
     - iotivity-xmpp
+- name: Set core file pattern
+  sysctl:
+    name: kernel.core_pattern
+    value: "%e-%t-SIG%s.core"
