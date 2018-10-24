@@ -150,3 +150,5 @@
     - iotivity-upnp-bridge
     - iotivity-voice
     - iotivity-xmpp
+- name: Kernel dump output
+  command: echo 'kernel.core_pattern=%e-%t-SIG%s.core' >> /etc/sysctl.conf
