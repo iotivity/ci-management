@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_ee542f23",
+        "filename": "packer/provision/roles/iotivity/tasks/shared-dependencies.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 12677
+      },
+      "writtenOn": "2018-10-24T22:07:57Z",
+      "side": 1,
+      "message": "I\u0027d change this to \"Set core file pattern\". Its more apt :)",
+      "parentUuid": "9a3d3df0_8e448375",
+      "range": {
+        "startLine": 153,
+        "startChar": 2,
+        "endLine": 153,
+        "endChar": 19
+      },
+      "revId": "5073cb38c0f95ef000a5f4666cd2987e6c7eb317",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_4ec71b13",
         "filename": "packer/provision/roles/iotivity/tasks/shared-dependencies.yaml",
         "patchSetId": 1
