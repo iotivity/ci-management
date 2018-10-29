@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_7988e7e7",
+        "filename": "packer/provision/roles/iotivity/tasks/shared-dependencies.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-10-29T19:33:21Z",
+      "side": 1,
+      "message": "Sorry for the nit, but these should be quoted. I\u0027m not sure what yaml\u0027s interpretation of \u0027%\u0027 might be when it\u0027s not in a string.",
+      "range": {
+        "startLine": 155,
+        "startChar": 10,
+        "endLine": 156,
+        "endChar": 27
+      },
+      "revId": "980ff9134f40d42a94405e1bee9e0aab34076738",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
