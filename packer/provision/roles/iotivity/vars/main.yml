@@ -54,3 +54,7 @@ android_gradle_url: 'https://services.gradle.org/distributions/gradle-{{ android
 
 hippomocks_version: '5.0'
 hippomocks_url: 'https://github.com/dascandy/hippomocks/archive'
+
+rapidjson_version : '1.0.2'
+rapidjson_url: 'https://github.com/miloyip/rapidjson/archive'
+
