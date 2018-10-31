@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_74110eac",
+        "filename": "packer/provision/roles/iotivity/vars/main.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-10-31T21:18:59Z",
+      "side": 1,
+      "message": "version",
+      "range": {
+        "startLine": 58,
+        "startChar": 10,
+        "endLine": 58,
+        "endChar": 12
+      },
+      "revId": "6798d418130256c5f2512568f9e5762bef815567",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
