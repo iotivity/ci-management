@@ -72,6 +72,16 @@
         dest: '{{ extlibs }}/hippomocks/'
         creates: '{{ extlibs }}/hippomocks/hippomocks-{{ hippomocks_version }}'
         remote_src: true
+- name: Rapidjson
+  block:
+    - name: Create Rapidjson Directory
+      file: path='{{ extlibs }}/rapidjson' state=directory
+    - name: Download Rapidjson Versions
+      unarchive:
+        src: '{{ rapidjson_url }}/v{{ rapidjson_ver }}.zip'
+        dest: '{{ extlibs }}/rapidjson/'
+        creates: '{{ extlibs }}/rapidjson/rapidjson-{{ rapidjson_ver }}'
+        remote_src: true
 - name: Gtest
   block:
     - name: Create Gtest Directory
