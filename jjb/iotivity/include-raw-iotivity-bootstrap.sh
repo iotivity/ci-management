@@ -4,6 +4,7 @@ set -o pipefail
 #IOTIVITYEXTLIB=${IOTIVITYEXTLIB:-/extlibs}
 IOTIVITYEXTLIB=/extlibs
 
+
 rm -rf ${WORKSPACE}/extlibs/arduino/arduino-1.5.8
 rm -rf ${WORKSPACE}/extlibs/boost/boost_1_58_0
 rm -rf ${WORKSPACE}/extlibs/boost/boost_1_58_0.zip
@@ -16,6 +17,7 @@ rm -rf ${WORKSPACE}/extlibs/android/sdk/android-sdk_r24.2
 rm -rf ${WORKSPACE}/extlibs/android/gradle/gradle-2.2.1
 rm -rf ${WORKSPACE}/extlibs/raxmpp/raxmpp
 rm -rf ${WORKSPACE}/extlibs/libcoap/libcoap
+rm -rf ${WORKSPACE}/extlibs/rapidjson/rapidjson
 
 if [ ! -d "${WORKSPACE}/extlibs/arduino" ]
 then
@@ -104,6 +106,13 @@ fi
 
 ln -sv ${IOTIVITYEXTLIB}/gtest/googletest-release-1.7.0 ${WORKSPACE}/extlibs/gtest/googletest-release-1.7.0
 ln -sv ${IOTIVITYEXTLIB}/hippomocks-master ${WORKSPACE}/extlibs/hippomocks-master
+
+if [ ! -d "${WORKSPACE}/extlibs/rapidjson" ]
+then
+	mkdir ${WORKSPACE}/extlibs/rapidjson
+fi
+
+ln -sv ${IOTIVITYEXTLIB}/rapidjson/rapidjson-1.1.0 ${WORKSPACE}/extlibs/rapidjson/rapidjson
 
 if [ ! -d "${WORKSPACE}/extlibs/yaml" ]
 then
