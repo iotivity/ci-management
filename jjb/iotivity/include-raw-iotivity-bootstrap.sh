@@ -17,6 +17,7 @@ rm -rf ${WORKSPACE}/extlibs/android/gradle/gradle-2.2.1
 rm -rf ${WORKSPACE}/extlibs/raxmpp/raxmpp
 rm -rf ${WORKSPACE}/extlibs/libcoap/libcoap
 
+
 if [ ! -d "${WORKSPACE}/extlibs/arduino" ]
 then
 	mkdir ${WORKSPACE}/extlibs/arduino
