@@ -1,0 +1,54 @@
+---
+  - project:
+      name: '00-Empty View'
+      views:
+        - common-view
+      view-name: '00-Empty View'
+      view-description: >
+        Empty job view. This is used as the default landing view to keep the
+        Jenkins UI responding better while a) under high load and b) when there
+        are a lot of jobs defined in the system
+      view-regex: ''
+
+  - project:
+      name: 'IoTivity'
+      views:
+        - common-view
+      view-name: 'IoTivity'
+      view-description: 'List of IoTivity jobs'
+      view-regex: '^iotivity-verify-.*'
+  
+  - project:
+      name: 'IoTivity-constrained'
+      views:
+        - common-view
+      view-name: 'IoTivity-constrained'
+      view-description: 'List of IoTivity constrained jobs'
+      view-regex: '^iotivity-constrained-.*'
+  
+  - project:
+      name: 'IoTivity-merge'
+      views:
+        - common-view
+      view-name: 'IoTivity-merge'
+      view-description: 'List of IoTivity merge jobs'
+      view-regex: '^iotivity-merge-.*'
+  
+  
+  - project:
+      name: 'IoTivity-upnp-bridge'
+      views:
+        - common-view
+      view-name: 'IoTivity-upnp-bridge'
+      view-description: 'List of IoTivity upnp bridge jobs'
+      view-regex: '^iotivity-upnp-bridge-.*'
+  
+  
+  - project:
+      name: 'ci-managment'
+      views:
+        - common-view
+      view-name: 'ci-managment'
+      view-description: 'List of ci-managment jobs'
+      view-regex: '^ci-managment-.*'
+
