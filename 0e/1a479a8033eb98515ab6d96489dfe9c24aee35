@@ -1,0 +1,7 @@
+Verified+1: IoTivity Jenkins <jenkins-daemon@iotivity.org>
+Code-Review+2: suresh channamallu <schannamallu@linuxfoundation.org>
+Submitted-by: suresh channamallu <schannamallu@linuxfoundation.org>
+Submitted-at: Fri, 16 Nov 2018 18:01:27 +0000
+Reviewed-on: https://gerrit.iotivity.org/gerrit/27481
+Project: ci-management
+Branch: refs/heads/master
