@@ -57,6 +57,15 @@
                 echo "unsupported architecture: %TARGET_ARCH%"
                 exit /B 1
               )
+            ) ELSE IF "%MSVC_VERSION%" == "15.0" (
+              IF "%TARGET_ARCH%" == "x86" (
+                set BUILD_ARGS=-logging -noSecurity
+              ) ELSE IF "%TARGET_ARCH%" == "amd64" (
+                set BUILD_ARGS=-release
+              ) ELSE (
+                echo "unsupported architecture: %TARGET_ARCH%"
+                exit /B 1
+              )
             ) ELSE (
               echo "unsupported MSVC version: %MSVC_VERSION%"
               exit /B 2
