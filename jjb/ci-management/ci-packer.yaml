@@ -19,3 +19,5 @@
             templates: windows
         - ws2012-vs2015:
             templates: windows
+        - ws2016-vs2017:
+            templates: windows
