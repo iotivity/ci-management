@@ -22,6 +22,30 @@
       "revId": "732e9c0a3c5d0d88e826920a709543b8ffef7170",
       "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_17c19f2e",
+        "filename": "jjb/common-views.yaml",
+        "patchSetId": 16
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 14275
+      },
+      "writtenOn": "2018-11-28T19:03:26Z",
+      "side": 1,
+      "message": "I tried to add view name in project template. But not working in sanbox. Can you share any more details on how to make this views using templates.?",
+      "parentUuid": "9a3d3df0_b7a55306",
+      "range": {
+        "startLine": 6,
+        "startChar": 4,
+        "endLine": 6,
+        "endChar": 13
+      },
+      "revId": "732e9c0a3c5d0d88e826920a709543b8ffef7170",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
     }
   ]
 }
