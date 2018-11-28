@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_fcafc029",
+        "filename": "jjb/common-views.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 14275
+      },
+      "writtenOn": "2018-11-28T19:03:26Z",
+      "side": 1,
+      "message": "Done.May be prefix added due to the editor i used. Removed the whitespace.",
+      "parentUuid": "9a3d3df0_bcb098de",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 2
+      },
+      "revId": "d53f69bafd034cc7da842b642b41905271d16daf",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_9cb5d4cf",
         "filename": "jjb/common-views.yaml",
         "patchSetId": 15
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_fc76a0d7",
+        "filename": "jjb/common-views.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 14275
+      },
+      "writtenOn": "2018-11-28T19:03:26Z",
+      "side": 1,
+      "message": "May be prefix added due to the editor i used. Removed the whitespace.",
+      "parentUuid": "9a3d3df0_9cb5d4cf",
+      "revId": "d53f69bafd034cc7da842b642b41905271d16daf",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_fcc9805b",
         "filename": "jjb/view-templates.yaml",
         "patchSetId": 15
@@ -53,6 +95,24 @@
       "writtenOn": "2018-11-25T12:54:25Z",
       "side": 1,
       "message": "why are there black spaces prefixed? yaml files are to be indented properly and requires strict formatting.",
+      "revId": "d53f69bafd034cc7da842b642b41905271d16daf",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_dcac7c38",
+        "filename": "jjb/view-templates.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 14275
+      },
+      "writtenOn": "2018-11-28T19:03:26Z",
+      "side": 1,
+      "message": "Done.May be prefix added due to the editor i used. Removed the whitespace.",
+      "parentUuid": "9a3d3df0_fcc9805b",
       "revId": "d53f69bafd034cc7da842b642b41905271d16daf",
       "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
       "unresolved": false
