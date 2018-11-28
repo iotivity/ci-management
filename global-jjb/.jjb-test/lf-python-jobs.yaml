@@ -1,0 +1,23 @@
+---
+- project:
+    name: gerrit-python-jobs
+    jobs:
+      - "{project-name}-python-jobs"
+      - gerrit-tox-sonar
+
+    project-name: gerrit-python
+
+- project:
+    name: github-python-jobs
+    jobs:
+      - "{project-name}-github-python-jobs"
+      - github-tox-sonar
+
+    project-name: github-python
+
+- project:
+    name: python-jobs-view
+    views:
+      - project-view
+
+    project-name: python

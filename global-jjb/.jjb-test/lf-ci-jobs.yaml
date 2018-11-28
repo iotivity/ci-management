@@ -1,0 +1,76 @@
+---
+- project:
+    name: gerrit-ci-jobs
+    jobs:
+      - "{project-name}-ci-jobs"
+      - gerrit-branch-lock
+
+    project-name: gerrit-ciman
+
+- project:
+    name: github-ci-jobs
+    jobs:
+      - "{project-name}-github-ci-jobs"
+
+    project-name: github-ciman
+
+
+- project:
+    name: gerrit-openstack-jobs
+    jobs:
+      - gerrit-openstack-cron
+
+    project-name: gerrit-ciman
+
+    jenkins-urls: >
+        https://jenkins.example.org
+        https://jenkins.example.org/sandbox
+
+- project:
+    name: github-openstack-jobs
+    jobs:
+      - github-openstack-cron
+
+    project-name: github-ciman
+
+    jenkins-urls: >
+        https://jenkins.example.org
+        https://jenkins.example.org/sandbox
+
+
+- project:
+    name: gerrit-packer-jobs
+    jobs:
+      - "{project-name}-packer-jobs"
+
+    packer-cloud-settings: ci-packer-cloud-env
+    project-name: gerrit-ciman
+    platforms:
+      - centos
+      - ubuntu1604
+
+    templates:
+      - java-builder
+      - mininet
+
+- project:
+    name: github-packer-jobs
+    jobs:
+      - "{project-name}-github-packer-jobs"
+
+    packer-cloud-settings: ci-packer-cloud-env
+    project-name: github-ciman
+    platforms:
+      - centos
+      - ubuntu1604
+
+    templates:
+      - java-builder
+      - mininet
+
+- project:
+    name: ci-jobs-view
+    views:
+      - project-view
+
+    project-name: ci-jobs

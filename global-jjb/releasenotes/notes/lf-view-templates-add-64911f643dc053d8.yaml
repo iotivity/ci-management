@@ -1,0 +1,56 @@
+---
+features:
+  - |
+    New view-templates ``project-view``, ``common-view``, and ``csit-view`` are
+    available for projects to manage Jenkins views through code.
+
+    To use the ``project-view`` template in a project:
+
+    .. code-block:: yaml
+
+       - project:
+           name: aaa-view
+           views:
+             - project-view
+
+           project-name: aaa
+
+    To use the ``common-view`` template in a project:
+
+    .. code-block:: yaml
+
+       - project:
+           name: daily-builds
+           views:
+             - common-view
+
+           view-name: Periodic
+           view-regex: '.*-periodic-.*'
+
+    To use the ``csit-view`` template in a project:
+
+    .. code-block:: yaml
+
+       - project:
+           name: csit
+           views:
+             - csit-view
+
+           view-name: CSIT
+           view-regex: '.*csit.*'
+
+       - project:
+           name: csit-1node
+           views:
+             - csit-view
+
+           view-name: CSIT-1node
+           view-regex: '.*-csit-1node-.*'
+
+upgrade:
+  - |
+    Some LF projects are already using a ``common-view`` template in their
+    local ci-management repo. This ``common-view`` is called ``project-view``
+    in global-jjb so rename all instances of ``common-view`` to
+    ``project-view`` when upgrading and remove the local ``common-view``
+    view-template definition from ci-management.
