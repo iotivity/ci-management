@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_72d3d938",
+        "filename": "jjb/common-views.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 12677
+      },
+      "writtenOn": "2018-11-29T03:21:44Z",
+      "side": 1,
+      "message": "Please add a view for getting the list of most recent jobs run. This is very useful to keep track of the recent job runs.",
+      "revId": "10088ae8e2671c3efb265320162aea72f67c98d9",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
