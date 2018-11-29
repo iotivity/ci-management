@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_d2d745be",
+        "filename": "jjb/common-views.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 12677
+      },
+      "writtenOn": "2018-11-29T20:14:07Z",
+      "side": 1,
+      "message": "Does IoT require views for verify jobs?",
+      "range": {
+        "startLine": 31,
+        "startChar": 11,
+        "endLine": 31,
+        "endChar": 24
+      },
+      "revId": "e9bfca45d4d7ac874f0c08d0507683e9aff23a27",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_92d65dc4",
+        "filename": "jjb/common-views.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 12677
+      },
+      "writtenOn": "2018-11-29T20:14:07Z",
+      "side": 1,
+      "message": "move this on the top of the file.",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 18
+      },
+      "revId": "e9bfca45d4d7ac874f0c08d0507683e9aff23a27",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_f2da49e8",
+        "filename": "jjb/common-views.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 12677
+      },
+      "writtenOn": "2018-11-29T20:14:07Z",
+      "side": 1,
+      "message": "move this section asciibetically, after \u002700-Empty View\u0027.",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 29
+      },
+      "revId": "e9bfca45d4d7ac874f0c08d0507683e9aff23a27",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
