@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_724ab984",
+        "filename": "packer/templates/windows.json",
+        "patchSetId": 100
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-11-29T21:27:38Z",
+      "side": 0,
+      "message": "Here too.",
+      "range": {
+        "startLine": 57,
+        "startChar": 8,
+        "endLine": 57,
+        "endChar": 81
+      },
+      "revId": "4d10cbdd29cfd2fec2a97ed286efc2731f647d39",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_32815190",
+        "filename": "packer/templates/windows.json",
+        "patchSetId": 100
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-11-29T21:27:38Z",
+      "side": 0,
+      "message": "If these files are no longer being used in the build they should also be removed.",
+      "range": {
+        "startLine": 76,
+        "startChar": 3,
+        "endLine": 76,
+        "endChar": 71
+      },
+      "revId": "4d10cbdd29cfd2fec2a97ed286efc2731f647d39",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_127ecdae",
+        "filename": "packer/templates/windows.json",
+        "patchSetId": 100
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-11-29T21:27:38Z",
+      "side": 0,
+      "message": "Here too.",
+      "range": {
+        "startLine": 80,
+        "startChar": 4,
+        "endLine": 80,
+        "endChar": 49
+      },
+      "revId": "4d10cbdd29cfd2fec2a97ed286efc2731f647d39",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}

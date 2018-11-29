@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_f2afe929",
+        "filename": "packer/provision/connection_plugins/packer.py",
+        "patchSetId": 100
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-11-29T21:27:38Z",
+      "side": 1,
+      "message": "Did this file come from somewhere? I\u0027m not sure why this is needed?\n\nWhat does `__metaclass__ \u003d type` do in Python? I\u0027ve never seen that.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 20
+      },
+      "revId": "646f528e86c039b6480a1c74fa76003fb0dce5a0",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_32aaf119",
+        "filename": "packer/provision/local-windows.yaml",
+        "patchSetId": 100
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-11-29T21:27:38Z",
+      "side": 1,
+      "message": "Is there a reason fact gathering is disabled? I\u0027m fairly certain this will cause lookups of `ansible_os_*` to behave incorrectly.",
+      "range": {
+        "startLine": 4,
+        "startChar": 1,
+        "endLine": 4,
+        "endChar": 21
+      },
+      "revId": "646f528e86c039b6480a1c74fa76003fb0dce5a0",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_12a7ed50",
+        "filename": "packer/provision/roles/iotivity/tasks/main.yml",
+        "patchSetId": 100
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-11-29T21:27:38Z",
+      "side": 1,
+      "message": "I don\u0027t know what the `os_type` variable is. From what I understand all host variables start with either `ansible_` or `factor_` https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#variables-discovered-from-systems-facts",
+      "range": {
+        "startLine": 16,
+        "startChar": 10,
+        "endLine": 16,
+        "endChar": 30
+      },
+      "revId": "646f528e86c039b6480a1c74fa76003fb0dce5a0",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_b26d6107",
+        "filename": "packer/provision/roles/iotivity/tasks/windows.yaml",
+        "patchSetId": 100
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-11-29T21:27:38Z",
+      "side": 1,
+      "message": "I\u0027m not certain either of these are required as\n1) The rdp service is setup and configured in the jenkins-init-scripts (nssm)\n2) We don\u0027t (and shouldn\u0027t be) using perl anywhere (strawberryperl)",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 21
+      },
+      "revId": "646f528e86c039b6480a1c74fa76003fb0dce5a0",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_f276c9d7",
+        "filename": "packer/provision/roles/iotivity/tasks/windows.yaml",
+        "patchSetId": 100
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-11-29T21:27:38Z",
+      "side": 1,
+      "message": "I thought I\u0027d mentioned this before, but we\u0027ve landed on using zulu8 for Windows machines as it\u0027s completely open source and shouldn\u0027t require accepting the Oracle license.",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 11
+      },
+      "revId": "646f528e86c039b6480a1c74fa76003fb0dce5a0",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_9272dde3",
+        "filename": "packer/provision/roles/iotivity/tasks/windows.yaml",
+        "patchSetId": 100
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-11-29T21:27:38Z",
+      "side": 1,
+      "message": "I have no idea why we\u0027d need vim installed on Windows...",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 10
+      },
+      "revId": "646f528e86c039b6480a1c74fa76003fb0dce5a0",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_d273c5e5",
+        "filename": "packer/provision/roles/iotivity/vars/defaults.yaml",
+        "patchSetId": 100
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-11-29T21:27:38Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be VisualStudio2017Community?",
+      "range": {
+        "startLine": 2,
+        "startChar": 19,
+        "endLine": 2,
+        "endChar": 35
+      },
+      "revId": "646f528e86c039b6480a1c74fa76003fb0dce5a0",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
