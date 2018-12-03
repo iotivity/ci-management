@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_8d8800e9",
+        "filename": "packer/templates/windows.json",
+        "patchSetId": 108
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-12-03T23:13:26Z",
+      "side": 0,
+      "message": "Remove this file.",
+      "range": {
+        "startLine": 57,
+        "startChar": 58,
+        "endLine": 57,
+        "endChar": 80
+      },
+      "revId": "51e0938bfb16f0c3f6dc64c5b54fb68a0303a383",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_ed6c2c39",
+        "filename": "packer/templates/windows.json",
+        "patchSetId": 108
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-12-03T23:13:26Z",
+      "side": 0,
+      "message": "Remove this file",
+      "range": {
+        "startLine": 76,
+        "startChar": 43,
+        "endLine": 76,
+        "endChar": 68
+      },
+      "revId": "51e0938bfb16f0c3f6dc64c5b54fb68a0303a383",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_cd696827",
+        "filename": "packer/templates/windows.json",
+        "patchSetId": 108
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-12-03T23:13:26Z",
+      "side": 0,
+      "message": "Remove this file",
+      "range": {
+        "startLine": 80,
+        "startChar": 24,
+        "endLine": 80,
+        "endChar": 47
+      },
+      "revId": "51e0938bfb16f0c3f6dc64c5b54fb68a0303a383",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
