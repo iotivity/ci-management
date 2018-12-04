@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_2dbe1400",
+        "filename": "packer/provision/connection_plugins/packer.py",
+        "patchSetId": 100
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 14275
+      },
+      "writtenOn": "2018-12-04T13:34:52Z",
+      "side": 1,
+      "message": "This file we copied for packer website this file is used by packer command to communicate with winrm and execute ansible scripts on windows system.\nwithout this plugin file packer command was unable to execute the ansible scripts on windows.\n\nhttps://www.packer.io/docs/provisioners/ansible.html",
+      "parentUuid": "9a3d3df0_f2afe929",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 20
+      },
+      "revId": "646f528e86c039b6480a1c74fa76003fb0dce5a0",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_32aaf119",
         "filename": "packer/provision/local-windows.yaml",
         "patchSetId": 100
@@ -36,6 +60,30 @@
       "writtenOn": "2018-11-29T21:27:38Z",
       "side": 1,
       "message": "Is there a reason fact gathering is disabled? I\u0027m fairly certain this will cause lookups of `ansible_os_*` to behave incorrectly.",
+      "range": {
+        "startLine": 4,
+        "startChar": 1,
+        "endLine": 4,
+        "endChar": 21
+      },
+      "revId": "646f528e86c039b6480a1c74fa76003fb0dce5a0",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_0dbb500f",
+        "filename": "packer/provision/local-windows.yaml",
+        "patchSetId": 100
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 14275
+      },
+      "writtenOn": "2018-12-04T13:34:52Z",
+      "side": 1,
+      "message": "While testing I observed that build used to fail, as soon as packer try to execute ansible scripts on windows. so i have used gather_facts: false\n\nyou are correct I have added while debugging the fail builds. I will change \"when: os_type !\u003d \"Windows\"\" back to \"when: ansible_facts[\u0027os_family\u0027] \u003d\u003d \u0027Windows\u0027\"",
+      "parentUuid": "9a3d3df0_32aaf119",
       "range": {
         "startLine": 4,
         "startChar": 1,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_6d377cb1",
+        "filename": "packer/provision/roles/iotivity/tasks/main.yml",
+        "patchSetId": 100
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 14275
+      },
+      "writtenOn": "2018-12-04T13:34:52Z",
+      "side": 1,
+      "message": "you are correct I have added while debugging the fail builds. I will change \"when: os_type !\u003d \"Windows\"\" back to \"when: ansible_facts[\u0027os_family\u0027] \u003d\u003d \u0027Windows\u0027\"",
+      "parentUuid": "9a3d3df0_12a7ed50",
+      "range": {
+        "startLine": 16,
+        "startChar": 10,
+        "endLine": 16,
+        "endChar": 30
+      },
+      "revId": "646f528e86c039b6480a1c74fa76003fb0dce5a0",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_b26d6107",
         "filename": "packer/provision/roles/iotivity/tasks/windows.yaml",
         "patchSetId": 100
@@ -82,6 +154,30 @@
       "writtenOn": "2018-11-29T21:27:38Z",
       "side": 1,
       "message": "I\u0027m not certain either of these are required as\n1) The rdp service is setup and configured in the jenkins-init-scripts (nssm)\n2) We don\u0027t (and shouldn\u0027t be) using perl anywhere (strawberryperl)",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 21
+      },
+      "revId": "646f528e86c039b6480a1c74fa76003fb0dce5a0",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_4d3c3894",
+        "filename": "packer/provision/roles/iotivity/tasks/windows.yaml",
+        "patchSetId": 100
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 14275
+      },
+      "writtenOn": "2018-12-04T13:34:52Z",
+      "side": 1,
+      "message": "The above package I have copied from puppet scripts. \"iotivity-build-minion.pp\"",
+      "parentUuid": "9a3d3df0_b26d6107",
       "range": {
         "startLine": 12,
         "startChar": 0,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_ad41840d",
+        "filename": "packer/provision/roles/iotivity/tasks/windows.yaml",
+        "patchSetId": 100
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 14275
+      },
+      "writtenOn": "2018-12-04T13:34:52Z",
+      "side": 1,
+      "message": "The above package I have copied from puppet scripts \"iotivity-build-minion.pp\", I will change to zulu8.",
+      "parentUuid": "9a3d3df0_f276c9d7",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 11
+      },
+      "revId": "646f528e86c039b6480a1c74fa76003fb0dce5a0",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_9272dde3",
         "filename": "packer/provision/roles/iotivity/tasks/windows.yaml",
         "patchSetId": 100
@@ -140,6 +260,30 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_8d464022",
+        "filename": "packer/provision/roles/iotivity/tasks/windows.yaml",
+        "patchSetId": 100
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 14275
+      },
+      "writtenOn": "2018-12-04T13:34:52Z",
+      "side": 1,
+      "message": "I am  also no sure, The above package I have copied from puppet scripts. iotivity-build-minion.pp",
+      "parentUuid": "9a3d3df0_9272dde3",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 10
+      },
+      "revId": "646f528e86c039b6480a1c74fa76003fb0dce5a0",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_d273c5e5",
         "filename": "packer/provision/roles/iotivity/vars/defaults.yaml",
         "patchSetId": 100
@@ -151,6 +295,30 @@
       "writtenOn": "2018-11-29T21:27:38Z",
       "side": 1,
       "message": "Shouldn\u0027t this be VisualStudio2017Community?",
+      "range": {
+        "startLine": 2,
+        "startChar": 19,
+        "endLine": 2,
+        "endChar": 35
+      },
+      "revId": "646f528e86c039b6480a1c74fa76003fb0dce5a0",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_ed4a6c26",
+        "filename": "packer/provision/roles/iotivity/vars/defaults.yaml",
+        "patchSetId": 100
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 14275
+      },
+      "writtenOn": "2018-12-04T13:34:52Z",
+      "side": 1,
+      "message": "You are correct, it should be visualstudio2017community, but at present I am in testing and debugging phase so this file is not used. \nlater I will move all the packages list from windows.yaml to defaults.yaml",
+      "parentUuid": "9a3d3df0_d273c5e5",
       "range": {
         "startLine": 2,
         "startChar": 19,
