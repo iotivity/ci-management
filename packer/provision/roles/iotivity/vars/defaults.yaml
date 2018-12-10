@@ -1,0 +1,13 @@
+---
+win_dependent:
+  - visualstudio2017community
+  - windows-sdk-10.1
+  - visualstudio2017-workload-nativedesktop
+  - visualstudio2017buildtools
+  - 7zip.install
+  - git
+  - curl
+  - cmake
+  - sqlite
+  - python2
+  - zulu8
