@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3f45e8_bd125f56",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-12-14T15:33:31Z",
+      "side": 1,
+      "message": "This should be clearer that you\u0027re adding vs2017 jobs, \u0027add jenkins jobs\u0027 is too general of a statement",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 28
+      },
+      "revId": "562a02b88b2cd0313ae1dfdc18405e07b0e0f9e7",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_5d0ebb35",
+        "filename": "jjb/iotivity/iotivity-macros.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2018-12-14T15:33:31Z",
+      "side": 1,
+      "message": "This is fine, though I believe the SCons scripts only support up to 14.1 right now so they\u0027ll need to be updated.",
+      "range": {
+        "startLine": 60,
+        "startChar": 42,
+        "endLine": 60,
+        "endChar": 48
+      },
+      "revId": "562a02b88b2cd0313ae1dfdc18405e07b0e0f9e7",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
