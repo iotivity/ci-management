@@ -17,7 +17,7 @@
 - project:
     name: '00-Empty View'
     views:
-      - common-view
+      - project-view
     view-name: '00-Empty View'
     project-name: '00-Empty View'
     view-description: >
@@ -39,7 +39,7 @@
 - project:
     name: 'IoTivity'
     views:
-      - common-view
+      - project-view
     view-name: 'iotivity'
     project-name: 'iotivity'
     view-description: 'List of IoTivity jobs'
@@ -47,7 +47,7 @@
 - project:
     name: 'IoTivity-constrained'
     views:
-      - common-view
+      - project-view
     view-name: 'iotivity-constrained'
     project-name: 'iotivity-constrained'
     view-description: 'List of IoTivity constrained jobs'
@@ -55,7 +55,7 @@
 - project:
     name: 'IoTivity-merge'
     views:
-      - common-view
+      - project-view
     view-name: 'iotivity-merge'
     project-name: 'iotivity-merge'
     view-description: 'List of IoTivity merge jobs'
@@ -63,7 +63,7 @@
 - project:
     name: 'IoTivity-upnp-bridge'
     views:
-      - common-view
+      - project-view
     view-name: 'iotivity-upnp-bridge'
     project-name: 'iotivity-upnp-bridge'
     view-description: 'List of IoTivity upnp bridge jobs'
@@ -71,7 +71,7 @@
 - project:
     name: 'ci-management'
     views:
-      - common-view
+      - project-view
     view-name: 'ci-management'
     project-name: 'ci-management'
     view-description: 'List of ci-management jobs'
