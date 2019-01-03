@@ -1,6 +1,6 @@
 ---
 - view-template:
-    id: 'common-view'
+    id: 'project-view'
     name: '{project-name}'
     view-type: list
     filter-executors: false
