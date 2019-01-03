@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3f45e8_e0c0bc2c",
+        "filename": "jjb/ci-management/ci-management.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 12677
+      },
+      "writtenOn": "2019-01-03T21:44:08Z",
+      "side": 1,
+      "message": "isn\u0027t this set in global-jjb? why do we need to set this again here?",
+      "range": {
+        "startLine": 14,
+        "startChar": 4,
+        "endLine": 14,
+        "endChar": 22
+      },
+      "revId": "e99e05ca179067a0274c3abb1fb2435115d40e0c",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
