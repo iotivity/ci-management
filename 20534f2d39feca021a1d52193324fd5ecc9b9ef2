@@ -22,6 +22,30 @@
       "revId": "20534f2d39feca021a1d52193324fd5ecc9b9ef2",
       "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_0381728f",
+        "filename": "jjb/iotivity/iotivity-macros.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 14275
+      },
+      "writtenOn": "2019-01-10T18:08:34Z",
+      "side": 1,
+      "message": "Fixed it, I didnt see the 14.0 so just replaced 15.0 with 14.0.",
+      "parentUuid": "5a3f45e8_e3a60653",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 15
+      },
+      "revId": "20534f2d39feca021a1d52193324fd5ecc9b9ef2",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
     }
   ]
 }
