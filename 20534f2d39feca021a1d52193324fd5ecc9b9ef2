@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3f45e8_e3a60653",
+        "filename": "jjb/iotivity/iotivity-macros.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1154
+      },
+      "writtenOn": "2019-01-10T08:24:10Z",
+      "side": 1,
+      "message": "I don\u0027t understand why this is added? It will never be reached as its the same conditional as the one above it.",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 15
+      },
+      "revId": "20534f2d39feca021a1d52193324fd5ecc9b9ef2",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
