@@ -14,3 +14,14 @@
     update_cache: true
   become: true
   tags: debug
+
+- name: Create directory for GBS
+  file: dest=/GBS/GBS-ROOT-OIC/local/cache state=directory mode=0777
+  become: true
+  tags: debug
+
+- name: Download GBS cache
+  get_url: url=http://cdn.download.tizen.org/releases/2.4/2.4-mobile/tizen-2.4-mobile_20160531.3/repos/target-TM1/packages/armv7l/{{item}}  dest=/GBS/GBS-ROOT-OIC/local/cache/ mode=0444
+  with_items: "{{ tizen_modules }}"
+  become: true
+  tags: debug

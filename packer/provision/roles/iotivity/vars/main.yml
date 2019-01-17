@@ -57,3 +57,10 @@ hippomocks_url: 'https://github.com/dascandy/hippomocks/archive'
 
 rapidjson_version : '1.1.0'
 rapidjson_url: 'https://github.com/miloyip/rapidjson/archive'
+
+tizen_modules:
+  - app-checker-0.0.20-1.1.armv7l.rpm
+  - app-checker-server-0.0.20-1.1.armv7l.rpm
+  - app-svc-0.1.78-1.1.armv7l.rpm
+  - appfw-env-0.0.1-1.1.armv7l.rpm
+  - aul-0.2.3.0-2.1.armv7l.rpm
