@@ -14,3 +14,20 @@
     update_cache: true
   become: true
   tags: debug
+
+- name: Create directory for GBS
+  file: dest=/GBS/ state=directory mode=0777
+  become: true
+  tags: debug
+
+- name: Download GBS cache tizen_base_noarch
+  shell: wget -r -np -R "index.html*" http://cdn.download.tizen.org/releases/2.4/2.4-base/latest/repos/standard/packages/noarch/ -P /GBS/
+ 
+- name: Download GBS cache tizen_base_armv7l
+  shell: wget -r -np -R "index.html*" http://cdn.download.tizen.org/releases/2.4/2.4-base/latest/repos/standard/packages/armv7l/ -P /GBS/
+
+- name: Download GBS cache tizen_mobile_noarch
+  shell: wget -r -np -R "index.html*" http://cdn.download.tizen.org/releases/2.4/2.4-mobile/latest/repos/target-TM1/packages/noarch/ -P /GBS/
+
+- name: Download GBS cache tizen_mobile_armv7l
+  shell: wget -r -np -R "index.html*" http://cdn.download.tizen.org/releases/2.4/2.4-mobile/latest/repos/target-TM1/packages/armv7l/ -P /GBS/
