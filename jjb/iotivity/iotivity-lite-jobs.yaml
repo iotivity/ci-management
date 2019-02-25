@@ -1,0 +1,68 @@
+---
+- project:
+    name: iotivity-lite-verify-jobs
+    project: 'iotivity-lite'
+    disabled: false
+    node: '{ubuntu-node}'
+    silent: false
+    jobs:
+      - 'iotivity-lite-verify-{component}'
+    component:
+      - 'freertos'
+      - 'linux'
+      - 'linux_test':
+          lite_wrappers:
+            - timestamps
+            - openstack:
+                single-use: true
+            - timeout:
+                timeout: 3
+                type: absolute
+                fail: false
+                abort: true
+      - 'linux_unsecured'
+      - 'linux_unsecured_test'
+      - 'tizenrt'
+
+- job-template:
+    name: 'iotivity-lite-verify-{component}'
+
+    project-type: freestyle
+    node: '{node}'
+    concurrent: true
+    disabled: '{obj:disabled}'
+
+    lite_wrappers:
+      - timestamps
+      - openstack:
+          single-use: true
+
+    parameters:
+      - gerrit-project:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: '{refspec}'
+
+    scm:
+      - gerrit-branch-iotivity-lite-scm:
+          credentials-id: '{ssh-credentials}'
+
+    triggers:
+      - gerrit-trigger-patch-submitted:
+          silent: '{silent}'
+          project: '{project}'
+          branch: '{gerrit-branch}'
+
+    wrappers: '{obj:lite_wrappers}'
+
+    builders:
+      - iotivity-lite-auto-build:
+          component: '{component}'
+
+    publishers:
+      - retry-build-on-builder-error
+      - archive-artifacts:
+          artifacts: '**/*.out.*'
+      - wipe-workspace
+      - email-notification:
+          mailto: 'oicbuild@intel.com'

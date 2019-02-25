@@ -53,6 +53,14 @@
     view-description: 'List of IoTivity constrained jobs'
 
 - project:
+    name: 'IoTivity-lite'
+    views:
+      - project-view
+    view-name: 'iotivity-lite'
+    project-name: 'iotivity-lite'
+    view-description: 'List of IoTivity lite jobs'
+
+- project:
     name: 'IoTivity-merge'
     views:
       - project-view

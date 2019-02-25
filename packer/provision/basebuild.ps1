@@ -60,6 +60,7 @@ function fetch-gerrit-repo
 $project_names = @('iotivity',
 'iotivity-alljoyn-bridge',
 'iotivity-constrained',
+'iotivity-lite',
 'iotivity-contrib',
 'iotivity-node',
 'iotivity-test',

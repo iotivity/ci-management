@@ -1,0 +1,31 @@
+# IoTivity lite Macros
+
+## SCMs
+- scm:
+    name: gerrit-branch-iotivity-lite-scm
+    scm:
+      - git:
+          credentials-id: '{credentials-id}'
+          reference-repo: '/extlibs/gerrit/iotivity-lite'
+          url: '$GIT_URL/iotivity-lite'
+          refspec: '$GERRIT_REFSPEC'
+          branches:
+            - 'origin/$GERRIT_BRANCH'
+          skip-tag: true
+          wipe-workspace: true
+          choosing-strategy: 'gerrit'
+          shallow-clone: true
+
+## Builders
+- builder:
+    name: iotivity-lite-auto-build
+    builders:
+      - shell: |
+            #!/bin/bash -eux
+            set -o pipefail
+
+            export VERBOSE=false
+            export CCACHE_DISABLE=false
+            cd tests
+            ./auto_build.sh {component}
+
