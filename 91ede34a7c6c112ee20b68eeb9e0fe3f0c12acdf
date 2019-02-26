@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3a4c51b2_1cd55543",
+        "filename": "jjb/iotivity/include-raw-iotivity-tizen.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 14275
+      },
+      "writtenOn": "2019-02-26T17:52:13Z",
+      "side": 1,
+      "message": "Did not get your comment. Actually this change is for tizen build.  Here we are linking the already downloaded rpms to a path where gbs searches and install them.",
+      "parentUuid": "5a3f45e8_b1d9e885",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 39
+      },
+      "revId": "91ede34a7c6c112ee20b68eeb9e0fe3f0c12acdf",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a3f45e8_11e7fc41",
         "filename": "packer/provision/roles/iotivity/tasks/tizen.yaml",
         "patchSetId": 5
@@ -36,6 +60,30 @@
       "writtenOn": "2019-01-28T18:55:29Z",
       "side": 1,
       "message": "Instead of listing all the versions for these packages, and downloading them through ansible, you should write a script to download everything under the 4 repos listed, add it (copy) and run it (command).\n\nDownloading specific versions of packages won\u0027t scale in the future as you\u0027ll have to continually update the list as new packages are released, otherwise they\u0027ll be downloaded during the job execution.",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 13
+      },
+      "revId": "91ede34a7c6c112ee20b68eeb9e0fe3f0c12acdf",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a4c51b2_5ccfddb0",
+        "filename": "packer/provision/roles/iotivity/tasks/tizen.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 14275
+      },
+      "writtenOn": "2019-02-26T17:52:13Z",
+      "side": 1,
+      "message": "Now I am downloading all the RPMs from the 4 repo\u0027s with latest version. When ever a new version comes its always links to the latest path so no need to change the paths.",
+      "parentUuid": "5a3f45e8_11e7fc41",
       "range": {
         "startLine": 23,
         "startChar": 0,
