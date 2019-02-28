@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a494da4_9887a40f",
+        "filename": "jenkins-config/clouds/openstack/cattle/centos7-builder-2c-1g.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 12779
+      },
+      "writtenOn": "2019-02-28T21:24:16Z",
+      "side": 1,
+      "message": "I don\u0027t think you need this, unless you are trying to set it up differently from the Default slave options. \nCurrently, this value is \"Inherited value: 600000\" which means it is being inherited from the Default slave options.",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 20
+      },
+      "revId": "f45eee76fc524665b5ab16b179a358ea3b136642",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a494da4_f87b4827",
+        "filename": "jenkins-config/clouds/openstack/cattle/cloud.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 12779
+      },
+      "writtenOn": "2019-02-28T21:24:16Z",
+      "side": 1,
+      "message": "This is ONAP\u0027s credential name. \nYou need the one that iotivity is using",
+      "range": {
+        "startLine": 2,
+        "startChar": 20,
+        "endLine": 2,
+        "endChar": 32
+      },
+      "revId": "f45eee76fc524665b5ab16b179a358ea3b136642",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
