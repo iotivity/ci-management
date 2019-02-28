@@ -45,6 +45,121 @@
       "revId": "f45eee76fc524665b5ab16b179a358ea3b136642",
       "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a494da4_3876503f",
+        "filename": "jenkins-config/clouds/openstack/cattle/cloud.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 12779
+      },
+      "writtenOn": "2019-02-28T21:28:23Z",
+      "side": 1,
+      "message": "These are ONAP\u0027s values, you need to set up the iotivity ones",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 47
+      },
+      "revId": "f45eee76fc524665b5ab16b179a358ea3b136642",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a494da4_1873944e",
+        "filename": "jenkins-config/clouds/openstack/cattle/cloud.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 12779
+      },
+      "writtenOn": "2019-02-28T21:28:23Z",
+      "side": 1,
+      "message": "These are ONAP\u0027s values, you need to set up the iotivity ones. \nI believe this value should be 45",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 15
+      },
+      "revId": "f45eee76fc524665b5ab16b179a358ea3b136642",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a494da4_788f3824",
+        "filename": "jenkins-config/clouds/openstack/cattle/ubuntu1604-4c-16g.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 12779
+      },
+      "writtenOn": "2019-02-28T21:28:23Z",
+      "side": 1,
+      "message": "This value is different from what prod currently has",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 71
+      },
+      "revId": "f45eee76fc524665b5ab16b179a358ea3b136642",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a494da4_5894fc36",
+        "filename": "jenkins-config/clouds/openstack/cattle/ws2012-vs2013-4c-16g.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 12779
+      },
+      "writtenOn": "2019-02-28T21:28:23Z",
+      "side": 1,
+      "message": "This value is different from what prod has",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 51
+      },
+      "revId": "f45eee76fc524665b5ab16b179a358ea3b136642",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a494da4_b899c070",
+        "filename": "jenkins-config/clouds/openstack/cattle/ws2016-vs2017.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 12779
+      },
+      "writtenOn": "2019-02-28T21:28:23Z",
+      "side": 1,
+      "message": "This value is different from what prod has",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 51
+      },
+      "revId": "f45eee76fc524665b5ab16b179a358ea3b136642",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
     }
   ]
 }
