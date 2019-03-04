@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a494da4_d8500c61",
+        "filename": "jenkins-config/clouds/openstack/OCIVEXX/cloud.cfg",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 12779
+      },
+      "writtenOn": "2019-03-04T19:06:39Z",
+      "side": 1,
+      "message": "This is ONAP\u0027s please use Iotivity\u0027s",
+      "range": {
+        "startLine": 10,
+        "startChar": 11,
+        "endLine": 10,
+        "endChar": 47
+      },
+      "revId": "96698166dd3955324d6c0330cc1833f8ef8abaf7",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a494da4_384e50c2",
+        "filename": "jenkins-config/clouds/openstack/OCIVEXX/cloud.cfg",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 12779
+      },
+      "writtenOn": "2019-03-04T19:06:39Z",
+      "side": 1,
+      "message": "You also need to define \"INSTANCE_CAP\" which is equivalent to \"Max. No. of Instances\"",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 13
+      },
+      "revId": "96698166dd3955324d6c0330cc1833f8ef8abaf7",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a494da4_184b94b1",
+        "filename": "jenkins-config/clouds/openstack/OCIVEXX/ubuntu1604-4c-16g.cfg",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 12779
+      },
+      "writtenOn": "2019-03-04T19:06:39Z",
+      "side": 1,
+      "message": "Not needed, unless you want to overwrite it",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 20
+      },
+      "revId": "96698166dd3955324d6c0330cc1833f8ef8abaf7",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a494da4_58ccfc35",
+        "filename": "jenkins-config/clouds/openstack/OCIVEXX/ws2012-vs2013-4c-16g.cfg",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 12779
+      },
+      "writtenOn": "2019-03-04T19:06:39Z",
+      "side": 1,
+      "message": "This value is not correct, I can see it as \"c:\\j\"",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 11
+      },
+      "revId": "96698166dd3955324d6c0330cc1833f8ef8abaf7",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a494da4_d8d76cbe",
+        "filename": "jenkins-config/clouds/openstack/OCIVEXX/ws2016-vs2017.cfg",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 12779
+      },
+      "writtenOn": "2019-03-04T19:06:39Z",
+      "side": 1,
+      "message": "Does not match the current value",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 13
+      },
+      "revId": "96698166dd3955324d6c0330cc1833f8ef8abaf7",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a494da4_f8da28e8",
+        "filename": "jenkins-config/clouds/openstack/OCIVEXX/ws2016-vs2017.cfg",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 12779
+      },
+      "writtenOn": "2019-03-04T19:06:39Z",
+      "side": 1,
+      "message": "These do not match the current values",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 16
+      },
+      "revId": "96698166dd3955324d6c0330cc1833f8ef8abaf7",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
