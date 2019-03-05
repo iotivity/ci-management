@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a494da4_b320c39c",
+        "filename": "jenkins-config/clouds/openstack/OCIVEXX/ws2012-vs2015-4c-16g.cfg",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 12779
+      },
+      "writtenOn": "2019-03-05T18:01:44Z",
+      "side": 1,
+      "message": "This does not match production",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 13
+      },
+      "revId": "5c8ff126c6e6447acb4a6ed5f00596100f7b6317",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
