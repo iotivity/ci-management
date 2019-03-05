@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "1a494da4_f825080b",
+        "filename": "jenkins-config/clouds/openstack/cattle/cloud.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 14275
+      },
+      "writtenOn": "2019-03-05T18:31:21Z",
+      "side": 1,
+      "message": "Can you suggest where I can find this?",
+      "parentUuid": "1a494da4_f87b4827",
+      "range": {
+        "startLine": 2,
+        "startChar": 20,
+        "endLine": 2,
+        "endChar": 32
+      },
+      "revId": "f45eee76fc524665b5ab16b179a358ea3b136642",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a494da4_3876503f",
         "filename": "jenkins-config/clouds/openstack/cattle/cloud.cfg",
         "patchSetId": 1
@@ -59,6 +83,30 @@
       "writtenOn": "2019-02-28T21:28:23Z",
       "side": 1,
       "message": "These are ONAP\u0027s values, you need to set up the iotivity ones",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 47
+      },
+      "revId": "f45eee76fc524665b5ab16b179a358ea3b136642",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a494da4_b88380cb",
+        "filename": "jenkins-config/clouds/openstack/cattle/cloud.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 14275
+      },
+      "writtenOn": "2019-03-05T18:31:21Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "1a494da4_3876503f",
       "range": {
         "startLine": 8,
         "startChar": 0,
