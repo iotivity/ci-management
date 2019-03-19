@@ -187,6 +187,10 @@
     name: 'iotivity-verify-unit_tests'
 
     properties:
+      - lf-infra-properties:
+          project: '{project}'
+          build-days-to-keep: 7
+          artifact-days-to-keep: 7
       - throttle:
           max-total: 4
           option: project
