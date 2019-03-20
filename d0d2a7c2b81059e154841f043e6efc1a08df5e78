@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a494da4_6e3772b1",
+        "filename": "jjb/iotivity/iotivity-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-03-20T18:17:12Z",
+      "side": 1,
+      "message": "lf-infra-properties explicitly disables artifact storing. To keep the current artifact storage you need to do the following instead:\n\n- build-discarder:\n    days-to-keep: 7\n\nThis works around the forced non-storage of artifacts",
+      "range": {
+        "startLine": 190,
+        "startChar": 0,
+        "endLine": 193,
+        "endChar": 34
+      },
+      "revId": "d0d2a7c2b81059e154841f043e6efc1a08df5e78",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
