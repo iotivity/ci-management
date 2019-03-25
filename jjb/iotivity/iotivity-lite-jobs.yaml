@@ -5,6 +5,9 @@
     disabled: false
     node: '{ubuntu-node}'
     silent: false
+    branch: 'master'
+    refspec: 'refs/heads/master'
+    gerrit-branch: '**'
     jobs:
       - 'iotivity-lite-verify-{component}'
     component:

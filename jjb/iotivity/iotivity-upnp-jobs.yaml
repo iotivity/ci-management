@@ -3,6 +3,10 @@
     name: iotivity-upnp-bridge-verify-jobs
     project: 'iotivity-upnp-bridge'
     node: '{ubuntu-node}'
+    silent: false
+    branch: 'master'
+    refspec: 'refs/heads/master'
+    gerrit-branch: '**'
     disabled: false
     jobs:
       - 'iotivity-upnp-bridge-verify-android'

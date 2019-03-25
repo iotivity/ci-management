@@ -23,6 +23,9 @@
           refspec: 'refs/heads/1.3-rel'
           gerrit-branch: '1.3-rel'
     silent: true
+    branch: 'master'
+    refspec: 'refs/heads/master'
+    gerrit-branch: '**'
     disabled: false
     mailto: 'oicbuild@intel.com, tbramwell@linuxfoundation.org'
     jobs:
