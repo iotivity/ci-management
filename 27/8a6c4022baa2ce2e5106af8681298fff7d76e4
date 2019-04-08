@@ -1,0 +1,7 @@
+Verified+1: IoTivity Jenkins <jenkins-daemon@iotivity.org>
+Code-Review+2: Jessica Wagantall <jwagantall@linuxfoundation.org>
+Submitted-by: Jessica Wagantall <jwagantall@linuxfoundation.org>
+Submitted-at: Mon, 08 Apr 2019 17:07:19 +0000
+Reviewed-on: https://gerrit.iotivity.org/gerrit/29382
+Project: ci-management
+Branch: refs/heads/master
