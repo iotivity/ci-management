@@ -1,0 +1,7 @@
+Verified+1: IoTivity Jenkins <jenkins-daemon@iotivity.org>
+Code-Review+2: Andrew Grimberg <agrimberg@linuxfoundation.org>
+Submitted-by: Andrew Grimberg <agrimberg@linuxfoundation.org>
+Submitted-at: Tue, 14 May 2019 18:27:09 +0000
+Reviewed-on: https://gerrit.iotivity.org/gerrit/29495
+Project: ci-management
+Branch: refs/heads/master
