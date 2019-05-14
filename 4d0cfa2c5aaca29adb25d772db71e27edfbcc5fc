@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a494da4_b6bb8c71",
+        "filename": "jjb/ci-management/ci-packer.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-05-14T18:21:42Z",
+      "side": 1,
+      "message": "Just remove this. You shouldn\u0027t be forcing a packer version unless there is a good reason to and the now default version is 1.4.0",
+      "revId": "4d0cfa2c5aaca29adb25d772db71e27edfbcc5fc",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": false
+    }
+  ]
+}
