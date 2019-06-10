@@ -147,7 +147,7 @@
     version: IoTivity-1.2.1d
 - name: Gerrit Projects
   git:
-    repo: 'https://gerrit.iotivity.org/gerrit/p/{{ item }}.git'
+    repo: 'https://gerrit.iotivity.org/gerrit/{{ item }}.git'
     dest: '{{ extlibs }}/gerrit/{{ item }}'
     version: master
   with_items:
