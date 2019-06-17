@@ -376,6 +376,13 @@
     concurrent: true
     disabled: '{obj:disabled}'
 
+    properties:
+      - build-discarder:
+          days-to-keep: 7
+      - throttle:
+          max-total: 4
+          option: project
+
     parameters:
       - gerrit-project:
           project: '{project}'
