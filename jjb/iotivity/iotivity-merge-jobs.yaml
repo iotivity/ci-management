@@ -474,6 +474,13 @@
 - job-template:
     name: 'iotivity-merge-{stream}-windows-{arch}-{vs-version}'
 
+    properties:
+      - build-discarder:
+          days-to-keep: 7
+      - throttle:
+          max-total: 4
+          option: project
+
     project-type: freestyle
     node: '{vs-version}'
     concurrent: true
