@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ef4403f0_133bb4d5",
+        "filename": "jjb/iotivity/iotivity-merge-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 482,
+      "author": {
+        "id": 12677
+      },
+      "writtenOn": "2019-08-23T14:14:38Z",
+      "side": 1,
+      "message": "why not use the lf-infra-properties macro?\n\n    properties:\n      - lf-infra-properties:\n          project: \u0027{project}\u0027\n          build-days-to-keep: 7\n      - throttle:\n          categories: \u0027{obj:throttle_categories}\u0027\n          enabled: \u0027{throttle-enabled}\u0027\n          max-per-node: \u0027{throttle-max-per-node}\u0027\n          max-total: \u0027{throttle-max-total}\u0027\n          option: \u0027{throttle-option}\u0027",
+      "range": {
+        "startLine": 476,
+        "startChar": 0,
+        "endLine": 482,
+        "endChar": 25
+      },
+      "revId": "f9f951d790188cde54586f781454e4e0da6f0c1b",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": true
+    }
+  ]
+}
