@@ -473,7 +473,23 @@
 
 - job-template:
     name: 'iotivity-merge-{stream}-windows-{arch}-{vs-version}'
-
+    throttle-enabled: true
+    throttle_categories:
+      - "cat1"
+      - "cat2"
+    throttle-max-per-node: 3
+    throttle-max-total: 2
+    throttle-option: "project"
+    properties:
+      - lf-infra-properties:
+          project: '{project}'
+          build-days-to-keep: 7
+      - throttle:
+          categories: '{obj:throttle_categories}'
+          enabled: '{throttle-enabled}'
+          max-per-node: '{throttle-max-per-node}'
+          max-total: '{throttle-max-total}'
+          option: '{throttle-option}'
     project-type: freestyle
     node: '{vs-version}'
     concurrent: true
