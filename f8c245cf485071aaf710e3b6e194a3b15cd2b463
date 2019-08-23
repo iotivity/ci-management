@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6b815dc1_3b271b13",
+        "filename": "jjb/iotivity/iotivity-merge-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 12677
+      },
+      "writtenOn": "2019-08-23T16:08:45Z",
+      "side": 1,
+      "message": "move all these as defaults in your templates you wont require to define them in all projects",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 30
+      },
+      "revId": "f8c245cf485071aaf710e3b6e194a3b15cd2b463",
+      "serverId": "c6509b8a-a471-4ec1-8e5f-9aed2654acb5",
+      "unresolved": true
+    }
+  ]
+}
